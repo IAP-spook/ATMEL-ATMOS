@@ -14,6 +14,11 @@
 #include "devices/TGS2600.h"
 #include "devices/K30.h"
 #include "common.h"
+#include "utilities/llist.h"
+ #include "Event/Event.h"
+
+#include "avr/io.h"
+#include "avr/interrupt.h"
 
 unsigned char data[3];
 char dummy;
@@ -63,7 +68,7 @@ static void APP_Init(void){
 static void APP_TaskHandler(void)
 {
 
-	printf("Top of loop\n");
+	printf("Top of loop !\n");
 	//SPI Test
 	int i;
 	for(i=0;i<=1;i++){
@@ -180,9 +185,43 @@ static void APP_TaskHandler(void)
   */
 }
 
+
+/* Initialization Routine Example 3 : Timer 2 Async operation */
+/* Clock for Timer 2 is taken from crystal connected to TOSC pins */
+void init_Ex3(void)
+{
+	/* Select clock source as crystal on TOSCn pins */
+	ASSR |= 1 << AS2;
+	/* Clear Timer on compare match. Toggle OC2A on Compare Match */
+	TCCR2A = (1<<COM2A0) | (1<<WGM21);
+	/* Timer Clock = 32768 Hz / 1024 */
+	TCCR2B = (1<<CS22)|(1<<CS21)|(1<<CS20);
+	/* Set Output Compare Value to 32. Output pin will toggle every second */
+	OCR2A  = 32;
+	/* Wait till registers are ready
+	 * Refer ATmega328PB datasheet section
+	 * 'Asynchronous Operation of Timer/Counter2' */
+	while ((ASSR & ((1 << OCR2AUB) | (1 << OCR2BUB) | (1 << TCR2AUB) 
+		| (1 << TCR2BUB) | (1<< TCN2UB))));
+	/* Clear pending interrupts */
+	TIFR2  = (1 << TOV2) | (1 << OCF2A) | (1 << OCF2B);
+	/* Enable Timer 2 Output Compare Match Interrupt */
+	TIMSK2 = (1 << OCIE2A);
+}
+
+static int count = 0;
+
+ISR(TIMER2_COMPA_vect)
+{
+	count++;
+	/* Toggle a pin on timer overflow */
+	printf("count = %d\n",count);
+	foo();	
+}
 int main(void)
 {
   //SYS_Init(); //Commented out until wireless hardware is tuned
+  /*
   APP_Init();
   printf("\n======================\n");
   while (1)
@@ -190,4 +229,15 @@ int main(void)
     //SYS_TaskHandler(); //Commented out until wireless hardware is tuned
     APP_TaskHandler();
   }
+  */
+	SYS_Init();
+	APP_Init();
+	printf("init done!\n");
+  	count = 0;
+  	init_Ex3();
+	/* Enable global interrupt */
+	sei();
+
+	for (;;){}
+	return 0;
 }

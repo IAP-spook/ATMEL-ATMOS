@@ -26,14 +26,14 @@
     <BootSegment>2</BootSegment>
     <eraseonlaunchrule>0</eraseonlaunchrule>
     <AsfFrameworkConfig>
-      <framework-data xmlns="">
+      <framework-data>
         <options />
         <configurations />
         <files />
         <documentation help="" />
         <offline-documentation help="" />
         <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.17.0" />
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.20.1" />
         </dependencies>
       </framework-data>
     </AsfFrameworkConfig>
@@ -249,6 +249,9 @@
     <Compile Include="drivers\usart0.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Event\Event.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="hal\atmega256rfr2\inc\hal.h">
       <SubType>compile</SubType>
     </Compile>
@@ -292,6 +295,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\drivers\usart0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\Event\Event.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\utilities\llist.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="inc\util.h">
@@ -399,6 +408,10 @@
     <Folder Include="include\drivers" />
     <Folder Include="devices" />
     <Folder Include="include\devices" />
+    <Folder Include="include\Event\" />
+    <Folder Include="include\utilities\" />
+    <Folder Include="Event" />
+    <Folder Include="utilities" />
     <Folder Include="nwk\" />
     <Folder Include="nwk\inc\" />
     <Folder Include="nwk\src\" />
