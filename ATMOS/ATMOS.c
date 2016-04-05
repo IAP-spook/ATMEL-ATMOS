@@ -52,7 +52,7 @@ char checkChar(char *ref, char test){
 static void APP_Init(void){
 	PWR_Init();
 	PWR_TurnOn5V();
-	USART0_Init(76800);
+	USART0_Init(9600);
 	DDRB |= 0b00010000;
 	DDRE |= 0b00001000;
 	PORTE|= 0b00001000;
@@ -209,15 +209,41 @@ void init_Ex3(void)
 	TIMSK2 = (1 << OCIE2A);
 }
 
+/* Initialization Routine Example 2 : Input Capture - Timer 1*/
+/* Capture pin PB0 (ICP1). By default performs capture on falling edge */
+void init_Ex2(void)
+{
+	/* Timer clock = I/O clock / 64 */
+	TCCR1B = (1<<CS11)|(1<<CS10);
+	/* Clear ICF1. Clear pending interrupts */
+	TIFR1   = 1<<ICF1;
+	/* Enable Timer 1 Capture Event Interrupt */
+	TIMSK1  = 1<<ICIE1;
+}
+
 static int count = 0;
 
 ISR(TIMER2_COMPA_vect)
 {
 	count++;
-	/* Toggle a pin on timer overflow */
-	printf("count = %d\n",count);
+	if( count & 0x01 )
+		OCR2A = 32;
+	else
+		OCR2A = 32;
+	printf("count1 = %d\n",count);
 	foo();	
 }
+	
+/* Example 2 - ISR Input Capture Interrupt Timer 1 */
+ISR (TIMER1_CAPT_vect)
+{
+	count++;
+	printf("count = %d\n",count);
+	foo();
+	/* Clear counter to restart counting */
+	TCNT1 = 0;
+}
+
 int main(void)
 {
   //SYS_Init(); //Commented out until wireless hardware is tuned
