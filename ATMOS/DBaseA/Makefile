@@ -44,8 +44,10 @@ SUBDIRS :=  \
 ../devices \
 ../include/devices \
 ../include/Event/ \
+../include/sensors \
 ../include/utilities/ \
 ../Event \
+../sensors \
 ../utilities \
 ../nwk/ \
 ../nwk/inc/ \
@@ -72,6 +74,7 @@ C_SRCS +=  \
 ../drivers/SPI.c \
 ../drivers/TWI.c \
 ../drivers/usart0.c \
+../Event/Event_Timer.c \
 ../Event/Event.c \
 ../hal/atmega256rfr2/src/hal.c \
 ../hal/atmega256rfr2/src/halTimer.c \
@@ -85,9 +88,12 @@ C_SRCS +=  \
 ../nwk/src/nwkSecurity.c \
 ../nwk/src/nwkTx.c \
 ../phy/atmegarfr2/src/phy.c \
+../sensors/Base_Sensor.c \
+../sensors/My_Sensor.c \
 ../sys/src/sys.c \
 ../sys/src/sysEncrypt.c \
-../sys/src/sysTimer.c
+../sys/src/sysTimer.c \
+../utilities/llist.c
 
 
 PREPROCESSING_SRCS += 
@@ -108,6 +114,7 @@ drivers/PWR.o \
 drivers/SPI.o \
 drivers/TWI.o \
 drivers/usart0.o \
+Event/Event_Timer.o \
 Event/Event.o \
 hal/atmega256rfr2/src/hal.o \
 hal/atmega256rfr2/src/halTimer.o \
@@ -121,9 +128,12 @@ nwk/src/nwkRx.o \
 nwk/src/nwkSecurity.o \
 nwk/src/nwkTx.o \
 phy/atmegarfr2/src/phy.o \
+sensors/Base_Sensor.o \
+sensors/My_Sensor.o \
 sys/src/sys.o \
 sys/src/sysEncrypt.o \
-sys/src/sysTimer.o
+sys/src/sysTimer.o \
+utilities/llist.o
 
 OBJS_AS_ARGS +=  \
 ATMOS.o \
@@ -137,6 +147,7 @@ drivers/PWR.o \
 drivers/SPI.o \
 drivers/TWI.o \
 drivers/usart0.o \
+Event/Event_Timer.o \
 Event/Event.o \
 hal/atmega256rfr2/src/hal.o \
 hal/atmega256rfr2/src/halTimer.o \
@@ -150,9 +161,12 @@ nwk/src/nwkRx.o \
 nwk/src/nwkSecurity.o \
 nwk/src/nwkTx.o \
 phy/atmegarfr2/src/phy.o \
+sensors/Base_Sensor.o \
+sensors/My_Sensor.o \
 sys/src/sys.o \
 sys/src/sysEncrypt.o \
-sys/src/sysTimer.o
+sys/src/sysTimer.o \
+utilities/llist.o
 
 C_DEPS +=  \
 ATMOS.d \
@@ -166,6 +180,7 @@ drivers/PWR.d \
 drivers/SPI.d \
 drivers/TWI.d \
 drivers/usart0.d \
+Event/Event_Timer.d \
 Event/Event.d \
 hal/atmega256rfr2/src/hal.d \
 hal/atmega256rfr2/src/halTimer.d \
@@ -179,9 +194,12 @@ nwk/src/nwkRx.d \
 nwk/src/nwkSecurity.d \
 nwk/src/nwkTx.d \
 phy/atmegarfr2/src/phy.d \
+sensors/Base_Sensor.d \
+sensors/My_Sensor.d \
 sys/src/sys.d \
 sys/src/sysEncrypt.d \
-sys/src/sysTimer.d
+sys/src/sysTimer.d \
+utilities/llist.d
 
 C_DEPS_AS_ARGS +=  \
 ATMOS.d \
@@ -195,6 +213,7 @@ drivers/PWR.d \
 drivers/SPI.d \
 drivers/TWI.d \
 drivers/usart0.d \
+Event/Event_Timer.d \
 Event/Event.d \
 hal/atmega256rfr2/src/hal.d \
 hal/atmega256rfr2/src/halTimer.d \
@@ -208,9 +227,12 @@ nwk/src/nwkRx.d \
 nwk/src/nwkSecurity.d \
 nwk/src/nwkTx.d \
 phy/atmegarfr2/src/phy.d \
+sensors/Base_Sensor.d \
+sensors/My_Sensor.d \
 sys/src/sys.d \
 sys/src/sysEncrypt.d \
-sys/src/sysTimer.d
+sys/src/sysTimer.d \
+utilities/llist.d
 
 OUTPUT_FILE_PATH +=ATMOS.elf
 
@@ -226,6 +248,14 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
+
+
 
 
 
@@ -330,7 +360,21 @@ phy/atmegarfr2/src/%.o: ../phy/atmegarfr2/src/%.c
 	@echo Finished building: $<
 	
 
+sensors/%.o: ../sensors/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.8.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 sys/src/%.o: ../sys/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.8.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+utilities/%.o: ../utilities/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

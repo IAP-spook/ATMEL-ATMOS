@@ -15,7 +15,9 @@
 #include "devices/K30.h"
 #include "common.h"
 #include "utilities/llist.h"
- #include "Event/Event.h"
+#include "Event/Event.h"
+#include "Event/Event_Timer.h"
+#include "sensors/My_Sensor.h"
 
 #include "avr/io.h"
 #include "avr/interrupt.h"
@@ -221,46 +223,24 @@ void init_Ex2(void)
 	TIMSK1  = 1<<ICIE1;
 }
 
-static int count = 0;
 
-ISR(TIMER2_COMPA_vect)
-{
-	count++;
-	if( count & 0x01 )
-		OCR2A = 32;
-	else
-		OCR2A = 32;
-	printf("count1 = %d\n",count);
-	foo();	
-}
-	
-/* Example 2 - ISR Input Capture Interrupt Timer 1 */
-ISR (TIMER1_CAPT_vect)
-{
-	count++;
-	printf("count = %d\n",count);
-	foo();
-	/* Clear counter to restart counting */
-	TCNT1 = 0;
-}
 
 int main(void)
 {
-  //SYS_Init(); //Commented out until wireless hardware is tuned
-  /*
-  APP_Init();
-  printf("\n======================\n");
-  while (1)
-  {
-    //SYS_TaskHandler(); //Commented out until wireless hardware is tuned
-    APP_TaskHandler();
-  }
-  */
 	SYS_Init();
 	APP_Init();
+	
+	/* could have sealed following in a function */
+	init_timeoutq();
+	MySensor *p = New_My_Sensor( 1023 );
+	My_FctnInit(p);
+	init_Event_Timer();
 	printf("init done!\n");
-  	count = 0;
-  	init_Ex3();
+	
+	/* could have sealed following in a function */
+	load_new_sensor( 1, 4, (BaseSensor *)p, 0 );
+	init_set_timer( get_next_interval() );
+	
 	/* Enable global interrupt */
 	sei();
 

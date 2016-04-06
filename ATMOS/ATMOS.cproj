@@ -249,6 +249,9 @@
     <Compile Include="drivers\usart0.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Event\Event_Timer.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Event\Event.c">
       <SubType>compile</SubType>
     </Compile>
@@ -298,6 +301,15 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\Event\Event.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\Event\Event_Timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\sensors\Base_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\sensors\My_Sensor.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\utilities\llist.h">
@@ -372,6 +384,12 @@
     <Compile Include="phy\atmegarfr2\src\phy.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="sensors\Base_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sensors\My_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="sys\inc\sys.h">
       <SubType>compile</SubType>
     </Compile>
@@ -396,6 +414,9 @@
     <Compile Include="sys\src\sysTimer.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="utilities\llist.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="hal\" />
@@ -409,8 +430,10 @@
     <Folder Include="devices" />
     <Folder Include="include\devices" />
     <Folder Include="include\Event\" />
+    <Folder Include="include\sensors" />
     <Folder Include="include\utilities\" />
     <Folder Include="Event" />
+    <Folder Include="sensors" />
     <Folder Include="utilities" />
     <Folder Include="nwk\" />
     <Folder Include="nwk\inc\" />

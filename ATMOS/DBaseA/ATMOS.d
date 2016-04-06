@@ -33,7 +33,9 @@ ATMOS.d ATMOS.o: .././ATMOS.c .././config.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\math.h \
- ../include/utilities/llist.h ../include/Event/Event.h
+ ../include/utilities/llist.h ../include/Event/Event.h \
+ ../include/sensors/Base_Sensor.h ../include/Event/Event_Timer.h \
+ ../include/sensors/My_Sensor.h
 
 .././config.h:
 
@@ -132,3 +134,9 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 ../include/utilities/llist.h:
 
 ../include/Event/Event.h:
+
+../include/sensors/Base_Sensor.h:
+
+../include/Event/Event_Timer.h:
+
+../include/sensors/My_Sensor.h:

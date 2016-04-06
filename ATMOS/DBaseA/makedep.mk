@@ -24,6 +24,8 @@ drivers\TWI.c
 
 drivers\usart0.c
 
+Event\Event_Timer.c
+
 Event\Event.c
 
 hal\atmega256rfr2\src\hal.c
@@ -50,9 +52,15 @@ nwk\src\nwkTx.c
 
 phy\atmegarfr2\src\phy.c
 
+sensors\Base_Sensor.c
+
+sensors\My_Sensor.c
+
 sys\src\sys.c
 
 sys\src\sysEncrypt.c
 
 sys\src\sysTimer.c
+
+utilities\llist.c
 
