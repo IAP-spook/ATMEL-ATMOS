@@ -18,7 +18,9 @@
 #include "Event/Event.h"
 #include "Event/Event_Timer.h"
 #include "sensors/My_Sensor.h"
-
+#include "sensors/Si7020_Sensor.h"
+#include "sensors/Temperature_ADC_Sensor.h"
+#include "sensors/BMP280_Sensor.h"
 #include "avr/io.h"
 #include "avr/interrupt.h"
 
@@ -46,13 +48,18 @@ int main(void)
 	
 	/* could have sealed following in a function */
 	init_timeoutq();
-	MySensor *p = New_My_Sensor( 1023 );
-	My_FctnInit(p);
+	Si7020Sensor *Si7020_ptr = New_Si7020_Sensor( 0 );
+	Si7020_FctnInit(Si7020_ptr);
+	Temperature_ADCSensor *T_ADC_ptr = New_Temperature_ADC_Sensor( 0 );
+	Temperature_ADC_FctnInit(T_ADC_ptr);
+	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0 );
+	BMP280_FctnInit(BMP280_ptr);
 	init_Event_Timer();
 	printf("init done!\n");
 	
 	/* could have sealed following in a function */
-	load_new_sensor( 1, 4, (BaseSensor *)p, 0 );
+	load_new_sensor( 1, 4, (BaseSensor *)BMP280_ptr, 0 );
+	// load_new_sensor( 4, 4, (BaseSensor *)Si7020_ptr, 0 );
 	init_set_timer( get_next_interval() );
 	
 	/* Enable global interrupt */

@@ -30,7 +30,7 @@ struct event
 	BaseSensor * sp;
 	int info;
     enum DeviceState cur_state;
-    void (* run)(struct event *);
+    int (* run)(struct event *);
 };
 
 struct event queue[ MAX_EVENTS ];
@@ -42,7 +42,7 @@ struct event *timeoutq;
 struct event *freelist;
 
 /* run-next function */
-static void run_next( struct event *p );
+static int run_next( struct event *p );
 
 
 

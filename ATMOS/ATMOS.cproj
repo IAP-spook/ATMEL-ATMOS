@@ -309,6 +309,15 @@
     <Compile Include="include\sensors\Base_Sensor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\sensors\BMP280_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\sensors\Temperature_ADC_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\sensors\Si7020_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\sensors\My_Sensor.h">
       <SubType>compile</SubType>
     </Compile>
@@ -387,7 +396,16 @@
     <Compile Include="sensors\Base_Sensor.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="sensors\BMP280_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sensors\Si7020_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="sensors\My_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sensors\Temperature_ADC_Sensor.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="sys\inc\sys.h">

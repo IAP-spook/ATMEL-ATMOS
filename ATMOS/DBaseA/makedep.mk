@@ -54,7 +54,13 @@ phy\atmegarfr2\src\phy.c
 
 sensors\Base_Sensor.c
 
+sensors\BMP280_Sensor.c
+
+sensors\Si7020_Sensor.c
+
 sensors\My_Sensor.c
+
+sensors\Temperature_ADC_Sensor.c
 
 sys\src\sys.c
 

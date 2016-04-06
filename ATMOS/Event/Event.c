@@ -9,7 +9,7 @@
 // #include "Event.h"
 
 /* run-next function */
-static void run_next( struct event *p )
+static int run_next( struct event *p )
 {
     int retNum;
     int data = 0;
@@ -20,7 +20,7 @@ static void run_next( struct event *p )
 #ifdef DEBUG
         printf("Null Event Error !!!");
 #endif
-        return;
+        return 0;
     }
 
 
@@ -55,7 +55,9 @@ static void run_next( struct event *p )
 				p->cur_state = Running;
 				p->timeout = retNum;
 				p->borrow_timeout = retNum;
+				LL_POP( timeoutq );
 				insert_timeoutq_event( p );
+				return 1;
 			}
             // retNum = p->sp->vmt->PreProcess();
             // TODO : retNum = waiting time
@@ -88,6 +90,7 @@ static void run_next( struct event *p )
         case Running :
             //      data = p->sp->vmt->Collect();
             p->cur_state = Ready;
+			p->sp->vmt->Collect(p->sp);
 #ifdef DEBUG
             //      printf("data : %d\n", data);
 #endif
@@ -104,6 +107,7 @@ static void run_next( struct event *p )
 #endif
             break;
     }
+	return 0;
     // printf(" run :\n\t");
     // p->sp->vmt->MyPrint(p->sp);
     
@@ -191,8 +195,14 @@ int handle_timeoutq_event( )
     if( ev->sp == NULL )
         return -1;
 
-    ev->run( ev );
-
+	/* retNum may need to be designed in other ways */
+    int retNum = ev->run( ev );
+	if( retNum == 1 )
+	{
+		set_timer(get_next_interval());
+		return 0;
+	}
+	
     // printf("running some function\n");
     LL_POP( timeoutq );
     if( ev->repeat_interval != 0 )
@@ -202,6 +212,7 @@ int handle_timeoutq_event( )
 		{
 			ev->timeout += ev->repeat_interval;
 		}
+		ev->borrow_timeout = 0;
         insert_timeoutq_event( ev );
     }
     else

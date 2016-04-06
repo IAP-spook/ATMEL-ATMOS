@@ -89,7 +89,10 @@ C_SRCS +=  \
 ../nwk/src/nwkTx.c \
 ../phy/atmegarfr2/src/phy.c \
 ../sensors/Base_Sensor.c \
+../sensors/BMP280_Sensor.c \
+../sensors/Si7020_Sensor.c \
 ../sensors/My_Sensor.c \
+../sensors/Temperature_ADC_Sensor.c \
 ../sys/src/sys.c \
 ../sys/src/sysEncrypt.c \
 ../sys/src/sysTimer.c \
@@ -129,7 +132,10 @@ nwk/src/nwkSecurity.o \
 nwk/src/nwkTx.o \
 phy/atmegarfr2/src/phy.o \
 sensors/Base_Sensor.o \
+sensors/BMP280_Sensor.o \
+sensors/Si7020_Sensor.o \
 sensors/My_Sensor.o \
+sensors/Temperature_ADC_Sensor.o \
 sys/src/sys.o \
 sys/src/sysEncrypt.o \
 sys/src/sysTimer.o \
@@ -162,7 +168,10 @@ nwk/src/nwkSecurity.o \
 nwk/src/nwkTx.o \
 phy/atmegarfr2/src/phy.o \
 sensors/Base_Sensor.o \
+sensors/BMP280_Sensor.o \
+sensors/Si7020_Sensor.o \
 sensors/My_Sensor.o \
+sensors/Temperature_ADC_Sensor.o \
 sys/src/sys.o \
 sys/src/sysEncrypt.o \
 sys/src/sysTimer.o \
@@ -195,7 +204,10 @@ nwk/src/nwkSecurity.d \
 nwk/src/nwkTx.d \
 phy/atmegarfr2/src/phy.d \
 sensors/Base_Sensor.d \
+sensors/BMP280_Sensor.d \
+sensors/Si7020_Sensor.d \
 sensors/My_Sensor.d \
+sensors/Temperature_ADC_Sensor.d \
 sys/src/sys.d \
 sys/src/sysEncrypt.d \
 sys/src/sysTimer.d \
@@ -228,7 +240,10 @@ nwk/src/nwkSecurity.d \
 nwk/src/nwkTx.d \
 phy/atmegarfr2/src/phy.d \
 sensors/Base_Sensor.d \
+sensors/BMP280_Sensor.d \
+sensors/Si7020_Sensor.d \
 sensors/My_Sensor.d \
+sensors/Temperature_ADC_Sensor.d \
 sys/src/sys.d \
 sys/src/sysEncrypt.d \
 sys/src/sysTimer.d \
@@ -248,6 +263,12 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
 
 
 
