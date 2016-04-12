@@ -4,29 +4,27 @@
 
 ATMOS.c
 
-common.c
+devices\src\BMP280.c
 
-devices\BMP280.c
+devices\src\K30.c
 
-devices\K30.c
+devices\src\Si7020.c
 
-devices\Si7020.c
+devices\src\TGS2600.c
 
-devices\TGS2600.c
+drivers\src\ADC.c
 
-drivers\ADC.c
+drivers\src\int_timer.c
 
-drivers\PWR.c
+drivers\src\PWR.c
 
-drivers\SPI.c
+drivers\src\SPI.c
 
-drivers\TWI.c
+drivers\src\TWI.c
 
-drivers\usart0.c
+drivers\src\usart0.c
 
-Event\Event_Timer.c
-
-Event\Event.c
+event\src\Event.c
 
 hal\atmega256rfr2\src\hal.c
 
@@ -52,21 +50,23 @@ nwk\src\nwkTx.c
 
 phy\atmegarfr2\src\phy.c
 
-sensors\Base_Sensor.c
-
-sensors\BMP280_Sensor.c
-
-sensors\Si7020_Sensor.c
-
-sensors\My_Sensor.c
-
-sensors\Temperature_ADC_Sensor.c
-
 sys\src\sys.c
 
 sys\src\sysEncrypt.c
 
 sys\src\sysTimer.c
 
-utilities\llist.c
+utilities\src\common.c
+
+utilities\src\llist.c
+
+wrapper\base-class\src\Base_Sensor.c
+
+wrapper\sensor\src\BMP280_Sensor.c
+
+wrapper\sensor\src\My_Sensor.c
+
+wrapper\sensor\src\Si7020_Sensor.c
+
+wrapper\sensor\src\Temperature_ADC_Sensor.c
 

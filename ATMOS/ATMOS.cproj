@@ -216,43 +216,70 @@
     <Compile Include="ATMOS.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="common.c">
+    <Compile Include="devices\inc\BMP280.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="config.h">
+    <Compile Include="devices\inc\K30.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="devices\BMP280.c">
+    <Compile Include="devices\inc\Si7020.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="devices\K30.c">
+    <Compile Include="devices\inc\TGS2600.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="devices\Si7020.c">
+    <Compile Include="devices\src\BMP280.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="devices\TGS2600.c">
+    <Compile Include="devices\src\K30.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="drivers\ADC.c">
+    <Compile Include="devices\src\Si7020.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="drivers\PWR.c">
+    <Compile Include="devices\src\TGS2600.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="drivers\SPI.c">
+    <Compile Include="drivers\inc\ADC.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="drivers\TWI.c">
+    <Compile Include="drivers\inc\int_timer.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="drivers\usart0.c">
+    <Compile Include="drivers\inc\PWR.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Event\Event_Timer.c">
+    <Compile Include="drivers\inc\SPI.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Event\Event.c">
+    <Compile Include="drivers\inc\TWI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\inc\usart0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\src\ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\src\int_timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\src\PWR.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\src\SPI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\src\TWI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\src\usart0.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="event\inc\event.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="event\src\Event.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="hal\atmega256rfr2\inc\hal.h">
@@ -268,60 +295,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="hal\atmega256rfr2\src\halTimer.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\common.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\devices\BMP280.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\devices\K30.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\devices\Si7020.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\devices\TGS2600.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\drivers\ADC.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\drivers\PWR.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\drivers\SPI.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\drivers\TWI.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\drivers\usart0.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\Event\Event.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\Event\Event_Timer.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\sensors\Base_Sensor.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\sensors\BMP280_Sensor.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\sensors\Temperature_ADC_Sensor.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\sensors\Si7020_Sensor.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\sensors\My_Sensor.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\utilities\llist.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="inc\util.h">
@@ -393,21 +366,6 @@
     <Compile Include="phy\atmegarfr2\src\phy.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="sensors\Base_Sensor.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="sensors\BMP280_Sensor.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="sensors\Si7020_Sensor.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="sensors\My_Sensor.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="sensors\Temperature_ADC_Sensor.c">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="sys\inc\sys.h">
       <SubType>compile</SubType>
     </Compile>
@@ -432,26 +390,70 @@
     <Compile Include="sys\src\sysTimer.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="utilities\llist.c">
+    <Compile Include="utilities\inc\common.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="utilities\inc\config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="utilities\inc\llist.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="utilities\src\common.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="utilities\src\llist.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\base-class\inc\Base_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\base-class\src\Base_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\sensor\inc\BMP280_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\sensor\inc\My_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\sensor\inc\Si7020_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\sensor\inc\Temperature_ADC_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\sensor\src\BMP280_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\sensor\src\My_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\sensor\src\Si7020_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\sensor\src\Temperature_ADC_Sensor.c">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="devices\inc" />
+    <Folder Include="devices\src" />
+    <Folder Include="drivers\inc" />
+    <Folder Include="drivers\src" />
+    <Folder Include="event\inc" />
+    <Folder Include="event\src" />
     <Folder Include="hal\" />
     <Folder Include="hal\atmega256rfr2\" />
     <Folder Include="hal\atmega256rfr2\inc\" />
     <Folder Include="hal\atmega256rfr2\src\" />
     <Folder Include="drivers" />
     <Folder Include="inc" />
-    <Folder Include="include" />
-    <Folder Include="include\drivers" />
     <Folder Include="devices" />
-    <Folder Include="include\devices" />
-    <Folder Include="include\Event\" />
-    <Folder Include="include\sensors" />
-    <Folder Include="include\utilities\" />
-    <Folder Include="Event" />
-    <Folder Include="sensors" />
+    <Folder Include="event" />
+    <Folder Include="utilities\inc" />
+    <Folder Include="utilities\src" />
+    <Folder Include="wrapper" />
     <Folder Include="utilities" />
     <Folder Include="nwk\" />
     <Folder Include="nwk\inc\" />
@@ -463,6 +465,15 @@
     <Folder Include="sys\" />
     <Folder Include="sys\inc\" />
     <Folder Include="sys\src\" />
+    <Folder Include="wrapper\base-class" />
+    <Folder Include="wrapper\base-class\inc" />
+    <Folder Include="wrapper\base-class\src" />
+    <Folder Include="wrapper\other-device" />
+    <Folder Include="wrapper\other-device\inc\" />
+    <Folder Include="wrapper\other-device\src\" />
+    <Folder Include="wrapper\sensor" />
+    <Folder Include="wrapper\sensor\inc\" />
+    <Folder Include="wrapper\sensor\src\" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
