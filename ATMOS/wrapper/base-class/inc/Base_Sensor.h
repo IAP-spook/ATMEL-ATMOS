@@ -7,11 +7,10 @@ typedef struct _Base_Sensor BaseSensor;
 typedef struct _Base_vmt
 {
 	void (*FctnInit)(BaseSensor*);
-	int (*Init)(BaseSensor*);
-	int (*Configure)(BaseSensor*);
-	int (*PreProcessing)(BaseSensor*);
-	int (*Collect)(BaseSensor*);
-	int (*Error)(BaseSensor*);
+	int (*configure)(BaseSensor*);
+	int (*preProcessing)(BaseSensor*);
+	int (*collect)(BaseSensor*);
+	int (*error)(BaseSensor*);
 } Base_FctnTable;
 
 typedef struct _Abstract_vmt
