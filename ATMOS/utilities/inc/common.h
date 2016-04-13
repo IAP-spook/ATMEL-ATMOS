@@ -15,6 +15,13 @@
 
 #define SHIFTED_DIVISOR	0x988000
 
+/* used for device/sensor management */
+enum
+{
+	TYPE_BASE_DEVICE,
+	TYPE_BASE_SENSOR,
+	TYPE_SENSOR
+};
 
 //prototypes//
 unsigned int check_crc(uint16_t, uint8_t);

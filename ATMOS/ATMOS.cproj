@@ -279,7 +279,7 @@
     <Compile Include="event\inc\event.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="event\src\Event.c">
+    <Compile Include="event\src\event.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="hal\atmega256rfr2\inc\hal.h">
@@ -405,7 +405,13 @@
     <Compile Include="utilities\src\llist.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="wrapper\base-class\inc\Base_Device.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="wrapper\base-class\inc\Base_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\base-class\src\Base_Device.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="wrapper\base-class\src\Base_Sensor.c">

@@ -85,7 +85,7 @@ C_SRCS +=  \
 ../drivers/src/SPI.c \
 ../drivers/src/TWI.c \
 ../drivers/src/usart0.c \
-../event/src/Event.c \
+../event/src/event.c \
 ../hal/atmega256rfr2/src/hal.c \
 ../hal/atmega256rfr2/src/halTimer.c \
 ../nwk/src/nwk.c \
@@ -103,6 +103,7 @@ C_SRCS +=  \
 ../sys/src/sysTimer.c \
 ../utilities/src/common.c \
 ../utilities/src/llist.c \
+../wrapper/base-class/src/Base_Device.c \
 ../wrapper/base-class/src/Base_Sensor.c \
 ../wrapper/sensor/src/BMP280_Sensor.c \
 ../wrapper/sensor/src/My_Sensor.c \
@@ -128,7 +129,7 @@ drivers/src/PWR.o \
 drivers/src/SPI.o \
 drivers/src/TWI.o \
 drivers/src/usart0.o \
-event/src/Event.o \
+event/src/event.o \
 hal/atmega256rfr2/src/hal.o \
 hal/atmega256rfr2/src/halTimer.o \
 nwk/src/nwk.o \
@@ -146,6 +147,7 @@ sys/src/sysEncrypt.o \
 sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
+wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/sensor/src/BMP280_Sensor.o \
 wrapper/sensor/src/My_Sensor.o \
@@ -164,7 +166,7 @@ drivers/src/PWR.o \
 drivers/src/SPI.o \
 drivers/src/TWI.o \
 drivers/src/usart0.o \
-event/src/Event.o \
+event/src/event.o \
 hal/atmega256rfr2/src/hal.o \
 hal/atmega256rfr2/src/halTimer.o \
 nwk/src/nwk.o \
@@ -182,6 +184,7 @@ sys/src/sysEncrypt.o \
 sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
+wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/sensor/src/BMP280_Sensor.o \
 wrapper/sensor/src/My_Sensor.o \
@@ -200,7 +203,7 @@ drivers/src/PWR.d \
 drivers/src/SPI.d \
 drivers/src/TWI.d \
 drivers/src/usart0.d \
-event/src/Event.d \
+event/src/event.d \
 hal/atmega256rfr2/src/hal.d \
 hal/atmega256rfr2/src/halTimer.d \
 nwk/src/nwk.d \
@@ -218,6 +221,7 @@ sys/src/sysEncrypt.d \
 sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
+wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/sensor/src/BMP280_Sensor.d \
 wrapper/sensor/src/My_Sensor.d \
@@ -236,7 +240,7 @@ drivers/src/PWR.d \
 drivers/src/SPI.d \
 drivers/src/TWI.d \
 drivers/src/usart0.d \
-event/src/Event.d \
+event/src/event.d \
 hal/atmega256rfr2/src/hal.d \
 hal/atmega256rfr2/src/halTimer.d \
 nwk/src/nwk.d \
@@ -254,6 +258,7 @@ sys/src/sysEncrypt.d \
 sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
+wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/sensor/src/BMP280_Sensor.d \
 wrapper/sensor/src/My_Sensor.d \
@@ -274,6 +279,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

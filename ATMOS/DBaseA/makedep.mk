@@ -24,7 +24,7 @@ drivers\src\TWI.c
 
 drivers\src\usart0.c
 
-event\src\Event.c
+event\src\event.c
 
 hal\atmega256rfr2\src\hal.c
 
@@ -59,6 +59,8 @@ sys\src\sysTimer.c
 utilities\src\common.c
 
 utilities\src\llist.c
+
+wrapper\base-class\src\Base_Device.c
 
 wrapper\base-class\src\Base_Sensor.c
 
