@@ -196,7 +196,7 @@ char BMP280_StartMeasurment(void){
 	if (result) // good write?
 	return(delay); // return the delay in ms (rounded up) to wait before retrieving data
 	else
-	return(0); // or return 0 if there was a problem communicating with the BMP
+	return(-1); // or return -1 if there was a problem communicating with the BMP
 }
 
 /*************************************************************************//**
