@@ -50,6 +50,8 @@ nwk\src\nwkTx.c
 
 phy\atmegarfr2\src\phy.c
 
+scheduler\src\scheduler.c
+
 sys\src\sys.c
 
 sys\src\sysEncrypt.c
@@ -67,8 +69,4 @@ wrapper\base-class\src\Base_Sensor.c
 wrapper\sensor\src\BMP280_Sensor.c
 
 wrapper\sensor\src\My_Sensor.c
-
-wrapper\sensor\src\Si7020_Sensor.c
-
-wrapper\sensor\src\Temperature_ADC_Sensor.c
 

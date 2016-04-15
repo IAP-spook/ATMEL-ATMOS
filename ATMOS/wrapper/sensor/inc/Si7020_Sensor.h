@@ -10,7 +10,7 @@ typedef struct _Si7020_vmt
 	void (*FctnInit)(Si7020Sensor*);
 	int (*Init)(Si7020Sensor*);
 	int (*Configure)(Si7020Sensor*);
-	int (*PreProcessing)(Si7020Sensor*);
+	int (*re)(Si7020Sensor*);
 	int (*Collect)(Si7020Sensor*);
 	int (*Error)(Si7020Sensor*);
 } Si7020_FctnTable;

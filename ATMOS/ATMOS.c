@@ -29,8 +29,6 @@ static void APP_Init(void){
 	PORTE|= 0b00001000;
 	TWI_Init(10000);
 	ADC_Init();
-	TGS2600_Init();
-	Si7020_init();
 	printf("BMP280 Status %i\n", BMP280_Init());
 	BMP280_SetOversampling(4);
 	SPI_SlaveInit();
@@ -43,10 +41,6 @@ int main(void)
 	
 	/* could have sealed following in a function */
 	init_timeoutq();
-	Si7020Sensor *Si7020_ptr = New_Si7020_Sensor( 0 );
-	Si7020_FctnInit(Si7020_ptr);
-	Temperature_ADCSensor *T_ADC_ptr = New_Temperature_ADC_Sensor( 0 );
-	Temperature_ADC_FctnInit(T_ADC_ptr);
 	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0 );
 	BMP280_FctnInit(BMP280_ptr);
 	init_Event_Timer();

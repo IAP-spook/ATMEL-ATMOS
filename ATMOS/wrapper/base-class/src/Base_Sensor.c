@@ -4,18 +4,17 @@
 
 Base_FctnTable Base_vmt = { 
 	Base_FctnInit, 
-	Base_Init, 
 	Base_Configure, 
-	Base_PreProcessing, 
+	Base_Request, 
 	Base_Collect, 
 	Base_Error 
 };
 
 Abstract_FctnTable Abstract_vmt = {
 	Base_VTinit,
-	Base_init,
-	Base_reset,
-	Base_getType
+	Base_Init,
+	Base_Reset,
+	Base_GetType
 };
 
 
@@ -24,19 +23,13 @@ void Base_FctnInit(BaseSensor *this)
 	this->vmt = &Base_vmt;
 }
 
-int Base_Init(BaseSensor *this )
-{
-	this->test_num = 10;
-	return 0;
-}
-
 int Base_Configure(BaseSensor *this )
 {
 	// virtual function
 	return 0;
 }
 
-int Base_PreProcessing(BaseSensor *this )
+int Base_Request(BaseSensor *this )
 {
 	// virtual function
 	return 0;
@@ -69,19 +62,21 @@ void Base_VTinit( BaseSensor* this)
 	this->abstract->device_vt = &Abstract_vmt;
 }
 
-int Base_init( BaseSensor* this)
+
+int Base_Init(BaseSensor *this )
 {
-	printf("Base Sensor Init\n");
+	this->test_num = 10;
 	return 0;
 }
 
-int Base_reset( BaseSensor* this)
+
+int Base_Reset( BaseSensor* this)
 {
 	// virtual function
 	return 0;
 }
 
-int Base_getType( BaseSensor* this)
+int Base_GetType( BaseSensor* this)
 {
 	return TYPE_BASE_SENSOR;
 }

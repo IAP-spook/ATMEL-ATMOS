@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-My_FctnTable My_vmt = { My_FctnInit, My_Init, My_Configure, My_PreProcessing, My_Collect, My_Error };
+My_FctnTable My_vmt = { My_FctnInit, My_Init, My_Configure, My_Request, My_Collect, My_Error };
 
 void My_FctnInit(MySensor *this)
 {

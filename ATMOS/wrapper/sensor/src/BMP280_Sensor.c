@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-BMP280_FctnTable BMP280_vmt = { BMP280_FctnInit, BMP280_init, BMP280_Configure, BMP280_PreProcessing, BMP280_Collect, BMP280_Error };
+BMP280_FctnTable BMP280_vmt = { BMP280_FctnInit, BMP280_init, BMP280_Configure, BMP280_request, BMP280_Collect, BMP280_Error };
 
 void BMP280_FctnInit(BMP280Sensor *this)
 {
@@ -30,7 +30,7 @@ int BMP280_Configure(BMP280Sensor *this )
 	return 0;
 }
 
-int BMP280_PreProcessing(BMP280Sensor *this )
+int BMP280_request(BMP280Sensor *this )
 {
 	printf("BMP280_PreProcessing\n");
 	int Delay = BMP280_StartMeasurment();

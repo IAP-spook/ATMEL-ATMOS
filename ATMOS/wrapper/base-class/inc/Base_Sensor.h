@@ -8,7 +8,7 @@ typedef struct _Base_vmt
 {
 	void (*FctnInit)(BaseSensor*);
 	int (*configure)(BaseSensor*);
-	int (*preProcessing)(BaseSensor*);
+	int (*request)(BaseSensor*);
 	int (*collect)(BaseSensor*);
 	int (*error)(BaseSensor*);
 } Base_FctnTable;
@@ -30,16 +30,15 @@ struct _Base_Sensor
 
 
 void Base_FctnInit( BaseSensor *this);
-int Base_Init( BaseSensor *this);
 int Base_Configure( BaseSensor *this );
-int Base_PreProcessing( BaseSensor *this );
+int Base_Request( BaseSensor *this );
 int Base_Collect( BaseSensor *this );
 int Base_Error( BaseSensor *this );
 
 void Base_VTinit( BaseSensor* );
-int Base_init( BaseSensor* );
-int Base_reset( BaseSensor* );
-int Base_getType( BaseSensor* );
+int Base_Init( BaseSensor* );
+int Base_Reset( BaseSensor* );
+int Base_GetType( BaseSensor* );
 
 BaseSensor* New_Base_Sensor( int num );
 

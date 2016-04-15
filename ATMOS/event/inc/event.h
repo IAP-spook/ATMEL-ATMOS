@@ -13,7 +13,10 @@
 #include "wrapper/base-class/inc/Base_Sensor.h"
 
 /* #define DEBGU */
+#ifndef DEBUG
 #define DEBUG
+#endif 
+
 #define MAX_EVENTS	16
 #define MAX_SLEEP_INTERVAL 0x04 // That is a second currently
 #define EV_NULL ( struct event * ) (LL_NULL)
@@ -34,30 +37,12 @@ struct event
 
 struct event queue[ MAX_EVENTS ];
 
-/* list anchors -- important, but ignore them; they are never used directly */
-llobject_t TQ;
-llobject_t FL;
-struct event *timeoutq;
-struct event *freelist;
-
-/* run-next function */
-static int run_next( struct event *p );
 
 
 
-/* API of the Round-Robin Scheduler */
-int load_new_sensor( int timeout, int repeat, BaseSensor *sensor_ptr, int otherinfo );
-void init_timeoutq();
-int get_next_interval();
-void insert_timeoutq_event( struct event * event_pointer);
-int handle_timeoutq_event( );
 
-#ifdef DEBUG
 
-void dump_timeoutq();
-void foo();
 
-#endif
 
 
 #endif /* EVENT_H_ */

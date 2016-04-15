@@ -47,6 +47,9 @@ SUBDIRS :=  \
 ../inc \
 ../devices \
 ../event \
+../scheduler \
+../scheduler/inc \
+../scheduler/src \
 ../utilities/inc \
 ../utilities/src \
 ../wrapper \
@@ -98,6 +101,7 @@ C_SRCS +=  \
 ../nwk/src/nwkSecurity.c \
 ../nwk/src/nwkTx.c \
 ../phy/atmegarfr2/src/phy.c \
+../scheduler/src/scheduler.c \
 ../sys/src/sys.c \
 ../sys/src/sysEncrypt.c \
 ../sys/src/sysTimer.c \
@@ -106,9 +110,7 @@ C_SRCS +=  \
 ../wrapper/base-class/src/Base_Device.c \
 ../wrapper/base-class/src/Base_Sensor.c \
 ../wrapper/sensor/src/BMP280_Sensor.c \
-../wrapper/sensor/src/My_Sensor.c \
-../wrapper/sensor/src/Si7020_Sensor.c \
-../wrapper/sensor/src/Temperature_ADC_Sensor.c
+../wrapper/sensor/src/My_Sensor.c
 
 
 PREPROCESSING_SRCS += 
@@ -142,6 +144,7 @@ nwk/src/nwkRx.o \
 nwk/src/nwkSecurity.o \
 nwk/src/nwkTx.o \
 phy/atmegarfr2/src/phy.o \
+scheduler/src/scheduler.o \
 sys/src/sys.o \
 sys/src/sysEncrypt.o \
 sys/src/sysTimer.o \
@@ -150,9 +153,7 @@ utilities/src/llist.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/sensor/src/BMP280_Sensor.o \
-wrapper/sensor/src/My_Sensor.o \
-wrapper/sensor/src/Si7020_Sensor.o \
-wrapper/sensor/src/Temperature_ADC_Sensor.o
+wrapper/sensor/src/My_Sensor.o
 
 OBJS_AS_ARGS +=  \
 ATMOS.o \
@@ -179,6 +180,7 @@ nwk/src/nwkRx.o \
 nwk/src/nwkSecurity.o \
 nwk/src/nwkTx.o \
 phy/atmegarfr2/src/phy.o \
+scheduler/src/scheduler.o \
 sys/src/sys.o \
 sys/src/sysEncrypt.o \
 sys/src/sysTimer.o \
@@ -187,9 +189,7 @@ utilities/src/llist.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/sensor/src/BMP280_Sensor.o \
-wrapper/sensor/src/My_Sensor.o \
-wrapper/sensor/src/Si7020_Sensor.o \
-wrapper/sensor/src/Temperature_ADC_Sensor.o
+wrapper/sensor/src/My_Sensor.o
 
 C_DEPS +=  \
 ATMOS.d \
@@ -216,6 +216,7 @@ nwk/src/nwkRx.d \
 nwk/src/nwkSecurity.d \
 nwk/src/nwkTx.d \
 phy/atmegarfr2/src/phy.d \
+scheduler/src/scheduler.d \
 sys/src/sys.d \
 sys/src/sysEncrypt.d \
 sys/src/sysTimer.d \
@@ -224,9 +225,7 @@ utilities/src/llist.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/sensor/src/BMP280_Sensor.d \
-wrapper/sensor/src/My_Sensor.d \
-wrapper/sensor/src/Si7020_Sensor.d \
-wrapper/sensor/src/Temperature_ADC_Sensor.d
+wrapper/sensor/src/My_Sensor.d
 
 C_DEPS_AS_ARGS +=  \
 ATMOS.d \
@@ -253,6 +252,7 @@ nwk/src/nwkRx.d \
 nwk/src/nwkSecurity.d \
 nwk/src/nwkTx.d \
 phy/atmegarfr2/src/phy.d \
+scheduler/src/scheduler.d \
 sys/src/sys.d \
 sys/src/sysEncrypt.d \
 sys/src/sysTimer.d \
@@ -261,9 +261,7 @@ utilities/src/llist.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/sensor/src/BMP280_Sensor.d \
-wrapper/sensor/src/My_Sensor.d \
-wrapper/sensor/src/Si7020_Sensor.d \
-wrapper/sensor/src/Temperature_ADC_Sensor.d
+wrapper/sensor/src/My_Sensor.d
 
 OUTPUT_FILE_PATH +=ATMOS.elf
 
@@ -279,8 +277,6 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
-
-
 
 
 
@@ -393,6 +389,13 @@ nwk/src/%.o: ../nwk/src/%.c
 	
 
 phy/atmegarfr2/src/%.o: ../phy/atmegarfr2/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.8.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+scheduler/src/%.o: ../scheduler/src/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

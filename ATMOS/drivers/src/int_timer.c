@@ -2,6 +2,8 @@
 
 #ifdef ATMEL
 
+static int timer_usage = 0;
+
 ISR(TIMER2_COMPA_vect)
 {
 	timer_usage ++;
@@ -10,11 +12,11 @@ ISR(TIMER2_COMPA_vect)
 }
 
 
-
 /* Initialization Routine Example 3 : Timer 2 Async operation */
 /* Clock for Timer 2 is taken from crystal connected to TOSC pins */
 void init_Event_Timer(void)
 {
+	timer_usage = 0;
 	/* Select clock source as crystal on TOSCn pins */
 	ASSR |= 1 << AS2;
 	/* Clear Timer on compare match. Toggle OC2A on Compare Match */

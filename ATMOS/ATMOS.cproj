@@ -366,6 +366,12 @@
     <Compile Include="phy\atmegarfr2\src\phy.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="scheduler\inc\scheduler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="scheduler\src\scheduler.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="sys\inc\sys.h">
       <SubType>compile</SubType>
     </Compile>
@@ -423,22 +429,10 @@
     <Compile Include="wrapper\sensor\inc\My_Sensor.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="wrapper\sensor\inc\Si7020_Sensor.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="wrapper\sensor\inc\Temperature_ADC_Sensor.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="wrapper\sensor\src\BMP280_Sensor.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="wrapper\sensor\src\My_Sensor.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="wrapper\sensor\src\Si7020_Sensor.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="wrapper\sensor\src\Temperature_ADC_Sensor.c">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
@@ -457,6 +451,9 @@
     <Folder Include="inc" />
     <Folder Include="devices" />
     <Folder Include="event" />
+    <Folder Include="scheduler" />
+    <Folder Include="scheduler\inc" />
+    <Folder Include="scheduler\src" />
     <Folder Include="utilities\inc" />
     <Folder Include="utilities\src" />
     <Folder Include="wrapper" />

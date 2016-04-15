@@ -6,11 +6,9 @@
 
 #include "avr/io.h"
 #include "avr/interrupt.h"
-#include "event/inc/event.h"
+#include "scheduler/inc/scheduler.h"
 
 #define APERIOD 8
-
-static int timer_usage = 0;
 
 void init_Event_Timer(void);
 void general_set_timer( int period_number );
