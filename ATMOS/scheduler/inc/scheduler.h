@@ -9,7 +9,8 @@
 #ifndef SCHEDULER_H_
 #define SCHEDULER_H_
 
-#include "event/inc/event.h"
+#include "scheduler/inc/event.h"
+#include "scheduler/inc/handler.h"
 #include "utilities/inc/llist.h"
 #include "drivers/inc/int_timer.h"
 
@@ -20,11 +21,10 @@ struct event *timeoutq;
 struct event *freelist;
 
 
-/* run-next function */
-int run_next( struct event *p );
+
 
 /* API of the Round-Robin Scheduler */
-int load_new_sensor( int timeout, int repeat, BaseSensor *sensor_ptr, int otherinfo );
+int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otherinfo );
 void init_timeoutq();
 int get_next_interval();
 void insert_timeoutq_event( struct event * event_pointer);

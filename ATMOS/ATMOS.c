@@ -11,7 +11,7 @@
 #include "drivers/inc/ADC.h"
 #include "drivers/inc/SPI.h"
 #include "drivers/inc/int_timer.h"
-#include "event/inc/event.h"
+#include "scheduler/inc/scheduler.h"
 #include "wrapper/sensor/inc/My_Sensor.h"
 #include "wrapper/sensor/inc/Si7020_Sensor.h"
 #include "wrapper/sensor/inc/Temperature_ADC_Sensor.h"

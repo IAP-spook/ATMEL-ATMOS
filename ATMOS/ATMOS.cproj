@@ -276,12 +276,6 @@
     <Compile Include="drivers\src\usart0.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="event\inc\event.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="event\src\event.c">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="hal\atmega256rfr2\inc\hal.h">
       <SubType>compile</SubType>
     </Compile>
@@ -366,7 +360,16 @@
     <Compile Include="phy\atmegarfr2\src\phy.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="scheduler\inc\event.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="scheduler\inc\handler.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="scheduler\inc\scheduler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="scheduler\src\handler.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="scheduler\src\scheduler.c">

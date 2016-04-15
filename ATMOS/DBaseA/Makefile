@@ -88,7 +88,6 @@ C_SRCS +=  \
 ../drivers/src/SPI.c \
 ../drivers/src/TWI.c \
 ../drivers/src/usart0.c \
-../event/src/event.c \
 ../hal/atmega256rfr2/src/hal.c \
 ../hal/atmega256rfr2/src/halTimer.c \
 ../nwk/src/nwk.c \
@@ -131,7 +130,6 @@ drivers/src/PWR.o \
 drivers/src/SPI.o \
 drivers/src/TWI.o \
 drivers/src/usart0.o \
-event/src/event.o \
 hal/atmega256rfr2/src/hal.o \
 hal/atmega256rfr2/src/halTimer.o \
 nwk/src/nwk.o \
@@ -167,7 +165,6 @@ drivers/src/PWR.o \
 drivers/src/SPI.o \
 drivers/src/TWI.o \
 drivers/src/usart0.o \
-event/src/event.o \
 hal/atmega256rfr2/src/hal.o \
 hal/atmega256rfr2/src/halTimer.o \
 nwk/src/nwk.o \
@@ -203,7 +200,6 @@ drivers/src/PWR.d \
 drivers/src/SPI.d \
 drivers/src/TWI.d \
 drivers/src/usart0.d \
-event/src/event.d \
 hal/atmega256rfr2/src/hal.d \
 hal/atmega256rfr2/src/halTimer.d \
 nwk/src/nwk.d \
@@ -239,7 +235,6 @@ drivers/src/PWR.d \
 drivers/src/SPI.d \
 drivers/src/TWI.d \
 drivers/src/usart0.d \
-event/src/event.d \
 hal/atmega256rfr2/src/hal.d \
 hal/atmega256rfr2/src/halTimer.d \
 nwk/src/nwk.d \
@@ -344,8 +339,6 @@ LINKER_SCRIPT_DEP+=
 
 
 
-
-
 ./%.o: .././%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
@@ -361,13 +354,6 @@ devices/src/%.o: ../devices/src/%.c
 	
 
 drivers/src/%.o: ../drivers/src/%.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 4.8.1
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-event/src/%.o: ../event/src/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

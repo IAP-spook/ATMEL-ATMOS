@@ -24,8 +24,6 @@ drivers\src\TWI.c
 
 drivers\src\usart0.c
 
-event\src\event.c
-
 hal\atmega256rfr2\src\hal.c
 
 hal\atmega256rfr2\src\halTimer.c
