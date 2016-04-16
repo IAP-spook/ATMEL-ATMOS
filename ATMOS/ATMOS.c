@@ -18,6 +18,18 @@
 #include "avr/io.h"
 #include "avr/interrupt.h"
 
+static void APP_Init(void){
+	PWR_Init();
+	PWR_TurnOn5V();
+	USART0_Init(9600);
+	DDRB |= 0b00010000;
+	DDRE |= 0b00001000;
+	PORTE|= 0b00001000;
+	TWI_Init(10000);
+	ADC_Init();
+	SPI_SlaveInit();
+}
+
 /* Initialization Routine Example 1 : Timer Overflow - TImer 0*/
 void init_Ex1(void)
 {
@@ -80,6 +92,9 @@ ISR (TIMER1_OVF_vect)
 
 int main (void)
 {
+	SYS_Init();
+	APP_Init();
+
 	init_Ex1();
 	// init_Ex2();
 	sei();
