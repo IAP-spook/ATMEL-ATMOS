@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-BMP280_FctnTable BMP280 = { 
+BMP280_FctnTable BMP280_vmt = { 
     BMP280_FctnInit, 
     BMP280_Configure,
     BMP280_Request,
@@ -43,7 +43,7 @@ int BMP280_Configure(BMP280Sensor *this )
 int BMP280_Request(BMP280Sensor *this )
 {
 	printf("BMP280 Request\n");
-	int Delay = BMP280_StrtMeasurement();
+	int Delay = BMP280_StartMeasurment();
 	if( Delay == 0 )
 		return 0;
 	else

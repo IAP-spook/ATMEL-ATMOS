@@ -11,7 +11,7 @@
 #include "drivers/inc/usart0.h"
 #include <avr/io.h>
 #include <stdbool.h>
-#include <avr/delay.h>
+#include <util/delay.h>
 
 /*************************************************************************//**
   @brief Initializes the 2-wire Serial Interface as a master

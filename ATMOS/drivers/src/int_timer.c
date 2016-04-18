@@ -48,6 +48,11 @@ void init_set_timer( int period_number )
 void set_timer( int period_number )
 {
 	printf("set timer gap = %d\n\n", period_number);
+	if( period_number == 0)
+	{
+		/* we won't every set a zero timeout, will we ? */
+		return;
+	}
     if( timer_usage == 0 )
     {
         init_set_timer( period_number );
@@ -56,7 +61,7 @@ void set_timer( int period_number )
     {
         general_set_timer( period_number );
     }
-}
+}	
 
 
 #endif

@@ -18,7 +18,7 @@
 #endif 
 
 #define MAX_EVENTS	16
-#define MAX_SLEEP_INTERVAL 0x04 // That is a second currently
+#define MAX_SLEEP_INTERVAL -1 // a non-valid timer
 #define EV_NULL ( struct event * ) (LL_NULL)
 
 enum DeviceState { New, Ready, Running, Terminated, Oops };

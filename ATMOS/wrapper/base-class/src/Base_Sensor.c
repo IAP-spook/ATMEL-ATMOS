@@ -4,7 +4,6 @@
 
 Base_FctnTable Base_vmt = { 
 	Base_FctnInit, 
-
     Base_Configure,
     Base_Request,
     Base_Collect,

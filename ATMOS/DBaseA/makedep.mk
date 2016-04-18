@@ -48,6 +48,8 @@ nwk\src\nwkTx.c
 
 phy\atmegarfr2\src\phy.c
 
+scheduler\src\handler.c
+
 scheduler\src\scheduler.c
 
 sys\src\sys.c

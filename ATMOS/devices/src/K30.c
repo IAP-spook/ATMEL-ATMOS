@@ -8,7 +8,7 @@
 //Includes// 
 #include "devices/inc/K30.h"
 #include "drivers/inc/TWI.h"
-#include "avr/delay.h"
+#include <util/delay.h>
 #include "drivers/inc/usart0.h"
 #include <math.h>
 

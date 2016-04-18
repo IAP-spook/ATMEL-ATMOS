@@ -46,7 +46,7 @@ int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otheri
     ep->sp = device_ptr;
     ep->info = otherinfo;
     ep->cur_state = Ready;
-    ep->run = run_next;
+    ep->run = sensor_handler;
     insert_timeoutq_event( ep );
     return 0;
 }
@@ -59,10 +59,17 @@ int get_next_interval()
 	int wait_time = MAX_SLEEP_INTERVAL;
 	struct event * ev = ( struct event * ) LL_TOP( timeoutq );
 
+	/* sanity check */
     /* no event in queue */
-    // TODO : to optimize the sleep time or let the CPU sleep or set up some other interrupts
+    /* TODO : to optimize the sleep time or let the CPU sleep or set up some other interrupts */
 	if( EV_NULL == ev )
+	{
+#ifdef DEBUG
+		printf("we may get some memory leakage issue, or something really bad occurs\n");
+		printf("so we are going to take some really sleep, since no event in scheduler\n");
+#endif
 	    return wait_time;
+	}
 	wait_time = ( wait_time > ( ev->timeout ) ) ? ( ev->timeout ) : wait_time ;
 	return wait_time;
 }
@@ -70,6 +77,7 @@ int get_next_interval()
 
 /* 
  * handle the next one in timeout queue
+ * the return value is reserved and now we just return 0
  */
 int handle_timeoutq_event( )
 {
@@ -77,10 +85,6 @@ int handle_timeoutq_event( )
 	struct event * ev = (struct event * )LL_TOP( timeoutq );
 	if( EV_NULL == ev )
         return -1;
-
-    // TODO : add a last_interval var in event_timer.h
-    // ev->timeout -= get_later_inerval();
-	// if( ev->timeout <= 0 )
     
     /* sanity check */
     if( ev->sp == NULL )
@@ -88,13 +92,27 @@ int handle_timeoutq_event( )
 
 	/* retNum may need to be designed in other ways */
     int retNum = ev->run( ev );
+	
+	/* 
+	 * return 1 if it has to with some borrow time( have a request-time!=0 case ) 
+	 * which means the event has already entered the scheduler, 
+	 * and won't need to do anything else
+	 */
 	if( retNum == 1 )
 	{
+		/* judge if the next top in queue has a timeout <= 0, which we may want to handle it right now */
+		if( get_next_interval() == 0 )
+			handle_timeoutq_event();
+			
 		set_timer(get_next_interval());
 		return 0;
 	}
 	
-    // printf("running some function\n");
+    /*
+	 * return 0 means we just fired a case, 
+	 * and may need to judge it over the repeat time to re-insert into the scheduler,
+	 * since we definitely want to collect data periodically
+	 */
     LL_POP( timeoutq );
     if( ev->repeat_interval != 0 )
     {
@@ -110,10 +128,13 @@ int handle_timeoutq_event( )
     {
         LL_PUSH( freelist, ev );
     }
+
+	
+	/* judge if the next top in queue has a timeout <= 0, which we may want to handle it right now */
+	if( get_next_interval() == 0 )
+		handle_timeoutq_event();
+		
 	set_timer(get_next_interval());
-    /* TODO : update next event by calling set_timer(int) in Event_timer.h 
-     * set_timer( get_next_interval() );
-     */
     return 0;
 }
 
