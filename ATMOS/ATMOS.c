@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 3be96be... test for Zidu
 #include "utilities/inc/config.h"
 #include "utilities/inc/common.h"
 #include "hal.h"
@@ -18,7 +22,11 @@
 #include "avr/io.h"
 #include "avr/interrupt.h"
 
+<<<<<<< HEAD
 /* TODO : clean up these messy init */
+=======
+
+>>>>>>> parent of 3be96be... test for Zidu
 static void APP_Init(void){
 	PWR_Init();
 	PWR_TurnOn5V();
@@ -33,25 +41,28 @@ static void APP_Init(void){
 	SPI_SlaveInit();
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 3be96be... test for Zidu
 int main(void)
 {
 	SYS_Init();
 	APP_Init();
 	
-	// could have sealed following in a function //
+	/* could have sealed following in a function */
 	init_timeoutq();
 	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0 );
 	BMP280_FctnInit(BMP280_ptr);
 	init_Event_Timer();
 	printf("init done!\n");
 	
-	// could have sealed following in a function //
+	/* could have sealed following in a function */
 	load_new_sensor( 1, 4, (BaseSensor *)BMP280_ptr, 0 );
 	// load_new_sensor( 4, 4, (BaseSensor *)Si7020_ptr, 0 );
 	init_set_timer( get_next_interval() );
 	
-	// Enable global interrupt //
+	/* Enable global interrupt */
 	sei();
 
 	for (;;){}
