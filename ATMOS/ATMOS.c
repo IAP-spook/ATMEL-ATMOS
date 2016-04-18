@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 3be96be... test for Zidu
 =======
 
 >>>>>>> parent of 3be96be... test for Zidu
@@ -42,7 +46,10 @@ static void APP_Init(void){
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 3be96be... test for Zidu
 =======
 >>>>>>> parent of 3be96be... test for Zidu
 int main(void)
