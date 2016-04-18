@@ -6,8 +6,9 @@
  */ 
 #include "wrapper/base-class/inc/Base_Device.h"
 #include <stdio.h>
+#include "utilities/inc/common.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 
 Base_Device_FctnTable BDT =
 {

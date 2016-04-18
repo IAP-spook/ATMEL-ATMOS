@@ -7,10 +7,10 @@ typedef struct _Base_Sensor BaseSensor;
 typedef struct _Base_vmt
 {
 	void (*FctnInit)(BaseSensor*);
-	int (*configure)(BaseSensor*);
-	int (*request)(BaseSensor*);
-	int (*collect)(BaseSensor*);
-	int (*error)(BaseSensor*);
+	int (*Configure)(BaseSensor*);
+	int (*Request)(BaseSensor*);
+	int (*Collect)(BaseSensor*);
+	int (*Error)(BaseSensor*);
 } Base_FctnTable;
 
 typedef struct _Abstract_vmt
@@ -23,9 +23,9 @@ typedef struct _Abstract_vmt
 
 struct _Base_Sensor
 {
+    BaseDevice abstract;
 	int test_num;
 	Base_FctnTable *vmt;
-	BaseDevice *abstract;
 };
 
 
@@ -36,9 +36,9 @@ int Base_Collect( BaseSensor *this );
 int Base_Error( BaseSensor *this );
 
 void Base_VTinit( BaseSensor* );
-int Base_Init( BaseSensor* );
-int Base_Reset( BaseSensor* );
-int Base_GetType( BaseSensor* );
+int Base_init( BaseSensor* );
+int Base_reset( BaseSensor* );
+int Base_getType( BaseSensor* );
 
 BaseSensor* New_Base_Sensor( int num );
 
