@@ -10,30 +10,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-BMP280_FctnTable BMP280_vmt = { BMP280_FctnInit, BMP280_init, BMP280_Configure, BMP280_request, BMP280_Collect, BMP280_Error };
+BMP280_FctnTable BMP280 = { 
+    BMP280_FctnInit, 
+    BMP280_Configure,
+    BMP280_Request,
+    BMP280_Collect, 
+    BMP280_Error 
+};
+
+BMP280_Abstract_FctnTable BMP280_abstract_vmt = {
+    BMP280_VTinit,
+    BMP280_init,
+    BMP280_reset,
+    BMP280_getType
+};
+
+
+
 
 void BMP280_FctnInit(BMP280Sensor *this)
 {
 	this->inherited.vmt = &BMP280_vmt;
 }
 
-int BMP280_init(BMP280Sensor *this )
-{
-	this->inherited.test_num = 10;
-	return 0;
-}
 
 int BMP280_Configure(BMP280Sensor *this )
 {
-	printf("BMP280_Configure\n");
 	// virtual function
 	return 0;
 }
 
-int BMP280_request(BMP280Sensor *this )
+int BMP280_Request(BMP280Sensor *this )
 {
-	printf("BMP280_PreProcessing\n");
-	int Delay = BMP280_StartMeasurment();
+	printf("BMP280 Request\n");
+	int Delay = BMP280_StrtMeasurement();
 	if( Delay == 0 )
 		return 0;
 	else
@@ -42,10 +52,10 @@ int BMP280_request(BMP280Sensor *this )
 
 int BMP280_Collect(BMP280Sensor *this )
 {
-	printf("BMP280_Collect\n");
+	printf("BMP280 Collect\n");
 	double T, P;
 	BMP280_GetTemperatureAndPressure(&T,&P);
-	printf("Temperature = %.3f\nHumility = %.3f\n",T,P);
+	printf("Temperature = %.3f\nPressure = %.3f\n",T,P);
 	return 0;
 }
 
@@ -54,10 +64,34 @@ int BMP280_Error(BMP280Sensor *this )
 	printf("BMP280_Error\n");
 	return 0;
 }
+void BMP280_VTinit( BMP280Sensor* this)
+{
+    this->inherited.abstract.device_vt = &BMP280_abstract_vmt;
+}
+
+int BMP280_init( BMP280Sensor* this)
+{
+    printf("BMP280 Sensor Init\n");
+    return 0;
+}
+
+int BMP280_reset( BMP280Sensor* this)
+{
+    // virtual function
+    return 0;
+}
+
+int BMP280_getType(BMP280Sensor* this)
+{
+    return TYPE_SENSOR;
+}
+
 
 BMP280Sensor* New_BMP280_Sensor( int num)
 {
 	BMP280Sensor *p = malloc(sizeof(BMP280Sensor));
+    BMP280_VTinit( p );
+    BMP280_FctnInit( p );
 	p->inherited.test_num = num;
 	return p;
 }
