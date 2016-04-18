@@ -36,7 +36,7 @@ int run_next( struct event *p )
 		break;
 		/* Ready : ready to activate collection preprocess */
 		case Ready :
-		retNum = p->sp->vmt->request(p->sp);
+		retNum = p->sp->vmt->Request(p->sp);
 		if ( retNum == -1 )
 		{
 			p->cur_state = Oops;
@@ -44,7 +44,7 @@ int run_next( struct event *p )
 		else if( retNum == 0 )
 		{
 			p->cur_state = Ready;
-			data = p->sp->vmt->collect(p->sp);
+			data = p->sp->vmt->Collect(p->sp);
 			#ifdef DEBUG
 			printf("data : %d\n", data);
 			#endif
@@ -89,7 +89,7 @@ int run_next( struct event *p )
 		case Running :
 		//      data = p->sp->vmt->Collect();
 		p->cur_state = Ready;
-		p->sp->vmt->collect(p->sp);
+		p->sp->vmt->Collect(p->sp);
 		#ifdef DEBUG
 		//      printf("data : %d\n", data);
 		#endif
