@@ -16,10 +16,10 @@ typedef struct _My_vmt
 
 typedef struct _My_Abstract_vmt
 {
-    void (*VTinit)( MySensor* );
-    int (*init)( MySensor* );
-    int (*reset)( MySensor* );
-    int (*getType)( MySensor* );
+	void (*VTinit)( MySensor* );
+	int (*init)( MySensor* );
+	int (*reset)( MySensor* );
+	int (*getType)( MySensor* );
 } My_Abstract_FctnTable;
 
 

@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-Base_FctnTable Base_vmt = { 
-	Base_FctnInit, 
-    Base_Configure,
-    Base_Request,
-    Base_Collect,
-	Base_Error 
+Base_FctnTable Base_vmt = {
+	Base_FctnInit,
+	Base_Configure,
+	Base_Request,
+	Base_Collect,
+	Base_Error
 };
 
 Abstract_FctnTable Abstract_vmt = {
