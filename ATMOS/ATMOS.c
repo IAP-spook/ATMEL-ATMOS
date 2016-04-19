@@ -47,7 +47,7 @@ int main(void)
 	printf("init done!\n");
 	
 	// could have sealed following in a function //
-	load_new_sensor( 1, 4, (BaseSensor *)BMP280_ptr, 0 );
+	load_new_sensor( 1000, 4000, (BaseSensor *)BMP280_ptr, 0 );
 	// load_new_sensor( 4, 4, (BaseSensor *)Si7020_ptr, 0 );
 	init_set_timer( get_next_interval() );
 	

@@ -56,6 +56,7 @@ int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otheri
  */
 int get_next_interval()
 {
+
 	int wait_time = MAX_SLEEP_INTERVAL;
 	struct event * ev = ( struct event * ) LL_TOP( timeoutq );
 

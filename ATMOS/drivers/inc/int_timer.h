@@ -17,7 +17,7 @@ void init_set_timer( int period_number );
 
 void set_timer( int period_number );
 
-ISR(TIMER2_COMPA_vect);
+ISR(TIMER2_OVF_vect);
 
 #endif
 #endif

@@ -57,9 +57,9 @@ int sensor_handler( struct event *p )
 		{
 			p->cur_state = Ready;
 			data = sp->vmt->Collect(p->sp);
-			#ifdef DEBUG
-			printf("data : %d\n", data);
-			#endif
+			// #ifdef DEBUG
+			// printf("data : %d\n", data);
+			// #endif
 		}
 		else
 		{

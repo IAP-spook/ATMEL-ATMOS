@@ -44,10 +44,11 @@ int BMP280_Request(BMP280Sensor *this )
 {
 	printf("BMP280 Request\n");
 	int Delay = BMP280_StartMeasurment();
+	printf("\tWait for %d ms\n",Delay);
 	if( Delay == 0 )
 		return 0;
 	else
-		return 2;
+		return ( 1 + Delay );
 }
 
 int BMP280_Collect(BMP280Sensor *this )
@@ -55,7 +56,7 @@ int BMP280_Collect(BMP280Sensor *this )
 	printf("BMP280 Collect\n");
 	double T, P;
 	BMP280_GetTemperatureAndPressure(&T,&P);
-	printf("Temperature = %.3f\nPressure = %.3f\n",T,P);
+	printf("\tTemperature = %.3f\n\tPressure = %.3f\n",T,P);
 	return 0;
 }
 
