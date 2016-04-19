@@ -77,6 +77,7 @@ int get_next_interval()
 	{
 		wait_time = ev->timetout;
 	}
+	/* if the next event time is longer, we need to wait it time by time, since currently, the longest waiting time support is 8s */
 	else
 	{
 		ev->timeout = ev->timeout - wait_time;
