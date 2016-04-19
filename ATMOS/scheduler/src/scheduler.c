@@ -71,7 +71,16 @@ int get_next_interval()
 #endif
 	    return wait_time;
 	}
-	wait_time = ( wait_time > ( ev->timeout ) ) ? ( ev->timeout ) : wait_time ;
+	
+	/* if the next event is nearer */
+	if( wait_time > ev->timeout )
+	{
+		wait_time = ev->timetout;
+	}
+	else
+	{
+		ev->timeout = ev->timeout - wait_time;
+	}
 	return wait_time;
 }
 
