@@ -37,8 +37,6 @@ SUBDIRS :=  \
 ../devices/src \
 ../drivers/inc \
 ../drivers/src \
-../event/inc \
-../event/src \
 ../hal/ \
 ../hal/atmega256rfr2/ \
 ../hal/atmega256rfr2/inc/ \
@@ -46,7 +44,6 @@ SUBDIRS :=  \
 ../drivers \
 ../inc \
 ../devices \
-../event \
 ../scheduler \
 ../scheduler/inc \
 ../scheduler/src \
@@ -107,6 +104,7 @@ C_SRCS +=  \
 ../sys/src/sysTimer.c \
 ../utilities/src/common.c \
 ../utilities/src/llist.c \
+../utilities/src/time.c \
 ../wrapper/base-class/src/Base_Device.c \
 ../wrapper/base-class/src/Base_Sensor.c \
 ../wrapper/sensor/src/BMP280_Sensor.c \
@@ -150,6 +148,7 @@ sys/src/sysEncrypt.o \
 sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
+utilities/src/time.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/sensor/src/BMP280_Sensor.o \
@@ -186,6 +185,7 @@ sys/src/sysEncrypt.o \
 sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
+utilities/src/time.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/sensor/src/BMP280_Sensor.o \
@@ -222,6 +222,7 @@ sys/src/sysEncrypt.d \
 sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
+utilities/src/time.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/sensor/src/BMP280_Sensor.d \
@@ -258,6 +259,7 @@ sys/src/sysEncrypt.d \
 sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
+utilities/src/time.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/sensor/src/BMP280_Sensor.d \
@@ -277,6 +279,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

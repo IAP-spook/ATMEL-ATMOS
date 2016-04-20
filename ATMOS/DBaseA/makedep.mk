@@ -62,6 +62,8 @@ utilities\src\common.c
 
 utilities\src\llist.c
 
+utilities\src\time.c
+
 wrapper\base-class\src\Base_Device.c
 
 wrapper\base-class\src\Base_Sensor.c

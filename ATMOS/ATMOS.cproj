@@ -405,13 +405,22 @@
     <Compile Include="utilities\inc\config.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="utilities\inc\data_unit.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="utilities\inc\llist.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="utilities\inc\time.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="utilities\src\common.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="utilities\src\llist.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="utilities\src\time.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="wrapper\base-class\inc\Base_Device.h">
@@ -444,8 +453,6 @@
     <Folder Include="devices\src" />
     <Folder Include="drivers\inc" />
     <Folder Include="drivers\src" />
-    <Folder Include="event\inc" />
-    <Folder Include="event\src" />
     <Folder Include="hal\" />
     <Folder Include="hal\atmega256rfr2\" />
     <Folder Include="hal\atmega256rfr2\inc\" />
@@ -453,7 +460,6 @@
     <Folder Include="drivers" />
     <Folder Include="inc" />
     <Folder Include="devices" />
-    <Folder Include="event" />
     <Folder Include="scheduler" />
     <Folder Include="scheduler\inc" />
     <Folder Include="scheduler\src" />

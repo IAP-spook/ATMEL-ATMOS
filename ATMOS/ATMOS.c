@@ -57,3 +57,11 @@ int main(void)
 	for (;;){}
 	return 0;
 }
+
+/* TODO list at high priority 
+ * 1. Add a BaseOtherDevice.h/.c at wrapper/base-class which features a exec() function
+ * 2. Derive a DemoFlashDevice.h/.c for demonstration usage , it should hold some DataUnit queue
+ * 3. Add two members one called Start_data, the other End_data in BaseSensor.h/.c
+ * 4. Add getStartNum() and getEndNum() in BaseSensor.h/.c correspondingly
+ * 5. Add a null_start_device to get a valid empty DataUnit, and it should init all data to -9999 as default
+ */ 

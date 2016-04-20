@@ -6,6 +6,7 @@
  */ 
 
 #include "scheduler/inc/handler.h"
+#include "utilities/inc/data_unit.h"
 
 /* 
  * sensor_handler function
@@ -109,6 +110,31 @@ int sensor_handler( struct event *p )
  */
 int device_handler( struct event *p )
 {
+	int retNum;
+	//BaseOtherDevice *dp;
+
+	/* sanity check */
+	if( p == EV_NULL )
+	{
+		#ifdef DEBUG
+		printf("Null Event Error !!!");
+		#endif
+		return 0;
+	}
+	
+	switch( p->cur_state )
+	{
+		/* New : init first, if retNum is not 0 goto Oops state */
+		case New :
+			p->cur_state = Ready;
+			break;
+		case Ready :
+			p->cur_state = Ready;
+			// dp->sth.->run();
+			break;
+		default :
+			break;
+	}
 	return 0;
 }
 
@@ -118,5 +144,21 @@ int device_handler( struct event *p )
  */
 int storeData_handler( struct event *p )
 {
+	int retNum;
+	DataUnit data_instance;
+	// TODO : Macro of GetCurDataUnit
+	// data_instance = GetCurDataUnit();
+	BaseSensor *sp = ( BaseSensor * )( p->sp );
+	
+	/* TODO : should have a better way in BaseSensor struct and scheduler.c to make this process easy to implement like following */
+	/*
+	 * int i = 0;
+	 * for( int j = sp->getStartNum(); j < sp->getEndNum() ; ++j )
+	 * {
+	 *		data_instance[j] = sp->data[i++];
+	 *  }
+	 */
+
+	
 	return 0;
 }

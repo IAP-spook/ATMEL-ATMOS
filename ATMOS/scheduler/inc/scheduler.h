@@ -14,13 +14,24 @@
 #include "utilities/inc/llist.h"
 #include "drivers/inc/int_timer.h"
 
+
+/* #define DEBGU */
+#ifndef DEBUG
+#define DEBUG
+#endif
+
+#define MAX_EVENTS	16
+#define MAX_SLEEP_INTERVAL 8000 // current max time
+#define EV_NULL ( struct event * ) (LL_NULL)
+
+	
 /* list anchors -- important, but ignore them; they are never used directly */
 llobject_t TQ;
 llobject_t FL;
 struct event *timeoutq;
 struct event *freelist;
 
-
+struct event queue[ MAX_EVENTS ];
 
 
 /* API of the Round-Robin Scheduler */

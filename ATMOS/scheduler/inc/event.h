@@ -12,17 +12,8 @@
 #include "utilities/inc/llist.h"
 #include "wrapper/base-class/inc/Base_Sensor.h"
 
-/* #define DEBGU */
-#ifndef DEBUG
-#define DEBUG
-#endif 
-
-#define MAX_EVENTS	16
-#define MAX_SLEEP_INTERVAL 8000 // current max time
-#define EV_NULL ( struct event * ) (LL_NULL)
-
 enum DeviceState { New, Ready, Running, Terminated, Oops };
-
+	
 struct event 
 {
 	LL_PTRS;
@@ -35,7 +26,6 @@ struct event
     int (* run)(struct event *);
 };
 
-struct event queue[ MAX_EVENTS ];
 
 
 
