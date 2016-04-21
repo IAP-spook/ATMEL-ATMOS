@@ -1,3 +1,11 @@
+/**
+ * \file int_timer.c
+ * 
+ * \brief Implementation of an asynchronous interrupt timer.
+ *
+ *  Author: Anxin Bai
+ */ 
+
 #include "drivers/inc/int_timer.h"
 #include "utilities/inc/time.h"
 #ifdef ATMEL

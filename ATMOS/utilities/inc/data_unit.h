@@ -1,8 +1,10 @@
-/*
- * data_unit.h
+/**
+ * \file data_unit.h
  *
+ * \brief Decalration of data struct, which is used to store timestamp and all sensors' data within a period .
+ * 
  * Created: 2016/4/20 1:12:29
- *  Author: AB
+ *  Author: Anxin Bai
  */ 
 #ifndef DATA_UNIT_H_
 #define DATA_UNIT_H_

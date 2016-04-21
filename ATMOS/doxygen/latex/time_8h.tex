@@ -1,0 +1,84 @@
+\hypertarget{time_8h}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/utilities/inc/time.h File Reference}
+\label{time_8h}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/utilities/inc/time.\-h@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/utilities/inc/time.\-h}}
+}
+
+
+Declaration of various timestamp function.  
+
+
+{\ttfamily \#include \char`\"{}utilities/inc/common.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+Include dependency graph for time.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{time_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{time_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtm}{tm}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{time_8h_a3e923baa68e23ea5d9cf85f1a1041b42}{update\-Time} (\hyperlink{common_8h_a0ddb3f43e52282b59ee55d059ed74a28}{uint32\-\_\-t} increment\-\_\-msec, \hyperlink{structtm}{tm} $\ast$tm\-\_\-ptr)
+\item 
+void \hyperlink{time_8h_a78a9cf7eb310f25f49b2cb8bd44c0341}{synch\-Time} (\hyperlink{common_8h_a0ddb3f43e52282b59ee55d059ed74a28}{uint32\-\_\-t} calibrate\-\_\-sec, \hyperlink{structtm}{tm} $\ast$tm\-\_\-ptr)
+\item 
+void \hyperlink{time_8h_ad26eced34fff67d983a1df32c20d1a13}{calc\-Date} (\hyperlink{structtm}{tm} $\ast$tm\-\_\-ptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Declaration of various timestamp function. I admit the time struct is not perfectly designed as regard to \-\_\-tm struct, but it is convenient anyway. calc\-Data function modified from \href{http://stackoverflow.com/questions/21593692/convert-unix-timestamp-to-date-without-system-libs}{\tt http\-://stackoverflow.\-com/questions/21593692/convert-\/unix-\/timestamp-\/to-\/date-\/without-\/system-\/libs}
+
+Created\-: 2016/4/20 0\-:23\-:31 Author\-: Anxin Bai 
+
+\subsection{Function Documentation}
+\hypertarget{time_8h_ad26eced34fff67d983a1df32c20d1a13}{\index{time.\-h@{time.\-h}!calc\-Date@{calc\-Date}}
+\index{calc\-Date@{calc\-Date}!time.h@{time.\-h}}
+\subsubsection[{calc\-Date}]{\setlength{\rightskip}{0pt plus 5cm}void calc\-Date (
+\begin{DoxyParamCaption}
+\item[{{\bf tm} $\ast$}]{tm\-\_\-ptr}
+\end{DoxyParamCaption}
+)}}\label{time_8h_ad26eced34fff67d983a1df32c20d1a13}
+
+
+References tm\-::tm\-\_\-hour, tm\-::tm\-\_\-mday, tm\-::tm\-\_\-min, tm\-::tm\-\_\-mon, tm\-::tm\-\_\-sec, tm\-::tm\-\_\-wday, tm\-::tm\-\_\-yday, tm\-::tm\-\_\-year, uint32\-\_\-t, and tm\-::unix\-\_\-time.
+
+\hypertarget{time_8h_a78a9cf7eb310f25f49b2cb8bd44c0341}{\index{time.\-h@{time.\-h}!synch\-Time@{synch\-Time}}
+\index{synch\-Time@{synch\-Time}!time.h@{time.\-h}}
+\subsubsection[{synch\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void synch\-Time (
+\begin{DoxyParamCaption}
+\item[{{\bf uint32\-\_\-t}}]{calibrate\-\_\-sec, }
+\item[{{\bf tm} $\ast$}]{tm\-\_\-ptr}
+\end{DoxyParamCaption}
+)}}\label{time_8h_a78a9cf7eb310f25f49b2cb8bd44c0341}
+
+
+References tm\-::unix\-\_\-msec, and tm\-::unix\-\_\-time.
+
+\hypertarget{time_8h_a3e923baa68e23ea5d9cf85f1a1041b42}{\index{time.\-h@{time.\-h}!update\-Time@{update\-Time}}
+\index{update\-Time@{update\-Time}!time.h@{time.\-h}}
+\subsubsection[{update\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void update\-Time (
+\begin{DoxyParamCaption}
+\item[{{\bf uint32\-\_\-t}}]{increment\-\_\-msec, }
+\item[{{\bf tm} $\ast$}]{tm\-\_\-ptr}
+\end{DoxyParamCaption}
+)}}\label{time_8h_a3e923baa68e23ea5d9cf85f1a1041b42}
+
+
+References tm\-::unix\-\_\-msec, and tm\-::unix\-\_\-time.
+

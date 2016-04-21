@@ -1,9 +1,10 @@
-
-/*
- * llist.c
+/**
+ * \file llist.c
  *
- * routines for a doubly linked list package
- */
+ * \brief Implementation of routines for a doubly linked list package
+ * 
+ *  Author: Resources from web
+ */ 
 
 #include "utilities/inc/llist.h"
 

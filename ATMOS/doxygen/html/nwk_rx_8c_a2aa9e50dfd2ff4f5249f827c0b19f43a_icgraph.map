@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$nwk_rx_8c.html#a2dcf6798c9fb243e4b9d3f0f9402e025" title="Initializes the Rx module." alt="" coords="257,12,335,39"/>
+<area shape="rect" id="node5" href="$nwk_8c.html#a77c5c81f6584bb39aa76d3fa0a73292b" title="Initializes all network layer modules." alt="" coords="384,12,461,39"/>
+<area shape="rect" id="node7" href="$sys_8c.html#ae7266b09907efcfb4bc5df00c544715c" title="SYS_Init" alt="" coords="510,12,583,39"/>
+<area shape="rect" id="node9" href="$_a_t_m_o_s_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="632,12,683,39"/>
+</map>

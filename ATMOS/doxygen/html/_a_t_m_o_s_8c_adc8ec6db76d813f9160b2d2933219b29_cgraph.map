@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_a_d_c_8h.html#a5137b551f1b83b0f4d8df7d071a3d3a6" title="Initializes the ADC." alt="" coords="181,56,254,83"/>
+<area shape="rect" id="node5" href="$_b_m_p280_8h.html#a2d512d05a3f329da6e0bfb081a1f6685" title="Initializes the BMP280 and reads the calibration data from the device." alt="" coords="169,107,265,133"/>
+<area shape="rect" id="node30" href="$_b_m_p280_8h.html#ac56b30a97fa1388153530bb658a0ab3d" title="Sets the oversampling setting for the library." alt="" coords="129,157,306,184"/>
+<area shape="rect" id="node32" href="$_p_w_r_8h.html#a296db3b4daa15223bbf9e327bc630e48" title="Initializes the power management system." alt="" coords="179,208,256,235"/>
+<area shape="rect" id="node34" href="$_p_w_r_8h.html#a262a42521a229e7817f01728fa59c29a" title="Turns on the 5V power supply." alt="" coords="158,259,277,285"/>
+<area shape="rect" id="node36" href="$_s_p_i_8h.html#a31fa6a6e47b103a9ba39e4f61c863b51" title="SPI_SlaveInit" alt="" coords="168,309,267,336"/>
+<area shape="rect" id="node38" href="$_t_w_i_8h.html#afe02d55f5c368f00e807900163b668c4" title="Initializes the 2&#45;wire Serial Interface as a master." alt="" coords="183,360,252,387"/>
+<area shape="rect" id="node40" href="$usart0_8h.html#adb47bcbd863fea2505836968049c20a9" title="Initializes USART0 in asynchronous UART mode, 8 bit data, 1 stop bit." alt="" coords="169,411,265,437"/>
+<area shape="rect" id="node7" href="$_b_m_p280_8c.html#a200056e2a6e922b99256963a78ec17ae" title="Reads an unsigned int from the BMP280." alt="" coords="355,81,487,108"/>
+<area shape="rect" id="node27" href="$_b_m_p280_8c.html#a9dc83fe6c5b73afce7d6c95fdc8bf12e" title="Reads an int from the BMP280." alt="" coords="360,132,483,159"/>
+<area shape="rect" id="node9" href="$_b_m_p280_8c.html#a366477c92e35622e140f6e3e3d0ac141" title="Reads some bytes from the BMP280." alt="" coords="537,107,679,133"/>
+<area shape="rect" id="node11" href="$_t_w_i_8h.html#ae1f51b83add546422b068cef6f304bd2" title="Starts a transmission over the TWI Bus." alt="" coords="729,5,845,32"/>
+<area shape="rect" id="node13" href="$_t_w_i_8h.html#aa78d37b505f1afc8e048adedf4242f21" title="Sends a byte over TWI." alt="" coords="894,56,1005,83"/>
+<area shape="rect" id="node16" href="$_t_w_i_8h.html#ae9258eaad53fc76d3dc8e6506f57b585" title="Starts a transmission over the TWI Bus." alt="" coords="729,107,844,133"/>
+<area shape="rect" id="node19" href="$_t_w_i_8h.html#abacd37b6bf3b709c05ca77c08b2c1e49" title="Reads multiple bytes from the TWI bus." alt="" coords="745,157,828,184"/>
+<area shape="rect" id="node25" href="$_t_w_i_8h.html#a6b77b26021430a2cc51be63022463fd2" title="Sends a Stop bit, be sure to send a Start bit before future interactions on the bus." alt="" coords="747,208,826,235"/>
+<area shape="rect" id="node21" href="$_t_w_i_8h.html#a4ffe192eac4421209ac0f9a9fd30684c" title="Receives a byte over TWI and returns a NACK." alt="" coords="893,132,1005,159"/>
+<area shape="rect" id="node23" href="$_t_w_i_8h.html#a3dca0b267e7b3181690518f158b7011b" title="Receives a byte over TWI and returns an ACK." alt="" coords="897,183,1002,209"/>
+</map>

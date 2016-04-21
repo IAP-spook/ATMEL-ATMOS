@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$hal_8c.html" title="ATmega256rfr2 HAL implementation." alt="" coords="5,109,219,165"/>
+<area shape="rect" id="node5" href="$hal_timer_8c.html" title="ATmega256rfr2 timer implementation." alt="" coords="243,109,457,165"/>
+<area shape="rect" id="node7" href="$sys_timer_8c.html" title="System timer implementation." alt="" coords="483,109,696,165"/>
+</map>

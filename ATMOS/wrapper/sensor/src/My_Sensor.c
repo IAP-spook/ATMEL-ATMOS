@@ -1,3 +1,11 @@
+/**
+ * \file My_Sensor.c
+ *
+ * \brief Implementation of My_Sensor struct, which derived from BaseSensor.
+ * 
+ *  Author: Anxin Bai
+ */ 
+
 #include "wrapper/sensor/inc/My_Sensor.h"
 #include <stdlib.h>
 #include <stdio.h>

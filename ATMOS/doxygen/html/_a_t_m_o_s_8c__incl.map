@@ -1,0 +1,30 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$config_8h.html" title="Currently no info." alt="" coords="103,555,236,581"/>
+<area shape="rect" id="node5" href="$common_8h.html" title="Declaration of miscellaneous definitions, enumerators, and functions." alt="" coords="1425,637,1575,664"/>
+<area shape="rect" id="node13" href="$hal_8h.html" title="ATmega256rfr2 HAL interface." alt="" coords="985,299,1036,325"/>
+<area shape="rect" id="node25" href="$phy_8h.html" title="ATMEGAxxxRFR2 PHY interface." alt="" coords="5,381,59,408"/>
+<area shape="rect" id="node33" href="$sys_8h.html" title="sys.h" alt="" coords="537,208,591,235"/>
+<area shape="rect" id="node37" href="$nwk_8h.html" title="Network layer public interface." alt="" coords="536,299,592,325"/>
+<area shape="rect" id="node72" href="$usart0_8h.html" title="USART0 in UART mode." alt="" coords="1508,208,1639,235"/>
+<area shape="rect" id="node76" href="$_t_w_i_8h.html" title="TWI hardware interface in master mode." alt="" coords="722,208,840,235"/>
+<area shape="rect" id="node79" href="$_p_w_r_8h.html" title="drivers/inc/PWR.h" alt="" coords="1786,117,1912,144"/>
+<area shape="rect" id="node81" href="$_a_d_c_8h.html" title="ADC Library." alt="" coords="1937,117,2060,144"/>
+<area shape="rect" id="node83" href="$_s_p_i_8h.html" title="SPI declaration." alt="" coords="2085,117,2200,144"/>
+<area shape="rect" id="node85" href="$int__timer_8h.html" title="Example for Timers on AVR Devices." alt="" coords="1223,117,1368,144"/>
+<area shape="rect" id="node89" href="$scheduler_8h.html" title="The resources that hold all events and manage useful events in&#45;order within a linked list..." alt="" coords="1313,208,1484,235"/>
+<area shape="rect" id="node111" href="$_my___sensor_8h.html" title="Declaration of My_Sensor struct, which derived from BaseSensor." alt="" coords="1713,201,1844,242"/>
+<area shape="rect" id="node120" href="$_b_m_p280___sensor_8h.html" title="Declaration of BMP280_Sensor struct, which derived from BaseSensor." alt="" coords="1623,291,1757,333"/>
+<area shape="rect" id="node15" href="$sys_types_8h.html" title="System types and definitions." alt="" coords="877,637,965,664"/>
+<area shape="rect" id="node30" href="$sys_config_8h.html" title="Main system configyration file." alt="" coords="151,464,241,491"/>
+<area shape="rect" id="node42" href="$nwk_route_8h.html" title="Routing interface." alt="" coords="781,381,872,408"/>
+<area shape="rect" id="node55" href="$nwk_group_8h.html" title="Multicast group management implementation." alt="" coords="524,555,615,581"/>
+<area shape="rect" id="node59" href="$nwk_security_8h.html" title="Network layer security interface." alt="" coords="287,381,391,408"/>
+<area shape="rect" id="node64" href="$nwk_data_req_8h.html" title="NWK_DataReq() interface." alt="" coords="465,381,572,408"/>
+<area shape="rect" id="node46" href="$nwk_rx_8h.html" title="Receive routines interface." alt="" coords="791,464,863,491"/>
+<area shape="rect" id="node50" href="$nwk_frame_8h.html" title="Frame buffers management interface." alt="" coords="791,555,884,581"/>
+<area shape="rect" id="node91" href="$event_8h.html" title="A container struct to hold device/sensor pointer and corresponding timeout info." alt="" coords="1429,381,1573,408"/>
+<area shape="rect" id="node95" href="$llist_8h.html" title="Declaration of routines for a doubly linked list package." alt="" coords="1333,464,1451,491"/>
+<area shape="rect" id="node102" href="$handler_8h.html" title="Declaration of various handlers." alt="" coords="1263,299,1419,325"/>
+<area shape="rect" id="node97" href="$_base___sensor_8h.html" title="Declaration of BaseSensor struct, which derived from BaseDevice." alt="" coords="1623,457,1759,498"/>
+<area shape="rect" id="node99" href="$_base___device_8h.html" title="Declaration of BaseDevice struct." alt="" coords="1581,547,1715,589"/>
+</map>

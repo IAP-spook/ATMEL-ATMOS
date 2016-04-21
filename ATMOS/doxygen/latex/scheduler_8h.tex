@@ -1,0 +1,369 @@
+\hypertarget{scheduler_8h}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/scheduler/inc/scheduler.h File Reference}
+\label{scheduler_8h}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/scheduler/inc/scheduler.\-h@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/scheduler/inc/scheduler.\-h}}
+}
+
+
+The resources that hold all events and manage useful events in-\/order within a linked list.  
+
+
+{\ttfamily \#include \char`\"{}scheduler/inc/event.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}scheduler/inc/handler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utilities/inc/llist.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}drivers/inc/int\-\_\-timer.\-h\char`\"{}}\\*
+Include dependency graph for scheduler.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scheduler_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scheduler_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{scheduler_8h_ad72dbcf6d0153db1b8d8a58001feed83}{D\-E\-B\-U\-G}
+\item 
+\#define \hyperlink{scheduler_8h_ae42954bb8545d24e3e9dcde5920c9a0b}{M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S}~16
+\begin{DoxyCompactList}\small\item\em Max number of available device within a scheduler. \end{DoxyCompactList}\item 
+\#define \hyperlink{scheduler_8h_ac80e5a8cb91e749b3f81c707ef5e09d7}{M\-A\-X\-\_\-\-S\-L\-E\-E\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}~8000
+\begin{DoxyCompactList}\small\item\em The max sleep time(ms) with current timer support. \end{DoxyCompactList}\item 
+\#define \hyperlink{scheduler_8h_aea5c41adffebdc974f45fa1f1349f1e6}{E\-V\-\_\-\-N\-U\-L\-L}~( struct \hyperlink{structevent}{event} $\ast$ ) (\hyperlink{llist_8h_a1babdd7167f351594fa0d08c2073d9bb}{L\-L\-\_\-\-N\-U\-L\-L})
+\begin{DoxyCompactList}\small\item\em Null pointer of a event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{scheduler_8h_aaaa4549e9b567c40996a037ec81ef5b2}{dump\-\_\-timeoutq} ()
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf A\-P\-I of scheduler}\par
+{\em A\-P\-I of the Round-\/\-Robin Scheduler }\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{scheduler_8h_a7f089fd35d3f012126b8d75b4be3274e}{load\-\_\-new\-\_\-sensor} (int timeout, int repeat, \hyperlink{_base___sensor_8h_ae91aa07b7bce6c6b463d63d8f214bb37}{Base\-Sensor} $\ast$device\-\_\-ptr, int otherinfo)
+\begin{DoxyCompactList}\small\item\em Load a brand new device activity into the scheduler's timeout\-Q. \end{DoxyCompactList}\item 
+void \hyperlink{scheduler_8h_a0b1a5ec264185ca0c573406b452dc9a2}{init\-\_\-timeoutq} ()
+\begin{DoxyCompactList}\small\item\em Init function of scheduler, which initialize all events and put them into freelist. \end{DoxyCompactList}\item 
+int \hyperlink{scheduler_8h_a14fc4d6f2c57dd6c53413dcda79d71aa}{get\-\_\-next\-\_\-interval} ()
+\begin{DoxyCompactList}\small\item\em Return the the time ( ms ) of the next event. \end{DoxyCompactList}\item 
+void \hyperlink{scheduler_8h_a0cd2b196b5888a7df16b4d2413dd0f7c}{insert\-\_\-timeoutq\-\_\-event} (struct \hyperlink{structevent}{event} $\ast$event\-\_\-pointer)
+\begin{DoxyCompactList}\small\item\em Insert a new event into the scheduler according to timeout order. \end{DoxyCompactList}\item 
+int \hyperlink{scheduler_8h_a4fb33031c030b4646e4bb73c5227c075}{handle\-\_\-timeoutq\-\_\-event} ()
+\begin{DoxyCompactList}\small\item\em Handle the next event in timeout\-Q\-: execute the event's handler function according to the device type, re-\/insert it according to the period, and set a timer of next event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Variables}
+\begin{Indent}{\bf list anchors}\par
+{\em Important, but ignore them; they are never used directly }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} \hyperlink{scheduler_8h_ad17d434bd1dba04ff0556e067edb79c9}{T\-Q}
+\begin{DoxyCompactList}\small\item\em Timeout\-Queue anchor. \end{DoxyCompactList}\item 
+\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} \hyperlink{scheduler_8h_a5f81bbbad9a45addf59ffb36e58ddad7}{F\-L}
+\begin{DoxyCompactList}\small\item\em Free\-List anchor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Event list/queue}\par
+{\em The linked list resource, where each node is an event }\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structevent}{event} $\ast$ \hyperlink{scheduler_8h_a205c3d34a3045a7d2b64671b32daef1b}{timeoutq}
+\begin{DoxyCompactList}\small\item\em Timeout\-Queue, which holds the events in line. \end{DoxyCompactList}\item 
+struct \hyperlink{structevent}{event} $\ast$ \hyperlink{scheduler_8h_a5a2f8a3a91cf08e5ddf1a9a8a30109f6}{freelist}
+\begin{DoxyCompactList}\small\item\em Free\-List, which holds the events ready to hold new device. \end{DoxyCompactList}\item 
+struct \hyperlink{structevent}{event} \hyperlink{scheduler_8h_a872627fe536757a2be2b73c6cca7f6f7}{queue} \mbox{[}\hyperlink{scheduler_8h_ae42954bb8545d24e3e9dcde5920c9a0b}{M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Declaration of event resources, and all events are within this queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+The resources that hold all events and manage useful events in-\/order within a linked list. Created\-: 2016/4/14 23\-:05\-:30 Author\-: Anxin Bai 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{scheduler_8h_ad72dbcf6d0153db1b8d8a58001feed83}{\index{scheduler.\-h@{scheduler.\-h}!D\-E\-B\-U\-G@{D\-E\-B\-U\-G}}
+\index{D\-E\-B\-U\-G@{D\-E\-B\-U\-G}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-B\-U\-G}}\label{scheduler_8h_ad72dbcf6d0153db1b8d8a58001feed83}
+\hypertarget{scheduler_8h_aea5c41adffebdc974f45fa1f1349f1e6}{\index{scheduler.\-h@{scheduler.\-h}!E\-V\-\_\-\-N\-U\-L\-L@{E\-V\-\_\-\-N\-U\-L\-L}}
+\index{E\-V\-\_\-\-N\-U\-L\-L@{E\-V\-\_\-\-N\-U\-L\-L}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{E\-V\-\_\-\-N\-U\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-V\-\_\-\-N\-U\-L\-L~( struct {\bf event} $\ast$ ) ({\bf L\-L\-\_\-\-N\-U\-L\-L})}}\label{scheduler_8h_aea5c41adffebdc974f45fa1f1349f1e6}
+
+
+Null pointer of a event. 
+
+
+
+Referenced by device\-\_\-handler(), get\-\_\-next\-\_\-interval(), handle\-\_\-timeoutq\-\_\-event(), insert\-\_\-timeoutq\-\_\-event(), load\-\_\-new\-\_\-sensor(), and sensor\-\_\-handler().
+
+\hypertarget{scheduler_8h_ae42954bb8545d24e3e9dcde5920c9a0b}{\index{scheduler.\-h@{scheduler.\-h}!M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S@{M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S}}
+\index{M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S@{M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S~16}}\label{scheduler_8h_ae42954bb8545d24e3e9dcde5920c9a0b}
+
+
+Max number of available device within a scheduler. 
+
+
+
+Referenced by init\-\_\-timeoutq().
+
+\hypertarget{scheduler_8h_ac80e5a8cb91e749b3f81c707ef5e09d7}{\index{scheduler.\-h@{scheduler.\-h}!M\-A\-X\-\_\-\-S\-L\-E\-E\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L@{M\-A\-X\-\_\-\-S\-L\-E\-E\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}}
+\index{M\-A\-X\-\_\-\-S\-L\-E\-E\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L@{M\-A\-X\-\_\-\-S\-L\-E\-E\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-L\-E\-E\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-S\-L\-E\-E\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L~8000}}\label{scheduler_8h_ac80e5a8cb91e749b3f81c707ef5e09d7}
+
+
+The max sleep time(ms) with current timer support. 
+
+
+
+Referenced by get\-\_\-next\-\_\-interval().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{scheduler_8h_aaaa4549e9b567c40996a037ec81ef5b2}{\index{scheduler.\-h@{scheduler.\-h}!dump\-\_\-timeoutq@{dump\-\_\-timeoutq}}
+\index{dump\-\_\-timeoutq@{dump\-\_\-timeoutq}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{dump\-\_\-timeoutq}]{\setlength{\rightskip}{0pt plus 5cm}void dump\-\_\-timeoutq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8h_aaaa4549e9b567c40996a037ec81ef5b2}
+\hypertarget{scheduler_8h_a14fc4d6f2c57dd6c53413dcda79d71aa}{\index{scheduler.\-h@{scheduler.\-h}!get\-\_\-next\-\_\-interval@{get\-\_\-next\-\_\-interval}}
+\index{get\-\_\-next\-\_\-interval@{get\-\_\-next\-\_\-interval}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{get\-\_\-next\-\_\-interval}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-next\-\_\-interval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8h_a14fc4d6f2c57dd6c53413dcda79d71aa}
+
+
+Return the the time ( ms ) of the next event. 
+
+
+
+References E\-V\-\_\-\-N\-U\-L\-L, L\-L\-\_\-\-T\-O\-P, M\-A\-X\-\_\-\-S\-L\-E\-E\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L, event\-::timeout, and timeoutq.
+
+
+
+Referenced by handle\-\_\-timeoutq\-\_\-event(), and main().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{scheduler_8h_a14fc4d6f2c57dd6c53413dcda79d71aa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{scheduler_8h_a4fb33031c030b4646e4bb73c5227c075}{\index{scheduler.\-h@{scheduler.\-h}!handle\-\_\-timeoutq\-\_\-event@{handle\-\_\-timeoutq\-\_\-event}}
+\index{handle\-\_\-timeoutq\-\_\-event@{handle\-\_\-timeoutq\-\_\-event}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{handle\-\_\-timeoutq\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}int handle\-\_\-timeoutq\-\_\-event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8h_a4fb33031c030b4646e4bb73c5227c075}
+
+
+Handle the next event in timeout\-Q\-: execute the event's handler function according to the device type, re-\/insert it according to the period, and set a timer of next event. 
+
+
+
+References event\-::borrow\-\_\-timeout, E\-V\-\_\-\-N\-U\-L\-L, freelist, get\-\_\-next\-\_\-interval(), handle\-\_\-timeoutq\-\_\-event(), insert\-\_\-timeoutq\-\_\-event(), L\-L\-\_\-\-P\-O\-P, L\-L\-\_\-\-P\-U\-S\-H, L\-L\-\_\-\-T\-O\-P, event\-::repeat\-\_\-interval, event\-::run, set\-\_\-timer(), event\-::sp, event\-::timeout, and timeoutq.
+
+
+
+Referenced by handle\-\_\-timeoutq\-\_\-event().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{scheduler_8h_a4fb33031c030b4646e4bb73c5227c075_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{scheduler_8h_a4fb33031c030b4646e4bb73c5227c075_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{scheduler_8h_a0b1a5ec264185ca0c573406b452dc9a2}{\index{scheduler.\-h@{scheduler.\-h}!init\-\_\-timeoutq@{init\-\_\-timeoutq}}
+\index{init\-\_\-timeoutq@{init\-\_\-timeoutq}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{init\-\_\-timeoutq}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-timeoutq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8h_a0b1a5ec264185ca0c573406b452dc9a2}
+
+
+Init function of scheduler, which initialize all events and put them into freelist. 
+
+
+
+References F\-L, freelist, L\-L\-\_\-\-I\-N\-I\-T, L\-L\-\_\-\-P\-U\-S\-H, M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S, queue, timeoutq, and T\-Q.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{scheduler_8h_a0b1a5ec264185ca0c573406b452dc9a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{scheduler_8h_a0cd2b196b5888a7df16b4d2413dd0f7c}{\index{scheduler.\-h@{scheduler.\-h}!insert\-\_\-timeoutq\-\_\-event@{insert\-\_\-timeoutq\-\_\-event}}
+\index{insert\-\_\-timeoutq\-\_\-event@{insert\-\_\-timeoutq\-\_\-event}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{insert\-\_\-timeoutq\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void insert\-\_\-timeoutq\-\_\-event (
+\begin{DoxyParamCaption}
+\item[{struct {\bf event} $\ast$}]{event\-\_\-pointer}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8h_a0cd2b196b5888a7df16b4d2413dd0f7c}
+
+
+Insert a new event into the scheduler according to timeout order. 
+
+
+
+References E\-V\-\_\-\-N\-U\-L\-L, L\-L\-\_\-\-A\-P\-P\-E\-N\-D, L\-L\-\_\-\-E\-A\-C\-H, L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T, event\-::timeout, and timeoutq.
+
+
+
+Referenced by handle\-\_\-timeoutq\-\_\-event(), load\-\_\-new\-\_\-sensor(), and sensor\-\_\-handler().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scheduler_8h_a0cd2b196b5888a7df16b4d2413dd0f7c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{scheduler_8h_a7f089fd35d3f012126b8d75b4be3274e}{\index{scheduler.\-h@{scheduler.\-h}!load\-\_\-new\-\_\-sensor@{load\-\_\-new\-\_\-sensor}}
+\index{load\-\_\-new\-\_\-sensor@{load\-\_\-new\-\_\-sensor}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{load\-\_\-new\-\_\-sensor}]{\setlength{\rightskip}{0pt plus 5cm}int load\-\_\-new\-\_\-sensor (
+\begin{DoxyParamCaption}
+\item[{int}]{timeout, }
+\item[{int}]{repeat, }
+\item[{{\bf Base\-Sensor} $\ast$}]{device\-\_\-ptr, }
+\item[{int}]{otherinfo}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8h_a7f089fd35d3f012126b8d75b4be3274e}
+
+
+Load a brand new device activity into the scheduler's timeout\-Q. 
+
+
+
+References event\-::borrow\-\_\-timeout, event\-::cur\-\_\-state, E\-V\-\_\-\-N\-U\-L\-L, freelist, event\-::info, insert\-\_\-timeoutq\-\_\-event(), L\-L\-\_\-\-P\-O\-P, Ready, event\-::repeat\-\_\-interval, event\-::run, sensor\-\_\-handler(), event\-::sp, and event\-::timeout.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scheduler_8h_a7f089fd35d3f012126b8d75b4be3274e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{scheduler_8h_a7f089fd35d3f012126b8d75b4be3274e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{scheduler_8h_a5f81bbbad9a45addf59ffb36e58ddad7}{\index{scheduler.\-h@{scheduler.\-h}!F\-L@{F\-L}}
+\index{F\-L@{F\-L}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{F\-L}]{\setlength{\rightskip}{0pt plus 5cm}{\bf llobject\-\_\-t} F\-L}}\label{scheduler_8h_a5f81bbbad9a45addf59ffb36e58ddad7}
+
+
+Free\-List anchor. 
+
+
+
+Referenced by init\-\_\-timeoutq().
+
+\hypertarget{scheduler_8h_a5a2f8a3a91cf08e5ddf1a9a8a30109f6}{\index{scheduler.\-h@{scheduler.\-h}!freelist@{freelist}}
+\index{freelist@{freelist}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{freelist}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf event}$\ast$ freelist}}\label{scheduler_8h_a5a2f8a3a91cf08e5ddf1a9a8a30109f6}
+
+
+Free\-List, which holds the events ready to hold new device. 
+
+
+
+Referenced by handle\-\_\-timeoutq\-\_\-event(), init\-\_\-timeoutq(), and load\-\_\-new\-\_\-sensor().
+
+\hypertarget{scheduler_8h_a872627fe536757a2be2b73c6cca7f6f7}{\index{scheduler.\-h@{scheduler.\-h}!queue@{queue}}
+\index{queue@{queue}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{queue}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf event} queue\mbox{[}{\bf M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S}\mbox{]}}}\label{scheduler_8h_a872627fe536757a2be2b73c6cca7f6f7}
+
+
+Declaration of event resources, and all events are within this queue. 
+
+
+
+Referenced by init\-\_\-timeoutq().
+
+\hypertarget{scheduler_8h_a205c3d34a3045a7d2b64671b32daef1b}{\index{scheduler.\-h@{scheduler.\-h}!timeoutq@{timeoutq}}
+\index{timeoutq@{timeoutq}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{timeoutq}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf event}$\ast$ timeoutq}}\label{scheduler_8h_a205c3d34a3045a7d2b64671b32daef1b}
+
+
+Timeout\-Queue, which holds the events in line. 
+
+
+
+Referenced by get\-\_\-next\-\_\-interval(), handle\-\_\-timeoutq\-\_\-event(), init\-\_\-timeoutq(), insert\-\_\-timeoutq\-\_\-event(), and sensor\-\_\-handler().
+
+\hypertarget{scheduler_8h_ad17d434bd1dba04ff0556e067edb79c9}{\index{scheduler.\-h@{scheduler.\-h}!T\-Q@{T\-Q}}
+\index{T\-Q@{T\-Q}!scheduler.h@{scheduler.\-h}}
+\subsubsection[{T\-Q}]{\setlength{\rightskip}{0pt plus 5cm}{\bf llobject\-\_\-t} T\-Q}}\label{scheduler_8h_ad17d434bd1dba04ff0556e067edb79c9}
+
+
+Timeout\-Queue anchor. 
+
+
+
+Referenced by init\-\_\-timeoutq().
+

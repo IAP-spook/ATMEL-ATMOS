@@ -1,10 +1,10 @@
-/*
- * IncFile1.h
+/**
+ * \file llist.h
  *
- * Created: 2016/4/4 13:27:08
- *  Author: AB
+ * \brief Declaration of routines for a doubly linked list package
+ * 
+ *  Author: Resources from web
  */ 
-
 
 #ifndef _LLIST_H_
 #define _LLIST_H_

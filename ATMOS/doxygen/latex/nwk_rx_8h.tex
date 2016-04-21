@@ -1,0 +1,234 @@
+\hypertarget{nwk_rx_8h}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/nwk/inc/nwk\-Rx.h File Reference}
+\label{nwk_rx_8h}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/nwk/inc/nwk\-Rx.\-h@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/nwk/inc/nwk\-Rx.\-h}}
+}
+
+
+Receive routines interface.  
+
+
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}sys\-Types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}nwk\-Frame.\-h\char`\"{}}\\*
+Include dependency graph for nwk\-Rx.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nwk_rx_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nwk_rx_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_n_w_k___data_ind__t}{N\-W\-K\-\_\-\-Data\-Ind\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_n_w_k___data_ind__t}{N\-W\-K\-\_\-\-Data\-Ind\-\_\-t} \hyperlink{nwk_rx_8h_a993b4e489883087bad19fb7271971ea9}{N\-W\-K\-\_\-\-Data\-Ind\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+\hyperlink{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a70843d1d8acc24c82e37abc52bfc358a}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-A\-C\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-E\-D} =  1 $<$$<$ 0, 
+\hyperlink{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a39964a9ea7e6e777503d43b548825128}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-S\-E\-C\-U\-R\-E\-D} =  1 $<$$<$ 1, 
+\hyperlink{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600af36b8e914eff363767b0c3cb19bec255}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T} =  1 $<$$<$ 2, 
+\hyperlink{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a77a269fc772b053d4fc86db373aad8c1}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-O\-C\-A\-L} =  1 $<$$<$ 3, 
+\\*
+\hyperlink{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600ac13356e25d07bedd16f8b8a7501e576c}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T\-\_\-\-P\-A\-N\-\_\-\-I\-D} =  1 $<$$<$ 4, 
+\hyperlink{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a323fbc15a29b0ec016bcab1743d14a11}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-I\-N\-K\-\_\-\-L\-O\-C\-A\-L} =  1 $<$$<$ 5, 
+\hyperlink{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a4afac47976b900426a60fd13b0310326}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T} =  1 $<$$<$ 6
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{nwk_rx_8h_a2c5cc6ec8376996c9dc37ec03fe2f2e4}{N\-W\-K\-\_\-\-Set\-Ack\-Control} (uint8\-\_\-t control)
+\item 
+void \hyperlink{nwk_rx_8h_a2dcf6798c9fb243e4b9d3f0f9402e025}{nwk\-Rx\-Init} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the Rx module. \end{DoxyCompactList}\item 
+void \hyperlink{nwk_rx_8h_af95623ac79e9d935c0b5900ebff68a27}{nwk\-Rx\-Decrypt\-Conf} (\hyperlink{struct_nwk_frame__t}{Nwk\-Frame\-\_\-t} $\ast$frame, bool \hyperlink{_b_m_p280_8c_a051c9e198ee930358372c407a17e8b78}{status})
+\item 
+void \hyperlink{nwk_rx_8h_ac726b5ee870a3f2651b4ada21cf45f1a}{nwk\-Rx\-Task\-Handler} (void)
+\begin{DoxyCompactList}\small\item\em Rx Module task handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Receive routines interface. Copyright (C) 2012-\/2014, Atmel Corporation. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\-:
+
+
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item The name of Atmel may not be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item This software may only be redistributed and used in connection with an Atmel microcontroller product.
+\end{DoxyEnumerate}
+
+T\-H\-I\-S S\-O\-F\-T\-W\-A\-R\-E I\-S P\-R\-O\-V\-I\-D\-E\-D B\-Y A\-T\-M\-E\-L \char`\"{}\-A\-S I\-S\char`\"{} A\-N\-D A\-N\-Y E\-X\-P\-R\-E\-S\-S O\-R I\-M\-P\-L\-I\-E\-D W\-A\-R\-R\-A\-N\-T\-I\-E\-S, I\-N\-C\-L\-U\-D\-I\-N\-G, B\-U\-T N\-O\-T L\-I\-M\-I\-T\-E\-D T\-O, T\-H\-E I\-M\-P\-L\-I\-E\-D W\-A\-R\-R\-A\-N\-T\-I\-E\-S O\-F M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y, F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E A\-N\-D N\-O\-N-\/\-I\-N\-F\-R\-I\-N\-G\-E\-M\-E\-N\-T A\-R\-E E\-X\-P\-R\-E\-S\-S\-L\-Y A\-N\-D S\-P\-E\-C\-I\-F\-I\-C\-A\-L\-L\-Y D\-I\-S\-C\-L\-A\-I\-M\-E\-D. I\-N N\-O E\-V\-E\-N\-T S\-H\-A\-L\-L A\-T\-M\-E\-L B\-E L\-I\-A\-B\-L\-E F\-O\-R A\-N\-Y D\-I\-R\-E\-C\-T, I\-N\-D\-I\-R\-E\-C\-T, I\-N\-C\-I\-D\-E\-N\-T\-A\-L, S\-P\-E\-C\-I\-A\-L, E\-X\-E\-M\-P\-L\-A\-R\-Y, O\-R C\-O\-N\-S\-E\-Q\-U\-E\-N\-T\-I\-A\-L D\-A\-M\-A\-G\-E\-S (I\-N\-C\-L\-U\-D\-I\-N\-G, B\-U\-T N\-O\-T L\-I\-M\-I\-T\-E\-D T\-O, P\-R\-O\-C\-U\-R\-E\-M\-E\-N\-T O\-F S\-U\-B\-S\-T\-I\-T\-U\-T\-E G\-O\-O\-D\-S O\-R S\-E\-R\-V\-I\-C\-E\-S; L\-O\-S\-S O\-F U\-S\-E, D\-A\-T\-A, O\-R P\-R\-O\-F\-I\-T\-S; O\-R B\-U\-S\-I\-N\-E\-S\-S I\-N\-T\-E\-R\-R\-U\-P\-T\-I\-O\-N) H\-O\-W\-E\-V\-E\-R C\-A\-U\-S\-E\-D A\-N\-D O\-N A\-N\-Y T\-H\-E\-O\-R\-Y O\-F L\-I\-A\-B\-I\-L\-I\-T\-Y, W\-H\-E\-T\-H\-E\-R I\-N C\-O\-N\-T\-R\-A\-C\-T, S\-T\-R\-I\-C\-T L\-I\-A\-B\-I\-L\-I\-T\-Y, O\-R T\-O\-R\-T (I\-N\-C\-L\-U\-D\-I\-N\-G N\-E\-G\-L\-I\-G\-E\-N\-C\-E O\-R O\-T\-H\-E\-R\-W\-I\-S\-E) A\-R\-I\-S\-I\-N\-G I\-N A\-N\-Y W\-A\-Y O\-U\-T O\-F T\-H\-E U\-S\-E O\-F T\-H\-I\-S S\-O\-F\-T\-W\-A\-R\-E, E\-V\-E\-N I\-F A\-D\-V\-I\-S\-E\-D O\-F T\-H\-E P\-O\-S\-S\-I\-B\-I\-L\-I\-T\-Y O\-F S\-U\-C\-H D\-A\-M\-A\-G\-E.
+
+Modification and other use of this code is subject to Atmel's Limited License Agreement (license.\-txt).
+
+\begin{DoxyParagraph}{Id\-:}
+\hyperlink{nwk_rx_8h}{nwk\-Rx.\-h} 9267 2014-\/03-\/18 21\-:46\-:19\-Z ataradov 
+\end{DoxyParagraph}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{nwk_rx_8h_a993b4e489883087bad19fb7271971ea9}{\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!N\-W\-K\-\_\-\-Data\-Ind\-\_\-t@{N\-W\-K\-\_\-\-Data\-Ind\-\_\-t}}
+\index{N\-W\-K\-\_\-\-Data\-Ind\-\_\-t@{N\-W\-K\-\_\-\-Data\-Ind\-\_\-t}!nwkRx.h@{nwk\-Rx.\-h}}
+\subsubsection[{N\-W\-K\-\_\-\-Data\-Ind\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf N\-W\-K\-\_\-\-Data\-Ind\-\_\-t}  {\bf N\-W\-K\-\_\-\-Data\-Ind\-\_\-t}}}\label{nwk_rx_8h_a993b4e489883087bad19fb7271971ea9}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-A\-C\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-E\-D@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-A\-C\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-E\-D}!nwk\-Rx.\-h@{nwk\-Rx.\-h}}\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-A\-C\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-E\-D@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-A\-C\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-E\-D}}\item[{\em 
+\hypertarget{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a70843d1d8acc24c82e37abc52bfc358a}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-A\-C\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-E\-D}\label{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a70843d1d8acc24c82e37abc52bfc358a}
+}]\index{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-S\-E\-C\-U\-R\-E\-D@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-S\-E\-C\-U\-R\-E\-D}!nwk\-Rx.\-h@{nwk\-Rx.\-h}}\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-S\-E\-C\-U\-R\-E\-D@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-S\-E\-C\-U\-R\-E\-D}}\item[{\em 
+\hypertarget{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a39964a9ea7e6e777503d43b548825128}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-S\-E\-C\-U\-R\-E\-D}\label{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a39964a9ea7e6e777503d43b548825128}
+}]\index{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T}!nwk\-Rx.\-h@{nwk\-Rx.\-h}}\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T}}\item[{\em 
+\hypertarget{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600af36b8e914eff363767b0c3cb19bec255}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T}\label{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600af36b8e914eff363767b0c3cb19bec255}
+}]\index{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-O\-C\-A\-L@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-O\-C\-A\-L}!nwk\-Rx.\-h@{nwk\-Rx.\-h}}\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-O\-C\-A\-L@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-O\-C\-A\-L}}\item[{\em 
+\hypertarget{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a77a269fc772b053d4fc86db373aad8c1}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-O\-C\-A\-L}\label{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a77a269fc772b053d4fc86db373aad8c1}
+}]\index{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T\-\_\-\-P\-A\-N\-\_\-\-I\-D@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T\-\_\-\-P\-A\-N\-\_\-\-I\-D}!nwk\-Rx.\-h@{nwk\-Rx.\-h}}\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T\-\_\-\-P\-A\-N\-\_\-\-I\-D@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T\-\_\-\-P\-A\-N\-\_\-\-I\-D}}\item[{\em 
+\hypertarget{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600ac13356e25d07bedd16f8b8a7501e576c}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T\-\_\-\-P\-A\-N\-\_\-\-I\-D}\label{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600ac13356e25d07bedd16f8b8a7501e576c}
+}]\index{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-I\-N\-K\-\_\-\-L\-O\-C\-A\-L@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-I\-N\-K\-\_\-\-L\-O\-C\-A\-L}!nwk\-Rx.\-h@{nwk\-Rx.\-h}}\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-I\-N\-K\-\_\-\-L\-O\-C\-A\-L@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-I\-N\-K\-\_\-\-L\-O\-C\-A\-L}}\item[{\em 
+\hypertarget{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a323fbc15a29b0ec016bcab1743d14a11}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-L\-I\-N\-K\-\_\-\-L\-O\-C\-A\-L}\label{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a323fbc15a29b0ec016bcab1743d14a11}
+}]\index{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T}!nwk\-Rx.\-h@{nwk\-Rx.\-h}}\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T@{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T}}\item[{\em 
+\hypertarget{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a4afac47976b900426a60fd13b0310326}{N\-W\-K\-\_\-\-I\-N\-D\-\_\-\-O\-P\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T}\label{nwk_rx_8h_abed82baf7f470b522273a3e37c24c600a4afac47976b900426a60fd13b0310326}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{nwk_rx_8h_a2c5cc6ec8376996c9dc37ec03fe2f2e4}{\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!N\-W\-K\-\_\-\-Set\-Ack\-Control@{N\-W\-K\-\_\-\-Set\-Ack\-Control}}
+\index{N\-W\-K\-\_\-\-Set\-Ack\-Control@{N\-W\-K\-\_\-\-Set\-Ack\-Control}!nwkRx.h@{nwk\-Rx.\-h}}
+\subsubsection[{N\-W\-K\-\_\-\-Set\-Ack\-Control}]{\setlength{\rightskip}{0pt plus 5cm}void N\-W\-K\-\_\-\-Set\-Ack\-Control (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{control}
+\end{DoxyParamCaption}
+)}}\label{nwk_rx_8h_a2c5cc6ec8376996c9dc37ec03fe2f2e4}
+
+
+References nwk\-Rx\-Ack\-Control.
+
+\hypertarget{nwk_rx_8h_af95623ac79e9d935c0b5900ebff68a27}{\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!nwk\-Rx\-Decrypt\-Conf@{nwk\-Rx\-Decrypt\-Conf}}
+\index{nwk\-Rx\-Decrypt\-Conf@{nwk\-Rx\-Decrypt\-Conf}!nwkRx.h@{nwk\-Rx.\-h}}
+\subsubsection[{nwk\-Rx\-Decrypt\-Conf}]{\setlength{\rightskip}{0pt plus 5cm}void nwk\-Rx\-Decrypt\-Conf (
+\begin{DoxyParamCaption}
+\item[{{\bf Nwk\-Frame\-\_\-t} $\ast$}]{frame, }
+\item[{bool}]{status}
+\end{DoxyParamCaption}
+)}}\label{nwk_rx_8h_af95623ac79e9d935c0b5900ebff68a27}
+\hypertarget{nwk_rx_8h_a2dcf6798c9fb243e4b9d3f0f9402e025}{\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!nwk\-Rx\-Init@{nwk\-Rx\-Init}}
+\index{nwk\-Rx\-Init@{nwk\-Rx\-Init}!nwkRx.h@{nwk\-Rx.\-h}}
+\subsubsection[{nwk\-Rx\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void nwk\-Rx\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{nwk_rx_8h_a2dcf6798c9fb243e4b9d3f0f9402e025}
+
+
+Initializes the Rx module. 
+
+
+
+References S\-Y\-S\-\_\-\-Timer\-\_\-t\-::handler, S\-Y\-S\-\_\-\-Timer\-\_\-t\-::interval, S\-Y\-S\-\_\-\-Timer\-\_\-t\-::mode, N\-W\-K\-\_\-\-D\-U\-P\-L\-I\-C\-A\-T\-E\-\_\-\-R\-E\-J\-E\-C\-T\-I\-O\-N\-\_\-\-T\-A\-B\-L\-E\-\_\-\-S\-I\-Z\-E, N\-W\-K\-\_\-\-Open\-Endpoint(), N\-W\-K\-\_\-\-R\-X\-\_\-\-D\-U\-P\-L\-I\-C\-A\-T\-E\-\_\-\-R\-E\-J\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L, N\-W\-K\-\_\-\-S\-E\-R\-V\-I\-C\-E\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-I\-D, nwk\-Rx\-Duplicate\-Rejection\-Timer\-Handler(), nwk\-Rx\-Service\-Data\-Ind(), and S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L\-\_\-\-M\-O\-D\-E.
+
+
+
+Referenced by N\-W\-K\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nwk_rx_8h_a2dcf6798c9fb243e4b9d3f0f9402e025_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nwk_rx_8h_a2dcf6798c9fb243e4b9d3f0f9402e025_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{nwk_rx_8h_ac726b5ee870a3f2651b4ada21cf45f1a}{\index{nwk\-Rx.\-h@{nwk\-Rx.\-h}!nwk\-Rx\-Task\-Handler@{nwk\-Rx\-Task\-Handler}}
+\index{nwk\-Rx\-Task\-Handler@{nwk\-Rx\-Task\-Handler}!nwkRx.h@{nwk\-Rx.\-h}}
+\subsubsection[{nwk\-Rx\-Task\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void nwk\-Rx\-Task\-Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{nwk_rx_8h_ac726b5ee870a3f2651b4ada21cf45f1a}
+
+
+Rx Module task handler. 
+
+
+
+References N\-W\-K\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-E\-C\-R\-Y\-P\-T, N\-W\-K\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-I\-N\-I\-S\-H, N\-W\-K\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-D\-I\-C\-A\-T\-E, N\-W\-K\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D, N\-W\-K\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-O\-U\-T\-E, nwk\-Frame\-Free(), nwk\-Frame\-Next(), nwk\-Rx\-Handle\-Indication(), nwk\-Rx\-Handle\-Received\-Frame(), and Nwk\-Frame\-\_\-t\-::state.
+
+
+
+Referenced by N\-W\-K\-\_\-\-Task\-Handler().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nwk_rx_8h_ac726b5ee870a3f2651b4ada21cf45f1a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nwk_rx_8h_ac726b5ee870a3f2651b4ada21cf45f1a_icgraph}
+\end{center}
+\end{figure}
+
+

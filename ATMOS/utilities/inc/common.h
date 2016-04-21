@@ -1,10 +1,11 @@
-/*
- * common.h
+/**
+ * \file common.h
+ *
+ * \brief Declaration of miscellaneous definitions, enumerators, and functions.
  *
  * Created: 10/10/2014 11:47:44 AM
- *  Author: Camden
+ *  Author: Camden and Anxin Bai
  */ 
-
 
 #ifndef COMMON_H_
 #define COMMON_H_
@@ -20,6 +21,9 @@
 /*TODO: better description than this : define max amount of data within a data_unit, if we get 2 sensors and each of them has 2 data to collect, it should be 4 */
 /* It is vital to make this number correct for future coders in real implementation */
 #define MAX_NUM_DATA 4
+
+
+enum DeviceState { New, Ready, Running, Terminated, Oops };
 
 /* used for device/sensor management and data_unit organizing*/
 enum

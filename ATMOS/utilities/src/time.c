@@ -1,8 +1,10 @@
-/*
- * time.c
+/**
+ * \file time.c
  *
+ * \brief Implementation of various timestamp function
+ * 
  * Created: 2016/4/20 2:00:06
- *  Author: AB
+ *  Author: Anxin Bai
  */ 
 #include "utilities/inc/time.h"
 

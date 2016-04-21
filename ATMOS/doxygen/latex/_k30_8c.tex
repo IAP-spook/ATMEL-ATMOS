@@ -1,0 +1,72 @@
+\hypertarget{_k30_8c}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/devices/src/\-K30.c File Reference}
+\label{_k30_8c}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/devices/src/\-K30.\-c@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/devices/src/\-K30.\-c}}
+}
+{\ttfamily \#include \char`\"{}devices/inc/\-K30.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}drivers/inc/\-T\-W\-I.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$util/delay.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}drivers/inc/usart0.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+Include dependency graph for K30.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_k30_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_k30_8c_a9749b047bc23704623901452834f78b5}{K30\-\_\-read\-C\-O2} ()
+\begin{DoxyCompactList}\small\item\em Initializes the K30. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \hyperlink{_k30_8c_a285d44439ab5819219a386e84446c554}{readcmd} \mbox{[}4\mbox{]} = \{0x22,0x00,0x08,0x2\-A\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Created\-: 04/02/2015 18\-:01\-:55 Author\-: Hui Shi 
+
+\subsection{Function Documentation}
+\hypertarget{_k30_8c_a9749b047bc23704623901452834f78b5}{\index{K30.\-c@{K30.\-c}!K30\-\_\-read\-C\-O2@{K30\-\_\-read\-C\-O2}}
+\index{K30\-\_\-read\-C\-O2@{K30\-\_\-read\-C\-O2}!K30.c@{K30.\-c}}
+\subsubsection[{K30\-\_\-read\-C\-O2}]{\setlength{\rightskip}{0pt plus 5cm}int K30\-\_\-read\-C\-O2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_k30_8c_a9749b047bc23704623901452834f78b5}
+
+
+Initializes the K30. 
+
+\begin{DoxyReturn}{Returns}
+status zero 
+\end{DoxyReturn}
+
+
+References buffer, readcmd, status, T\-W\-I\-\_\-\-Begin\-Read(), T\-W\-I\-\_\-\-Begin\-Write(), T\-W\-I\-\_\-\-Read(), T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-Stop(), and T\-W\-I\-\_\-\-Write().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_k30_8c_a9749b047bc23704623901452834f78b5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_k30_8c_a285d44439ab5819219a386e84446c554}{\index{K30.\-c@{K30.\-c}!readcmd@{readcmd}}
+\index{readcmd@{readcmd}!K30.c@{K30.\-c}}
+\subsubsection[{readcmd}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char readcmd\mbox{[}4\mbox{]} = \{0x22,0x00,0x08,0x2\-A\}}}\label{_k30_8c_a285d44439ab5819219a386e84446c554}
+
+
+Referenced by K30\-\_\-read\-C\-O2().
+

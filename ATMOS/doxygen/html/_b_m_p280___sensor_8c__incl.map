@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_b_m_p280___sensor_8h.html" title="Declaration of BMP280_Sensor struct, which derived from BaseSensor." alt="" coords="58,126,192,167"/>
+<area shape="rect" id="node17" href="$_b_m_p280_8h.html" title="BMP280 Interface Library." alt="" coords="217,133,367,160"/>
+<area shape="rect" id="node5" href="$_base___sensor_8h.html" title="Declaration of BaseSensor struct, which derived from BaseDevice." alt="" coords="57,217,193,258"/>
+<area shape="rect" id="node7" href="$_base___device_8h.html" title="Declaration of BaseDevice struct." alt="" coords="58,307,192,349"/>
+<area shape="rect" id="node9" href="$common_8h.html" title="Declaration of miscellaneous definitions, enumerators, and functions." alt="" coords="51,397,200,424"/>
+</map>

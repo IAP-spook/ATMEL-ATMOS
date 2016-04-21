@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_t_w_i_8c.html#abacd37b6bf3b709c05ca77c08b2c1e49" title="Reads multiple bytes from the TWI bus." alt="" coords="160,139,243,165"/>
+<area shape="rect" id="node5" href="$_b_m_p280_8c.html#a366477c92e35622e140f6e3e3d0ac141" title="Reads some bytes from the BMP280." alt="" coords="303,63,446,89"/>
+<area shape="rect" id="node24" href="$_k30_8c.html#a9749b047bc23704623901452834f78b5" title="Initializes the K30." alt="" coords="323,113,426,140"/>
+<area shape="rect" id="node26" href="$_si7020_8c.html#a02b54bae1dd5e2a61b45d78860888f43" title="Read humidity from Si7020." alt="" coords="302,164,447,191"/>
+<area shape="rect" id="node28" href="$_si7020_8c.html#a65ed1540f836f7d4245b6bd0eb28691f" title="Read temperature from Si7020." alt="" coords="291,215,458,241"/>
+<area shape="rect" id="node7" href="$_b_m_p280_8c.html#a008576c2ff8ad54b8886a77ce92d6a42" title="Gets the uncalibrated temperature and pressure data." alt="" coords="507,12,639,39"/>
+<area shape="rect" id="node13" href="$_b_m_p280_8c.html#a9dc83fe6c5b73afce7d6c95fdc8bf12e" title="Reads an int from the BMP280." alt="" coords="512,63,635,89"/>
+<area shape="rect" id="node21" href="$_b_m_p280_8c.html#a200056e2a6e922b99256963a78ec17ae" title="Reads an unsigned int from the BMP280." alt="" coords="507,113,639,140"/>
+<area shape="rect" id="node9" href="$_b_m_p280_8c.html#ac9a59f23569a393dd0f9e33d57aa36d5" title="Gets temperature and pressure." alt="" coords="688,5,883,46"/>
+<area shape="rect" id="node11" href="$_b_m_p280___sensor_8c.html#ae71f0447ded96ba90a402026bc58770a" title="BMP280_Collect" alt="" coords="931,12,1050,39"/>
+<area shape="rect" id="node15" href="$_b_m_p280_8c.html#a2d512d05a3f329da6e0bfb081a1f6685" title="Initializes the BMP280 and reads the calibration data from the device." alt="" coords="737,92,833,119"/>
+<area shape="rect" id="node17" href="$_a_t_m_o_s_8c.html#adc8ec6db76d813f9160b2d2933219b29" title="APP_Init" alt="" coords="954,92,1027,119"/>
+<area shape="rect" id="node19" href="$_a_t_m_o_s_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1099,92,1149,119"/>
+</map>

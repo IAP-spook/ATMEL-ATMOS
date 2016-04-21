@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$scheduler_8h.html" title="The resources that hold all events and manage useful events in&#45;order within a linked list..." alt="" coords="247,109,417,136"/>
+<area shape="rect" id="node9" href="$event_8h.html" title="A container struct to hold device/sensor pointer and corresponding timeout info." alt="" coords="168,259,312,285"/>
+<area shape="rect" id="node20" href="$llist_8h.html" title="Declaration of routines for a doubly linked list package." alt="" coords="363,341,481,368"/>
+<area shape="rect" id="node27" href="$handler_8h.html" title="Declaration of various handlers." alt="" coords="377,184,532,211"/>
+<area shape="rect" id="node13" href="$common_8h.html" title="Declaration of miscellaneous definitions, enumerators, and functions." alt="" coords="67,515,216,541"/>
+<area shape="rect" id="node22" href="$_base___sensor_8h.html" title="Declaration of BaseSensor struct, which derived from BaseDevice." alt="" coords="67,334,203,375"/>
+<area shape="rect" id="node24" href="$_base___device_8h.html" title="Declaration of BaseDevice struct." alt="" coords="67,425,201,466"/>
+</map>

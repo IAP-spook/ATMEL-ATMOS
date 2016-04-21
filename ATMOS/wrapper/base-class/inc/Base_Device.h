@@ -1,10 +1,11 @@
-/*
- * Base_Device.h
+/**
+ * \file Base_Device.h
+ *
+ * \brief Declaration of BaseDevice struct.
  *
  * Created: 2016/4/12 18:54:36
- *  Author: AB
+ *  Author: Anxin Bai
  */ 
-
 #ifndef BASE_DEVICE_H_
 #define BASE_DEVICE_H_
 #include "utilities/inc/common.h"

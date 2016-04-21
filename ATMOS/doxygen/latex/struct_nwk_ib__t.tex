@@ -1,0 +1,72 @@
+\hypertarget{struct_nwk_ib__t}{\section{Nwk\-Ib\-\_\-t Struct Reference}
+\label{struct_nwk_ib__t}\index{Nwk\-Ib\-\_\-t@{Nwk\-Ib\-\_\-t}}
+}
+
+
+{\ttfamily \#include $<$nwk.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\-\_\-t \hyperlink{struct_nwk_ib__t_a93d41c50b1fc0979fdcb5b31525b64a3}{addr}
+\item 
+uint16\-\_\-t \hyperlink{struct_nwk_ib__t_a421fbf7eaa40857b90ed458d8648e774}{pan\-Id}
+\item 
+uint8\-\_\-t \hyperlink{struct_nwk_ib__t_a7922253056ebd63dd2c8fce7164e71d6}{nwk\-Seq\-Num}
+\item 
+uint8\-\_\-t \hyperlink{struct_nwk_ib__t_a17330655f00d16fb7a4732d55c8ce646}{mac\-Seq\-Num}
+\item 
+bool($\ast$ \hyperlink{struct_nwk_ib__t_a6884c7984dc4010d48772d84fd9b83bc}{endpoint} \mbox{[}\hyperlink{nwk_8h_aeed58979d2ea2db91c59f556223da4ae}{N\-W\-K\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-S\-\_\-\-A\-M\-O\-U\-N\-T}\mbox{]})(\hyperlink{struct_n_w_k___data_ind__t}{N\-W\-K\-\_\-\-Data\-Ind\-\_\-t} $\ast$ind)
+\item 
+uint16\-\_\-t \hyperlink{struct_nwk_ib__t_a577806f9b0e40c84e2c8235b3479f759}{lock}
+\end{DoxyCompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_nwk_ib__t_a93d41c50b1fc0979fdcb5b31525b64a3}{\index{Nwk\-Ib\-\_\-t@{Nwk\-Ib\-\_\-t}!addr@{addr}}
+\index{addr@{addr}!NwkIb_t@{Nwk\-Ib\-\_\-t}}
+\subsubsection[{addr}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t Nwk\-Ib\-\_\-t\-::addr}}\label{struct_nwk_ib__t_a93d41c50b1fc0979fdcb5b31525b64a3}
+
+
+Referenced by N\-W\-K\-\_\-\-Init(), N\-W\-K\-\_\-\-Set\-Addr(), nwk\-Data\-Req\-Send\-Frame(), nwk\-Frame\-Command\-Init(), nwk\-Rx\-Handle\-Indication(), nwk\-Rx\-Handle\-Received\-Frame(), nwk\-Rx\-Reject\-Duplicate(), nwk\-Tx\-Broadcast\-Frame(), nwk\-Tx\-Frame(), and nwk\-Tx\-Task\-Handler().
+
+\hypertarget{struct_nwk_ib__t_a6884c7984dc4010d48772d84fd9b83bc}{\index{Nwk\-Ib\-\_\-t@{Nwk\-Ib\-\_\-t}!endpoint@{endpoint}}
+\index{endpoint@{endpoint}!NwkIb_t@{Nwk\-Ib\-\_\-t}}
+\subsubsection[{endpoint}]{\setlength{\rightskip}{0pt plus 5cm}bool($\ast$ Nwk\-Ib\-\_\-t\-::endpoint\mbox{[}{\bf N\-W\-K\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-S\-\_\-\-A\-M\-O\-U\-N\-T}\mbox{]})({\bf N\-W\-K\-\_\-\-Data\-Ind\-\_\-t} $\ast$ind)}}\label{struct_nwk_ib__t_a6884c7984dc4010d48772d84fd9b83bc}
+
+
+Referenced by N\-W\-K\-\_\-\-Init(), N\-W\-K\-\_\-\-Open\-Endpoint(), and nwk\-Rx\-Indicate\-Frame().
+
+\hypertarget{struct_nwk_ib__t_a577806f9b0e40c84e2c8235b3479f759}{\index{Nwk\-Ib\-\_\-t@{Nwk\-Ib\-\_\-t}!lock@{lock}}
+\index{lock@{lock}!NwkIb_t@{Nwk\-Ib\-\_\-t}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t Nwk\-Ib\-\_\-t\-::lock}}\label{struct_nwk_ib__t_a577806f9b0e40c84e2c8235b3479f759}
+
+
+Referenced by N\-W\-K\-\_\-\-Busy(), N\-W\-K\-\_\-\-Data\-Req(), N\-W\-K\-\_\-\-Init(), N\-W\-K\-\_\-\-Lock(), N\-W\-K\-\_\-\-Unlock(), nwk\-Data\-Req\-Confirm(), nwk\-Frame\-Alloc(), nwk\-Frame\-Free(), nwk\-Tx\-Task\-Handler(), and P\-H\-Y\-\_\-\-Data\-Conf().
+
+\hypertarget{struct_nwk_ib__t_a17330655f00d16fb7a4732d55c8ce646}{\index{Nwk\-Ib\-\_\-t@{Nwk\-Ib\-\_\-t}!mac\-Seq\-Num@{mac\-Seq\-Num}}
+\index{mac\-Seq\-Num@{mac\-Seq\-Num}!NwkIb_t@{Nwk\-Ib\-\_\-t}}
+\subsubsection[{mac\-Seq\-Num}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Nwk\-Ib\-\_\-t\-::mac\-Seq\-Num}}\label{struct_nwk_ib__t_a17330655f00d16fb7a4732d55c8ce646}
+
+
+Referenced by N\-W\-K\-\_\-\-Init(), nwk\-Tx\-Broadcast\-Frame(), and nwk\-Tx\-Frame().
+
+\hypertarget{struct_nwk_ib__t_a7922253056ebd63dd2c8fce7164e71d6}{\index{Nwk\-Ib\-\_\-t@{Nwk\-Ib\-\_\-t}!nwk\-Seq\-Num@{nwk\-Seq\-Num}}
+\index{nwk\-Seq\-Num@{nwk\-Seq\-Num}!NwkIb_t@{Nwk\-Ib\-\_\-t}}
+\subsubsection[{nwk\-Seq\-Num}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Nwk\-Ib\-\_\-t\-::nwk\-Seq\-Num}}\label{struct_nwk_ib__t_a7922253056ebd63dd2c8fce7164e71d6}
+
+
+Referenced by N\-W\-K\-\_\-\-Init(), nwk\-Data\-Req\-Send\-Frame(), and nwk\-Frame\-Command\-Init().
+
+\hypertarget{struct_nwk_ib__t_a421fbf7eaa40857b90ed458d8648e774}{\index{Nwk\-Ib\-\_\-t@{Nwk\-Ib\-\_\-t}!pan\-Id@{pan\-Id}}
+\index{pan\-Id@{pan\-Id}!NwkIb_t@{Nwk\-Ib\-\_\-t}}
+\subsubsection[{pan\-Id}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t Nwk\-Ib\-\_\-t\-::pan\-Id}}\label{struct_nwk_ib__t_a421fbf7eaa40857b90ed458d8648e774}
+
+
+Referenced by N\-W\-K\-\_\-\-Set\-Pan\-Id(), and nwk\-Tx\-Frame().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/nwk/inc/\hyperlink{nwk_8h}{nwk.\-h}\end{DoxyCompactItemize}

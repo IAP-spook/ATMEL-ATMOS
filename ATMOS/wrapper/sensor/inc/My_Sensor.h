@@ -1,3 +1,11 @@
+/**
+ * \file My_Sensor.h
+ *
+ * \brief Declaration of My_Sensor struct, which derived from BaseSensor.
+ * 
+ *  Author: Anxin Bai
+ */ 
+
 #ifndef _My_SENSOR_H_
 #define _My_SENSOR_H_
 

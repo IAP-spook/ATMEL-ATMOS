@@ -1,0 +1,783 @@
+\hypertarget{_t_w_i_8h}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/drivers/inc/\-T\-W\-I.h File Reference}
+\label{_t_w_i_8h}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/drivers/inc/\-T\-W\-I.\-h@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/drivers/inc/\-T\-W\-I.\-h}}
+}
+
+
+T\-W\-I hardware interface in master mode.  
+
+
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+Include dependency graph for T\-W\-I.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{_t_w_i_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{Indent}{\bf T\-W\-I Status Codes}\par
+{\em All the codes that could be given via T\-W\-S\-R }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_t_w_i_8h_a0c0d979ddd60bc9d89f1b5c920f4e6bf}{T\-W\-I\-\_\-\-B\-U\-S\-\_\-\-E\-R\-R\-O\-R}~0x00
+\begin{DoxyCompactList}\small\item\em Bus error due to illegal S\-T\-A\-R\-T or S\-T\-O\-P condition. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a3b12a0369906d5264bd6e7ea596f6d29}{T\-W\-I\-\_\-\-S\-T\-A\-R\-T}~0x08
+\begin{DoxyCompactList}\small\item\em A S\-T\-A\-R\-T condition has been transmitted. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a6d2a4abda3537a819d16459fe582db95}{T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T}~0x10
+\begin{DoxyCompactList}\small\item\em A repeated S\-T\-A\-R\-T condition has been transmitted. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a8258f3aa0e419dfd2db8312147ef2a86}{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K}~0x18
+\begin{DoxyCompactList}\small\item\em S\-L\-A+\-W has been transmitted; A\-C\-K has been received. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a1fc6d658d75df0518c26c4d1f6d5d078}{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-N\-A\-C\-K}~0x20
+\begin{DoxyCompactList}\small\item\em S\-L\-A+\-W has been transmitted; N\-O\-T A\-C\-K has been received. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a9466c47e6acd944f439ba0149c5efa37}{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K}~0x28
+\begin{DoxyCompactList}\small\item\em Data byte has been transmitted; A\-C\-K has been received. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a4bcab197ab5eb6209adf02c9755cab66}{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K}~0x30
+\begin{DoxyCompactList}\small\item\em Data byte has been transmitted; N\-O\-T A\-C\-K has been received. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a18f0fa90106a2d53187409b9e440e35c}{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-L\-O\-S\-T}~0x38
+\begin{DoxyCompactList}\small\item\em Arbitration Lost. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a198ec1ac5ed3afcc37a182eff3dedc18}{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K}~0x40
+\begin{DoxyCompactList}\small\item\em S\-L\-A+\-R has been transmitted; A\-C\-K has been received. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_aa5ce36648567e23dfdf4009f8ddfd936}{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-N\-A\-C\-K}~0x48
+\begin{DoxyCompactList}\small\item\em S\-L\-A+\-R has been transmitted; N\-O\-T A\-C\-K has been received. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a79fa784694081059b53a9a5e1c43c06e}{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}~0x50
+\begin{DoxyCompactList}\small\item\em Data byte has been received; A\-C\-K has been returned. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a6e54b1631ee186730173eb615995b21f}{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}~0x58
+\begin{DoxyCompactList}\small\item\em Data byte has been received; N\-O\-T A\-C\-K has been returned. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a77bcdaf64c9956c603b50f0074484c61}{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K}~0x60
+\begin{DoxyCompactList}\small\item\em Own S\-L\-A+\-W has been received; A\-C\-K has been returned. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a1f9620475420534df5f166ad4c7d6b0d}{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T}~0x68
+\begin{DoxyCompactList}\small\item\em Arbitration Lost. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a7f188833664932f035b81e72e48511d7}{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-C\-A\-L\-L\-\_\-\-A\-C\-K}~0x70
+\begin{DoxyCompactList}\small\item\em General call address has been received; A\-C\-K has been returned. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a8643e54ca7877997f257dc429fc8b3ee}{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K}~0x78
+\begin{DoxyCompactList}\small\item\em Arbitration Lost. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_aeec3bb4f9c55b2fc5f515d8a9c95a369}{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}~0x80
+\begin{DoxyCompactList}\small\item\em Previously addressed with own S\-L\-A+\-W; data has been received; A\-C\-K has been returned. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_ab734bd353d77a8ced034bf45d900ce83}{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}~0x88
+\begin{DoxyCompactList}\small\item\em Previously addressed with own S\-L\-A+\-W; data has been received; N\-O\-T A\-C\-K has been returned. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_aa33142eb28b453e8617329a48601d1d4}{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}~0x90
+\begin{DoxyCompactList}\small\item\em Previously addressed with general call; data has been received; A\-C\-K has been returned. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a3e22845f1f886933a88faccd9e4473df}{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}~0x98
+\begin{DoxyCompactList}\small\item\em Previously addressed with general call; data has been received; N\-O\-T A\-C\-K has been returned. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a84c19805c49f158172fa405c1523e240}{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-S\-T\-O\-P}~0x\-A0
+\begin{DoxyCompactList}\small\item\em A S\-T\-O\-P condition or repeated S\-T\-A\-R\-T condition has been received while still addressed as Slave. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a478caf4635e9289e3c6875bcbffd3134}{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K}~0x\-A8
+\begin{DoxyCompactList}\small\item\em Own S\-L\-A+\-R has been received; A\-C\-K has been returned. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_ae08365951d6dd09814b336d41cbcf2db}{T\-W\-I\-\_\-\-O\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K}~0x\-B0
+\begin{DoxyCompactList}\small\item\em Arbitration Lost. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a022290c32f9571174f5a3359937a484e}{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K}~0x\-B8
+\begin{DoxyCompactList}\small\item\em Data byte in T\-W\-D\-R has been transmitted; A\-C\-K has been received. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_ae0a56daecac305d16e3f8e516d5a5194}{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K}~0x\-C0
+\begin{DoxyCompactList}\small\item\em Data byte in T\-W\-D\-R has been transmitted; N\-O A\-C\-K has been received. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a3c004a85b3e969dd36a3b3b4008b04b7}{T\-W\-I\-\_\-\-L\-A\-S\-T\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T}~0x\-C8
+\begin{DoxyCompactList}\small\item\em Last data byte in T\-W\-D\-R has been transmitted (T\-W\-E\-A = 0); A\-C\-K has been received. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a4cfa2800f3c8c6aa2e35ac61a1284545}{T\-W\-I\-\_\-\-N\-O\-\_\-\-I\-N\-F\-O}~0x\-F8
+\begin{DoxyCompactList}\small\item\em No relevant state information available; T\-W\-I\-N\-T = 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf T\-W\-I Masks}\par
+{\em Mask off T\-W\-S\-R with 0x\-F8 (T\-W\-S\-R\-\_\-\-M\-A\-S\-K) to get status bits }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_t_w_i_8h_aaac43615069aab95db4725072c61844c}{T\-W\-S\-R\-\_\-\-M\-A\-S\-K}~0x\-F8
+\begin{DoxyCompactList}\small\item\em Mask off with T\-W\-S\-R to get status codes. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_ac7b6f6bf6373ea53dea56f4bf5bab545}{S\-L\-A\-W\-\_\-\-M\-A\-S\-K}~0x\-F\-E
+\begin{DoxyCompactList}\small\item\em A\-N\-D i2c address with this to reset R/\-W bit. \end{DoxyCompactList}\item 
+\#define \hyperlink{_t_w_i_8h_a4f64f6173b2f3c9334c0ba3c2fadd99e}{S\-L\-A\-R\-\_\-\-M\-A\-S\-K}~0x01
+\begin{DoxyCompactList}\small\item\em O\-R i2c address with this to set R/\-W bit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{_t_w_i_8h_a2fb6fa099d19955403d648070ff03158}{T\-W\-I\-\_\-\-Write} (unsigned char $\ast$data, int amount)
+\begin{DoxyCompactList}\small\item\em Writes multiple bytes to the T\-W\-I bus. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8h_abacd37b6bf3b709c05ca77c08b2c1e49}{T\-W\-I\-\_\-\-Read} (unsigned char $\ast$data, int amount, bool ack)
+\begin{DoxyCompactList}\small\item\em Reads multiple bytes from the T\-W\-I bus. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8h_a6b77b26021430a2cc51be63022463fd2}{T\-W\-I\-\_\-\-Stop} (void)
+\begin{DoxyCompactList}\small\item\em Sends a Stop bit, be sure to send a Start bit before future interactions on the bus. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8h_a4ffe192eac4421209ac0f9a9fd30684c}{T\-W\-I\-\_\-\-Read\-Nack} (unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Receives a byte over T\-W\-I and returns a N\-A\-C\-K. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8h_a3dca0b267e7b3181690518f158b7011b}{T\-W\-I\-\_\-\-Read\-Ack} (unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Receives a byte over T\-W\-I and returns an A\-C\-K. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8h_aa78d37b505f1afc8e048adedf4242f21}{T\-W\-I\-\_\-\-Write\-Byte} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Sends a byte over T\-W\-I. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8h_ae9258eaad53fc76d3dc8e6506f57b585}{T\-W\-I\-\_\-\-Begin\-Read} (unsigned char address)
+\begin{DoxyCompactList}\small\item\em Starts a transmission over the T\-W\-I Bus. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8h_ae1f51b83add546422b068cef6f304bd2}{T\-W\-I\-\_\-\-Begin\-Write} (unsigned char address)
+\begin{DoxyCompactList}\small\item\em Starts a transmission over the T\-W\-I Bus. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8h_afe02d55f5c368f00e807900163b668c4}{T\-W\-I\-\_\-\-Init} (unsigned long freq)
+\begin{DoxyCompactList}\small\item\em Initializes the 2-\/wire Serial Interface as a master. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+T\-W\-I hardware interface in master mode. Created\-: 2/7/2015 21\-:12\-:13 Author\-: Camden 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_t_w_i_8h_a4f64f6173b2f3c9334c0ba3c2fadd99e}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!S\-L\-A\-R\-\_\-\-M\-A\-S\-K@{S\-L\-A\-R\-\_\-\-M\-A\-S\-K}}
+\index{S\-L\-A\-R\-\_\-\-M\-A\-S\-K@{S\-L\-A\-R\-\_\-\-M\-A\-S\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{S\-L\-A\-R\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-L\-A\-R\-\_\-\-M\-A\-S\-K~0x01}}\label{_t_w_i_8h_a4f64f6173b2f3c9334c0ba3c2fadd99e}
+
+
+O\-R i2c address with this to set R/\-W bit. 
+
+
+
+Referenced by T\-W\-I\-\_\-\-Begin\-Read().
+
+\hypertarget{_t_w_i_8h_ac7b6f6bf6373ea53dea56f4bf5bab545}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!S\-L\-A\-W\-\_\-\-M\-A\-S\-K@{S\-L\-A\-W\-\_\-\-M\-A\-S\-K}}
+\index{S\-L\-A\-W\-\_\-\-M\-A\-S\-K@{S\-L\-A\-W\-\_\-\-M\-A\-S\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{S\-L\-A\-W\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-L\-A\-W\-\_\-\-M\-A\-S\-K~0x\-F\-E}}\label{_t_w_i_8h_ac7b6f6bf6373ea53dea56f4bf5bab545}
+
+
+A\-N\-D i2c address with this to reset R/\-W bit. 
+
+
+
+Referenced by T\-W\-I\-\_\-\-Begin\-Write().
+
+\hypertarget{_t_w_i_8h_a0c0d979ddd60bc9d89f1b5c920f4e6bf}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-B\-U\-S\-\_\-\-E\-R\-R\-O\-R@{T\-W\-I\-\_\-\-B\-U\-S\-\_\-\-E\-R\-R\-O\-R}}
+\index{T\-W\-I\-\_\-\-B\-U\-S\-\_\-\-E\-R\-R\-O\-R@{T\-W\-I\-\_\-\-B\-U\-S\-\_\-\-E\-R\-R\-O\-R}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-B\-U\-S\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-B\-U\-S\-\_\-\-E\-R\-R\-O\-R~0x00}}\label{_t_w_i_8h_a0c0d979ddd60bc9d89f1b5c920f4e6bf}
+
+
+Bus error due to illegal S\-T\-A\-R\-T or S\-T\-O\-P condition. 
+
+\hypertarget{_t_w_i_8h_a7f188833664932f035b81e72e48511d7}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-C\-A\-L\-L\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-C\-A\-L\-L\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-C\-A\-L\-L\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-C\-A\-L\-L\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-C\-A\-L\-L\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-C\-A\-L\-L\-\_\-\-A\-C\-K~0x70}}\label{_t_w_i_8h_a7f188833664932f035b81e72e48511d7}
+
+
+General call address has been received; A\-C\-K has been returned. 
+
+\hypertarget{_t_w_i_8h_a8643e54ca7877997f257dc429fc8b3ee}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K~0x78}}\label{_t_w_i_8h_a8643e54ca7877997f257dc429fc8b3ee}
+
+
+Arbitration Lost. 
+
+Arbitration lost in S\-L\-A+\-R/\-W as Master; general call address has been received; A\-C\-K has been returned. \hypertarget{_t_w_i_8h_aa33142eb28b453e8617329a48601d1d4}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K~0x90}}\label{_t_w_i_8h_aa33142eb28b453e8617329a48601d1d4}
+
+
+Previously addressed with general call; data has been received; A\-C\-K has been returned. 
+
+\hypertarget{_t_w_i_8h_a3e22845f1f886933a88faccd9e4473df}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-G\-E\-N\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K~0x98}}\label{_t_w_i_8h_a3e22845f1f886933a88faccd9e4473df}
+
+
+Previously addressed with general call; data has been received; N\-O\-T A\-C\-K has been returned. 
+
+\hypertarget{_t_w_i_8h_a3c004a85b3e969dd36a3b3b4008b04b7}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-L\-A\-S\-T\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T@{T\-W\-I\-\_\-\-L\-A\-S\-T\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T}}
+\index{T\-W\-I\-\_\-\-L\-A\-S\-T\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T@{T\-W\-I\-\_\-\-L\-A\-S\-T\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-L\-A\-S\-T\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-L\-A\-S\-T\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T~0x\-C8}}\label{_t_w_i_8h_a3c004a85b3e969dd36a3b3b4008b04b7}
+
+
+Last data byte in T\-W\-D\-R has been transmitted (T\-W\-E\-A = 0); A\-C\-K has been received. 
+
+\hypertarget{_t_w_i_8h_a4cfa2800f3c8c6aa2e35ac61a1284545}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-N\-O\-\_\-\-I\-N\-F\-O@{T\-W\-I\-\_\-\-N\-O\-\_\-\-I\-N\-F\-O}}
+\index{T\-W\-I\-\_\-\-N\-O\-\_\-\-I\-N\-F\-O@{T\-W\-I\-\_\-\-N\-O\-\_\-\-I\-N\-F\-O}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-N\-O\-\_\-\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-N\-O\-\_\-\-I\-N\-F\-O~0x\-F8}}\label{_t_w_i_8h_a4cfa2800f3c8c6aa2e35ac61a1284545}
+
+
+No relevant state information available; T\-W\-I\-N\-T = 0. 
+
+\hypertarget{_t_w_i_8h_ae08365951d6dd09814b336d41cbcf2db}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-O\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-O\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-O\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-O\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-O\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-O\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T\-\_\-\-A\-C\-K~0x\-B0}}\label{_t_w_i_8h_ae08365951d6dd09814b336d41cbcf2db}
+
+
+Arbitration Lost. 
+
+Arbitration lost in S\-L\-A+\-R/\-W as Master; own S\-L\-A+\-R has been received; A\-C\-K has been returned. \hypertarget{_t_w_i_8h_a478caf4635e9289e3c6875bcbffd3134}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K~0x\-A8}}\label{_t_w_i_8h_a478caf4635e9289e3c6875bcbffd3134}
+
+
+Own S\-L\-A+\-R has been received; A\-C\-K has been returned. 
+
+\hypertarget{_t_w_i_8h_a77bcdaf64c9956c603b50f0074484c61}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-O\-W\-N\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K~0x60}}\label{_t_w_i_8h_a77bcdaf64c9956c603b50f0074484c61}
+
+
+Own S\-L\-A+\-W has been received; A\-C\-K has been returned. 
+
+\hypertarget{_t_w_i_8h_a79fa784694081059b53a9a5e1c43c06e}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K~0x50}}\label{_t_w_i_8h_a79fa784694081059b53a9a5e1c43c06e}
+
+
+Data byte has been received; A\-C\-K has been returned. 
+
+
+
+Referenced by K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), Si7020\-\_\-read\-Temperature(), and T\-W\-I\-\_\-\-Read().
+
+\hypertarget{_t_w_i_8h_a6e54b1631ee186730173eb615995b21f}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K~0x58}}\label{_t_w_i_8h_a6e54b1631ee186730173eb615995b21f}
+
+
+Data byte has been received; N\-O\-T A\-C\-K has been returned. 
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes().
+
+\hypertarget{_t_w_i_8h_a6d2a4abda3537a819d16459fe582db95}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T@{T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T}}
+\index{T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T@{T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T~0x10}}\label{_t_w_i_8h_a6d2a4abda3537a819d16459fe582db95}
+
+
+A repeated S\-T\-A\-R\-T condition has been transmitted. 
+
+
+
+Referenced by T\-W\-I\-\_\-\-Begin\-Read(), and T\-W\-I\-\_\-\-Begin\-Write().
+
+\hypertarget{_t_w_i_8h_a9466c47e6acd944f439ba0149c5efa37}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K~0x28}}\label{_t_w_i_8h_a9466c47e6acd944f439ba0149c5efa37}
+
+
+Data byte has been transmitted; A\-C\-K has been received. 
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Write\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), Si7020\-\_\-read\-Temperature(), and T\-W\-I\-\_\-\-Write().
+
+\hypertarget{_t_w_i_8h_a4bcab197ab5eb6209adf02c9755cab66}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K~0x30}}\label{_t_w_i_8h_a4bcab197ab5eb6209adf02c9755cab66}
+
+
+Data byte has been transmitted; N\-O\-T A\-C\-K has been received. 
+
+\hypertarget{_t_w_i_8h_aeec3bb4f9c55b2fc5f515d8a9c95a369}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K~0x80}}\label{_t_w_i_8h_aeec3bb4f9c55b2fc5f515d8a9c95a369}
+
+
+Previously addressed with own S\-L\-A+\-W; data has been received; A\-C\-K has been returned. 
+
+\hypertarget{_t_w_i_8h_ab734bd353d77a8ced034bf45d900ce83}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K~0x88}}\label{_t_w_i_8h_ab734bd353d77a8ced034bf45d900ce83}
+
+
+Previously addressed with own S\-L\-A+\-W; data has been received; N\-O\-T A\-C\-K has been returned. 
+
+\hypertarget{_t_w_i_8h_a84c19805c49f158172fa405c1523e240}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-S\-T\-O\-P@{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-S\-T\-O\-P}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-S\-T\-O\-P@{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-S\-T\-O\-P}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-S\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-\_\-\-S\-T\-O\-P~0x\-A0}}\label{_t_w_i_8h_a84c19805c49f158172fa405c1523e240}
+
+
+A S\-T\-O\-P condition or repeated S\-T\-A\-R\-T condition has been received while still addressed as Slave. 
+
+\hypertarget{_t_w_i_8h_a198ec1ac5ed3afcc37a182eff3dedc18}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K~0x40}}\label{_t_w_i_8h_a198ec1ac5ed3afcc37a182eff3dedc18}
+
+
+S\-L\-A+\-R has been transmitted; A\-C\-K has been received. 
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+\hypertarget{_t_w_i_8h_a1f9620475420534df5f166ad4c7d6b0d}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T@{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T@{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-L\-O\-S\-T~0x68}}\label{_t_w_i_8h_a1f9620475420534df5f166ad4c7d6b0d}
+
+
+Arbitration Lost. 
+
+Arbitration lost in S\-L\-A+\-R/\-W as Master; own S\-L\-A+\-W has been received; A\-C\-K has been returned. \hypertarget{_t_w_i_8h_aa5ce36648567e23dfdf4009f8ddfd936}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-N\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-N\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-N\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-N\-A\-C\-K~0x48}}\label{_t_w_i_8h_aa5ce36648567e23dfdf4009f8ddfd936}
+
+
+S\-L\-A+\-R has been transmitted; N\-O\-T A\-C\-K has been received. 
+
+\hypertarget{_t_w_i_8h_a8258f3aa0e419dfd2db8312147ef2a86}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K~0x18}}\label{_t_w_i_8h_a8258f3aa0e419dfd2db8312147ef2a86}
+
+
+S\-L\-A+\-W has been transmitted; A\-C\-K has been received. 
+
+
+
+Referenced by K30\-\_\-read\-C\-O2().
+
+\hypertarget{_t_w_i_8h_a18f0fa90106a2d53187409b9e440e35c}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-L\-O\-S\-T@{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-L\-O\-S\-T}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-L\-O\-S\-T@{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-L\-O\-S\-T}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-L\-O\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-L\-O\-S\-T~0x38}}\label{_t_w_i_8h_a18f0fa90106a2d53187409b9e440e35c}
+
+
+Arbitration Lost. 
+
+Arbitration lost in S\-L\-A+\-W or data bytes (Transmitter); Arbitration lost in S\-L\-A+\-R or N\-O\-T A\-C\-K bit (Receiver). \hypertarget{_t_w_i_8h_a1fc6d658d75df0518c26c4d1f6d5d078}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-N\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-N\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-N\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-N\-A\-C\-K~0x20}}\label{_t_w_i_8h_a1fc6d658d75df0518c26c4d1f6d5d078}
+
+
+S\-L\-A+\-W has been transmitted; N\-O\-T A\-C\-K has been received. 
+
+\hypertarget{_t_w_i_8h_a3b12a0369906d5264bd6e7ea596f6d29}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-S\-T\-A\-R\-T@{T\-W\-I\-\_\-\-S\-T\-A\-R\-T}}
+\index{T\-W\-I\-\_\-\-S\-T\-A\-R\-T@{T\-W\-I\-\_\-\-S\-T\-A\-R\-T}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-T\-A\-R\-T~0x08}}\label{_t_w_i_8h_a3b12a0369906d5264bd6e7ea596f6d29}
+
+
+A S\-T\-A\-R\-T condition has been transmitted. 
+
+
+
+Referenced by T\-W\-I\-\_\-\-Begin\-Read(), and T\-W\-I\-\_\-\-Begin\-Write().
+
+\hypertarget{_t_w_i_8h_a022290c32f9571174f5a3359937a484e}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K@{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K~0x\-B8}}\label{_t_w_i_8h_a022290c32f9571174f5a3359937a484e}
+
+
+Data byte in T\-W\-D\-R has been transmitted; A\-C\-K has been received. 
+
+\hypertarget{_t_w_i_8h_ae0a56daecac305d16e3f8e516d5a5194}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K}}
+\index{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K@{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-T\-W\-D\-R\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K~0x\-C0}}\label{_t_w_i_8h_ae0a56daecac305d16e3f8e516d5a5194}
+
+
+Data byte in T\-W\-D\-R has been transmitted; N\-O A\-C\-K has been received. 
+
+\hypertarget{_t_w_i_8h_aaac43615069aab95db4725072c61844c}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-S\-R\-\_\-\-M\-A\-S\-K@{T\-W\-S\-R\-\_\-\-M\-A\-S\-K}}
+\index{T\-W\-S\-R\-\_\-\-M\-A\-S\-K@{T\-W\-S\-R\-\_\-\-M\-A\-S\-K}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-S\-R\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-S\-R\-\_\-\-M\-A\-S\-K~0x\-F8}}\label{_t_w_i_8h_aaac43615069aab95db4725072c61844c}
+
+
+Mask off with T\-W\-S\-R to get status codes. 
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), T\-W\-I\-\_\-\-Begin\-Read(), T\-W\-I\-\_\-\-Begin\-Write(), T\-W\-I\-\_\-\-Read\-Ack(), T\-W\-I\-\_\-\-Read\-Nack(), and T\-W\-I\-\_\-\-Write\-Byte().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_t_w_i_8h_ae9258eaad53fc76d3dc8e6506f57b585}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-Begin\-Read@{T\-W\-I\-\_\-\-Begin\-Read}}
+\index{T\-W\-I\-\_\-\-Begin\-Read@{T\-W\-I\-\_\-\-Begin\-Read}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-Begin\-Read}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Begin\-Read (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8h_ae9258eaad53fc76d3dc8e6506f57b585}
+
+
+Starts a transmission over the T\-W\-I Bus. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em address} & Address of device to send to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K on success, other code otherwise 
+\end{DoxyReturn}
+
+
+References S\-L\-A\-R\-\_\-\-M\-A\-S\-K, T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T, T\-W\-I\-\_\-\-S\-T\-A\-R\-T, T\-W\-I\-\_\-\-Write\-Byte(), and T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{_t_w_i_8h_ae9258eaad53fc76d3dc8e6506f57b585_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8h_ae9258eaad53fc76d3dc8e6506f57b585_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8h_ae1f51b83add546422b068cef6f304bd2}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-Begin\-Write@{T\-W\-I\-\_\-\-Begin\-Write}}
+\index{T\-W\-I\-\_\-\-Begin\-Write@{T\-W\-I\-\_\-\-Begin\-Write}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-Begin\-Write}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Begin\-Write (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8h_ae1f51b83add546422b068cef6f304bd2}
+
+
+Starts a transmission over the T\-W\-I Bus. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em address} & Address of device to send to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K on success, other code otherwise 
+\end{DoxyReturn}
+
+
+References S\-L\-A\-W\-\_\-\-M\-A\-S\-K, T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T, T\-W\-I\-\_\-\-S\-T\-A\-R\-T, T\-W\-I\-\_\-\-Write\-Byte(), and T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), B\-M\-P280\-\_\-\-Write\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{_t_w_i_8h_ae1f51b83add546422b068cef6f304bd2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8h_ae1f51b83add546422b068cef6f304bd2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8h_afe02d55f5c368f00e807900163b668c4}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-Init@{T\-W\-I\-\_\-\-Init}}
+\index{T\-W\-I\-\_\-\-Init@{T\-W\-I\-\_\-\-Init}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{freq}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8h_afe02d55f5c368f00e807900163b668c4}
+
+
+Initializes the 2-\/wire Serial Interface as a master. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em freq} & S\-C\-L frequency (Do not exceed 400k\-Hz) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status ({\ttfamily 0} on failure, nonzero otherwise) 
+\end{DoxyReturn}
+
+
+References F\-\_\-\-C\-P\-U.
+
+
+
+Referenced by A\-P\-P\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{_t_w_i_8h_afe02d55f5c368f00e807900163b668c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8h_abacd37b6bf3b709c05ca77c08b2c1e49}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-Read@{T\-W\-I\-\_\-\-Read}}
+\index{T\-W\-I\-\_\-\-Read@{T\-W\-I\-\_\-\-Read}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-Read}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Read (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data, }
+\item[{int}]{amount, }
+\item[{bool}]{ack}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8h_abacd37b6bf3b709c05ca77c08b2c1e49}
+
+
+Reads multiple bytes from the T\-W\-I bus. 
+
+When using this function, be sure to send a S\-T\-A\-R\-T first; this only automates calls to T\-W\-I\-\_\-\-Read\-Ack and/or T\-W\-I\-\_\-\-Read\-Nack. 
+
+Does not contain buffer overrun protection. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em $\ast$data} & Pointer to an array to store the bytes \\
+\hline
+\mbox{\tt in}  & {\em amount} & Number of bytes to recieve \\
+\hline
+\mbox{\tt in}  & {\em whether} & or not to send an A\-C\-K on the last byte, sends N\-A\-C\-K if false \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K or T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K on success depending on function arguments 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_t_w_i_8c_ae9258eaad53fc76d3dc8e6506f57b585}{T\-W\-I\-\_\-\-Begin\-Read} 
+\end{DoxySeeAlso}
+
+
+References status, T\-W\-I\-\_\-\-Read\-Ack(), T\-W\-I\-\_\-\-Read\-Nack(), and T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{_t_w_i_8h_abacd37b6bf3b709c05ca77c08b2c1e49_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8h_abacd37b6bf3b709c05ca77c08b2c1e49_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8h_a3dca0b267e7b3181690518f158b7011b}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-Read\-Ack@{T\-W\-I\-\_\-\-Read\-Ack}}
+\index{T\-W\-I\-\_\-\-Read\-Ack@{T\-W\-I\-\_\-\-Read\-Ack}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-Read\-Ack}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Read\-Ack (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8h_a3dca0b267e7b3181690518f158b7011b}
+
+
+Receives a byte over T\-W\-I and returns an A\-C\-K. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em $\ast$data} & pointer to a byte to store the received byte in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K on success, other code otherwise 
+\end{DoxyReturn}
+
+
+References T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by T\-W\-I\-\_\-\-Read().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8h_a3dca0b267e7b3181690518f158b7011b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8h_a4ffe192eac4421209ac0f9a9fd30684c}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-Read\-Nack@{T\-W\-I\-\_\-\-Read\-Nack}}
+\index{T\-W\-I\-\_\-\-Read\-Nack@{T\-W\-I\-\_\-\-Read\-Nack}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-Read\-Nack}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Read\-Nack (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8h_a4ffe192eac4421209ac0f9a9fd30684c}
+
+
+Receives a byte over T\-W\-I and returns a N\-A\-C\-K. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em $\ast$data} & pointer to a byte to store the received byte in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K on success, other code otherwise 
+\end{DoxyReturn}
+
+
+References T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by T\-W\-I\-\_\-\-Read().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8h_a4ffe192eac4421209ac0f9a9fd30684c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8h_a6b77b26021430a2cc51be63022463fd2}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-Stop@{T\-W\-I\-\_\-\-Stop}}
+\index{T\-W\-I\-\_\-\-Stop@{T\-W\-I\-\_\-\-Stop}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8h_a6b77b26021430a2cc51be63022463fd2}
+
+
+Sends a Stop bit, be sure to send a Start bit before future interactions on the bus. 
+
+\begin{DoxyReturn}{Returns}
+Status code, should always be nonzero 
+\end{DoxyReturn}
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), B\-M\-P280\-\_\-\-Write\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8h_a6b77b26021430a2cc51be63022463fd2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8h_a2fb6fa099d19955403d648070ff03158}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-Write@{T\-W\-I\-\_\-\-Write}}
+\index{T\-W\-I\-\_\-\-Write@{T\-W\-I\-\_\-\-Write}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-Write}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Write (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data, }
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8h_a2fb6fa099d19955403d648070ff03158}
+
+
+Writes multiple bytes to the T\-W\-I bus. 
+
+When using this function, be sure to send a S\-T\-A\-R\-T first; this only automates calls to T\-W\-I\-\_\-\-Write. 
+
+Does not contain buffer overrun protection. Function will return if a N\-A\-C\-K is received partway through. If you don't expect a N\-A\-C\-K, be sure to check for it anyway. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$data} & Pointer to an array of bytes to send \\
+\hline
+\mbox{\tt in}  & {\em amount} & Number of bytes to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K or T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K on success 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_t_w_i_8c_ae1f51b83add546422b068cef6f304bd2}{T\-W\-I\-\_\-\-Begin\-Write} 
+\end{DoxySeeAlso}
+
+
+References status, T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K, and T\-W\-I\-\_\-\-Write\-Byte().
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Write\-Bytes(), and K30\-\_\-read\-C\-O2().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{_t_w_i_8h_a2fb6fa099d19955403d648070ff03158_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8h_a2fb6fa099d19955403d648070ff03158_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8h_aa78d37b505f1afc8e048adedf4242f21}{\index{T\-W\-I.\-h@{T\-W\-I.\-h}!T\-W\-I\-\_\-\-Write\-Byte@{T\-W\-I\-\_\-\-Write\-Byte}}
+\index{T\-W\-I\-\_\-\-Write\-Byte@{T\-W\-I\-\_\-\-Write\-Byte}!TWI.h@{T\-W\-I.\-h}}
+\subsubsection[{T\-W\-I\-\_\-\-Write\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Write\-Byte (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{data}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8h_aa78d37b505f1afc8e048adedf4242f21}
+
+
+Sends a byte over T\-W\-I. 
+
+When checking the status code, bear in mind that it could be an A\-C\-K or a N\-A\-C\-K depending on what the slave is expecting/doing. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & byte to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K or T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K on success 
+\end{DoxyReturn}
+
+
+References T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), Si7020\-\_\-read\-Humidity(), Si7020\-\_\-read\-Temperature(), T\-W\-I\-\_\-\-Begin\-Read(), T\-W\-I\-\_\-\-Begin\-Write(), and T\-W\-I\-\_\-\-Write().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8h_aa78d37b505f1afc8e048adedf4242f21_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,457 @@
+\hypertarget{_t_w_i_8c}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/drivers/src/\-T\-W\-I.c File Reference}
+\label{_t_w_i_8c}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/drivers/src/\-T\-W\-I.\-c@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/drivers/src/\-T\-W\-I.\-c}}
+}
+
+
+T\-W\-I hardware interface library implementation in master mode.  
+
+
+{\ttfamily \#include \char`\"{}drivers/inc/\-T\-W\-I.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}drivers/inc/usart0.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include $<$util/delay.\-h$>$}\\*
+Include dependency graph for T\-W\-I.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{_t_w_i_8c_afe02d55f5c368f00e807900163b668c4}{T\-W\-I\-\_\-\-Init} (unsigned long freq)
+\begin{DoxyCompactList}\small\item\em Initializes the 2-\/wire Serial Interface as a master. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8c_ae1f51b83add546422b068cef6f304bd2}{T\-W\-I\-\_\-\-Begin\-Write} (unsigned char address)
+\begin{DoxyCompactList}\small\item\em Starts a transmission over the T\-W\-I Bus. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8c_ae9258eaad53fc76d3dc8e6506f57b585}{T\-W\-I\-\_\-\-Begin\-Read} (unsigned char address)
+\begin{DoxyCompactList}\small\item\em Starts a transmission over the T\-W\-I Bus. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8c_aa78d37b505f1afc8e048adedf4242f21}{T\-W\-I\-\_\-\-Write\-Byte} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Sends a byte over T\-W\-I. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8c_a3dca0b267e7b3181690518f158b7011b}{T\-W\-I\-\_\-\-Read\-Ack} (unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Receives a byte over T\-W\-I and returns an A\-C\-K. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8c_a4ffe192eac4421209ac0f9a9fd30684c}{T\-W\-I\-\_\-\-Read\-Nack} (unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Receives a byte over T\-W\-I and returns a N\-A\-C\-K. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8c_a6b77b26021430a2cc51be63022463fd2}{T\-W\-I\-\_\-\-Stop} (void)
+\begin{DoxyCompactList}\small\item\em Sends a Stop bit, be sure to send a Start bit before future interactions on the bus. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8c_abacd37b6bf3b709c05ca77c08b2c1e49}{T\-W\-I\-\_\-\-Read} (unsigned char $\ast$data, int amount, bool ack)
+\begin{DoxyCompactList}\small\item\em Reads multiple bytes from the T\-W\-I bus. \end{DoxyCompactList}\item 
+char \hyperlink{_t_w_i_8c_a2fb6fa099d19955403d648070ff03158}{T\-W\-I\-\_\-\-Write} (unsigned char $\ast$data, int amount)
+\begin{DoxyCompactList}\small\item\em Writes multiple bytes to the T\-W\-I bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+T\-W\-I hardware interface library implementation in master mode. Created\-: 2/7/2015 21\-:12\-:00 Author\-: Camden Miller 
+
+\subsection{Function Documentation}
+\hypertarget{_t_w_i_8c_ae9258eaad53fc76d3dc8e6506f57b585}{\index{T\-W\-I.\-c@{T\-W\-I.\-c}!T\-W\-I\-\_\-\-Begin\-Read@{T\-W\-I\-\_\-\-Begin\-Read}}
+\index{T\-W\-I\-\_\-\-Begin\-Read@{T\-W\-I\-\_\-\-Begin\-Read}!TWI.c@{T\-W\-I.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-Begin\-Read}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Begin\-Read (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8c_ae9258eaad53fc76d3dc8e6506f57b585}
+
+
+Starts a transmission over the T\-W\-I Bus. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em address} & Address of device to send to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K on success, other code otherwise 
+\end{DoxyReturn}
+
+
+References S\-L\-A\-R\-\_\-\-M\-A\-S\-K, T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T, T\-W\-I\-\_\-\-S\-T\-A\-R\-T, T\-W\-I\-\_\-\-Write\-Byte(), and T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{_t_w_i_8c_ae9258eaad53fc76d3dc8e6506f57b585_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8c_ae9258eaad53fc76d3dc8e6506f57b585_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8c_ae1f51b83add546422b068cef6f304bd2}{\index{T\-W\-I.\-c@{T\-W\-I.\-c}!T\-W\-I\-\_\-\-Begin\-Write@{T\-W\-I\-\_\-\-Begin\-Write}}
+\index{T\-W\-I\-\_\-\-Begin\-Write@{T\-W\-I\-\_\-\-Begin\-Write}!TWI.c@{T\-W\-I.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-Begin\-Write}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Begin\-Write (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8c_ae1f51b83add546422b068cef6f304bd2}
+
+
+Starts a transmission over the T\-W\-I Bus. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em address} & Address of device to send to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-S\-L\-A\-W\-\_\-\-A\-C\-K on success, other code otherwise 
+\end{DoxyReturn}
+
+
+References S\-L\-A\-W\-\_\-\-M\-A\-S\-K, T\-W\-I\-\_\-\-R\-E\-P\-E\-A\-T\-\_\-\-S\-T\-A\-R\-T, T\-W\-I\-\_\-\-S\-T\-A\-R\-T, T\-W\-I\-\_\-\-Write\-Byte(), and T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), B\-M\-P280\-\_\-\-Write\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{_t_w_i_8c_ae1f51b83add546422b068cef6f304bd2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8c_ae1f51b83add546422b068cef6f304bd2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8c_afe02d55f5c368f00e807900163b668c4}{\index{T\-W\-I.\-c@{T\-W\-I.\-c}!T\-W\-I\-\_\-\-Init@{T\-W\-I\-\_\-\-Init}}
+\index{T\-W\-I\-\_\-\-Init@{T\-W\-I\-\_\-\-Init}!TWI.c@{T\-W\-I.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{freq}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8c_afe02d55f5c368f00e807900163b668c4}
+
+
+Initializes the 2-\/wire Serial Interface as a master. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em freq} & S\-C\-L frequency (Do not exceed 400k\-Hz) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status ({\ttfamily 0} on failure, nonzero otherwise) 
+\end{DoxyReturn}
+
+
+References F\-\_\-\-C\-P\-U.
+
+
+
+Referenced by A\-P\-P\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{_t_w_i_8c_afe02d55f5c368f00e807900163b668c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8c_abacd37b6bf3b709c05ca77c08b2c1e49}{\index{T\-W\-I.\-c@{T\-W\-I.\-c}!T\-W\-I\-\_\-\-Read@{T\-W\-I\-\_\-\-Read}}
+\index{T\-W\-I\-\_\-\-Read@{T\-W\-I\-\_\-\-Read}!TWI.c@{T\-W\-I.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-Read}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Read (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data, }
+\item[{int}]{amount, }
+\item[{bool}]{ack}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8c_abacd37b6bf3b709c05ca77c08b2c1e49}
+
+
+Reads multiple bytes from the T\-W\-I bus. 
+
+When using this function, be sure to send a S\-T\-A\-R\-T first; this only automates calls to T\-W\-I\-\_\-\-Read\-Ack and/or T\-W\-I\-\_\-\-Read\-Nack. 
+
+Does not contain buffer overrun protection. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em $\ast$data} & Pointer to an array to store the bytes \\
+\hline
+\mbox{\tt in}  & {\em amount} & Number of bytes to recieve \\
+\hline
+\mbox{\tt in}  & {\em whether} & or not to send an A\-C\-K on the last byte, sends N\-A\-C\-K if false \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K or T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K on success depending on function arguments 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_t_w_i_8c_ae9258eaad53fc76d3dc8e6506f57b585}{T\-W\-I\-\_\-\-Begin\-Read} 
+\end{DoxySeeAlso}
+
+
+References status, T\-W\-I\-\_\-\-Read\-Ack(), T\-W\-I\-\_\-\-Read\-Nack(), and T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{_t_w_i_8c_abacd37b6bf3b709c05ca77c08b2c1e49_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8c_abacd37b6bf3b709c05ca77c08b2c1e49_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8c_a3dca0b267e7b3181690518f158b7011b}{\index{T\-W\-I.\-c@{T\-W\-I.\-c}!T\-W\-I\-\_\-\-Read\-Ack@{T\-W\-I\-\_\-\-Read\-Ack}}
+\index{T\-W\-I\-\_\-\-Read\-Ack@{T\-W\-I\-\_\-\-Read\-Ack}!TWI.c@{T\-W\-I.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-Read\-Ack}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Read\-Ack (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8c_a3dca0b267e7b3181690518f158b7011b}
+
+
+Receives a byte over T\-W\-I and returns an A\-C\-K. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em $\ast$data} & pointer to a byte to store the received byte in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K on success, other code otherwise 
+\end{DoxyReturn}
+
+
+References T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by T\-W\-I\-\_\-\-Read().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8c_a3dca0b267e7b3181690518f158b7011b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8c_a4ffe192eac4421209ac0f9a9fd30684c}{\index{T\-W\-I.\-c@{T\-W\-I.\-c}!T\-W\-I\-\_\-\-Read\-Nack@{T\-W\-I\-\_\-\-Read\-Nack}}
+\index{T\-W\-I\-\_\-\-Read\-Nack@{T\-W\-I\-\_\-\-Read\-Nack}!TWI.c@{T\-W\-I.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-Read\-Nack}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Read\-Nack (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8c_a4ffe192eac4421209ac0f9a9fd30684c}
+
+
+Receives a byte over T\-W\-I and returns a N\-A\-C\-K. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em $\ast$data} & pointer to a byte to store the received byte in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K on success, other code otherwise 
+\end{DoxyReturn}
+
+
+References T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by T\-W\-I\-\_\-\-Read().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8c_a4ffe192eac4421209ac0f9a9fd30684c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8c_a6b77b26021430a2cc51be63022463fd2}{\index{T\-W\-I.\-c@{T\-W\-I.\-c}!T\-W\-I\-\_\-\-Stop@{T\-W\-I\-\_\-\-Stop}}
+\index{T\-W\-I\-\_\-\-Stop@{T\-W\-I\-\_\-\-Stop}!TWI.c@{T\-W\-I.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8c_a6b77b26021430a2cc51be63022463fd2}
+
+
+Sends a Stop bit, be sure to send a Start bit before future interactions on the bus. 
+
+\begin{DoxyReturn}{Returns}
+Status code, should always be nonzero 
+\end{DoxyReturn}
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), B\-M\-P280\-\_\-\-Write\-Bytes(), K30\-\_\-read\-C\-O2(), Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8c_a6b77b26021430a2cc51be63022463fd2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8c_a2fb6fa099d19955403d648070ff03158}{\index{T\-W\-I.\-c@{T\-W\-I.\-c}!T\-W\-I\-\_\-\-Write@{T\-W\-I\-\_\-\-Write}}
+\index{T\-W\-I\-\_\-\-Write@{T\-W\-I\-\_\-\-Write}!TWI.c@{T\-W\-I.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-Write}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Write (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data, }
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8c_a2fb6fa099d19955403d648070ff03158}
+
+
+Writes multiple bytes to the T\-W\-I bus. 
+
+When using this function, be sure to send a S\-T\-A\-R\-T first; this only automates calls to T\-W\-I\-\_\-\-Write. 
+
+Does not contain buffer overrun protection. Function will return if a N\-A\-C\-K is received partway through. If you don't expect a N\-A\-C\-K, be sure to check for it anyway. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$data} & Pointer to an array of bytes to send \\
+\hline
+\mbox{\tt in}  & {\em amount} & Number of bytes to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K or T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-N\-A\-C\-K on success 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_t_w_i_8c_ae1f51b83add546422b068cef6f304bd2}{T\-W\-I\-\_\-\-Begin\-Write} 
+\end{DoxySeeAlso}
+
+
+References status, T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K, and T\-W\-I\-\_\-\-Write\-Byte().
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Write\-Bytes(), and K30\-\_\-read\-C\-O2().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{_t_w_i_8c_a2fb6fa099d19955403d648070ff03158_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8c_a2fb6fa099d19955403d648070ff03158_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_w_i_8c_aa78d37b505f1afc8e048adedf4242f21}{\index{T\-W\-I.\-c@{T\-W\-I.\-c}!T\-W\-I\-\_\-\-Write\-Byte@{T\-W\-I\-\_\-\-Write\-Byte}}
+\index{T\-W\-I\-\_\-\-Write\-Byte@{T\-W\-I\-\_\-\-Write\-Byte}!TWI.c@{T\-W\-I.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-Write\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}char T\-W\-I\-\_\-\-Write\-Byte (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{data}
+\end{DoxyParamCaption}
+)}}\label{_t_w_i_8c_aa78d37b505f1afc8e048adedf4242f21}
+
+
+Sends a byte over T\-W\-I. 
+
+When checking the status code, bear in mind that it could be an A\-C\-K or a N\-A\-C\-K depending on what the slave is expecting/doing. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & byte to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code, T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K or T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-N\-A\-C\-K on success 
+\end{DoxyReturn}
+
+
+References T\-W\-S\-R\-\_\-\-M\-A\-S\-K.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), Si7020\-\_\-read\-Humidity(), Si7020\-\_\-read\-Temperature(), T\-W\-I\-\_\-\-Begin\-Read(), T\-W\-I\-\_\-\-Begin\-Write(), and T\-W\-I\-\_\-\-Write().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_w_i_8c_aa78d37b505f1afc8e048adedf4242f21_icgraph}
+\end{center}
+\end{figure}
+
+

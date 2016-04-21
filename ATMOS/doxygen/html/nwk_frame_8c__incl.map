@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node11" href="$sys_config_8h.html" title="Main system configyration file." alt="" coords="601,259,692,285"/>
+<area shape="rect" id="node15" href="$nwk_8h.html" title="Network layer public interface." alt="" coords="668,109,724,136"/>
+<area shape="rect" id="node38" href="$nwk_frame_8h.html" title="Frame buffers management interface." alt="" coords="179,333,272,360"/>
+<area shape="rect" id="node13" href="$config_8h.html" title="Currently no info." alt="" coords="563,333,696,360"/>
+<area shape="rect" id="node20" href="$nwk_route_8h.html" title="Routing interface." alt="" coords="264,184,355,211"/>
+<area shape="rect" id="node43" href="$nwk_group_8h.html" title="Multicast group management implementation." alt="" coords="448,333,539,360"/>
+<area shape="rect" id="node47" href="$nwk_security_8h.html" title="Network layer security interface." alt="" coords="783,184,887,211"/>
+<area shape="rect" id="node52" href="$nwk_data_req_8h.html" title="NWK_DataReq() interface." alt="" coords="652,184,759,211"/>
+<area shape="rect" id="node23" href="$sys_types_8h.html" title="System types and definitions." alt="" coords="182,408,271,435"/>
+<area shape="rect" id="node34" href="$nwk_rx_8h.html" title="Receive routines interface." alt="" coords="273,259,345,285"/>
+</map>

@@ -1,3 +1,10 @@
+/**
+ * \file ATMOS.c
+ *
+ * \brief The entry function
+ * 
+ */ 
+
 #include "utilities/inc/config.h"
 #include "utilities/inc/common.h"
 #include "hal.h"

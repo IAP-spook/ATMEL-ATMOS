@@ -1,10 +1,11 @@
-/*
- * SPI.c
+/**
+ * \file SPI.c
+ *
+ * \brief SPI implementation
  *
  * Created: 4/28/2015 16:40:08
  *  Author: Camden
  */ 
-
 #include <drivers/inc/SPI.h>
 #include <avr/io.h>
 

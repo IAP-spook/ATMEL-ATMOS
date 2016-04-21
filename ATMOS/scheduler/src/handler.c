@@ -1,17 +1,19 @@
-/*
- * handler.c
+/**
+ * \file handler.c
+ *
+ * \brief Implementation of various handlers.
  *
  * Created: 2016/4/15 0:42:37
- *  Author: AB
- */ 
+ *  Author: Anxin Bai
+ */
 
 #include "scheduler/inc/handler.h"
 #include "utilities/inc/data_unit.h"
 
-/* 
- * sensor_handler function
- * return 1 if it has some borrow time 
- */
+
+/*************************************************************************//**
+  @brief sensor_handler function to decide the execution logic of a sensor according to its state, return 1 if it has some borrow time 
+*****************************************************************************/
 int sensor_handler( struct event *p )
 {
 	int retNum;
@@ -108,6 +110,9 @@ int sensor_handler( struct event *p )
 /* 
  * TODO : device_handler function
  */
+/*************************************************************************//**
+  @brief device_handler function to decide the execution logic of a non-sensor device according to its state.
+*****************************************************************************/
 int device_handler( struct event *p )
 {
 	int retNum;
@@ -142,6 +147,9 @@ int device_handler( struct event *p )
  * write back handler 
  * TODO : we need a struct to hold all possible data type and we need store them into flash I guess
  */
+/*************************************************************************//**
+  @brief Handler used to store sensor data in flash disk for later update usage. 
+*****************************************************************************/
 int storeData_handler( struct event *p )
 {
 	int retNum;

@@ -1,3 +1,11 @@
+/**
+ * \file Base_Sensor.c
+ *
+ * \brief Implementation of BaseSensor struct, which derived from BaseDevice
+ * 
+ *  Author: Anxin Bai
+ */ 
+
 #include "wrapper/base-class/inc/Base_Sensor.h"
 #include <stdlib.h>
 #include <stdio.h>

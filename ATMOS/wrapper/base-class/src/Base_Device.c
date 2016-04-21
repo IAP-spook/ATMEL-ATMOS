@@ -1,8 +1,10 @@
-/*
- * Base_Device.c
+/**
+ * \file Base_Device.c
  *
+ * \brief Implementation of BaseDevice struct
+ * 
  * Created: 2016/4/12 18:55:15
- *  Author: AB
+ *  Author: Anxin Bai
  */ 
 #include "wrapper/base-class/inc/Base_Device.h"
 #include <stdio.h>

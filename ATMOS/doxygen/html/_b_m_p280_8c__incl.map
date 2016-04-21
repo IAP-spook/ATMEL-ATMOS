@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_b_m_p280_8h.html" title="BMP280 Interface Library." alt="" coords="5,109,155,136"/>
+<area shape="rect" id="node7" href="$_t_w_i_8h.html" title="TWI hardware interface in master mode." alt="" coords="179,109,297,136"/>
+<area shape="rect" id="node10" href="$usart0_8h.html" title="USART0 in UART mode." alt="" coords="323,109,453,136"/>
+</map>

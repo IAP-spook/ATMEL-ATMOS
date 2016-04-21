@@ -1,0 +1,374 @@
+\hypertarget{llist_8h}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/utilities/inc/llist.h File Reference}
+\label{llist_8h}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/utilities/inc/llist.\-h@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/utilities/inc/llist.\-h}}
+}
+
+
+Declaration of routines for a doubly linked list package.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{llist_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__llp}{\-\_\-llp}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{llist_8h_a8e18aa1d618eca4a37fa8eb21b38b3af}{L\-L\-\_\-\-P\-T\-R\-S}
+\item 
+\#define \hyperlink{llist_8h_abcaffe365dee628fcf9fc90c69d534a1}{L\-L\-\_\-\-D\-E\-B\-U\-G}~0
+\item 
+\#define \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ptr)~((\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$)ptr)
+\item 
+\#define \hyperlink{llist_8h_a1babdd7167f351594fa0d08c2073d9bb}{L\-L\-\_\-\-N\-U\-L\-L}~((\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$)0)
+\item 
+\#define \hyperlink{llist_8h_a55d78b5017b31e935495ee4d8a326396}{L\-L\-\_\-\-N\-E\-X\-T}(lp, ep)~(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep)-\/$>$next == \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp) ? \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp)-\/$>$next \-: \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep)-\/$>$next)
+\item 
+\#define \hyperlink{llist_8h_a13c56387e2025383298ed67472635ff2}{L\-L\-\_\-\-P\-R\-E\-V}(lp, ep)~(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep)-\/$>$prev == \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp) ? \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp)-\/$>$prev \-: \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep)-\/$>$prev)
+\item 
+\#define \hyperlink{llist_8h_aec43699e901e63caff0c8ec6b721bc73}{L\-L\-\_\-\-E\-A\-C\-H}(lp, ep, t)~for (ep = (t $\ast$)(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp)-\/$>$next); \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep) != \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp); ep = (t $\ast$)(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep)-\/$>$next))
+\item 
+\#define \hyperlink{llist_8h_a09f166462aed99c612cf760b031049ae}{L\-L\-\_\-\-I\-N\-I\-T}(lp)~(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp)-\/$>$prev = \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp)-\/$>$next = \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp))
+\item 
+\#define \hyperlink{llist_8h_a5baa70f72aaf1e318aaca0c9e78bed8e}{L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y}(ep)~(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep)-\/$>$next == \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep))
+\item 
+\#define \hyperlink{llist_8h_a16bb3329801460a54b1f0c8e2d7d8f44}{L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T}(ip, ep)~\hyperlink{llist_8c_aab5d036577980c78731ebccacc4ed9e4}{ll\-\_\-r\-\_\-insert}(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ip), \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep))
+\item 
+\#define \hyperlink{llist_8h_a81df162eaf21e922c0818dcf09ef4cb0}{L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T}(ip, ep)~\hyperlink{llist_8h_a16bb3329801460a54b1f0c8e2d7d8f44}{L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T}(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ip)-\/$>$prev, ep)
+\item 
+\#define \hyperlink{llist_8h_a34733103eefbd896b095bce54eaccc01}{L\-L\-\_\-\-P\-U\-S\-H}(lp, ep)~\hyperlink{llist_8h_a16bb3329801460a54b1f0c8e2d7d8f44}{L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T}(lp, ep)
+\item 
+\#define \hyperlink{llist_8h_a02ef68be3bb36ac7666cc1d47d94c40b}{L\-L\-\_\-\-A\-P\-P\-E\-N\-D}(lp, ep)~\hyperlink{llist_8h_a81df162eaf21e922c0818dcf09ef4cb0}{L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T}(lp, ep)
+\item 
+\#define \hyperlink{llist_8h_a139b2c6b89603b6e6c7ea21f87e38fb0}{L\-L\-\_\-\-D\-E\-T\-A\-C\-H}(lp, ep)~\hyperlink{llist_8c_ae7d761051e41c2d04aee1bc5f0a232a7}{ll\-\_\-detach}(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp), \hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(ep))
+\item 
+\#define \hyperlink{llist_8h_a0a1fdbdea75017fdfed6e8f39c048147}{L\-L\-\_\-\-P\-O\-P}(lp)~\hyperlink{llist_8c_a2feb6848f38b19c80aa9f7d93ca2633a}{ll\-\_\-pop}(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp))
+\item 
+\#define \hyperlink{llist_8h_a553723c263a163d97781c048205d5ace}{L\-L\-\_\-\-A\-S\-S\-E\-R\-T}(ep)~\hyperlink{llist_8c_a1f21ade5728ae931bfd027231dda8ef6}{ll\-\_\-assert}((\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$)(ep), \#ep, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-)
+\item 
+\#define \hyperlink{llist_8h_aa4b8c232ffd5b37624213eaecf391102}{L\-L\-\_\-\-D\-E\-S\-T\-R\-O\-Y}(lp)~\hyperlink{llist_8h_a3688eab986af30216f75093054ac6086}{ll\-\_\-destroy}(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp))
+\item 
+\#define \hyperlink{llist_8h_abceffdee1278f15d277fc081531a2396}{L\-L\-\_\-\-F\-I\-R\-S\-T}(lp)~\hyperlink{llist_8c_ab184f89b47b3c9b54745bbfc128bd3ec}{ll\-\_\-first}(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp))
+\item 
+\#define \hyperlink{llist_8h_a54be2ff89d4ecbb4178f2e527a512bc1}{L\-L\-\_\-\-L\-A\-S\-T}(lp)~\hyperlink{llist_8c_af5027b57d95066c104dfd0e721385ecc}{ll\-\_\-last}(\hyperlink{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{L\-L\-P}(lp))
+\item 
+\#define \hyperlink{llist_8h_a71f57e802f9d87978fd936e300341002}{L\-L\-\_\-\-T\-O\-P}~\hyperlink{llist_8h_abceffdee1278f15d277fc081531a2396}{L\-L\-\_\-\-F\-I\-R\-S\-T}
+\item 
+\#define \hyperlink{llist_8h_a99e64578625e0b15a5f688ee9c07896e}{L\-L\-\_\-\-H\-E\-A\-D}~\hyperlink{llist_8h_abceffdee1278f15d277fc081531a2396}{L\-L\-\_\-\-F\-I\-R\-S\-T}
+\item 
+\#define \hyperlink{llist_8h_a3645371a255a0ebb5aa2c5b9a18919c1}{L\-L\-\_\-\-B\-O\-T\-T\-O\-M}~\hyperlink{llist_8h_a54be2ff89d4ecbb4178f2e527a512bc1}{L\-L\-\_\-\-L\-A\-S\-T}
+\item 
+\#define \hyperlink{llist_8h_a6d24ecd5dcef6394e3b21f3ac975b6b5}{L\-L\-\_\-\-T\-A\-I\-L}~\hyperlink{llist_8h_a54be2ff89d4ecbb4178f2e527a512bc1}{L\-L\-\_\-\-L\-A\-S\-T}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct__llp}{\-\_\-llp} \hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ \hyperlink{llist_8h_a4b44ebbf592053619df01ed7d0e2ceb0}{ll\-\_\-r\-\_\-insert} (\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$lp, \hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ep)
+\item 
+\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ \hyperlink{llist_8h_ae7d761051e41c2d04aee1bc5f0a232a7}{ll\-\_\-detach} (\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$lp, \hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ep)
+\item 
+\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ \hyperlink{llist_8h_a39b713321757707799a677b32e377232}{ll\-\_\-insert} (\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$lp, \hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ep, int($\ast$cmp)())
+\item 
+\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ \hyperlink{llist_8h_a7dfd44f1e6adb37a42464ca23c72e9a9}{ll\-\_\-first} (\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ep)
+\item 
+\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ \hyperlink{llist_8h_a09abd66b40719ddd328a950b7e9ff3ab}{ll\-\_\-pop} (\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ep)
+\item 
+\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ \hyperlink{llist_8h_a1f21ade5728ae931bfd027231dda8ef6}{ll\-\_\-assert} (\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ep, char $\ast$msg, char $\ast$file, int line)
+\item 
+\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$ \hyperlink{llist_8h_a3688eab986af30216f75093054ac6086}{ll\-\_\-destroy} (\hyperlink{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{llobject\-\_\-t} $\ast$lp)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Declaration of routines for a doubly linked list package. Author\-: Resources from web 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{llist_8h_a02ef68be3bb36ac7666cc1d47d94c40b}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-A\-P\-P\-E\-N\-D@{L\-L\-\_\-\-A\-P\-P\-E\-N\-D}}
+\index{L\-L\-\_\-\-A\-P\-P\-E\-N\-D@{L\-L\-\_\-\-A\-P\-P\-E\-N\-D}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-A\-P\-P\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-A\-P\-P\-E\-N\-D(
+\begin{DoxyParamCaption}
+\item[{}]{lp, }
+\item[{}]{ep}
+\end{DoxyParamCaption}
+)~{\bf L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T}(lp, ep)}}\label{llist_8h_a02ef68be3bb36ac7666cc1d47d94c40b}
+
+
+Referenced by insert\-\_\-timeoutq\-\_\-event(), and ll\-\_\-insert().
+
+\hypertarget{llist_8h_a553723c263a163d97781c048205d5ace}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-A\-S\-S\-E\-R\-T@{L\-L\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{L\-L\-\_\-\-A\-S\-S\-E\-R\-T@{L\-L\-\_\-\-A\-S\-S\-E\-R\-T}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-A\-S\-S\-E\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{ep}
+\end{DoxyParamCaption}
+)~{\bf ll\-\_\-assert}(({\bf llobject\-\_\-t} $\ast$)(ep), \#ep, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-)}}\label{llist_8h_a553723c263a163d97781c048205d5ace}
+\hypertarget{llist_8h_a3645371a255a0ebb5aa2c5b9a18919c1}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-B\-O\-T\-T\-O\-M@{L\-L\-\_\-\-B\-O\-T\-T\-O\-M}}
+\index{L\-L\-\_\-\-B\-O\-T\-T\-O\-M@{L\-L\-\_\-\-B\-O\-T\-T\-O\-M}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-B\-O\-T\-T\-O\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-B\-O\-T\-T\-O\-M~{\bf L\-L\-\_\-\-L\-A\-S\-T}}}\label{llist_8h_a3645371a255a0ebb5aa2c5b9a18919c1}
+\hypertarget{llist_8h_abcaffe365dee628fcf9fc90c69d534a1}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-D\-E\-B\-U\-G@{L\-L\-\_\-\-D\-E\-B\-U\-G}}
+\index{L\-L\-\_\-\-D\-E\-B\-U\-G@{L\-L\-\_\-\-D\-E\-B\-U\-G}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-D\-E\-B\-U\-G~0}}\label{llist_8h_abcaffe365dee628fcf9fc90c69d534a1}
+\hypertarget{llist_8h_aa4b8c232ffd5b37624213eaecf391102}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-D\-E\-S\-T\-R\-O\-Y@{L\-L\-\_\-\-D\-E\-S\-T\-R\-O\-Y}}
+\index{L\-L\-\_\-\-D\-E\-S\-T\-R\-O\-Y@{L\-L\-\_\-\-D\-E\-S\-T\-R\-O\-Y}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-D\-E\-S\-T\-R\-O\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-D\-E\-S\-T\-R\-O\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{lp}
+\end{DoxyParamCaption}
+)~{\bf ll\-\_\-destroy}({\bf L\-L\-P}(lp))}}\label{llist_8h_aa4b8c232ffd5b37624213eaecf391102}
+\hypertarget{llist_8h_a139b2c6b89603b6e6c7ea21f87e38fb0}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-D\-E\-T\-A\-C\-H@{L\-L\-\_\-\-D\-E\-T\-A\-C\-H}}
+\index{L\-L\-\_\-\-D\-E\-T\-A\-C\-H@{L\-L\-\_\-\-D\-E\-T\-A\-C\-H}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-D\-E\-T\-A\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-D\-E\-T\-A\-C\-H(
+\begin{DoxyParamCaption}
+\item[{}]{lp, }
+\item[{}]{ep}
+\end{DoxyParamCaption}
+)~{\bf ll\-\_\-detach}({\bf L\-L\-P}(lp), {\bf L\-L\-P}(ep))}}\label{llist_8h_a139b2c6b89603b6e6c7ea21f87e38fb0}
+
+
+Referenced by ll\-\_\-pop().
+
+\hypertarget{llist_8h_aec43699e901e63caff0c8ec6b721bc73}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-E\-A\-C\-H@{L\-L\-\_\-\-E\-A\-C\-H}}
+\index{L\-L\-\_\-\-E\-A\-C\-H@{L\-L\-\_\-\-E\-A\-C\-H}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-E\-A\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-E\-A\-C\-H(
+\begin{DoxyParamCaption}
+\item[{}]{lp, }
+\item[{}]{ep, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)~for (ep = (t $\ast$)({\bf L\-L\-P}(lp)-\/$>$next); {\bf L\-L\-P}(ep) != {\bf L\-L\-P}(lp); ep = (t $\ast$)({\bf L\-L\-P}(ep)-\/$>$next))}}\label{llist_8h_aec43699e901e63caff0c8ec6b721bc73}
+
+
+Referenced by insert\-\_\-timeoutq\-\_\-event(), and ll\-\_\-insert().
+
+\hypertarget{llist_8h_abceffdee1278f15d277fc081531a2396}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-F\-I\-R\-S\-T@{L\-L\-\_\-\-F\-I\-R\-S\-T}}
+\index{L\-L\-\_\-\-F\-I\-R\-S\-T@{L\-L\-\_\-\-F\-I\-R\-S\-T}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-F\-I\-R\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-F\-I\-R\-S\-T(
+\begin{DoxyParamCaption}
+\item[{}]{lp}
+\end{DoxyParamCaption}
+)~{\bf ll\-\_\-first}({\bf L\-L\-P}(lp))}}\label{llist_8h_abceffdee1278f15d277fc081531a2396}
+\hypertarget{llist_8h_a99e64578625e0b15a5f688ee9c07896e}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-H\-E\-A\-D@{L\-L\-\_\-\-H\-E\-A\-D}}
+\index{L\-L\-\_\-\-H\-E\-A\-D@{L\-L\-\_\-\-H\-E\-A\-D}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-H\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-H\-E\-A\-D~{\bf L\-L\-\_\-\-F\-I\-R\-S\-T}}}\label{llist_8h_a99e64578625e0b15a5f688ee9c07896e}
+\hypertarget{llist_8h_a09f166462aed99c612cf760b031049ae}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-I\-N\-I\-T@{L\-L\-\_\-\-I\-N\-I\-T}}
+\index{L\-L\-\_\-\-I\-N\-I\-T@{L\-L\-\_\-\-I\-N\-I\-T}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-I\-N\-I\-T(
+\begin{DoxyParamCaption}
+\item[{}]{lp}
+\end{DoxyParamCaption}
+)~({\bf L\-L\-P}(lp)-\/$>$prev = {\bf L\-L\-P}(lp)-\/$>$next = {\bf L\-L\-P}(lp))}}\label{llist_8h_a09f166462aed99c612cf760b031049ae}
+
+
+Referenced by init\-\_\-timeoutq().
+
+\hypertarget{llist_8h_a5baa70f72aaf1e318aaca0c9e78bed8e}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y@{L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y}}
+\index{L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y@{L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{ep}
+\end{DoxyParamCaption}
+)~({\bf L\-L\-P}(ep)-\/$>$next == {\bf L\-L\-P}(ep))}}\label{llist_8h_a5baa70f72aaf1e318aaca0c9e78bed8e}
+
+
+Referenced by ll\-\_\-detach(), ll\-\_\-first(), ll\-\_\-insert(), ll\-\_\-last(), and ll\-\_\-pop().
+
+\hypertarget{llist_8h_a81df162eaf21e922c0818dcf09ef4cb0}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T@{L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T}}
+\index{L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T@{L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{ip, }
+\item[{}]{ep}
+\end{DoxyParamCaption}
+)~{\bf L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T}({\bf L\-L\-P}(ip)-\/$>$prev, ep)}}\label{llist_8h_a81df162eaf21e922c0818dcf09ef4cb0}
+
+
+Referenced by insert\-\_\-timeoutq\-\_\-event().
+
+\hypertarget{llist_8h_a54be2ff89d4ecbb4178f2e527a512bc1}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-L\-A\-S\-T@{L\-L\-\_\-\-L\-A\-S\-T}}
+\index{L\-L\-\_\-\-L\-A\-S\-T@{L\-L\-\_\-\-L\-A\-S\-T}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-L\-A\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-L\-A\-S\-T(
+\begin{DoxyParamCaption}
+\item[{}]{lp}
+\end{DoxyParamCaption}
+)~{\bf ll\-\_\-last}({\bf L\-L\-P}(lp))}}\label{llist_8h_a54be2ff89d4ecbb4178f2e527a512bc1}
+\hypertarget{llist_8h_a55d78b5017b31e935495ee4d8a326396}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-N\-E\-X\-T@{L\-L\-\_\-\-N\-E\-X\-T}}
+\index{L\-L\-\_\-\-N\-E\-X\-T@{L\-L\-\_\-\-N\-E\-X\-T}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-N\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-N\-E\-X\-T(
+\begin{DoxyParamCaption}
+\item[{}]{lp, }
+\item[{}]{ep}
+\end{DoxyParamCaption}
+)~({\bf L\-L\-P}(ep)-\/$>$next == {\bf L\-L\-P}(lp) ? {\bf L\-L\-P}(lp)-\/$>$next \-: {\bf L\-L\-P}(ep)-\/$>$next)}}\label{llist_8h_a55d78b5017b31e935495ee4d8a326396}
+\hypertarget{llist_8h_a1babdd7167f351594fa0d08c2073d9bb}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-N\-U\-L\-L@{L\-L\-\_\-\-N\-U\-L\-L}}
+\index{L\-L\-\_\-\-N\-U\-L\-L@{L\-L\-\_\-\-N\-U\-L\-L}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-N\-U\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-N\-U\-L\-L~(({\bf llobject\-\_\-t} $\ast$)0)}}\label{llist_8h_a1babdd7167f351594fa0d08c2073d9bb}
+
+
+Referenced by ll\-\_\-assert(), ll\-\_\-detach(), ll\-\_\-first(), ll\-\_\-insert(), ll\-\_\-last(), and ll\-\_\-pop().
+
+\hypertarget{llist_8h_a0a1fdbdea75017fdfed6e8f39c048147}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-P\-O\-P@{L\-L\-\_\-\-P\-O\-P}}
+\index{L\-L\-\_\-\-P\-O\-P@{L\-L\-\_\-\-P\-O\-P}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-P\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-P\-O\-P(
+\begin{DoxyParamCaption}
+\item[{}]{lp}
+\end{DoxyParamCaption}
+)~{\bf ll\-\_\-pop}({\bf L\-L\-P}(lp))}}\label{llist_8h_a0a1fdbdea75017fdfed6e8f39c048147}
+
+
+Referenced by handle\-\_\-timeoutq\-\_\-event(), load\-\_\-new\-\_\-sensor(), and sensor\-\_\-handler().
+
+\hypertarget{llist_8h_a13c56387e2025383298ed67472635ff2}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-P\-R\-E\-V@{L\-L\-\_\-\-P\-R\-E\-V}}
+\index{L\-L\-\_\-\-P\-R\-E\-V@{L\-L\-\_\-\-P\-R\-E\-V}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-P\-R\-E\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-P\-R\-E\-V(
+\begin{DoxyParamCaption}
+\item[{}]{lp, }
+\item[{}]{ep}
+\end{DoxyParamCaption}
+)~({\bf L\-L\-P}(ep)-\/$>$prev == {\bf L\-L\-P}(lp) ? {\bf L\-L\-P}(lp)-\/$>$prev \-: {\bf L\-L\-P}(ep)-\/$>$prev)}}\label{llist_8h_a13c56387e2025383298ed67472635ff2}
+\hypertarget{llist_8h_a8e18aa1d618eca4a37fa8eb21b38b3af}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-P\-T\-R\-S@{L\-L\-\_\-\-P\-T\-R\-S}}
+\index{L\-L\-\_\-\-P\-T\-R\-S@{L\-L\-\_\-\-P\-T\-R\-S}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-P\-T\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-P\-T\-R\-S}}\label{llist_8h_a8e18aa1d618eca4a37fa8eb21b38b3af}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keyword}{struct }\hyperlink{struct__llp}{\_llp} *prev; \(\backslash\)
+    struct \hyperlink{struct__llp}{\_llp} *next
+\end{DoxyCode}
+\hypertarget{llist_8h_a34733103eefbd896b095bce54eaccc01}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-P\-U\-S\-H@{L\-L\-\_\-\-P\-U\-S\-H}}
+\index{L\-L\-\_\-\-P\-U\-S\-H@{L\-L\-\_\-\-P\-U\-S\-H}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-P\-U\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-P\-U\-S\-H(
+\begin{DoxyParamCaption}
+\item[{}]{lp, }
+\item[{}]{ep}
+\end{DoxyParamCaption}
+)~{\bf L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T}(lp, ep)}}\label{llist_8h_a34733103eefbd896b095bce54eaccc01}
+
+
+Referenced by handle\-\_\-timeoutq\-\_\-event(), init\-\_\-timeoutq(), and ll\-\_\-insert().
+
+\hypertarget{llist_8h_a16bb3329801460a54b1f0c8e2d7d8f44}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T@{L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T}}
+\index{L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T@{L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{ip, }
+\item[{}]{ep}
+\end{DoxyParamCaption}
+)~{\bf ll\-\_\-r\-\_\-insert}({\bf L\-L\-P}(ip), {\bf L\-L\-P}(ep))}}\label{llist_8h_a16bb3329801460a54b1f0c8e2d7d8f44}
+
+
+Referenced by ll\-\_\-insert().
+
+\hypertarget{llist_8h_a6d24ecd5dcef6394e3b21f3ac975b6b5}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-T\-A\-I\-L@{L\-L\-\_\-\-T\-A\-I\-L}}
+\index{L\-L\-\_\-\-T\-A\-I\-L@{L\-L\-\_\-\-T\-A\-I\-L}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-T\-A\-I\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-T\-A\-I\-L~{\bf L\-L\-\_\-\-L\-A\-S\-T}}}\label{llist_8h_a6d24ecd5dcef6394e3b21f3ac975b6b5}
+\hypertarget{llist_8h_a71f57e802f9d87978fd936e300341002}{\index{llist.\-h@{llist.\-h}!L\-L\-\_\-\-T\-O\-P@{L\-L\-\_\-\-T\-O\-P}}
+\index{L\-L\-\_\-\-T\-O\-P@{L\-L\-\_\-\-T\-O\-P}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-\_\-\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-\_\-\-T\-O\-P~{\bf L\-L\-\_\-\-F\-I\-R\-S\-T}}}\label{llist_8h_a71f57e802f9d87978fd936e300341002}
+
+
+Referenced by get\-\_\-next\-\_\-interval(), and handle\-\_\-timeoutq\-\_\-event().
+
+\hypertarget{llist_8h_a97243939f19fbd154228ba696ca3bc6b}{\index{llist.\-h@{llist.\-h}!L\-L\-P@{L\-L\-P}}
+\index{L\-L\-P@{L\-L\-P}!llist.h@{llist.\-h}}
+\subsubsection[{L\-L\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-P(
+\begin{DoxyParamCaption}
+\item[{}]{ptr}
+\end{DoxyParamCaption}
+)~(({\bf llobject\-\_\-t} $\ast$)ptr)}}\label{llist_8h_a97243939f19fbd154228ba696ca3bc6b}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}{\index{llist.\-h@{llist.\-h}!llobject\-\_\-t@{llobject\-\_\-t}}
+\index{llobject\-\_\-t@{llobject\-\_\-t}!llist.h@{llist.\-h}}
+\subsubsection[{llobject\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-llp}  {\bf llobject\-\_\-t}}}\label{llist_8h_ae25bff80eae6e2fe4e7114ec370f5fa5}
+
+
+\subsection{Function Documentation}
+\hypertarget{llist_8h_a1f21ade5728ae931bfd027231dda8ef6}{\index{llist.\-h@{llist.\-h}!ll\-\_\-assert@{ll\-\_\-assert}}
+\index{ll\-\_\-assert@{ll\-\_\-assert}!llist.h@{llist.\-h}}
+\subsubsection[{ll\-\_\-assert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf llobject\-\_\-t}$\ast$ ll\-\_\-assert (
+\begin{DoxyParamCaption}
+\item[{{\bf llobject\-\_\-t} $\ast$}]{ep, }
+\item[{char $\ast$}]{msg, }
+\item[{char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}}\label{llist_8h_a1f21ade5728ae931bfd027231dda8ef6}
+
+
+References L\-L\-\_\-\-N\-U\-L\-L.
+
+\hypertarget{llist_8h_a3688eab986af30216f75093054ac6086}{\index{llist.\-h@{llist.\-h}!ll\-\_\-destroy@{ll\-\_\-destroy}}
+\index{ll\-\_\-destroy@{ll\-\_\-destroy}!llist.h@{llist.\-h}}
+\subsubsection[{ll\-\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf llobject\-\_\-t}$\ast$ ll\-\_\-destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf llobject\-\_\-t} $\ast$}]{lp}
+\end{DoxyParamCaption}
+)}}\label{llist_8h_a3688eab986af30216f75093054ac6086}
+\hypertarget{llist_8h_ae7d761051e41c2d04aee1bc5f0a232a7}{\index{llist.\-h@{llist.\-h}!ll\-\_\-detach@{ll\-\_\-detach}}
+\index{ll\-\_\-detach@{ll\-\_\-detach}!llist.h@{llist.\-h}}
+\subsubsection[{ll\-\_\-detach}]{\setlength{\rightskip}{0pt plus 5cm}{\bf llobject\-\_\-t}$\ast$ ll\-\_\-detach (
+\begin{DoxyParamCaption}
+\item[{{\bf llobject\-\_\-t} $\ast$}]{lp, }
+\item[{{\bf llobject\-\_\-t} $\ast$}]{ep}
+\end{DoxyParamCaption}
+)}}\label{llist_8h_ae7d761051e41c2d04aee1bc5f0a232a7}
+
+
+References L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y, and L\-L\-\_\-\-N\-U\-L\-L.
+
+\hypertarget{llist_8h_a7dfd44f1e6adb37a42464ca23c72e9a9}{\index{llist.\-h@{llist.\-h}!ll\-\_\-first@{ll\-\_\-first}}
+\index{ll\-\_\-first@{ll\-\_\-first}!llist.h@{llist.\-h}}
+\subsubsection[{ll\-\_\-first}]{\setlength{\rightskip}{0pt plus 5cm}{\bf llobject\-\_\-t}$\ast$ ll\-\_\-first (
+\begin{DoxyParamCaption}
+\item[{{\bf llobject\-\_\-t} $\ast$}]{ep}
+\end{DoxyParamCaption}
+)}}\label{llist_8h_a7dfd44f1e6adb37a42464ca23c72e9a9}
+
+
+References L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y, and L\-L\-\_\-\-N\-U\-L\-L.
+
+\hypertarget{llist_8h_a39b713321757707799a677b32e377232}{\index{llist.\-h@{llist.\-h}!ll\-\_\-insert@{ll\-\_\-insert}}
+\index{ll\-\_\-insert@{ll\-\_\-insert}!llist.h@{llist.\-h}}
+\subsubsection[{ll\-\_\-insert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf llobject\-\_\-t}$\ast$ ll\-\_\-insert (
+\begin{DoxyParamCaption}
+\item[{{\bf llobject\-\_\-t} $\ast$}]{lp, }
+\item[{{\bf llobject\-\_\-t} $\ast$}]{ep, }
+\item[{int($\ast$)()}]{cmp}
+\end{DoxyParamCaption}
+)}}\label{llist_8h_a39b713321757707799a677b32e377232}
+
+
+References L\-L\-\_\-\-A\-P\-P\-E\-N\-D, L\-L\-\_\-\-E\-A\-C\-H, L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y, L\-L\-\_\-\-N\-U\-L\-L, L\-L\-\_\-\-P\-U\-S\-H, and L\-L\-\_\-\-R\-\_\-\-I\-N\-S\-E\-R\-T.
+
+\hypertarget{llist_8h_a09abd66b40719ddd328a950b7e9ff3ab}{\index{llist.\-h@{llist.\-h}!ll\-\_\-pop@{ll\-\_\-pop}}
+\index{ll\-\_\-pop@{ll\-\_\-pop}!llist.h@{llist.\-h}}
+\subsubsection[{ll\-\_\-pop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf llobject\-\_\-t}$\ast$ ll\-\_\-pop (
+\begin{DoxyParamCaption}
+\item[{{\bf llobject\-\_\-t} $\ast$}]{ep}
+\end{DoxyParamCaption}
+)}}\label{llist_8h_a09abd66b40719ddd328a950b7e9ff3ab}
+
+
+References L\-L\-\_\-\-D\-E\-T\-A\-C\-H, L\-L\-\_\-\-I\-S\-\_\-\-E\-M\-P\-T\-Y, and L\-L\-\_\-\-N\-U\-L\-L.
+
+\hypertarget{llist_8h_a4b44ebbf592053619df01ed7d0e2ceb0}{\index{llist.\-h@{llist.\-h}!ll\-\_\-r\-\_\-insert@{ll\-\_\-r\-\_\-insert}}
+\index{ll\-\_\-r\-\_\-insert@{ll\-\_\-r\-\_\-insert}!llist.h@{llist.\-h}}
+\subsubsection[{ll\-\_\-r\-\_\-insert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf llobject\-\_\-t}$\ast$ ll\-\_\-r\-\_\-insert (
+\begin{DoxyParamCaption}
+\item[{{\bf llobject\-\_\-t} $\ast$}]{lp, }
+\item[{{\bf llobject\-\_\-t} $\ast$}]{ep}
+\end{DoxyParamCaption}
+)}}\label{llist_8h_a4b44ebbf592053619df01ed7d0e2ceb0}

@@ -1,0 +1,574 @@
+\hypertarget{_b_m_p280_8h}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/devices/inc/\-B\-M\-P280.h File Reference}
+\label{_b_m_p280_8h}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/devices/inc/\-B\-M\-P280.\-h@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/devices/inc/\-B\-M\-P280.\-h}}
+}
+
+
+B\-M\-P280 Interface Library.  
+
+
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+Include dependency graph for B\-M\-P280.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{_b_m_p280_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_b_m_p280_8h_a64daeac0e223512b505ab0caa06ddbd8}{B\-M\-P280\-\_\-\-A\-D\-D\-R}~0x76
+\begin{DoxyCompactList}\small\item\em Device address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf T\-W\-I Status Codes}\par
+{\em All the codes that could be given via T\-W\-S\-R }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_b_m_p280_8h_a72ad9efb996305f741d5ac90bd974454}{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-C\-O\-N\-T\-R\-O\-L}~0x\-F4
+\item 
+\#define \hyperlink{_b_m_p280_8h_a963e6042d8e5635acac0e286157cb6cf}{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E}~0x\-F7
+\begin{DoxyCompactList}\small\item\em 0x\-F7(msb) , 0x\-F8(lsb) , 0x\-F9(xlsb) \-: stores the pressure data. \end{DoxyCompactList}\item 
+\#define \hyperlink{_b_m_p280_8h_ab34ac559ed33926ad842bd927c2cd04c}{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-T\-E\-M\-P\-R\-E\-R\-A\-T\-U\-R\-E}~0x\-F\-A
+\begin{DoxyCompactList}\small\item\em 0x\-F\-A(msb) , 0x\-F\-B(lsb) , 0x\-F\-C(xlsb) \-: stores the temperature data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Command Macros}\par
+{\em Measurement commands to issue to B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-C\-O\-N\-T\-R\-O\-L }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_b_m_p280_8h_a5fa6fe8a5113801977e4e65484d7f461}{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E}~0x2\-E
+\item 
+\#define \hyperlink{_b_m_p280_8h_a3b86f2a5c89dacf802c6056734fa3976}{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E0}~0x25
+\item 
+\#define \hyperlink{_b_m_p280_8h_af61c27793531f002244f3a1aa16ca280}{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E1}~0x29
+\item 
+\#define \hyperlink{_b_m_p280_8h_af336cfa825ec8ca06fdf6ee85d5bda7a}{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E2}~0x2\-D
+\item 
+\#define \hyperlink{_b_m_p280_8h_a407d2849ebecd8a77bcf2f66bf62c271}{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E3}~0x31
+\item 
+\#define \hyperlink{_b_m_p280_8h_ae6fab8592a44231f67330303c108c031}{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E4}~0x5\-D
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{_b_m_p280_8h_a2d512d05a3f329da6e0bfb081a1f6685}{B\-M\-P280\-\_\-\-Init} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the B\-M\-P280 and reads the calibration data from the device. \end{DoxyCompactList}\item 
+char \hyperlink{_b_m_p280_8h_a3aeeb100ef682ba3a48ea93ac87df141}{B\-M\-P280\-\_\-\-Get\-Un\-P\-T} (double $\ast$, double $\ast$)
+\begin{DoxyCompactList}\small\item\em Gets the uncalibrated temperature and pressure data. \end{DoxyCompactList}\item 
+short \hyperlink{_b_m_p280_8h_a3af5a29c8b539b09126c1dd874a7e6c4}{B\-M\-P280\-\_\-\-Get\-Oversampling} (void)
+\begin{DoxyCompactList}\small\item\em Gets the oversampling setting for the library. \end{DoxyCompactList}\item 
+char \hyperlink{_b_m_p280_8h_ac56b30a97fa1388153530bb658a0ab3d}{B\-M\-P280\-\_\-\-Set\-Oversampling} (short oss)
+\begin{DoxyCompactList}\small\item\em Sets the oversampling setting for the library. \end{DoxyCompactList}\item 
+char \hyperlink{_b_m_p280_8h_a79fe54e0ce75dc946a3540bddd43e878}{B\-M\-P280\-\_\-\-Start\-Measurment} (void)
+\begin{DoxyCompactList}\small\item\em Starts a measurement. \end{DoxyCompactList}\item 
+char \hyperlink{_b_m_p280_8h_aab0220cf4e61916eedbc1d5f72495c86}{B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure} (double $\ast$, double $\ast$)
+\begin{DoxyCompactList}\small\item\em Gets temperature and pressure. \end{DoxyCompactList}\item 
+char \hyperlink{_b_m_p280_8h_ac8c6848873b9fed4010c5c4f472a4ae2}{B\-M\-P280\-\_\-\-Calc\-Temperature} (double $\ast$, double $\ast$)
+\begin{DoxyCompactList}\small\item\em Calculates temperature. \end{DoxyCompactList}\item 
+char \hyperlink{_b_m_p280_8h_a782bc0a3fa2ac03ae179edb89bf91726}{B\-M\-P280\-\_\-\-Calc\-Pressure} (double $\ast$, double $\ast$)
+\begin{DoxyCompactList}\small\item\em Calculates pressure. \end{DoxyCompactList}\item 
+double \hyperlink{_b_m_p280_8h_acfd338e24de5158c7ec8389d6c4eaa6a}{B\-M\-P280\-\_\-\-Sealevel} (double, double)
+\begin{DoxyCompactList}\small\item\em Calculates pressure at sea level given an altitude. \end{DoxyCompactList}\item 
+double \hyperlink{_b_m_p280_8h_a109695e8464300cb4ec8593289627c93}{B\-M\-P280\-\_\-\-Altitude} (double, double)
+\begin{DoxyCompactList}\small\item\em Calculates altitude. \end{DoxyCompactList}\item 
+char \hyperlink{_b_m_p280_8h_aeca60c0f36d134193d76793f85476422}{B\-M\-P280\-\_\-\-Get\-Error} (void)
+\begin{DoxyCompactList}\small\item\em Returns the internal library error value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+B\-M\-P280 Interface Library. Created\-: 2/10/2015 20\-:25\-:27 Author\-: Camden Miller 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_b_m_p280_8h_a64daeac0e223512b505ab0caa06ddbd8}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-A\-D\-D\-R@{B\-M\-P280\-\_\-\-A\-D\-D\-R}}
+\index{B\-M\-P280\-\_\-\-A\-D\-D\-R@{B\-M\-P280\-\_\-\-A\-D\-D\-R}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-A\-D\-D\-R~0x76}}\label{_b_m_p280_8h_a64daeac0e223512b505ab0caa06ddbd8}
+
+
+Device address. 
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Read\-Bytes(), and B\-M\-P280\-\_\-\-Write\-Bytes().
+
+\hypertarget{_b_m_p280_8h_a3b86f2a5c89dacf802c6056734fa3976}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E0@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E0}}
+\index{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E0@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E0}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E0}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E0~0x25}}\label{_b_m_p280_8h_a3b86f2a5c89dacf802c6056734fa3976}
+
+
+Referenced by B\-M\-P280\-\_\-\-Start\-Measurment().
+
+\hypertarget{_b_m_p280_8h_af61c27793531f002244f3a1aa16ca280}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E1@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E1}}
+\index{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E1@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E1}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E1}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E1~0x29}}\label{_b_m_p280_8h_af61c27793531f002244f3a1aa16ca280}
+
+
+Referenced by B\-M\-P280\-\_\-\-Start\-Measurment().
+
+\hypertarget{_b_m_p280_8h_af336cfa825ec8ca06fdf6ee85d5bda7a}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E2@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E2}}
+\index{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E2@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E2}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E2}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E2~0x2\-D}}\label{_b_m_p280_8h_af336cfa825ec8ca06fdf6ee85d5bda7a}
+
+
+Referenced by B\-M\-P280\-\_\-\-Start\-Measurment().
+
+\hypertarget{_b_m_p280_8h_a407d2849ebecd8a77bcf2f66bf62c271}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E3@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E3}}
+\index{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E3@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E3}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E3}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E3~0x31}}\label{_b_m_p280_8h_a407d2849ebecd8a77bcf2f66bf62c271}
+
+
+Referenced by B\-M\-P280\-\_\-\-Start\-Measurment().
+
+\hypertarget{_b_m_p280_8h_ae6fab8592a44231f67330303c108c031}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E4@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E4}}
+\index{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E4@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E4}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E4}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E4~0x5\-D}}\label{_b_m_p280_8h_ae6fab8592a44231f67330303c108c031}
+
+
+Referenced by B\-M\-P280\-\_\-\-Start\-Measurment().
+
+\hypertarget{_b_m_p280_8h_a5fa6fe8a5113801977e4e65484d7f461}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E}}
+\index{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E@{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E~0x2\-E}}\label{_b_m_p280_8h_a5fa6fe8a5113801977e4e65484d7f461}
+\hypertarget{_b_m_p280_8h_a72ad9efb996305f741d5ac90bd974454}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-C\-O\-N\-T\-R\-O\-L@{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-C\-O\-N\-T\-R\-O\-L}}
+\index{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-C\-O\-N\-T\-R\-O\-L@{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-C\-O\-N\-T\-R\-O\-L}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-C\-O\-N\-T\-R\-O\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-C\-O\-N\-T\-R\-O\-L~0x\-F4}}\label{_b_m_p280_8h_a72ad9efb996305f741d5ac90bd974454}
+
+
+Referenced by B\-M\-P280\-\_\-\-Start\-Measurment().
+
+\hypertarget{_b_m_p280_8h_a963e6042d8e5635acac0e286157cb6cf}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E@{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E}}
+\index{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E@{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E~0x\-F7}}\label{_b_m_p280_8h_a963e6042d8e5635acac0e286157cb6cf}
+
+
+0x\-F7(msb) , 0x\-F8(lsb) , 0x\-F9(xlsb) \-: stores the pressure data. 
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Get\-Un\-P\-T().
+
+\hypertarget{_b_m_p280_8h_ab34ac559ed33926ad842bd927c2cd04c}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-T\-E\-M\-P\-R\-E\-R\-A\-T\-U\-R\-E@{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-T\-E\-M\-P\-R\-E\-R\-A\-T\-U\-R\-E}}
+\index{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-T\-E\-M\-P\-R\-E\-R\-A\-T\-U\-R\-E@{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-T\-E\-M\-P\-R\-E\-R\-A\-T\-U\-R\-E}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-T\-E\-M\-P\-R\-E\-R\-A\-T\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-T\-E\-M\-P\-R\-E\-R\-A\-T\-U\-R\-E~0x\-F\-A}}\label{_b_m_p280_8h_ab34ac559ed33926ad842bd927c2cd04c}
+
+
+0x\-F\-A(msb) , 0x\-F\-B(lsb) , 0x\-F\-C(xlsb) \-: stores the temperature data. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_b_m_p280_8h_a109695e8464300cb4ec8593289627c93}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Altitude@{B\-M\-P280\-\_\-\-Altitude}}
+\index{B\-M\-P280\-\_\-\-Altitude@{B\-M\-P280\-\_\-\-Altitude}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Altitude}]{\setlength{\rightskip}{0pt plus 5cm}double B\-M\-P280\-\_\-\-Altitude (
+\begin{DoxyParamCaption}
+\item[{double}]{P, }
+\item[{double}]{P0}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_a109695e8464300cb4ec8593289627c93}
+
+
+Calculates altitude. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pressure} & reading \\
+\hline
+\mbox{\tt in}  & {\em sea} & level pressure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corrected reading 
+\end{DoxyReturn}
+\hypertarget{_b_m_p280_8h_a782bc0a3fa2ac03ae179edb89bf91726}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Calc\-Pressure@{B\-M\-P280\-\_\-\-Calc\-Pressure}}
+\index{B\-M\-P280\-\_\-\-Calc\-Pressure@{B\-M\-P280\-\_\-\-Calc\-Pressure}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Calc\-Pressure}]{\setlength{\rightskip}{0pt plus 5cm}char B\-M\-P280\-\_\-\-Calc\-Pressure (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{P, }
+\item[{double $\ast$}]{u\-P}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_a782bc0a3fa2ac03ae179edb89bf91726}
+
+
+Calculates pressure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em pointer} & to a place to store the pressure data \\
+\hline
+\mbox{\tt in}  & {\em pointer} & to the uncalibrated pressure data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+
+
+References dig\-\_\-\-P1, dig\-\_\-\-P2, dig\-\_\-\-P3, dig\-\_\-\-P4, dig\-\_\-\-P5, dig\-\_\-\-P6, dig\-\_\-\-P7, dig\-\_\-\-P8, dig\-\_\-\-P9, and t\-\_\-fine.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h_a782bc0a3fa2ac03ae179edb89bf91726_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280_8h_ac8c6848873b9fed4010c5c4f472a4ae2}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Calc\-Temperature@{B\-M\-P280\-\_\-\-Calc\-Temperature}}
+\index{B\-M\-P280\-\_\-\-Calc\-Temperature@{B\-M\-P280\-\_\-\-Calc\-Temperature}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Calc\-Temperature}]{\setlength{\rightskip}{0pt plus 5cm}char B\-M\-P280\-\_\-\-Calc\-Temperature (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{T, }
+\item[{double $\ast$}]{u\-T}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_ac8c6848873b9fed4010c5c4f472a4ae2}
+
+
+Calculates temperature. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em pointer} & to a place to store the temperature data \\
+\hline
+\mbox{\tt in}  & {\em pointer} & to the uncalibrated temperature data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+
+
+References dig\-\_\-\-T1, dig\-\_\-\-T2, dig\-\_\-\-T3, and t\-\_\-fine.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h_ac8c6848873b9fed4010c5c4f472a4ae2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280_8h_aeca60c0f36d134193d76793f85476422}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Get\-Error@{B\-M\-P280\-\_\-\-Get\-Error}}
+\index{B\-M\-P280\-\_\-\-Get\-Error@{B\-M\-P280\-\_\-\-Get\-Error}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Get\-Error}]{\setlength{\rightskip}{0pt plus 5cm}char B\-M\-P280\-\_\-\-Get\-Error (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_aeca60c0f36d134193d76793f85476422}
+
+
+Returns the internal library error value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pressure} & reading \\
+\hline
+\mbox{\tt in}  & {\em sea} & level pressure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error value 
+\end{DoxyReturn}
+
+
+References error.
+
+\hypertarget{_b_m_p280_8h_a3af5a29c8b539b09126c1dd874a7e6c4}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Get\-Oversampling@{B\-M\-P280\-\_\-\-Get\-Oversampling}}
+\index{B\-M\-P280\-\_\-\-Get\-Oversampling@{B\-M\-P280\-\_\-\-Get\-Oversampling}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Get\-Oversampling}]{\setlength{\rightskip}{0pt plus 5cm}short B\-M\-P280\-\_\-\-Get\-Oversampling (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_a3af5a29c8b539b09126c1dd874a7e6c4}
+
+
+Gets the oversampling setting for the library. 
+
+\begin{DoxyReturn}{Returns}
+oversampling 
+\end{DoxyReturn}
+
+
+References oversampling.
+
+\hypertarget{_b_m_p280_8h_aab0220cf4e61916eedbc1d5f72495c86}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure@{B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure}}
+\index{B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure@{B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure}]{\setlength{\rightskip}{0pt plus 5cm}char B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{T, }
+\item[{double $\ast$}]{P}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_aab0220cf4e61916eedbc1d5f72495c86}
+
+
+Gets temperature and pressure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em pointer} & to a place to store the pressure data \\
+\hline
+\mbox{\tt out}  & {\em pointer} & to a place to store the temperature data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+
+
+References B\-M\-P280\-\_\-\-Calc\-Pressure(), B\-M\-P280\-\_\-\-Calc\-Temperature(), B\-M\-P280\-\_\-\-Get\-Un\-P\-T(), and error.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Collect().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h_aab0220cf4e61916eedbc1d5f72495c86_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h_aab0220cf4e61916eedbc1d5f72495c86_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280_8h_a3aeeb100ef682ba3a48ea93ac87df141}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Get\-Un\-P\-T@{B\-M\-P280\-\_\-\-Get\-Un\-P\-T}}
+\index{B\-M\-P280\-\_\-\-Get\-Un\-P\-T@{B\-M\-P280\-\_\-\-Get\-Un\-P\-T}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Get\-Un\-P\-T}]{\setlength{\rightskip}{0pt plus 5cm}char B\-M\-P280\-\_\-\-Get\-Un\-P\-T (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{u\-P, }
+\item[{double $\ast$}]{u\-T}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_a3aeeb100ef682ba3a48ea93ac87df141}
+
+
+Gets the uncalibrated temperature and pressure data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em pointer} & to a place to store the pressure data \\
+\hline
+\mbox{\tt out}  & {\em pointer} & to a place to store the temperature data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+
+
+References B\-M\-P280\-\_\-\-Read\-Bytes(), and B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-R\-E\-S\-U\-L\-T\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h_a3aeeb100ef682ba3a48ea93ac87df141_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h_a3aeeb100ef682ba3a48ea93ac87df141_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280_8h_a2d512d05a3f329da6e0bfb081a1f6685}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Init@{B\-M\-P280\-\_\-\-Init}}
+\index{B\-M\-P280\-\_\-\-Init@{B\-M\-P280\-\_\-\-Init}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}char B\-M\-P280\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_a2d512d05a3f329da6e0bfb081a1f6685}
+
+
+Initializes the B\-M\-P280 and reads the calibration data from the device. 
+
+\begin{DoxyReturn}{Returns}
+status (zero on failure, nonzero otherwise) 
+\end{DoxyReturn}
+
+
+References B\-M\-P280\-\_\-\-Read\-Int(), B\-M\-P280\-\_\-\-Read\-U\-Int(), dig\-\_\-\-P1, dig\-\_\-\-P2, dig\-\_\-\-P3, dig\-\_\-\-P4, dig\-\_\-\-P5, dig\-\_\-\-P6, dig\-\_\-\-P7, dig\-\_\-\-P8, dig\-\_\-\-P9, dig\-\_\-\-T1, dig\-\_\-\-T2, and dig\-\_\-\-T3.
+
+
+
+Referenced by A\-P\-P\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h_a2d512d05a3f329da6e0bfb081a1f6685_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{_b_m_p280_8h_a2d512d05a3f329da6e0bfb081a1f6685_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280_8h_acfd338e24de5158c7ec8389d6c4eaa6a}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Sealevel@{B\-M\-P280\-\_\-\-Sealevel}}
+\index{B\-M\-P280\-\_\-\-Sealevel@{B\-M\-P280\-\_\-\-Sealevel}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Sealevel}]{\setlength{\rightskip}{0pt plus 5cm}double B\-M\-P280\-\_\-\-Sealevel (
+\begin{DoxyParamCaption}
+\item[{double}]{P, }
+\item[{double}]{A}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_acfd338e24de5158c7ec8389d6c4eaa6a}
+
+
+Calculates pressure at sea level given an altitude. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pressure} & reading \\
+\hline
+\mbox{\tt in}  & {\em altitude} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corrected reading 
+\end{DoxyReturn}
+\hypertarget{_b_m_p280_8h_ac56b30a97fa1388153530bb658a0ab3d}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Set\-Oversampling@{B\-M\-P280\-\_\-\-Set\-Oversampling}}
+\index{B\-M\-P280\-\_\-\-Set\-Oversampling@{B\-M\-P280\-\_\-\-Set\-Oversampling}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Set\-Oversampling}]{\setlength{\rightskip}{0pt plus 5cm}char B\-M\-P280\-\_\-\-Set\-Oversampling (
+\begin{DoxyParamCaption}
+\item[{short}]{oss}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_ac56b30a97fa1388153530bb658a0ab3d}
+
+
+Sets the oversampling setting for the library. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em oss} & Oversampling setting \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 
+\end{DoxyReturn}
+
+
+References oversampling.
+
+
+
+Referenced by A\-P\-P\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h_ac56b30a97fa1388153530bb658a0ab3d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280_8h_a79fe54e0ce75dc946a3540bddd43e878}{\index{B\-M\-P280.\-h@{B\-M\-P280.\-h}!B\-M\-P280\-\_\-\-Start\-Measurment@{B\-M\-P280\-\_\-\-Start\-Measurment}}
+\index{B\-M\-P280\-\_\-\-Start\-Measurment@{B\-M\-P280\-\_\-\-Start\-Measurment}!BMP280.h@{B\-M\-P280.\-h}}
+\subsubsection[{B\-M\-P280\-\_\-\-Start\-Measurment}]{\setlength{\rightskip}{0pt plus 5cm}char B\-M\-P280\-\_\-\-Start\-Measurment (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280_8h_a79fe54e0ce75dc946a3540bddd43e878}
+
+
+Starts a measurement. 
+
+\begin{DoxyReturn}{Returns}
+time to wait for result (in ms) 
+\end{DoxyReturn}
+
+
+References B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E0, B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E1, B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E2, B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E3, B\-M\-P280\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-R\-E\-S\-S\-U\-R\-E4, B\-M\-P280\-\_\-\-R\-E\-G\-\_\-\-C\-O\-N\-T\-R\-O\-L, B\-M\-P280\-\_\-\-Write\-Bytes(), delay, oversampling, and oversampling\-\_\-t.
+
+
+
+Referenced by B\-M\-P280\-\_\-\-Request().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280_8h_a79fe54e0ce75dc946a3540bddd43e878_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{_b_m_p280_8h_a79fe54e0ce75dc946a3540bddd43e878_icgraph}
+\end{center}
+\end{figure}
+
+

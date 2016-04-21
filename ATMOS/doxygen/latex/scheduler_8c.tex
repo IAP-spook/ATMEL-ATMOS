@@ -1,0 +1,218 @@
+\hypertarget{scheduler_8c}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/scheduler/src/scheduler.c File Reference}
+\label{scheduler_8c}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/scheduler/src/scheduler.\-c@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/scheduler/src/scheduler.\-c}}
+}
+
+
+Implementation of the resources that hold all events and manage useful events in-\/order within a linked list.  
+
+
+{\ttfamily \#include \char`\"{}scheduler//inc/scheduler.\-h\char`\"{}}\\*
+Include dependency graph for scheduler.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scheduler_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{scheduler_8c_a0b1a5ec264185ca0c573406b452dc9a2}{init\-\_\-timeoutq} ()
+\begin{DoxyCompactList}\small\item\em Init function of scheduler, which initialize all events and put them into freelist. \end{DoxyCompactList}\item 
+int \hyperlink{scheduler_8c_a7f089fd35d3f012126b8d75b4be3274e}{load\-\_\-new\-\_\-sensor} (int timeout, int repeat, \hyperlink{_base___sensor_8h_ae91aa07b7bce6c6b463d63d8f214bb37}{Base\-Sensor} $\ast$device\-\_\-ptr, int otherinfo)
+\begin{DoxyCompactList}\small\item\em Load a brand new device activity into the scheduler's timeout\-Q. \end{DoxyCompactList}\item 
+int \hyperlink{scheduler_8c_a14fc4d6f2c57dd6c53413dcda79d71aa}{get\-\_\-next\-\_\-interval} ()
+\begin{DoxyCompactList}\small\item\em Return the the time ( ms ) of the next event. \end{DoxyCompactList}\item 
+int \hyperlink{scheduler_8c_a4fb33031c030b4646e4bb73c5227c075}{handle\-\_\-timeoutq\-\_\-event} ()
+\begin{DoxyCompactList}\small\item\em Handle the next event in timeout\-Q\-: execute the event's handler function according to the device type, re-\/insert it according to the period, and set a timer of next event. \end{DoxyCompactList}\item 
+void \hyperlink{scheduler_8c_abff11951f98021af2b6f1e2162da2de7}{insert\-\_\-timeoutq\-\_\-event} (struct \hyperlink{structevent}{event} $\ast$ep)
+\begin{DoxyCompactList}\small\item\em Insert a new event into the scheduler according to timeout order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the resources that hold all events and manage useful events in-\/order within a linked list. Created\-: 2016/4/14 23\-:05\-:53 Author\-: Anxin Bai 
+
+\subsection{Function Documentation}
+\hypertarget{scheduler_8c_a14fc4d6f2c57dd6c53413dcda79d71aa}{\index{scheduler.\-c@{scheduler.\-c}!get\-\_\-next\-\_\-interval@{get\-\_\-next\-\_\-interval}}
+\index{get\-\_\-next\-\_\-interval@{get\-\_\-next\-\_\-interval}!scheduler.c@{scheduler.\-c}}
+\subsubsection[{get\-\_\-next\-\_\-interval}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-next\-\_\-interval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8c_a14fc4d6f2c57dd6c53413dcda79d71aa}
+
+
+Return the the time ( ms ) of the next event. 
+
+
+
+References E\-V\-\_\-\-N\-U\-L\-L, L\-L\-\_\-\-T\-O\-P, M\-A\-X\-\_\-\-S\-L\-E\-E\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L, event\-::timeout, and timeoutq.
+
+
+
+Referenced by handle\-\_\-timeoutq\-\_\-event(), and main().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{scheduler_8c_a14fc4d6f2c57dd6c53413dcda79d71aa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{scheduler_8c_a4fb33031c030b4646e4bb73c5227c075}{\index{scheduler.\-c@{scheduler.\-c}!handle\-\_\-timeoutq\-\_\-event@{handle\-\_\-timeoutq\-\_\-event}}
+\index{handle\-\_\-timeoutq\-\_\-event@{handle\-\_\-timeoutq\-\_\-event}!scheduler.c@{scheduler.\-c}}
+\subsubsection[{handle\-\_\-timeoutq\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}int handle\-\_\-timeoutq\-\_\-event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8c_a4fb33031c030b4646e4bb73c5227c075}
+
+
+Handle the next event in timeout\-Q\-: execute the event's handler function according to the device type, re-\/insert it according to the period, and set a timer of next event. 
+
+
+
+References event\-::borrow\-\_\-timeout, E\-V\-\_\-\-N\-U\-L\-L, freelist, get\-\_\-next\-\_\-interval(), handle\-\_\-timeoutq\-\_\-event(), insert\-\_\-timeoutq\-\_\-event(), L\-L\-\_\-\-P\-O\-P, L\-L\-\_\-\-P\-U\-S\-H, L\-L\-\_\-\-T\-O\-P, event\-::repeat\-\_\-interval, event\-::run, set\-\_\-timer(), event\-::sp, event\-::timeout, and timeoutq.
+
+
+
+Referenced by handle\-\_\-timeoutq\-\_\-event().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scheduler_8c_a4fb33031c030b4646e4bb73c5227c075_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{scheduler_8c_a4fb33031c030b4646e4bb73c5227c075_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{scheduler_8c_a0b1a5ec264185ca0c573406b452dc9a2}{\index{scheduler.\-c@{scheduler.\-c}!init\-\_\-timeoutq@{init\-\_\-timeoutq}}
+\index{init\-\_\-timeoutq@{init\-\_\-timeoutq}!scheduler.c@{scheduler.\-c}}
+\subsubsection[{init\-\_\-timeoutq}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-timeoutq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8c_a0b1a5ec264185ca0c573406b452dc9a2}
+
+
+Init function of scheduler, which initialize all events and put them into freelist. 
+
+
+
+References F\-L, freelist, L\-L\-\_\-\-I\-N\-I\-T, L\-L\-\_\-\-P\-U\-S\-H, M\-A\-X\-\_\-\-E\-V\-E\-N\-T\-S, queue, timeoutq, and T\-Q.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{scheduler_8c_a0b1a5ec264185ca0c573406b452dc9a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{scheduler_8c_abff11951f98021af2b6f1e2162da2de7}{\index{scheduler.\-c@{scheduler.\-c}!insert\-\_\-timeoutq\-\_\-event@{insert\-\_\-timeoutq\-\_\-event}}
+\index{insert\-\_\-timeoutq\-\_\-event@{insert\-\_\-timeoutq\-\_\-event}!scheduler.c@{scheduler.\-c}}
+\subsubsection[{insert\-\_\-timeoutq\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void insert\-\_\-timeoutq\-\_\-event (
+\begin{DoxyParamCaption}
+\item[{struct {\bf event} $\ast$}]{ep}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8c_abff11951f98021af2b6f1e2162da2de7}
+
+
+Insert a new event into the scheduler according to timeout order. 
+
+
+
+References E\-V\-\_\-\-N\-U\-L\-L, L\-L\-\_\-\-A\-P\-P\-E\-N\-D, L\-L\-\_\-\-E\-A\-C\-H, L\-L\-\_\-\-L\-\_\-\-I\-N\-S\-E\-R\-T, event\-::timeout, and timeoutq.
+
+
+
+Referenced by handle\-\_\-timeoutq\-\_\-event(), load\-\_\-new\-\_\-sensor(), and sensor\-\_\-handler().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scheduler_8c_abff11951f98021af2b6f1e2162da2de7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{scheduler_8c_a7f089fd35d3f012126b8d75b4be3274e}{\index{scheduler.\-c@{scheduler.\-c}!load\-\_\-new\-\_\-sensor@{load\-\_\-new\-\_\-sensor}}
+\index{load\-\_\-new\-\_\-sensor@{load\-\_\-new\-\_\-sensor}!scheduler.c@{scheduler.\-c}}
+\subsubsection[{load\-\_\-new\-\_\-sensor}]{\setlength{\rightskip}{0pt plus 5cm}int load\-\_\-new\-\_\-sensor (
+\begin{DoxyParamCaption}
+\item[{int}]{timeout, }
+\item[{int}]{repeat, }
+\item[{{\bf Base\-Sensor} $\ast$}]{device\-\_\-ptr, }
+\item[{int}]{otherinfo}
+\end{DoxyParamCaption}
+)}}\label{scheduler_8c_a7f089fd35d3f012126b8d75b4be3274e}
+
+
+Load a brand new device activity into the scheduler's timeout\-Q. 
+
+
+
+References event\-::borrow\-\_\-timeout, event\-::cur\-\_\-state, E\-V\-\_\-\-N\-U\-L\-L, freelist, event\-::info, insert\-\_\-timeoutq\-\_\-event(), L\-L\-\_\-\-P\-O\-P, Ready, event\-::repeat\-\_\-interval, event\-::run, sensor\-\_\-handler(), event\-::sp, and event\-::timeout.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scheduler_8c_a7f089fd35d3f012126b8d75b4be3274e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{scheduler_8c_a7f089fd35d3f012126b8d75b4be3274e_icgraph}
+\end{center}
+\end{figure}
+
+

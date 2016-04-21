@@ -1,3 +1,11 @@
+/**
+ * \file int_timer.c
+ * 
+ * \brief Declaration of an asynchronous interrupt timer.
+ *
+ *  Author: Anxin Bai
+ */ 
+
 #ifndef _EVENT_TIMER_H_
 #define _EVENT_TIMER_H_
 

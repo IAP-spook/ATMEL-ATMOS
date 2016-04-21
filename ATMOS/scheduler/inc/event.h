@@ -1,23 +1,31 @@
-/*
- * Event.h
+/**
+ * \file Event.h
+ *
+ * \brief A container struct to hold device/sensor pointer and corresponding timeout info. 
  *
  * Created: 2016/4/4 13:32:45
- *  Author: AB
+ *  Author: Anxin Bai
  */ 
 
 
 #ifndef _EVENT_H_
 #define _EVENT_H_
+
 #include <stdio.h>
+#include "utilities/inc/common.h"
 #include "utilities/inc/llist.h"
 #include "wrapper/base-class/inc/Base_Sensor.h"
-
-enum DeviceState { New, Ready, Running, Terminated, Oops };
 	
+
+/*************************************************************************//**
+  @brief A container struct to hold device/sensor pointer and corresponding timeout info. 
+*****************************************************************************/
 struct event 
 {
 	LL_PTRS;
+	//! next timeout value in ms.
 	int timeout;
+	//! the repeat period of the event in ms. 0 means no repeatence.
 	int repeat_interval;
     int borrow_timeout;
 	BaseSensor * sp;

@@ -1,16 +1,18 @@
-/*
- * scheduler.c
+/**
+ * \file scheduler.c
+ *
+ * \brief Implementation of the resources that hold all events and manage useful events in-order within a linked list. 
  *
  * Created: 2016/4/14 23:05:53
- *  Author: AB
+ *  Author: Anxin Bai
  */ 
 #include "scheduler//inc/scheduler.h"
 
 
-/* 
- * like other many stuff, we got an init function
- * fill the freelist with all entries and left the timeoutq empty
- */
+
+/*************************************************************************//**
+  @brief Init function of scheduler, which initialize all events and put them into freelist
+*****************************************************************************/
 void init_timeoutq()
 {
 	int i;
@@ -29,9 +31,9 @@ void init_timeoutq()
 }
 
 
-/* 
- * load a brand new sensor activity in the scheduler
- */
+/*************************************************************************//**
+  @brief Load a brand new device activity into the scheduler's timeoutQ
+*****************************************************************************/
 int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otherinfo )
 {
 
@@ -51,9 +53,10 @@ int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otheri
     return 0;
 }
 
-/* 
- * return the numbers of period we should launch next
- */
+
+/*************************************************************************//**
+  @brief Return the the time ( ms ) of the next event
+*****************************************************************************/
 int get_next_interval()
 {
 
@@ -86,10 +89,9 @@ int get_next_interval()
 }
 
 
-/* 
- * handle the next one in timeout queue
- * the return value is reserved and now we just return 0
- */
+/*************************************************************************//**
+  @brief Handle the next event in timeoutQ: execute the event's handler function according to the device type, re-insert it according to the period, and set a timer of next event.
+*****************************************************************************/
 int handle_timeoutq_event( )
 {
 	/* assume we get a valid one */
@@ -149,6 +151,10 @@ int handle_timeoutq_event( )
     return 0;
 }
 
+
+/*************************************************************************//**
+  @brief Insert a new event into the scheduler according to timeout order
+*****************************************************************************/
 void insert_timeoutq_event( struct event * ep)
 {
 	// Try to insert it according to timeout and timeoutq
@@ -190,6 +196,9 @@ void insert_timeoutq_event( struct event * ep)
 
 #ifdef DEBUG
 
+/*************************************************************************//**
+  @brief Debug usage: Print out all events in line in order with regard to timeout
+*****************************************************************************/
 void dump_timeoutq()
 {
 	printf("\n\n\n=================\nenter function\n================\n");
@@ -202,14 +211,6 @@ void dump_timeoutq()
 		printf("NULL!\n");
 	}
 	printf("=================\nexit function\n================\n\n\n");
-}
-
-
-
-void foo()
-{
-	printf("Top of loop !\n");
-
 }
 
 #endif

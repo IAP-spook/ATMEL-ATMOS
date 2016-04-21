@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$event_8h.html" title="A container struct to hold device/sensor pointer and corresponding timeout info." alt="" coords="92,184,236,211"/>
+<area shape="rect" id="node15" href="$llist_8h.html" title="Declaration of routines for a doubly linked list package." alt="" coords="302,267,420,293"/>
+<area shape="rect" id="node22" href="$handler_8h.html" title="Declaration of various handlers." alt="" coords="311,109,467,136"/>
+<area shape="rect" id="node27" href="$int__timer_8h.html" title="Example for Timers on AVR Devices." alt="" coords="469,184,613,211"/>
+<area shape="rect" id="node7" href="$common_8h.html" title="Declaration of miscellaneous definitions, enumerators, and functions." alt="" coords="189,440,339,467"/>
+<area shape="rect" id="node17" href="$_base___sensor_8h.html" title="Declaration of BaseSensor struct, which derived from BaseDevice." alt="" coords="91,259,227,301"/>
+<area shape="rect" id="node19" href="$_base___device_8h.html" title="Declaration of BaseDevice struct." alt="" coords="91,350,225,391"/>
+</map>

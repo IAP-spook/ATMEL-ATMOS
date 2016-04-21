@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_my___sensor_8h.html" title="Declaration of My_Sensor struct, which derived from BaseSensor." alt="" coords="60,110,191,151"/>
+<area shape="rect" id="node5" href="$_base___sensor_8h.html" title="Declaration of BaseSensor struct, which derived from BaseDevice." alt="" coords="57,201,193,242"/>
+<area shape="rect" id="node7" href="$_base___device_8h.html" title="Declaration of BaseDevice struct." alt="" coords="58,291,192,333"/>
+<area shape="rect" id="node9" href="$common_8h.html" title="Declaration of miscellaneous definitions, enumerators, and functions." alt="" coords="51,381,200,408"/>
+</map>

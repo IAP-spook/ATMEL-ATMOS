@@ -1,0 +1,241 @@
+\hypertarget{_si7020_8h}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/devices/inc/\-Si7020.h File Reference}
+\label{_si7020_8h}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/devices/inc/\-Si7020.\-h@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/devices/inc/\-Si7020.\-h}}
+}
+
+
+Si7020 Interface Library.  
+
+
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+Include dependency graph for Si7020.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{_si7020_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{_si7020_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_si7020_8h_afff2812ca001e5c56254a301dbede825}{S\-I7020\-\_\-\-A\-D\-D\-R}~0x40
+\item 
+\#define \hyperlink{_si7020_8h_ad8588e4f0a0464884899f27ece06ae67}{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-H\-O\-L\-D}~0x\-E5
+\item 
+\#define \hyperlink{_si7020_8h_a84b62936cb987c0c57473bcf806ef5cc}{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-N\-O\-N\-H\-O\-L\-D}~0x\-F5
+\item 
+\#define \hyperlink{_si7020_8h_a87bc2a9a6f3c12f880a803cbe758e0ae}{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-H\-O\-L\-D}~0x\-E3
+\item 
+\#define \hyperlink{_si7020_8h_a30ecc68510a209cd3c7f8df33e565a6f}{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-N\-O\-H\-O\-L\-D}~0x\-F3
+\item 
+\#define \hyperlink{_si7020_8h_a932d4b9499d7a05d70f917d66771f3b7}{S\-I7020\-\_\-\-R\-D\-\_\-\-T\-E\-M\-P\-\_\-\-P\-R\-E\-\_\-\-R\-H}~0x\-E0
+\item 
+\#define \hyperlink{_si7020_8h_adba36e4cc4f209030231eadb1f3a90fe}{S\-I7020\-\_\-\-R\-E\-S\-E\-T}~0x\-F\-E
+\item 
+\#define \hyperlink{_si7020_8h_a9dbe1feadc8758d190bcea84ae991e2b}{S\-I7020\-\_\-\-W\-R\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1}~0x\-E6
+\item 
+\#define \hyperlink{_si7020_8h_a51403c4e1be19e16733a3e49594fc6fb}{S\-I7020\-\_\-\-R\-D\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1}~0x\-E7
+\item 
+\#define \hyperlink{_si7020_8h_a6e8822306ba989c166f6bdfce007654d}{S\-I7020\-\_\-\-W\-R\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G}~0x51
+\item 
+\#define \hyperlink{_si7020_8h_afcf7b09858c8c8b354aab4a6f523ab47}{S\-I7020\-\_\-\-R\-D\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G}~0x11
+\item 
+\#define \hyperlink{_si7020_8h_a281481f3083c7e10edd8cbb14f1b00d5}{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-1\-S\-T\-\_\-\-B\-Y\-T\-E}~0x\-F\-A
+\item 
+\#define \hyperlink{_si7020_8h_ab9a61c841eb8cfb4b4a0dfc787637888}{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-2\-N\-D\-\_\-\-B\-Y\-T\-E}~0x\-F\-C
+\item 
+\#define \hyperlink{_si7020_8h_a02a48291f7605a9e2164b18d20bf86ef}{S\-I7020\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-R\-E\-V}~0x84
+\item 
+\#define \hyperlink{_si7020_8h_a6ed1b7ebcf9a7bf84979813a65a6611e}{S\-H\-I\-F\-T\-E\-D\-\_\-\-D\-I\-V\-I\-S\-O\-R}~0x988000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{_si7020_8h_a75e9271e7a15c900a748e79f01d3c5be}{Si7020\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the Si7020. \end{DoxyCompactList}\item 
+char \hyperlink{_si7020_8h_aebde99dd234f560632ecdbe126b67e05}{Si7020\-\_\-read\-Humidity} (unsigned char $\ast$, char)
+\begin{DoxyCompactList}\small\item\em Read humidity from Si7020. \end{DoxyCompactList}\item 
+char \hyperlink{_si7020_8h_ac561f9976fbf8f27a921f55fc402548d}{Si7020\-\_\-read\-Temperature} (unsigned char $\ast$, char)
+\begin{DoxyCompactList}\small\item\em Read temperature from Si7020. \end{DoxyCompactList}\item 
+float \hyperlink{_si7020_8h_afa24936aee0e87d37acc2ed57286c28a}{Si7020\-\_\-cal\-Humidity} (unsigned char $\ast$)
+\begin{DoxyCompactList}\small\item\em Calculate humidity from Si7020. \end{DoxyCompactList}\item 
+float \hyperlink{_si7020_8h_ab74020292e05d0f98013df991f6c4568}{Si7020\-\_\-cal\-Temperature} (unsigned char $\ast$)
+\begin{DoxyCompactList}\small\item\em Calculate temperature from Si7020. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Si7020 Interface Library. Created\-: 3/27/2015 11\-:14\-:55 Author\-: Hui Shi 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_si7020_8h_a6ed1b7ebcf9a7bf84979813a65a6611e}{\index{Si7020.\-h@{Si7020.\-h}!S\-H\-I\-F\-T\-E\-D\-\_\-\-D\-I\-V\-I\-S\-O\-R@{S\-H\-I\-F\-T\-E\-D\-\_\-\-D\-I\-V\-I\-S\-O\-R}}
+\index{S\-H\-I\-F\-T\-E\-D\-\_\-\-D\-I\-V\-I\-S\-O\-R@{S\-H\-I\-F\-T\-E\-D\-\_\-\-D\-I\-V\-I\-S\-O\-R}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-H\-I\-F\-T\-E\-D\-\_\-\-D\-I\-V\-I\-S\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-H\-I\-F\-T\-E\-D\-\_\-\-D\-I\-V\-I\-S\-O\-R~0x988000}}\label{_si7020_8h_a6ed1b7ebcf9a7bf84979813a65a6611e}
+\hypertarget{_si7020_8h_afff2812ca001e5c56254a301dbede825}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-A\-D\-D\-R@{S\-I7020\-\_\-\-A\-D\-D\-R}}
+\index{S\-I7020\-\_\-\-A\-D\-D\-R@{S\-I7020\-\_\-\-A\-D\-D\-R}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-A\-D\-D\-R~0x40}}\label{_si7020_8h_afff2812ca001e5c56254a301dbede825}
+
+
+Referenced by Si7020\-\_\-read\-Humidity(), and Si7020\-\_\-read\-Temperature().
+
+\hypertarget{_si7020_8h_a281481f3083c7e10edd8cbb14f1b00d5}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-1\-S\-T\-\_\-\-B\-Y\-T\-E@{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-1\-S\-T\-\_\-\-B\-Y\-T\-E}}
+\index{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-1\-S\-T\-\_\-\-B\-Y\-T\-E@{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-1\-S\-T\-\_\-\-B\-Y\-T\-E}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-1\-S\-T\-\_\-\-B\-Y\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-1\-S\-T\-\_\-\-B\-Y\-T\-E~0x\-F\-A}}\label{_si7020_8h_a281481f3083c7e10edd8cbb14f1b00d5}
+\hypertarget{_si7020_8h_ab9a61c841eb8cfb4b4a0dfc787637888}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-2\-N\-D\-\_\-\-B\-Y\-T\-E@{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-2\-N\-D\-\_\-\-B\-Y\-T\-E}}
+\index{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-2\-N\-D\-\_\-\-B\-Y\-T\-E@{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-2\-N\-D\-\_\-\-B\-Y\-T\-E}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-2\-N\-D\-\_\-\-B\-Y\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-E\-L\-C\-I\-D\-\_\-2\-N\-D\-\_\-\-B\-Y\-T\-E~0x\-F\-C}}\label{_si7020_8h_ab9a61c841eb8cfb4b4a0dfc787637888}
+\hypertarget{_si7020_8h_a02a48291f7605a9e2164b18d20bf86ef}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-R\-E\-V@{S\-I7020\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-R\-E\-V}}
+\index{S\-I7020\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-R\-E\-V@{S\-I7020\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-R\-E\-V}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-R\-E\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-R\-E\-V~0x84}}\label{_si7020_8h_a02a48291f7605a9e2164b18d20bf86ef}
+\hypertarget{_si7020_8h_afcf7b09858c8c8b354aab4a6f523ab47}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-R\-D\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G@{S\-I7020\-\_\-\-R\-D\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G}}
+\index{S\-I7020\-\_\-\-R\-D\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G@{S\-I7020\-\_\-\-R\-D\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-R\-D\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-R\-D\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G~0x11}}\label{_si7020_8h_afcf7b09858c8c8b354aab4a6f523ab47}
+\hypertarget{_si7020_8h_a51403c4e1be19e16733a3e49594fc6fb}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-R\-D\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1@{S\-I7020\-\_\-\-R\-D\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1}}
+\index{S\-I7020\-\_\-\-R\-D\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1@{S\-I7020\-\_\-\-R\-D\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-R\-D\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-R\-D\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1~0x\-E7}}\label{_si7020_8h_a51403c4e1be19e16733a3e49594fc6fb}
+\hypertarget{_si7020_8h_a932d4b9499d7a05d70f917d66771f3b7}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-R\-D\-\_\-\-T\-E\-M\-P\-\_\-\-P\-R\-E\-\_\-\-R\-H@{S\-I7020\-\_\-\-R\-D\-\_\-\-T\-E\-M\-P\-\_\-\-P\-R\-E\-\_\-\-R\-H}}
+\index{S\-I7020\-\_\-\-R\-D\-\_\-\-T\-E\-M\-P\-\_\-\-P\-R\-E\-\_\-\-R\-H@{S\-I7020\-\_\-\-R\-D\-\_\-\-T\-E\-M\-P\-\_\-\-P\-R\-E\-\_\-\-R\-H}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-R\-D\-\_\-\-T\-E\-M\-P\-\_\-\-P\-R\-E\-\_\-\-R\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-R\-D\-\_\-\-T\-E\-M\-P\-\_\-\-P\-R\-E\-\_\-\-R\-H~0x\-E0}}\label{_si7020_8h_a932d4b9499d7a05d70f917d66771f3b7}
+\hypertarget{_si7020_8h_ad8588e4f0a0464884899f27ece06ae67}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-H\-O\-L\-D@{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-H\-O\-L\-D}}
+\index{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-H\-O\-L\-D@{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-H\-O\-L\-D}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-H\-O\-L\-D~0x\-E5}}\label{_si7020_8h_ad8588e4f0a0464884899f27ece06ae67}
+Status Codes 
+
+Referenced by Si7020\-\_\-read\-Humidity().
+
+\hypertarget{_si7020_8h_a84b62936cb987c0c57473bcf806ef5cc}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-N\-O\-N\-H\-O\-L\-D@{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-N\-O\-N\-H\-O\-L\-D}}
+\index{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-N\-O\-N\-H\-O\-L\-D@{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-N\-O\-N\-H\-O\-L\-D}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-N\-O\-N\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-N\-O\-N\-H\-O\-L\-D~0x\-F5}}\label{_si7020_8h_a84b62936cb987c0c57473bcf806ef5cc}
+\hypertarget{_si7020_8h_adba36e4cc4f209030231eadb1f3a90fe}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-R\-E\-S\-E\-T@{S\-I7020\-\_\-\-R\-E\-S\-E\-T}}
+\index{S\-I7020\-\_\-\-R\-E\-S\-E\-T@{S\-I7020\-\_\-\-R\-E\-S\-E\-T}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-R\-E\-S\-E\-T~0x\-F\-E}}\label{_si7020_8h_adba36e4cc4f209030231eadb1f3a90fe}
+\hypertarget{_si7020_8h_a87bc2a9a6f3c12f880a803cbe758e0ae}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-H\-O\-L\-D@{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-H\-O\-L\-D}}
+\index{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-H\-O\-L\-D@{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-H\-O\-L\-D}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-H\-O\-L\-D~0x\-E3}}\label{_si7020_8h_a87bc2a9a6f3c12f880a803cbe758e0ae}
+
+
+Referenced by Si7020\-\_\-read\-Temperature().
+
+\hypertarget{_si7020_8h_a30ecc68510a209cd3c7f8df33e565a6f}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-N\-O\-H\-O\-L\-D@{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-N\-O\-H\-O\-L\-D}}
+\index{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-N\-O\-H\-O\-L\-D@{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-N\-O\-H\-O\-L\-D}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-N\-O\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-N\-O\-H\-O\-L\-D~0x\-F3}}\label{_si7020_8h_a30ecc68510a209cd3c7f8df33e565a6f}
+\hypertarget{_si7020_8h_a6e8822306ba989c166f6bdfce007654d}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-W\-R\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G@{S\-I7020\-\_\-\-W\-R\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G}}
+\index{S\-I7020\-\_\-\-W\-R\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G@{S\-I7020\-\_\-\-W\-R\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-W\-R\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-W\-R\-\_\-\-H\-E\-A\-T\-\_\-\-C\-T\-R\-\_\-\-R\-E\-G~0x51}}\label{_si7020_8h_a6e8822306ba989c166f6bdfce007654d}
+\hypertarget{_si7020_8h_a9dbe1feadc8758d190bcea84ae991e2b}{\index{Si7020.\-h@{Si7020.\-h}!S\-I7020\-\_\-\-W\-R\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1@{S\-I7020\-\_\-\-W\-R\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1}}
+\index{S\-I7020\-\_\-\-W\-R\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1@{S\-I7020\-\_\-\-W\-R\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{S\-I7020\-\_\-\-W\-R\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I7020\-\_\-\-W\-R\-\_\-\-R\-H\-\_\-\-T\-\_\-\-R\-E\-G1~0x\-E6}}\label{_si7020_8h_a9dbe1feadc8758d190bcea84ae991e2b}
+
+
+\subsection{Function Documentation}
+\hypertarget{_si7020_8h_afa24936aee0e87d37acc2ed57286c28a}{\index{Si7020.\-h@{Si7020.\-h}!Si7020\-\_\-cal\-Humidity@{Si7020\-\_\-cal\-Humidity}}
+\index{Si7020\-\_\-cal\-Humidity@{Si7020\-\_\-cal\-Humidity}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{Si7020\-\_\-cal\-Humidity}]{\setlength{\rightskip}{0pt plus 5cm}float Si7020\-\_\-cal\-Humidity (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_si7020_8h_afa24936aee0e87d37acc2ed57286c28a}
+
+
+Calculate humidity from Si7020. 
+
+\begin{DoxyReturn}{Returns}
+humidity value 
+\end{DoxyReturn}
+\hypertarget{_si7020_8h_ab74020292e05d0f98013df991f6c4568}{\index{Si7020.\-h@{Si7020.\-h}!Si7020\-\_\-cal\-Temperature@{Si7020\-\_\-cal\-Temperature}}
+\index{Si7020\-\_\-cal\-Temperature@{Si7020\-\_\-cal\-Temperature}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{Si7020\-\_\-cal\-Temperature}]{\setlength{\rightskip}{0pt plus 5cm}float Si7020\-\_\-cal\-Temperature (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_si7020_8h_ab74020292e05d0f98013df991f6c4568}
+
+
+Calculate temperature from Si7020. 
+
+\begin{DoxyReturn}{Returns}
+temperature value 
+\end{DoxyReturn}
+\hypertarget{_si7020_8h_a75e9271e7a15c900a748e79f01d3c5be}{\index{Si7020.\-h@{Si7020.\-h}!Si7020\-\_\-init@{Si7020\-\_\-init}}
+\index{Si7020\-\_\-init@{Si7020\-\_\-init}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{Si7020\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}char Si7020\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_si7020_8h_a75e9271e7a15c900a748e79f01d3c5be}
+
+
+Initializes the Si7020. 
+
+\begin{DoxyReturn}{Returns}
+status zero 
+\end{DoxyReturn}
+\hypertarget{_si7020_8h_aebde99dd234f560632ecdbe126b67e05}{\index{Si7020.\-h@{Si7020.\-h}!Si7020\-\_\-read\-Humidity@{Si7020\-\_\-read\-Humidity}}
+\index{Si7020\-\_\-read\-Humidity@{Si7020\-\_\-read\-Humidity}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{Si7020\-\_\-read\-Humidity}]{\setlength{\rightskip}{0pt plus 5cm}char Si7020\-\_\-read\-Humidity (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data, }
+\item[{char}]{length}
+\end{DoxyParamCaption}
+)}}\label{_si7020_8h_aebde99dd234f560632ecdbe126b67e05}
+
+
+Read humidity from Si7020. 
+
+\begin{DoxyReturn}{Returns}
+status one if successfully read and crc check, otherwise return zero 
+\end{DoxyReturn}
+
+
+References check\-\_\-crc(), S\-I7020\-\_\-\-A\-D\-D\-R, S\-I7020\-\_\-\-R\-E\-L\-\_\-\-H\-U\-M\-I\-D\-I\-T\-Y\-\_\-\-H\-O\-L\-D, status, T\-W\-I\-\_\-\-Begin\-Read(), T\-W\-I\-\_\-\-Begin\-Write(), T\-W\-I\-\_\-\-Read(), T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-Stop(), and T\-W\-I\-\_\-\-Write\-Byte().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_si7020_8h_aebde99dd234f560632ecdbe126b67e05_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_si7020_8h_ac561f9976fbf8f27a921f55fc402548d}{\index{Si7020.\-h@{Si7020.\-h}!Si7020\-\_\-read\-Temperature@{Si7020\-\_\-read\-Temperature}}
+\index{Si7020\-\_\-read\-Temperature@{Si7020\-\_\-read\-Temperature}!Si7020.h@{Si7020.\-h}}
+\subsubsection[{Si7020\-\_\-read\-Temperature}]{\setlength{\rightskip}{0pt plus 5cm}char Si7020\-\_\-read\-Temperature (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data, }
+\item[{char}]{length}
+\end{DoxyParamCaption}
+)}}\label{_si7020_8h_ac561f9976fbf8f27a921f55fc402548d}
+
+
+Read temperature from Si7020. 
+
+\begin{DoxyReturn}{Returns}
+status one if successfully read and crc check, otherwise return zero 
+\end{DoxyReturn}
+
+
+References check\-\_\-crc(), S\-I7020\-\_\-\-A\-D\-D\-R, S\-I7020\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E\-\_\-\-H\-O\-L\-D, status, T\-W\-I\-\_\-\-Begin\-Read(), T\-W\-I\-\_\-\-Begin\-Write(), T\-W\-I\-\_\-\-Read(), T\-W\-I\-\_\-\-R\-E\-C\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-S\-E\-N\-T\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-S\-L\-A\-R\-\_\-\-A\-C\-K, T\-W\-I\-\_\-\-Stop(), and T\-W\-I\-\_\-\-Write\-Byte().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_si7020_8h_ac561f9976fbf8f27a921f55fc402548d_cgraph}
+\end{center}
+\end{figure}
+
+

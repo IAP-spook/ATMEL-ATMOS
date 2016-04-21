@@ -1,10 +1,11 @@
-/*
- * BMP280_Sensor.h
+/**
+ * \file BMP280_Sensor.h
  *
+ * \brief Declaration of BMP280_Sensor struct, which derived from BaseSensor.
+ * 
  * Created: 2016/4/6 17:40:39
- *  Author: AB
+ *  Author: Anxin Bai
  */ 
-
 
 #ifndef _BMP280_SENSOR_H_
 #define _BMP280_SENSOR_H_

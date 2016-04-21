@@ -1,0 +1,177 @@
+\hypertarget{usart0_8c}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/drivers/src/usart0.c File Reference}
+\label{usart0_8c}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/drivers/src/usart0.\-c@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/drivers/src/usart0.\-c}}
+}
+
+
+U\-S\-A\-R\-T0 in U\-A\-R\-T mode implementation.  
+
+
+{\ttfamily \#include \char`\"{}drivers/inc/usart0.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+Include dependency graph for usart0.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{usart0_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{usart0_8c_afc85e93c83fe494bfb76fc2f1a7dd929}{U\-S\-A\-R\-T0\-\_\-putchar\-\_\-printf} (char var, F\-I\-L\-E $\ast$stream)
+\begin{DoxyCompactList}\small\item\em Called when stdout is being printed to U\-S\-A\-R\-T0 (this is set up at runtime) \end{DoxyCompactList}\item 
+void \hyperlink{usart0_8c_adb47bcbd863fea2505836968049c20a9}{U\-S\-A\-R\-T0\-\_\-\-Init} (unsigned long baud)
+\begin{DoxyCompactList}\small\item\em Initializes U\-S\-A\-R\-T0 in asynchronous U\-A\-R\-T mode, 8 bit data, 1 stop bit. \end{DoxyCompactList}\item 
+void \hyperlink{usart0_8c_a7ed8a68edcbbe290b23ad69a1b63f1f4}{U\-S\-A\-R\-T0\-\_\-\-Transmit} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Transmits a byte via U\-S\-A\-R\-T0. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{usart0_8c_a48435142a44158906915a0de70dcab5c}{U\-S\-A\-R\-T\-\_\-\-Receive} (void)
+\begin{DoxyCompactList}\small\item\em Receives a byte via U\-S\-A\-R\-T0. \end{DoxyCompactList}\item 
+void \hyperlink{usart0_8c_a0f33ec0995bf5f267e847d9e22fb596a}{U\-S\-A\-R\-T\-\_\-\-Flush} (void)
+\begin{DoxyCompactList}\small\item\em Flushes out the U\-S\-A\-R\-T0 receive buffer. \end{DoxyCompactList}\item 
+void \hyperlink{usart0_8c_aa80df48f11c916f564ce46ae27e3b4ef}{I\-S\-R} (unsigned int U\-S\-A\-R\-T0\-\_\-\-R\-X\-\_\-vect)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\-S\-A\-R\-T0 in U\-A\-R\-T mode implementation. Created\-: 2/7/2015 18\-:35\-:59 Author\-: Camden Miller York 
+
+\subsection{Function Documentation}
+\hypertarget{usart0_8c_aa80df48f11c916f564ce46ae27e3b4ef}{\index{usart0.\-c@{usart0.\-c}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!usart0.c@{usart0.\-c}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}void I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{U\-S\-A\-R\-T0\-\_\-\-R\-X\-\_\-vect}
+\end{DoxyParamCaption}
+)}}\label{usart0_8c_aa80df48f11c916f564ce46ae27e3b4ef}
+\hypertarget{usart0_8c_adb47bcbd863fea2505836968049c20a9}{\index{usart0.\-c@{usart0.\-c}!U\-S\-A\-R\-T0\-\_\-\-Init@{U\-S\-A\-R\-T0\-\_\-\-Init}}
+\index{U\-S\-A\-R\-T0\-\_\-\-Init@{U\-S\-A\-R\-T0\-\_\-\-Init}!usart0.c@{usart0.\-c}}
+\subsubsection[{U\-S\-A\-R\-T0\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void U\-S\-A\-R\-T0\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{baud}
+\end{DoxyParamCaption}
+)}}\label{usart0_8c_adb47bcbd863fea2505836968049c20a9}
+
+
+Initializes U\-S\-A\-R\-T0 in asynchronous U\-A\-R\-T mode, 8 bit data, 1 stop bit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em desired} & baud rate (configuration values computed using F\-\_\-\-C\-P\-U) \\
+\hline
+\end{DoxyParams}
+
+
+References F\-\_\-\-C\-P\-U, and U\-S\-A\-R\-T0\-\_\-stdout.
+
+
+
+Referenced by A\-P\-P\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{usart0_8c_adb47bcbd863fea2505836968049c20a9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{usart0_8c_afc85e93c83fe494bfb76fc2f1a7dd929}{\index{usart0.\-c@{usart0.\-c}!U\-S\-A\-R\-T0\-\_\-putchar\-\_\-printf@{U\-S\-A\-R\-T0\-\_\-putchar\-\_\-printf}}
+\index{U\-S\-A\-R\-T0\-\_\-putchar\-\_\-printf@{U\-S\-A\-R\-T0\-\_\-putchar\-\_\-printf}!usart0.c@{usart0.\-c}}
+\subsubsection[{U\-S\-A\-R\-T0\-\_\-putchar\-\_\-printf}]{\setlength{\rightskip}{0pt plus 5cm}int U\-S\-A\-R\-T0\-\_\-putchar\-\_\-printf (
+\begin{DoxyParamCaption}
+\item[{char}]{var, }
+\item[{F\-I\-L\-E $\ast$}]{stream}
+\end{DoxyParamCaption}
+)}}\label{usart0_8c_afc85e93c83fe494bfb76fc2f1a7dd929}
+
+
+Called when stdout is being printed to U\-S\-A\-R\-T0 (this is set up at runtime) 
+
+Calls U\-S\-A\-R\-T0\-\_\-\-Transmit which contains busy loops, not production code 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em var} & byte to transmit \\
+\hline
+ & {\em in/out\mbox{]}} & $\ast$stream Pointer to a stdio.\-h F\-I\-L\-E io stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status 
+\end{DoxyReturn}
+
+
+References U\-S\-A\-R\-T0\-\_\-\-Transmit().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{usart0_8c_afc85e93c83fe494bfb76fc2f1a7dd929_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{usart0_8c_a7ed8a68edcbbe290b23ad69a1b63f1f4}{\index{usart0.\-c@{usart0.\-c}!U\-S\-A\-R\-T0\-\_\-\-Transmit@{U\-S\-A\-R\-T0\-\_\-\-Transmit}}
+\index{U\-S\-A\-R\-T0\-\_\-\-Transmit@{U\-S\-A\-R\-T0\-\_\-\-Transmit}!usart0.c@{usart0.\-c}}
+\subsubsection[{U\-S\-A\-R\-T0\-\_\-\-Transmit}]{\setlength{\rightskip}{0pt plus 5cm}void U\-S\-A\-R\-T0\-\_\-\-Transmit (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{data}
+\end{DoxyParamCaption}
+)}}\label{usart0_8c_a7ed8a68edcbbe290b23ad69a1b63f1f4}
+
+
+Transmits a byte via U\-S\-A\-R\-T0. 
+
+Function contains busy loops for simplicity in debugging. Not production code. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & byte to be transmitted \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by U\-S\-A\-R\-T0\-\_\-putchar\-\_\-printf().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{usart0_8c_a7ed8a68edcbbe290b23ad69a1b63f1f4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{usart0_8c_a0f33ec0995bf5f267e847d9e22fb596a}{\index{usart0.\-c@{usart0.\-c}!U\-S\-A\-R\-T\-\_\-\-Flush@{U\-S\-A\-R\-T\-\_\-\-Flush}}
+\index{U\-S\-A\-R\-T\-\_\-\-Flush@{U\-S\-A\-R\-T\-\_\-\-Flush}!usart0.c@{usart0.\-c}}
+\subsubsection[{U\-S\-A\-R\-T\-\_\-\-Flush}]{\setlength{\rightskip}{0pt plus 5cm}void U\-S\-A\-R\-T\-\_\-\-Flush (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{usart0_8c_a0f33ec0995bf5f267e847d9e22fb596a}
+
+
+Flushes out the U\-S\-A\-R\-T0 receive buffer. 
+
+Function contains busy loops for simplicity in debugging. Not production code. \hypertarget{usart0_8c_a48435142a44158906915a0de70dcab5c}{\index{usart0.\-c@{usart0.\-c}!U\-S\-A\-R\-T\-\_\-\-Receive@{U\-S\-A\-R\-T\-\_\-\-Receive}}
+\index{U\-S\-A\-R\-T\-\_\-\-Receive@{U\-S\-A\-R\-T\-\_\-\-Receive}!usart0.c@{usart0.\-c}}
+\subsubsection[{U\-S\-A\-R\-T\-\_\-\-Receive}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char U\-S\-A\-R\-T\-\_\-\-Receive (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{usart0_8c_a48435142a44158906915a0de70dcab5c}
+
+
+Receives a byte via U\-S\-A\-R\-T0. 
+
+Function contains busy loops for simplicity in debugging. Not production code. \begin{DoxyReturn}{Returns}
+the received byte 
+\end{DoxyReturn}

@@ -1,0 +1,221 @@
+\hypertarget{_my___sensor_8c}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/wrapper/sensor/src/\-My\-\_\-\-Sensor.c File Reference}
+\label{_my___sensor_8c}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/wrapper/sensor/src/\-My\-\_\-\-Sensor.\-c@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/wrapper/sensor/src/\-My\-\_\-\-Sensor.\-c}}
+}
+
+
+Implementation of My\-\_\-\-Sensor struct, which derived from Base\-Sensor.  
+
+
+{\ttfamily \#include \char`\"{}wrapper/sensor/inc/\-My\-\_\-\-Sensor.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+Include dependency graph for My\-\_\-\-Sensor.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{_my___sensor_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_my___sensor_8c_ad5c70b54e8ad27b5a54a611929e7083b}{My\-\_\-\-Fctn\-Init} (\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_my___sensor_8c_a4eb6745103f50782718d2908f041dbed}{My\-\_\-\-Configure} (\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_my___sensor_8c_acd410ea1af1c7d759f80e8f9b92640aa}{My\-\_\-\-Request} (\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_my___sensor_8c_abc7f7ef79d52ec232cfdb01505d27045}{My\-\_\-\-Collect} (\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_my___sensor_8c_a677c3e8c89bc4506339ba00de60fb819}{My\-\_\-\-Error} (\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$this)
+\item 
+void \hyperlink{_my___sensor_8c_aac28a50a0be9fe926e77f88a5147a24b}{My\-\_\-\-V\-Tinit} (\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_my___sensor_8c_a06768a197ce000964494fdd67d62d192}{My\-\_\-init} (\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_my___sensor_8c_a45c02e52f7a18f0d8aca090178e35786}{My\-\_\-reset} (\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_my___sensor_8c_a56bbcfc9901b5988fec235477da93860}{My\-\_\-get\-Type} (\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$this)
+\item 
+\hyperlink{_my___sensor_8h_aec3fece1ce83f3dd577aa3228199813f}{My\-Sensor} $\ast$ \hyperlink{_my___sensor_8c_ab84e16669344a1ea91f24bdd514041c2}{New\-\_\-\-My\-\_\-\-Sensor} (int num)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_my___sensor_8h_a0ea2e22c264bb7f9f4395f647ecd0433}{My\-\_\-\-Fctn\-Table} \hyperlink{_my___sensor_8c_a8a25a288e44cfc24f833b600e96651c3}{My\-\_\-vmt}
+\item 
+\hyperlink{_my___sensor_8h_af47a8921d2294a786b922ec2a94474e4}{My\-\_\-\-Abstract\-\_\-\-Fctn\-Table} \hyperlink{_my___sensor_8c_a0485b127a0a626f05e7def81407ba504}{My\-\_\-abstract\-\_\-vmt}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of My\-\_\-\-Sensor struct, which derived from Base\-Sensor. Author\-: Anxin Bai 
+
+\subsection{Function Documentation}
+\hypertarget{_my___sensor_8c_abc7f7ef79d52ec232cfdb01505d27045}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-\-Collect@{My\-\_\-\-Collect}}
+\index{My\-\_\-\-Collect@{My\-\_\-\-Collect}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-\-Collect}]{\setlength{\rightskip}{0pt plus 5cm}int My\-\_\-\-Collect (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_abc7f7ef79d52ec232cfdb01505d27045}
+\hypertarget{_my___sensor_8c_a4eb6745103f50782718d2908f041dbed}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-\-Configure@{My\-\_\-\-Configure}}
+\index{My\-\_\-\-Configure@{My\-\_\-\-Configure}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}int My\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_a4eb6745103f50782718d2908f041dbed}
+\hypertarget{_my___sensor_8c_a677c3e8c89bc4506339ba00de60fb819}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-\-Error@{My\-\_\-\-Error}}
+\index{My\-\_\-\-Error@{My\-\_\-\-Error}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-\-Error}]{\setlength{\rightskip}{0pt plus 5cm}int My\-\_\-\-Error (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_a677c3e8c89bc4506339ba00de60fb819}
+\hypertarget{_my___sensor_8c_ad5c70b54e8ad27b5a54a611929e7083b}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-\-Fctn\-Init@{My\-\_\-\-Fctn\-Init}}
+\index{My\-\_\-\-Fctn\-Init@{My\-\_\-\-Fctn\-Init}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-\-Fctn\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void My\-\_\-\-Fctn\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_ad5c70b54e8ad27b5a54a611929e7083b}
+
+
+References My\-\_\-vmt.
+
+
+
+Referenced by New\-\_\-\-My\-\_\-\-Sensor().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{_my___sensor_8c_ad5c70b54e8ad27b5a54a611929e7083b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_my___sensor_8c_a56bbcfc9901b5988fec235477da93860}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-get\-Type@{My\-\_\-get\-Type}}
+\index{My\-\_\-get\-Type@{My\-\_\-get\-Type}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}int My\-\_\-get\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_a56bbcfc9901b5988fec235477da93860}
+
+
+References T\-Y\-P\-E\-\_\-\-S\-E\-N\-S\-O\-R.
+
+\hypertarget{_my___sensor_8c_a06768a197ce000964494fdd67d62d192}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-init@{My\-\_\-init}}
+\index{My\-\_\-init@{My\-\_\-init}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int My\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_a06768a197ce000964494fdd67d62d192}
+\hypertarget{_my___sensor_8c_acd410ea1af1c7d759f80e8f9b92640aa}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-\-Request@{My\-\_\-\-Request}}
+\index{My\-\_\-\-Request@{My\-\_\-\-Request}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-\-Request}]{\setlength{\rightskip}{0pt plus 5cm}int My\-\_\-\-Request (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_acd410ea1af1c7d759f80e8f9b92640aa}
+\hypertarget{_my___sensor_8c_a45c02e52f7a18f0d8aca090178e35786}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-reset@{My\-\_\-reset}}
+\index{My\-\_\-reset@{My\-\_\-reset}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}int My\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_a45c02e52f7a18f0d8aca090178e35786}
+\hypertarget{_my___sensor_8c_aac28a50a0be9fe926e77f88a5147a24b}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-\-V\-Tinit@{My\-\_\-\-V\-Tinit}}
+\index{My\-\_\-\-V\-Tinit@{My\-\_\-\-V\-Tinit}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-\-V\-Tinit}]{\setlength{\rightskip}{0pt plus 5cm}void My\-\_\-\-V\-Tinit (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_aac28a50a0be9fe926e77f88a5147a24b}
+
+
+References My\-\_\-abstract\-\_\-vmt.
+
+
+
+Referenced by New\-\_\-\-My\-\_\-\-Sensor().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{_my___sensor_8c_aac28a50a0be9fe926e77f88a5147a24b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_my___sensor_8c_ab84e16669344a1ea91f24bdd514041c2}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!New\-\_\-\-My\-\_\-\-Sensor@{New\-\_\-\-My\-\_\-\-Sensor}}
+\index{New\-\_\-\-My\-\_\-\-Sensor@{New\-\_\-\-My\-\_\-\-Sensor}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{New\-\_\-\-My\-\_\-\-Sensor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf My\-Sensor}$\ast$ New\-\_\-\-My\-\_\-\-Sensor (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{_my___sensor_8c_ab84e16669344a1ea91f24bdd514041c2}
+
+
+References \-\_\-\-My\-\_\-\-Sensor\-::inherited, My\-\_\-\-Fctn\-Init(), My\-\_\-\-V\-Tinit(), and \-\_\-\-Base\-\_\-\-Sensor\-::test\-\_\-num.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{_my___sensor_8c_ab84e16669344a1ea91f24bdd514041c2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_my___sensor_8c_a0485b127a0a626f05e7def81407ba504}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-abstract\-\_\-vmt@{My\-\_\-abstract\-\_\-vmt}}
+\index{My\-\_\-abstract\-\_\-vmt@{My\-\_\-abstract\-\_\-vmt}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-abstract\-\_\-vmt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf My\-\_\-\-Abstract\-\_\-\-Fctn\-Table} My\-\_\-abstract\-\_\-vmt}}\label{_my___sensor_8c_a0485b127a0a626f05e7def81407ba504}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+ \{
+        \hyperlink{_my___sensor_8h_aa12863600f8c8ff427e89e3fbeb95936}{My\_VTinit},
+        \hyperlink{_my___sensor_8h_a3f5779d2da6e0593af6a72fd4af34823}{My\_init},
+        \hyperlink{_my___sensor_8h_a20955a6418e8fa74fa055cb859b59057}{My\_reset},
+        \hyperlink{_my___sensor_8h_aba12a831719616e3cc03d4b216daeb3c}{My\_getType}
+\}
+\end{DoxyCode}
+
+
+Referenced by My\-\_\-\-V\-Tinit().
+
+\hypertarget{_my___sensor_8c_a8a25a288e44cfc24f833b600e96651c3}{\index{My\-\_\-\-Sensor.\-c@{My\-\_\-\-Sensor.\-c}!My\-\_\-vmt@{My\-\_\-vmt}}
+\index{My\-\_\-vmt@{My\-\_\-vmt}!My_Sensor.c@{My\-\_\-\-Sensor.\-c}}
+\subsubsection[{My\-\_\-vmt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf My\-\_\-\-Fctn\-Table} My\-\_\-vmt}}\label{_my___sensor_8c_a8a25a288e44cfc24f833b600e96651c3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+ \{
+        \hyperlink{_my___sensor_8h_ad5c70b54e8ad27b5a54a611929e7083b}{My\_FctnInit},
+        \hyperlink{_my___sensor_8h_a4eb6745103f50782718d2908f041dbed}{My\_Configure},
+        \hyperlink{_my___sensor_8h_acd410ea1af1c7d759f80e8f9b92640aa}{My\_Request},
+        \hyperlink{_my___sensor_8h_abc7f7ef79d52ec232cfdb01505d27045}{My\_Collect},
+        \hyperlink{_my___sensor_8h_a677c3e8c89bc4506339ba00de60fb819}{My\_Error}
+\}
+\end{DoxyCode}
+
+
+Referenced by My\-\_\-\-Fctn\-Init().
+

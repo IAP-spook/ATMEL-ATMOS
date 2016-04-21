@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_b_m_p280_8c.html#a7634175c5e122cee3ae944189c389f7f" title="Reads some bytes from the BMP280." alt="" coords="136,5,280,32"/>
+<area shape="rect" id="node9" href="$_k30_8c.html#a9749b047bc23704623901452834f78b5" title="Initializes the K30." alt="" coords="157,56,259,83"/>
+<area shape="rect" id="node5" href="$_b_m_p280_8c.html#a79fe54e0ce75dc946a3540bddd43e878" title="Starts a measurement." alt="" coords="328,5,507,32"/>
+<area shape="rect" id="node7" href="$_b_m_p280___sensor_8c.html#a246c13070c963d68e95452484b280ee6" title="BMP280_Request" alt="" coords="555,5,682,32"/>
+</map>

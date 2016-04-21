@@ -1,10 +1,11 @@
-/*
- * config.h
+/**
+ * \file config.h
  *
+ * \brief Currently no info
+ * 
  * Created: 10/6/2014 11:11:17 AM
- *  Author: Camden
+ *  Author: Anxin Bai
  */ 
-
 
 #ifndef CONFIG_H_
 #define CONFIG_H_

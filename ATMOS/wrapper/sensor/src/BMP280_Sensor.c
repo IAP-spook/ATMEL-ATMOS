@@ -1,10 +1,11 @@
-/*
- * BMP280_Sensor.c
+/**
+ * \file BMP280_Sensor.c
  *
+ * \brief Implementation of BMP280_Sensor struct, which derived from BaseSensor.
+ * 
  * Created: 2016/4/6 17:43:53
- *  Author: AB
+ *  Author: Anxin Bai
  */ 
-
 #include "wrapper/sensor/inc/BMP280_Sensor.h"
 #include "devices/inc/BMP280.h"
 #include <stdio.h>

@@ -1,0 +1,127 @@
+\hypertarget{struct_nwk_frame__t}{\section{Nwk\-Frame\-\_\-t Struct Reference}
+\label{struct_nwk_frame__t}\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}}
+}
+
+
+{\ttfamily \#include $<$nwk\-Frame.\-h$>$}
+
+
+
+Collaboration diagram for Nwk\-Frame\-\_\-t\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{struct_nwk_frame__t__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{struct_nwk_frame__t_a5fbf3e581463732d26ea7b242c666109}{state}
+\item 
+uint8\-\_\-t \hyperlink{struct_nwk_frame__t_a42934dd5ff3a529ffb264402944f77e8}{size}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{struct_nwk_frame_header__t}{NwkFrameHeader\_t} \hyperlink{struct_nwk_frame__t_ae7615117e566f339c8893bd6f6ed642d}{header}\\
+\>uint8\_t \hyperlink{struct_nwk_frame__t_a504e9f54f727b77a64c482fd9c54c30d}{data} \mbox{[}\hyperlink{nwk_frame_8h_aecb889ddcbbc535190f5a83b26aa205b}{NWK\_FRAME\_MAX\_PAYLOAD\_SIZE}\mbox{]}\\
+\}; \\
+
+\end{tabbing}\item 
+uint8\-\_\-t $\ast$ \hyperlink{struct_nwk_frame__t_abe0e1d3be987a1a6fe8d6b9f19cefa67}{payload}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>uint8\_t \hyperlink{struct_nwk_frame__t_ace554a195e09279c216c3efc6895e66f}{lqi}\\
+\>\>int8\_t \hyperlink{struct_nwk_frame__t_ae99f976337170b91bab3c91efee0c19e}{rssi}\\
+\>\} \hyperlink{struct_nwk_frame__t_af342a861746a0f6f40285195c4959a9e}{rx}\\
+\>struct \{\\
+\>\>uint8\_t \hyperlink{struct_nwk_frame__t_ad6257c1abbda87dc2a653a6086f8e9e5}{status}\\
+\>\>uint16\_t \hyperlink{struct_nwk_frame__t_a3c49425f94b27976baefc90d1549ffab}{timeout}\\
+\>\>uint8\_t \hyperlink{struct_nwk_frame__t_a71639d3ef8b8ced3f027c8cd5b41a780}{control}\\
+\>\>void($\ast$ \hyperlink{struct_nwk_frame__t_a7b39f6281e35afdcbb31cbf4f959d639}{confirm} )(struct \hyperlink{struct_nwk_frame__t}{NwkFrame\_t} $\ast$frame)\\
+\>\} \hyperlink{struct_nwk_frame__t_ab5e3dc31787a24bb22a62465358d71ba}{tx}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_nwk_frame__t_a620850c2e91356398fae4bee93a792cc}{\subsubsection[{"@3}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}\label{struct_nwk_frame__t_a620850c2e91356398fae4bee93a792cc}
+\hypertarget{struct_nwk_frame__t_acffc95e38f5718cde3313373af1cf6d0}{\subsubsection[{"@5}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}\label{struct_nwk_frame__t_acffc95e38f5718cde3313373af1cf6d0}
+\hypertarget{struct_nwk_frame__t_a7b39f6281e35afdcbb31cbf4f959d639}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!confirm@{confirm}}
+\index{confirm@{confirm}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{confirm}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ Nwk\-Frame\-\_\-t\-::confirm)(struct {\bf Nwk\-Frame\-\_\-t} $\ast$frame)}}\label{struct_nwk_frame__t_a7b39f6281e35afdcbb31cbf4f959d639}
+\hypertarget{struct_nwk_frame__t_a71639d3ef8b8ced3f027c8cd5b41a780}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!control@{control}}
+\index{control@{control}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{control}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Nwk\-Frame\-\_\-t\-::control}}\label{struct_nwk_frame__t_a71639d3ef8b8ced3f027c8cd5b41a780}
+\hypertarget{struct_nwk_frame__t_a504e9f54f727b77a64c482fd9c54c30d}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!data@{data}}
+\index{data@{data}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Nwk\-Frame\-\_\-t\-::data\mbox{[}{\bf N\-W\-K\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-A\-X\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-S\-I\-Z\-E}\mbox{]}}}\label{struct_nwk_frame__t_a504e9f54f727b77a64c482fd9c54c30d}
+
+
+Referenced by nwk\-Frame\-Alloc(), nwk\-Frame\-Payload\-Size(), nwk\-Tx\-Broadcast\-Frame(), nwk\-Tx\-Task\-Handler(), and P\-H\-Y\-\_\-\-Data\-Ind().
+
+\hypertarget{struct_nwk_frame__t_ae7615117e566f339c8893bd6f6ed642d}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!header@{header}}
+\index{header@{header}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Nwk\-Frame\-Header\-\_\-t} Nwk\-Frame\-\_\-t\-::header}}\label{struct_nwk_frame__t_ae7615117e566f339c8893bd6f6ed642d}
+
+
+Referenced by nwk\-Data\-Req\-Send\-Frame(), nwk\-Frame\-Command\-Init(), nwk\-Rx\-Handle\-Indication(), nwk\-Rx\-Handle\-Received\-Frame(), nwk\-Rx\-Indicate\-Frame(), nwk\-Rx\-Send\-Ack(), nwk\-Tx\-Broadcast\-Frame(), nwk\-Tx\-Frame(), and nwk\-Tx\-Task\-Handler().
+
+\hypertarget{struct_nwk_frame__t_ace554a195e09279c216c3efc6895e66f}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!lqi@{lqi}}
+\index{lqi@{lqi}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{lqi}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Nwk\-Frame\-\_\-t\-::lqi}}\label{struct_nwk_frame__t_ace554a195e09279c216c3efc6895e66f}
+\hypertarget{struct_nwk_frame__t_abe0e1d3be987a1a6fe8d6b9f19cefa67}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!payload@{payload}}
+\index{payload@{payload}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{payload}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ Nwk\-Frame\-\_\-t\-::payload}}\label{struct_nwk_frame__t_abe0e1d3be987a1a6fe8d6b9f19cefa67}
+
+
+Referenced by nwk\-Data\-Req\-Send\-Frame(), nwk\-Frame\-Alloc(), nwk\-Frame\-Payload\-Size(), nwk\-Rx\-Handle\-Received\-Frame(), nwk\-Rx\-Indicate\-Frame(), and nwk\-Rx\-Send\-Ack().
+
+\hypertarget{struct_nwk_frame__t_ae99f976337170b91bab3c91efee0c19e}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!rssi@{rssi}}
+\index{rssi@{rssi}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{rssi}]{\setlength{\rightskip}{0pt plus 5cm}int8\-\_\-t Nwk\-Frame\-\_\-t\-::rssi}}\label{struct_nwk_frame__t_ae99f976337170b91bab3c91efee0c19e}
+\hypertarget{struct_nwk_frame__t_af342a861746a0f6f40285195c4959a9e}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!rx@{rx}}
+\index{rx@{rx}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{rx}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   Nwk\-Frame\-\_\-t\-::rx}}\label{struct_nwk_frame__t_af342a861746a0f6f40285195c4959a9e}
+
+
+Referenced by nwk\-Rx\-Handle\-Received\-Frame(), nwk\-Rx\-Indicate\-Frame(), and P\-H\-Y\-\_\-\-Data\-Ind().
+
+\hypertarget{struct_nwk_frame__t_a42934dd5ff3a529ffb264402944f77e8}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!size@{size}}
+\index{size@{size}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Nwk\-Frame\-\_\-t\-::size}}\label{struct_nwk_frame__t_a42934dd5ff3a529ffb264402944f77e8}
+
+
+Referenced by nwk\-Data\-Req\-Send\-Frame(), nwk\-Frame\-Alloc(), nwk\-Frame\-Payload\-Size(), nwk\-Rx\-Send\-Ack(), nwk\-Tx\-Broadcast\-Frame(), nwk\-Tx\-Task\-Handler(), and P\-H\-Y\-\_\-\-Data\-Ind().
+
+\hypertarget{struct_nwk_frame__t_a5fbf3e581463732d26ea7b242c666109}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!state@{state}}
+\index{state@{state}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Nwk\-Frame\-\_\-t\-::state}}\label{struct_nwk_frame__t_a5fbf3e581463732d26ea7b242c666109}
+
+
+Referenced by nwk\-Frame\-Free(), nwk\-Frame\-Next(), nwk\-Rx\-Handle\-Indication(), nwk\-Rx\-Handle\-Received\-Frame(), nwk\-Rx\-Task\-Handler(), nwk\-Tx\-Ack\-Received(), nwk\-Tx\-Ack\-Wait\-Timer\-Handler(), nwk\-Tx\-Broadcast\-Frame(), nwk\-Tx\-Confirm(), nwk\-Tx\-Delay\-Timer\-Handler(), nwk\-Tx\-Frame(), nwk\-Tx\-Task\-Handler(), P\-H\-Y\-\_\-\-Data\-Conf(), and P\-H\-Y\-\_\-\-Data\-Ind().
+
+\hypertarget{struct_nwk_frame__t_ad6257c1abbda87dc2a653a6086f8e9e5}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!status@{status}}
+\index{status@{status}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Nwk\-Frame\-\_\-t\-::status}}\label{struct_nwk_frame__t_ad6257c1abbda87dc2a653a6086f8e9e5}
+\hypertarget{struct_nwk_frame__t_a3c49425f94b27976baefc90d1549ffab}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!timeout@{timeout}}
+\index{timeout@{timeout}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{timeout}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t Nwk\-Frame\-\_\-t\-::timeout}}\label{struct_nwk_frame__t_a3c49425f94b27976baefc90d1549ffab}
+\hypertarget{struct_nwk_frame__t_ab5e3dc31787a24bb22a62465358d71ba}{\index{Nwk\-Frame\-\_\-t@{Nwk\-Frame\-\_\-t}!tx@{tx}}
+\index{tx@{tx}!NwkFrame_t@{Nwk\-Frame\-\_\-t}}
+\subsubsection[{tx}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   Nwk\-Frame\-\_\-t\-::tx}}\label{struct_nwk_frame__t_ab5e3dc31787a24bb22a62465358d71ba}
+
+
+Referenced by nwk\-Data\-Req\-Send\-Frame(), nwk\-Data\-Req\-Tx\-Conf(), nwk\-Frame\-Command\-Init(), nwk\-Rx\-Send\-Ack(), nwk\-Tx\-Ack\-Wait\-Timer\-Handler(), nwk\-Tx\-Broadcast\-Frame(), nwk\-Tx\-Confirm(), nwk\-Tx\-Delay\-Timer\-Handler(), nwk\-Tx\-Frame(), nwk\-Tx\-Task\-Handler(), and P\-H\-Y\-\_\-\-Data\-Conf().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/nwk/inc/\hyperlink{nwk_frame_8h}{nwk\-Frame.\-h}\end{DoxyCompactItemize}

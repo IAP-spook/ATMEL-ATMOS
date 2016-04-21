@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_b_m_p280_8h.html#a79fe54e0ce75dc946a3540bddd43e878" title="Starts a measurement." alt="" coords="181,56,360,83"/>
+<area shape="rect" id="node5" href="$_b_m_p280_8c.html#a7634175c5e122cee3ae944189c389f7f" title="Reads some bytes from the BMP280." alt="" coords="408,56,552,83"/>
+<area shape="rect" id="node7" href="$_t_w_i_8h.html#ae1f51b83add546422b068cef6f304bd2" title="Starts a transmission over the TWI Bus." alt="" coords="601,5,717,32"/>
+<area shape="rect" id="node11" href="$_t_w_i_8h.html#a6b77b26021430a2cc51be63022463fd2" title="Sends a Stop bit, be sure to send a Start bit before future interactions on the bus." alt="" coords="619,56,698,83"/>
+<area shape="rect" id="node13" href="$_t_w_i_8h.html#a2fb6fa099d19955403d648070ff03158" title="Writes multiple bytes to the TWI bus." alt="" coords="617,107,700,133"/>
+<area shape="rect" id="node9" href="$_t_w_i_8h.html#aa78d37b505f1afc8e048adedf4242f21" title="Sends a byte over TWI." alt="" coords="766,56,877,83"/>
+</map>

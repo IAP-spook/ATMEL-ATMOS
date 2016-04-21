@@ -1,7 +1,7 @@
 /**
  * \file common.c
  *
- * \brief Common functions
+ * \brief Implementation of miscellaneous definitions, enumerators, and functions.
  * 
  * Created: 4/10/2015 11:49:15
  *  Author: Camden

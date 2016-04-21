@@ -1,0 +1,270 @@
+\hypertarget{_b_m_p280___sensor_8c}{\section{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/wrapper/sensor/src/\-B\-M\-P280\-\_\-\-Sensor.c File Reference}
+\label{_b_m_p280___sensor_8c}\index{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/wrapper/sensor/src/\-B\-M\-P280\-\_\-\-Sensor.\-c@{C\-:/\-Users/\-A\-B/\-Documents/\-Git\-Hub/\-A\-T\-M\-E\-L-\/\-A\-T\-M\-O\-S/\-A\-T\-M\-O\-S/wrapper/sensor/src/\-B\-M\-P280\-\_\-\-Sensor.\-c}}
+}
+
+
+Implementation of B\-M\-P280\-\_\-\-Sensor struct, which derived from Base\-Sensor.  
+
+
+{\ttfamily \#include \char`\"{}wrapper/sensor/inc/\-B\-M\-P280\-\_\-\-Sensor.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}devices/inc/\-B\-M\-P280.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+Include dependency graph for B\-M\-P280\-\_\-\-Sensor.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280___sensor_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_b_m_p280___sensor_8c_adc39dc2a6e01aca157d012c8301b3b89}{B\-M\-P280\-\_\-\-Fctn\-Init} (\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_b_m_p280___sensor_8c_a7a7a9d5136cdb699ec8a114eb0bb10ee}{B\-M\-P280\-\_\-\-Configure} (\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_b_m_p280___sensor_8c_a246c13070c963d68e95452484b280ee6}{B\-M\-P280\-\_\-\-Request} (\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_b_m_p280___sensor_8c_ae71f0447ded96ba90a402026bc58770a}{B\-M\-P280\-\_\-\-Collect} (\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_b_m_p280___sensor_8c_a17abdd5784e0922e28969e252264234e}{B\-M\-P280\-\_\-\-Error} (\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$this)
+\item 
+void \hyperlink{_b_m_p280___sensor_8c_a14a706c0f78b861abe8280d454393fb1}{B\-M\-P280\-\_\-\-V\-Tinit} (\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_b_m_p280___sensor_8c_a25d9752697f2ebaab778bd25b3ee8c44}{B\-M\-P280\-\_\-init} (\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_b_m_p280___sensor_8c_abf35a3c094c4653c25ff1610958269fb}{B\-M\-P280\-\_\-reset} (\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$this)
+\item 
+int \hyperlink{_b_m_p280___sensor_8c_a89dac49139ef122142b83a0b20c359fb}{B\-M\-P280\-\_\-get\-Type} (\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$this)
+\item 
+\hyperlink{_b_m_p280___sensor_8h_a60806e7544fdc94d70d1ef5937e17f28}{B\-M\-P280\-Sensor} $\ast$ \hyperlink{_b_m_p280___sensor_8c_aba44ddddd81fec3ef4292ab83db8fa90}{New\-\_\-\-B\-M\-P280\-\_\-\-Sensor} (int num)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_b_m_p280___sensor_8h_af50fab99f7bf7398a2dd77009dbcc86c}{B\-M\-P280\-\_\-\-Fctn\-Table} \hyperlink{_b_m_p280___sensor_8c_a414973534ee571c000e9271ef4610bf0}{B\-M\-P280\-\_\-vmt}
+\item 
+\hyperlink{_b_m_p280___sensor_8h_a81286eb04a69453fe611cdce1da9f1dd}{B\-M\-P280\-\_\-\-Abstract\-\_\-\-Fctn\-Table} \hyperlink{_b_m_p280___sensor_8c_a950dbd9a5ff9c9645e8894efd21653c0}{B\-M\-P280\-\_\-abstract\-\_\-vmt}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of B\-M\-P280\-\_\-\-Sensor struct, which derived from Base\-Sensor. Created\-: 2016/4/6 17\-:43\-:53 Author\-: Anxin Bai 
+
+\subsection{Function Documentation}
+\hypertarget{_b_m_p280___sensor_8c_ae71f0447ded96ba90a402026bc58770a}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-\-Collect@{B\-M\-P280\-\_\-\-Collect}}
+\index{B\-M\-P280\-\_\-\-Collect@{B\-M\-P280\-\_\-\-Collect}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-\-Collect}]{\setlength{\rightskip}{0pt plus 5cm}int B\-M\-P280\-\_\-\-Collect (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-M\-P280\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_ae71f0447ded96ba90a402026bc58770a}
+
+
+References B\-M\-P280\-\_\-\-Get\-Temperature\-And\-Pressure().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280___sensor_8c_ae71f0447ded96ba90a402026bc58770a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280___sensor_8c_a7a7a9d5136cdb699ec8a114eb0bb10ee}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-\-Configure@{B\-M\-P280\-\_\-\-Configure}}
+\index{B\-M\-P280\-\_\-\-Configure@{B\-M\-P280\-\_\-\-Configure}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}int B\-M\-P280\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-M\-P280\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_a7a7a9d5136cdb699ec8a114eb0bb10ee}
+\hypertarget{_b_m_p280___sensor_8c_a17abdd5784e0922e28969e252264234e}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-\-Error@{B\-M\-P280\-\_\-\-Error}}
+\index{B\-M\-P280\-\_\-\-Error@{B\-M\-P280\-\_\-\-Error}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-\-Error}]{\setlength{\rightskip}{0pt plus 5cm}int B\-M\-P280\-\_\-\-Error (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-M\-P280\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_a17abdd5784e0922e28969e252264234e}
+\hypertarget{_b_m_p280___sensor_8c_adc39dc2a6e01aca157d012c8301b3b89}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-\-Fctn\-Init@{B\-M\-P280\-\_\-\-Fctn\-Init}}
+\index{B\-M\-P280\-\_\-\-Fctn\-Init@{B\-M\-P280\-\_\-\-Fctn\-Init}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-\-Fctn\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void B\-M\-P280\-\_\-\-Fctn\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-M\-P280\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_adc39dc2a6e01aca157d012c8301b3b89}
+
+
+References B\-M\-P280\-\_\-vmt.
+
+
+
+Referenced by main(), and New\-\_\-\-B\-M\-P280\-\_\-\-Sensor().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280___sensor_8c_adc39dc2a6e01aca157d012c8301b3b89_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280___sensor_8c_a89dac49139ef122142b83a0b20c359fb}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-get\-Type@{B\-M\-P280\-\_\-get\-Type}}
+\index{B\-M\-P280\-\_\-get\-Type@{B\-M\-P280\-\_\-get\-Type}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}int B\-M\-P280\-\_\-get\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-M\-P280\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_a89dac49139ef122142b83a0b20c359fb}
+
+
+References T\-Y\-P\-E\-\_\-\-S\-E\-N\-S\-O\-R.
+
+\hypertarget{_b_m_p280___sensor_8c_a25d9752697f2ebaab778bd25b3ee8c44}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-init@{B\-M\-P280\-\_\-init}}
+\index{B\-M\-P280\-\_\-init@{B\-M\-P280\-\_\-init}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int B\-M\-P280\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-M\-P280\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_a25d9752697f2ebaab778bd25b3ee8c44}
+\hypertarget{_b_m_p280___sensor_8c_a246c13070c963d68e95452484b280ee6}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-\-Request@{B\-M\-P280\-\_\-\-Request}}
+\index{B\-M\-P280\-\_\-\-Request@{B\-M\-P280\-\_\-\-Request}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-\-Request}]{\setlength{\rightskip}{0pt plus 5cm}int B\-M\-P280\-\_\-\-Request (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-M\-P280\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_a246c13070c963d68e95452484b280ee6}
+
+
+References B\-M\-P280\-\_\-\-Start\-Measurment().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280___sensor_8c_a246c13070c963d68e95452484b280ee6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280___sensor_8c_abf35a3c094c4653c25ff1610958269fb}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-reset@{B\-M\-P280\-\_\-reset}}
+\index{B\-M\-P280\-\_\-reset@{B\-M\-P280\-\_\-reset}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}int B\-M\-P280\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-M\-P280\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_abf35a3c094c4653c25ff1610958269fb}
+\hypertarget{_b_m_p280___sensor_8c_a14a706c0f78b861abe8280d454393fb1}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-\-V\-Tinit@{B\-M\-P280\-\_\-\-V\-Tinit}}
+\index{B\-M\-P280\-\_\-\-V\-Tinit@{B\-M\-P280\-\_\-\-V\-Tinit}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-\-V\-Tinit}]{\setlength{\rightskip}{0pt plus 5cm}void B\-M\-P280\-\_\-\-V\-Tinit (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-M\-P280\-Sensor} $\ast$}]{this}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_a14a706c0f78b861abe8280d454393fb1}
+
+
+References B\-M\-P280\-\_\-abstract\-\_\-vmt.
+
+
+
+Referenced by New\-\_\-\-B\-M\-P280\-\_\-\-Sensor().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_m_p280___sensor_8c_a14a706c0f78b861abe8280d454393fb1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_m_p280___sensor_8c_aba44ddddd81fec3ef4292ab83db8fa90}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!New\-\_\-\-B\-M\-P280\-\_\-\-Sensor@{New\-\_\-\-B\-M\-P280\-\_\-\-Sensor}}
+\index{New\-\_\-\-B\-M\-P280\-\_\-\-Sensor@{New\-\_\-\-B\-M\-P280\-\_\-\-Sensor}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{New\-\_\-\-B\-M\-P280\-\_\-\-Sensor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-M\-P280\-Sensor}$\ast$ New\-\_\-\-B\-M\-P280\-\_\-\-Sensor (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{_b_m_p280___sensor_8c_aba44ddddd81fec3ef4292ab83db8fa90}
+
+
+References B\-M\-P280\-\_\-\-Fctn\-Init(), B\-M\-P280\-\_\-\-V\-Tinit(), \-\_\-\-B\-M\-P280\-\_\-\-Sensor\-::inherited, and \-\_\-\-Base\-\_\-\-Sensor\-::test\-\_\-num.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{_b_m_p280___sensor_8c_aba44ddddd81fec3ef4292ab83db8fa90_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{_b_m_p280___sensor_8c_aba44ddddd81fec3ef4292ab83db8fa90_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_b_m_p280___sensor_8c_a950dbd9a5ff9c9645e8894efd21653c0}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-abstract\-\_\-vmt@{B\-M\-P280\-\_\-abstract\-\_\-vmt}}
+\index{B\-M\-P280\-\_\-abstract\-\_\-vmt@{B\-M\-P280\-\_\-abstract\-\_\-vmt}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-abstract\-\_\-vmt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-M\-P280\-\_\-\-Abstract\-\_\-\-Fctn\-Table} B\-M\-P280\-\_\-abstract\-\_\-vmt}}\label{_b_m_p280___sensor_8c_a950dbd9a5ff9c9645e8894efd21653c0}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+ \{
+    \hyperlink{_b_m_p280___sensor_8h_ad1ae1c07e73c2627bc3558917c95f8a9}{BMP280\_VTinit},
+    \hyperlink{_b_m_p280___sensor_8h_a17ffd221032f7152772d537c3814d56c}{BMP280\_init},
+    \hyperlink{_b_m_p280___sensor_8h_acb3f1f5f3fddac373ec1fc4ff1b7ba87}{BMP280\_reset},
+    \hyperlink{_b_m_p280___sensor_8h_a4c20f99847664917940490d2be30b3e0}{BMP280\_getType}
+\}
+\end{DoxyCode}
+
+
+Referenced by B\-M\-P280\-\_\-\-V\-Tinit().
+
+\hypertarget{_b_m_p280___sensor_8c_a414973534ee571c000e9271ef4610bf0}{\index{B\-M\-P280\-\_\-\-Sensor.\-c@{B\-M\-P280\-\_\-\-Sensor.\-c}!B\-M\-P280\-\_\-vmt@{B\-M\-P280\-\_\-vmt}}
+\index{B\-M\-P280\-\_\-vmt@{B\-M\-P280\-\_\-vmt}!BMP280_Sensor.c@{B\-M\-P280\-\_\-\-Sensor.\-c}}
+\subsubsection[{B\-M\-P280\-\_\-vmt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-M\-P280\-\_\-\-Fctn\-Table} B\-M\-P280\-\_\-vmt}}\label{_b_m_p280___sensor_8c_a414973534ee571c000e9271ef4610bf0}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+ \{ 
+    \hyperlink{_b_m_p280___sensor_8h_adc39dc2a6e01aca157d012c8301b3b89}{BMP280\_FctnInit}, 
+    \hyperlink{_b_m_p280___sensor_8h_a7a7a9d5136cdb699ec8a114eb0bb10ee}{BMP280\_Configure},
+    \hyperlink{_b_m_p280___sensor_8h_a246c13070c963d68e95452484b280ee6}{BMP280\_Request},
+    \hyperlink{_b_m_p280___sensor_8h_ae71f0447ded96ba90a402026bc58770a}{BMP280\_Collect}, 
+    \hyperlink{_b_m_p280___sensor_8h_a17abdd5784e0922e28969e252264234e}{BMP280\_Error} 
+\}
+\end{DoxyCode}
+
+
+Referenced by B\-M\-P280\-\_\-\-Fctn\-Init().
+

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$scheduler_8h.html#a14fc4d6f2c57dd6c53413dcda79d71aa" title="Return the the time ( ms ) of the next event." alt="" coords="426,5,545,32"/>
+<area shape="rect" id="node5" href="$scheduler_8h.html#a4fb33031c030b4646e4bb73c5227c075" title="Handle the next event in timeoutQ: execute the event&#39;s handler function according to the device type..." alt="" coords="208,61,363,88"/>
+<area shape="rect" id="node9" href="$scheduler_8h.html#a0cd2b196b5888a7df16b4d2413dd0f7c" title="Insert a new event into the scheduler according to timeout order." alt="" coords="411,93,559,120"/>
+<area shape="rect" id="node11" href="$int__timer_8h.html#a07c20565b7b2a31bb00ae736a02317f9" title="set_timer" alt="" coords="447,144,523,171"/>
+</map>

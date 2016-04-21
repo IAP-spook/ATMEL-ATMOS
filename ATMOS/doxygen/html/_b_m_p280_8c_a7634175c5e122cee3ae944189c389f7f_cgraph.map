@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_t_w_i_8h.html#ae1f51b83add546422b068cef6f304bd2" title="Starts a transmission over the TWI Bus." alt="" coords="198,5,314,32"/>
+<area shape="rect" id="node7" href="$_t_w_i_8h.html#a6b77b26021430a2cc51be63022463fd2" title="Sends a Stop bit, be sure to send a Start bit before future interactions on the bus." alt="" coords="217,56,295,83"/>
+<area shape="rect" id="node9" href="$_t_w_i_8h.html#a2fb6fa099d19955403d648070ff03158" title="Writes multiple bytes to the TWI bus." alt="" coords="215,107,297,133"/>
+<area shape="rect" id="node5" href="$_t_w_i_8h.html#aa78d37b505f1afc8e048adedf4242f21" title="Sends a byte over TWI." alt="" coords="363,56,474,83"/>
+</map>
