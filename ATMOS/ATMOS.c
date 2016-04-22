@@ -59,7 +59,7 @@ int main(void)
 	Si7020Sensor *Si_ptr = New_Si7020_Sensor(0,2);
 	
 	DemoStorageDevice *Strg_ptr = New_DemoStorage_Device(0);
-	LoadDataDevice *Load_ptr = New_LoadData_Device(0,Si_ptr);
+	LoadDataDevice *Load_ptr = New_LoadData_Device(0,Strg_ptr);
 	
 	init_Event_Timer();
 	printf("init done!\n");
