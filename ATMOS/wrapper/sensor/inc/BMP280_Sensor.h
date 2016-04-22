@@ -49,7 +49,7 @@ int BMP280_init( BMP280Sensor* );
 int BMP280_reset( BMP280Sensor* );
 int BMP280_getType( BMP280Sensor* );
 
-BMP280Sensor* New_BMP280_Sensor( int num );
+BMP280Sensor* New_BMP280_Sensor( int num, int NumData );
 
 
 #endif

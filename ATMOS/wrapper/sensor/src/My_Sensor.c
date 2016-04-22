@@ -80,11 +80,17 @@ int My_getType(MySensor* this)
 }
 
 
-MySensor* New_My_Sensor( int num)
+MySensor* New_My_Sensor( int num, int NumData)
 {
 	MySensor *p = malloc(sizeof(MySensor));
 	My_VTinit( p );
 	My_FctnInit( p );
 	p->inherited.test_num = num;
+	
+	p->inherited.NumOfData = NumData;
+	p->inherited.StartNum = SensorDataCount;
+	SensorDataCount += NumData;
+	printf("SensorDataCount %d\n",SensorDataCount);
+	
 	return p;
 }

@@ -25,6 +25,7 @@
 #include "avr/io.h"
 #include "avr/interrupt.h"
 
+int SensorDataCount;
 /* TODO : clean up these messy init */
 static void APP_Init(void){
 	PWR_Init();
@@ -38,6 +39,7 @@ static void APP_Init(void){
 	printf("BMP280 Status %i\n", BMP280_Init());
 	BMP280_SetOversampling(4);
 	SPI_SlaveInit();
+	SensorDataCount = 0;
 }
 
 
@@ -48,7 +50,7 @@ int main(void)
 	
 	// could have sealed following in a function //
 	init_timeoutq();
-	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0 );
+	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0,2 );
 	BMP280_FctnInit(BMP280_ptr);
 	init_Event_Timer();
 	printf("init done!\n");
@@ -68,7 +70,7 @@ int main(void)
 /* TODO list at high priority 
  * 1. Add a My_Device.h/.c at wrapper/other-device which features a Exec() and a Configure() function DONE!!!
  * 2. Derive a DemoFlashDevice.h/.c for demonstration usage , it should hold some DataUnit queue DONE!!!
- * 3. Add two members one called Start_data, the other End_data in BaseSensor.h/.c
- * 4. Add getStartNum() and getEndNum() in BaseSensor.h/.c correspondingly
+ * 3. Add two members one called Start_data, the other End_data in BaseSensor.h/.c DONE!!!
+ * 4. Add getStartNum() and getEndNum() in BaseSensor.h/.c correspondingly	DONE!!!
  * 5. Add a null_start_device to get a valid empty DataUnit, and it should init all data to -9999 as default
  */ 

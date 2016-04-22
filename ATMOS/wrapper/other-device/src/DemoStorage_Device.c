@@ -41,7 +41,7 @@ int DemoStorage_Device_reset( DemoStorageDevice *this )
 
 int DemoStorage_Device_getType( DemoStorageDevice *this )
 {
-	return 0;
+	return TYPE_STORAGE_DEVICE;
 }
 
 DemoStorageDevice* New_DemoStorage_Device( int infonum )

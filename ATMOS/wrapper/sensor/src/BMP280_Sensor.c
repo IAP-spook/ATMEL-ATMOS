@@ -89,11 +89,17 @@ int BMP280_getType(BMP280Sensor* this)
 }
 
 
-BMP280Sensor* New_BMP280_Sensor( int num)
+BMP280Sensor* New_BMP280_Sensor( int num, int NumData )
 {
 	BMP280Sensor *p = malloc(sizeof(BMP280Sensor));
     BMP280_VTinit( p );
     BMP280_FctnInit( p );
 	p->inherited.test_num = num;
+	
+	p->inherited.NumOfData = NumData;
+	p->inherited.StartNum = SensorDataCount;
+	SensorDataCount += NumData;
+	printf("SensorDataCount %d\n",SensorDataCount);
+	
 	return p;
 }

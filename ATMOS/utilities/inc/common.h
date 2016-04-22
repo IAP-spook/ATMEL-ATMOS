@@ -6,9 +6,8 @@
  * Created: 10/10/2014 11:47:44 AM
  *  Author: Camden and Anxin Bai
  */ 
+#pragma once
 
-#ifndef COMMON_H_
-#define COMMON_H_
 
 #include <stdint.h>
 #include "avr/io.h"
@@ -22,6 +21,7 @@
 /* It is vital to make this number correct for future coders in real implementation */
 #define MAX_NUM_DATA 4
 
+extern int SensorDataCount;
 
 enum DeviceState { New, Ready, Running, Terminated, Oops };
 
@@ -29,13 +29,12 @@ enum DeviceState { New, Ready, Running, Terminated, Oops };
 enum
 {
 	TYPE_BMP280,
-	TYPE_OTHERSENSOR,
 	TYPE_BASE_DEVICE,
 	TYPE_BASE_SENSOR,
-	TYPE_SENSOR
+	TYPE_SENSOR,
+	TYPE_STORAGE_DEVICE,
+	TYPE_DEVICE
 };
 
 //prototypes//
 unsigned int check_crc(uint16_t, uint8_t);
-
-#endif /* COMMON_H_ */

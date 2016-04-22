@@ -31,8 +31,7 @@ ATMOS.d ATMOS.o: .././ATMOS.c .././utilities/inc/config.h \
  .././drivers/inc/TWI.h .././drivers/inc/PWR.h .././drivers/inc/ADC.h \
  .././drivers/inc/SPI.h .././drivers/inc/int_timer.h \
  ../scheduler/inc/scheduler.h ../scheduler/inc/event.h \
- ../utilities/inc/common.h ../utilities/inc/llist.h \
- ../wrapper/base-class/inc/Base_Sensor.h \
+ ../utilities/inc/llist.h ../wrapper/base-class/inc/Base_Sensor.h \
  ../wrapper/base-class/inc/Base_Device.h ../scheduler/inc/handler.h \
  ../drivers/inc/int_timer.h .././scheduler/inc/scheduler.h \
  .././wrapper/sensor/inc/My_Sensor.h \
@@ -129,8 +128,6 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 ../scheduler/inc/scheduler.h:
 
 ../scheduler/inc/event.h:
-
-../utilities/inc/common.h:
 
 ../utilities/inc/llist.h:
 

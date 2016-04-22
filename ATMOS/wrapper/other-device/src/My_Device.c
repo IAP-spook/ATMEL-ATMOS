@@ -41,7 +41,7 @@ int My_Device_reset( MyDevice *this )
 
 int My_Device_getType( MyDevice *this )
 {
-	return 0;
+	return TYPE_DEVICE;
 }
 
 MyDevice* New_My_Device( int infonum )

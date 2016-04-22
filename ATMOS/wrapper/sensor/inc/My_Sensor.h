@@ -48,7 +48,7 @@ int My_init( MySensor* );
 int My_reset( MySensor* );
 int My_getType( MySensor* );
 
-MySensor* New_My_Sensor( int num );
+MySensor* New_My_Sensor( int num, int NumData );
 
 
 

@@ -411,6 +411,9 @@
     <Compile Include="utilities\inc\llist.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="utilities\inc\SensorDataCount.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="utilities\inc\time.h">
       <SubType>compile</SubType>
     </Compile>
