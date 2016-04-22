@@ -49,6 +49,7 @@ DemoStorageDevice* New_DemoStorage_Device( int infonum )
 	DemoStorageDevice *p = malloc(sizeof(DemoStorageDevice));
 	p->info = infonum;
 	DemoStorage_Device_VTinit(p);
+	DemoStorage_Device_Tinit(p);
 	p->StoragesData = ( DataUnit * ) malloc( sizeof(DataUnit) * MAX_HOLD_DATA);
 	
 	for( int i=0;i<MAX_HOLD_DATA;i++)

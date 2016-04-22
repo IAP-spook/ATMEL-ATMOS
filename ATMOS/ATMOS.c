@@ -67,8 +67,8 @@ int main(void)
 	// could have sealed following in a function //
 	load_new_sensor( 1000, 4000, (BaseSensor *)BMP280_ptr, 0 );
 	load_new_sensor( 3000, 4000, (BaseSensor *)Si_ptr, 0 );
-	load_new_sensor( 1000, 12000, (BaseSensor *)Strg_ptr, 0 );
-	load_new_sensor( 100, 4000, (BaseSensor *)Load_ptr, 0 );
+	load_new_device( 1000, 12000, (BaseSensor *)Strg_ptr, 0 );
+	load_new_device( 100, 4000, (BaseSensor *)Load_ptr, 0 );
 	// load_new_sensor( 4, 4, (BaseSensor *)Si7020_ptr, 0 );
 	init_set_timer( get_next_interval() );
 	

@@ -50,6 +50,7 @@ LoadDataDevice* New_LoadData_Device( int infonum, DemoStorageDevice * ptr )
 	p->info = infonum;
 	p->store_device = ptr;
 	LoadData_Device_VTinit(p);
+	LoadData_Device_Tinit(p);
 	return p;
 }
 
