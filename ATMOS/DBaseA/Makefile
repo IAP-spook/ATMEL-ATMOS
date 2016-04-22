@@ -105,6 +105,7 @@ C_SRCS +=  \
 ../utilities/src/common.c \
 ../utilities/src/llist.c \
 ../utilities/src/time.c \
+../wrapper/base-class/src/My_Device.c \
 ../wrapper/base-class/src/Base_Device.c \
 ../wrapper/base-class/src/Base_Sensor.c \
 ../wrapper/sensor/src/BMP280_Sensor.c \
@@ -149,6 +150,7 @@ sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
 utilities/src/time.o \
+wrapper/base-class/src/My_Device.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/sensor/src/BMP280_Sensor.o \
@@ -186,6 +188,7 @@ sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
 utilities/src/time.o \
+wrapper/base-class/src/My_Device.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/sensor/src/BMP280_Sensor.o \
@@ -223,6 +226,7 @@ sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
 utilities/src/time.d \
+wrapper/base-class/src/My_Device.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/sensor/src/BMP280_Sensor.d \
@@ -260,6 +264,7 @@ sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
 utilities/src/time.d \
+wrapper/base-class/src/My_Device.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/sensor/src/BMP280_Sensor.d \
@@ -279,6 +284,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

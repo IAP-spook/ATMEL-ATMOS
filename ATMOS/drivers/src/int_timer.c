@@ -15,6 +15,9 @@ static int timer_usage = 0;
 /* TODO : timestamp struct maybe */
 static long TimeStamp = 0.0;
 
+/*************************************************************************//**
+  @brief Timer Interrupt Service Routine
+*****************************************************************************/
 ISR(TIMER2_OVF_vect)
 {
 	timer_usage ++;
