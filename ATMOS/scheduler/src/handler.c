@@ -9,7 +9,8 @@
 
 #include "scheduler/inc/handler.h"
 #include "utilities/inc/data_unit.h"
-
+#include "wrapper/other-device/inc/DemoStorage_Device.h"
+#include "wrapper/other-device/inc/LoadData_Device.h"
 
 /*************************************************************************//**
   @brief sensor_handler function to decide the execution logic of a sensor according to its state, return 1 if it has some borrow time 
@@ -116,7 +117,9 @@ int sensor_handler( struct event *p )
 int device_handler( struct event *p )
 {
 	int retNum;
-	//BaseOtherDevice *dp;
+	BaseDevice * bdp = (BaseDevice *) ( p->sp );
+	LoadDataDevice *ldp = (LoadDataDevice*) ( p->sp );
+	DemoStorageDevice *ddp = (DemoStorageDevice*) ( p->sp );
 
 	/* sanity check */
 	if( p == EV_NULL )
@@ -135,6 +138,14 @@ int device_handler( struct event *p )
 			break;
 		case Ready :
 			p->cur_state = Ready;
+			if( bdp->device_vt->getType(bdp) == TYPE_DEVICE )
+			{
+				ldp->vmt->Execute(ldp);
+			}	
+			else if( bdp->device_vt->getType(bdp) == TYPE_STORAGE_DEVICE )
+			{
+				ddp->vmt->Execute(ddp);
+			}
 			// dp->sth.->run();
 			break;
 		default :

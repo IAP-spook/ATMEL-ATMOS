@@ -22,6 +22,8 @@
 #include "wrapper/sensor/inc/Si7020_Sensor.h"
 #include "wrapper/sensor/inc/Temperature_ADC_Sensor.h"
 #include "wrapper/sensor/inc/BMP280_Sensor.h"
+#include "wrapper/other-device/inc/DemoStorage_Device.h"
+#include "wrapper/other-device/inc/LoadData_Device.h"
 #include "avr/io.h"
 #include "avr/interrupt.h"
 #include "utilities/inc/data_unit.h"
@@ -54,12 +56,19 @@ int main(void)
 	// could have sealed following in a function //
 	init_timeoutq();
 	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0,2 );
-	BMP280_FctnInit(BMP280_ptr);
+	Si7020Sensor *Si_ptr = New_Si7020_Sensor(0,2);
+	
+	DemoStorageDevice *Strg_ptr = New_DemoStorage_Device(0);
+	LoadDataDevice *Load_ptr = New_LoadData_Device(0,Si_ptr);
+	
 	init_Event_Timer();
 	printf("init done!\n");
 	
 	// could have sealed following in a function //
 	load_new_sensor( 1000, 4000, (BaseSensor *)BMP280_ptr, 0 );
+	load_new_sensor( 3000, 4000, (BaseSensor *)Si_ptr, 0 );
+	load_new_sensor( 1000, 12000, (BaseSensor *)Strg_ptr, 0 );
+	load_new_sensor( 100, 4000, (BaseSensor *)Load_ptr, 0 );
 	// load_new_sensor( 4, 4, (BaseSensor *)Si7020_ptr, 0 );
 	init_set_timer( get_next_interval() );
 	
@@ -75,6 +84,7 @@ int main(void)
  * 2. Derive a DemoFlashDevice.h/.c for demonstration usage , it should hold some DataUnit queue DONE!!!
  * 3. Add two members one called Start_data, the other End_data in BaseSensor.h/.c DONE!!!
  * 4. Add getStartNum() and getEndNum() in BaseSensor.h/.c correspondingly	DONE!!!
- * 5. Add LoadData_Device to get a valid empty DataUnit, and it should init all data to -9999 as default DONE !!!
+ * 5. Add LoadData_Device to get a valid empty DataUnit DONE !!!
  * 6. Add Handler of Devices 
+ * 7. LoadData_Device should init all data to -9999 as default
  */ 

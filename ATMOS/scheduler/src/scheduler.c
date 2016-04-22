@@ -32,7 +32,7 @@ void init_timeoutq()
 
 
 /*************************************************************************//**
-  @brief Load a brand new device activity into the scheduler's timeoutQ
+  @brief Load a brand new sensor activity into the scheduler's timeoutQ
 *****************************************************************************/
 int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otherinfo )
 {
@@ -49,6 +49,29 @@ int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otheri
     ep->info = otherinfo;
     ep->cur_state = Ready;
     ep->run = sensor_handler;
+    insert_timeoutq_event( ep );
+    return 0;
+}
+
+
+/*************************************************************************//**
+  @brief Load a brand new device activity into the scheduler's timeoutQ
+*****************************************************************************/
+int load_new_device( int timeout, int repeat, BaseSensor *device_ptr, int otherinfo )
+{
+
+    /* assume we have available event in freelist */
+    struct event *ep = ( struct event * ) LL_POP( freelist );
+    /* if not return a -1 as an error code */
+    if( ep == EV_NULL )
+        return -1;
+    ep->timeout = timeout;
+    ep->repeat_interval = repeat;
+	ep->borrow_timeout = 0;
+    ep->sp = device_ptr;
+    ep->info = otherinfo;
+    ep->cur_state = Ready;
+    ep->run = device_handler;
     insert_timeoutq_event( ep );
     return 0;
 }
