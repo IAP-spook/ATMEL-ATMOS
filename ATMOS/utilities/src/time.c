@@ -9,14 +9,16 @@
 #include "utilities/inc/time.h"
 
 
-void updateTime(uint32_t increment_msec, tm *tm_ptr)
+void updateTime(long increment_msec, tm tm_eg)
 {
-	tm_ptr->unix_msec += increment_msec;
-	tm_ptr->unix_time += tm_ptr->unix_msec % 1000;
-	tm_ptr->unix_msec = tm_ptr->unix_msec % 1000;
+	printf("time debug %ld\n",tm_eg.unix_time);
+	tm_eg.unix_msec += increment_msec;
+	tm_eg.unix_time += tm_eg.unix_msec / 1000;
+	tm_eg.unix_msec = tm_eg.unix_msec % 1000;
+	printf("time debug %ld\n",tm_eg.unix_time);
 }
 
-void synchTime(uint32_t calibrate_sec, tm *tm_ptr)
+void synchTime(long calibrate_sec, tm *tm_ptr)
 {
 	tm_ptr->unix_time = calibrate_sec;
 	tm_ptr->unix_msec = 500; // to minimize error
@@ -24,8 +26,8 @@ void synchTime(uint32_t calibrate_sec, tm *tm_ptr)
 
 void calcDate(tm *tm_ptr)
 {
-	uint32_t seconds, minutes, hours, days, year, month;
-	uint32_t dayOfWeek;
+	long seconds, minutes, hours, days, year, month;
+	long dayOfWeek;
 	seconds = tm_ptr->unix_time;
 
 	/* calculate minutes */

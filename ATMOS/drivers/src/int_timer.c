@@ -13,7 +13,7 @@
 /* TODO : need to adjust and let it won't return to zero */
 static int timer_usage = 0;
 /* TODO : timestamp struct maybe */
-static long TimeStamp = 0.0;
+long TimeStamp = 0.0;
 
 /*************************************************************************//**
   @brief Timer Interrupt Service Routine
@@ -21,9 +21,9 @@ static long TimeStamp = 0.0;
 ISR(TIMER2_OVF_vect)
 {
 	timer_usage ++;
-	printf("count1 = %d\n",timer_usage);
+	// printf("count1 = %d\n",timer_usage);
 	printf("Timestamp : %ld\n",(TimeStamp));
-	handle_timeoutq_event();
+	handle_timeoutq_event();	
 }
 
 

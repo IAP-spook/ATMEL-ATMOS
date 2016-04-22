@@ -23,6 +23,7 @@ typedef struct _DemoStorage_Device_vmt
 	void (*Device_Tinit)(DemoStorageDevice*);
 	int (*Execute)(DemoStorageDevice*);
 	int (*Configure)(DemoStorageDevice*);
+	DataUnit * (*get_CurDataUnit)(DemoStorageDevice *);
 } DemoStorage_Device_FctnTable;
 
 typedef struct _DemoStorage_Device_Abstract_vmt
@@ -40,7 +41,7 @@ struct _DemoStorage_Device
 	int info;
 	int cur_pos;
 	DataUnit * StoragesData;
-	DataUnit * (*get_CurDataUnit)(DemoStorageDevice *);
+	
 };
 
 
@@ -54,4 +55,5 @@ DemoStorageDevice* New_DemoStorage_Device( int num );
 void DemoStorage_Device_Tinit(DemoStorageDevice *this);
 int DemoStorage_Device_Execute(DemoStorageDevice *this);
 int DemoStorage_Device_Configure(DemoStorageDevice *this);
+DataUnit * DemoStorageget_CurDataUnit(DemoStorageDevice *this);
 #endif

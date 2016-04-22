@@ -20,7 +20,6 @@ int sensor_handler( struct event *p )
 	int retNum;
 	int data = 0;
 	BaseSensor *sp;
-
 	/* sanity check */
 	if( p == EV_NULL )
 	{
@@ -32,7 +31,7 @@ int sensor_handler( struct event *p )
 	sp = ( BaseSensor * )( p->sp );
 
 	#ifdef DEBUG
-	printf("cur_state = %d\n", p->cur_state);
+	// printf("cur_state = %d\n", p->cur_state);
 	#endif
 	switch( p->cur_state )
 	{
@@ -117,15 +116,15 @@ int sensor_handler( struct event *p )
 int device_handler( struct event *p )
 {
 	int retNum;
-	BaseDevice * bdp = (BaseDevice *) ( p->sp );
-	LoadDataDevice *ldp = (LoadDataDevice*) ( p->sp );
-	DemoStorageDevice *ddp = (DemoStorageDevice*) ( p->sp );
+	BaseDevice * bdp = (BaseDevice *) ( p->load_p );
+	LoadDataDevice *ldp = (LoadDataDevice*) ( p->load_p );
+	DemoStorageDevice *ddp = (DemoStorageDevice*) ( p->store_p );
 
 	/* sanity check */
 	if( p == EV_NULL )
 	{
 		#ifdef DEBUG
-		printf("Null Event Error !!!");
+		printf("Null Event Error !!!\n");
 		#endif
 		return 0;
 	}
@@ -140,7 +139,9 @@ int device_handler( struct event *p )
 			p->cur_state = Ready;
 			if( bdp->device_vt->getType(bdp) == TYPE_DEVICE )
 			{
+				printf("Load Device\n");
 				ldp->vmt->Execute(ldp);
+				printf("Load Device Finish\n");
 			}	
 			else if( bdp->device_vt->getType(bdp) == TYPE_STORAGE_DEVICE )
 			{
@@ -181,3 +182,4 @@ int storeData_handler( struct event *p )
 	
 	return 0;
 }
+

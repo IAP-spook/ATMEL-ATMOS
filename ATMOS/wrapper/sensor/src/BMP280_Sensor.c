@@ -58,6 +58,13 @@ int BMP280_Collect(BMP280Sensor *this )
 	double T, P;
 	BMP280_GetTemperatureAndPressure(&T,&P);
 	printf("\tTemperature = %.3f\n\tPressure = %.3f\n",T,P);
+	/*
+	for( int i = 0 ; i = this->inherited.getStartNum(); i < this->inherited.getEndNum() )
+	{
+	}
+	*/
+	cur_data->data[0] = T;
+	cur_data->data[1] = P; 
 	return 0;
 }
 
@@ -100,6 +107,7 @@ BMP280Sensor* New_BMP280_Sensor( int num, int NumData )
 	p->inherited.StartNum = SensorDataCount;
 	SensorDataCount += NumData;
 	printf("SensorDataCount %d\n",SensorDataCount);
+	//printf("get start %d end %d\n",p->inherited.getStartNum(& (p->inherited) ),p->inherited.getEndNum(& (p->inherited)));
 	
 	return p;
 }

@@ -29,7 +29,7 @@
 #include "utilities/inc/data_unit.h"
 
 int SensorDataCount;
-DataUnit *cur_data;
+DataUnit *cur_data = NULL;
 
 /* TODO : clean up these messy init */
 static void APP_Init(void){
@@ -59,7 +59,7 @@ int main(void)
 	Si7020Sensor *Si_ptr = New_Si7020_Sensor(0,2);
 	
 	DemoStorageDevice *Strg_ptr = New_DemoStorage_Device(0);
-	LoadDataDevice *Load_ptr = New_LoadData_Device(0,Si_ptr);
+	LoadDataDevice *Load_ptr = New_LoadData_Device(0,Strg_ptr);
 	
 	init_Event_Timer();
 	printf("init done!\n");
@@ -67,8 +67,8 @@ int main(void)
 	// could have sealed following in a function //
 	load_new_sensor( 1000, 4000, (BaseSensor *)BMP280_ptr, 0 );
 	load_new_sensor( 3000, 4000, (BaseSensor *)Si_ptr, 0 );
-	load_new_sensor( 1000, 12000, (BaseSensor *)Strg_ptr, 0 );
-	load_new_sensor( 100, 4000, (BaseSensor *)Load_ptr, 0 );
+	load_new_device( 3300, 12000, (BaseDevice *)Strg_ptr, 0 );
+	load_new_device( 1100, 4000, (BaseDevice *)Load_ptr, 0 );
 	// load_new_sensor( 4, 4, (BaseSensor *)Si7020_ptr, 0 );
 	init_set_timer( get_next_interval() );
 	

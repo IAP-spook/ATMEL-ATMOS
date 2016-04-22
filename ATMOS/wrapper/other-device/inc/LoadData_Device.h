@@ -11,8 +11,10 @@
 
 #include "wrapper/base-class/inc/Base_Device.h"
 #include "wrapper/other-device/inc/DemoStorage_Device.h"
+#include "utilities/inc/data_unit.h"
 
 extern DataUnit * cur_data;
+
 
 struct _LoadData_Device;
 typedef struct _LoadData_Device LoadDataDevice;

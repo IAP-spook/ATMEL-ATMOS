@@ -19,7 +19,8 @@ DemoStorage_Device_Abstract_FctnTable DemoStorageDevice_abstract_vmt = {
 DemoStorage_Device_FctnTable DemoStorageDevice_vmt = {
 	DemoStorage_Device_Tinit,
 	DemoStorage_Device_Execute,
-	DemoStorage_Device_Configure
+	DemoStorage_Device_Configure,
+	DemoStorageget_CurDataUnit
 };
 
 
@@ -49,11 +50,14 @@ DemoStorageDevice* New_DemoStorage_Device( int infonum )
 	DemoStorageDevice *p = malloc(sizeof(DemoStorageDevice));
 	p->info = infonum;
 	DemoStorage_Device_VTinit(p);
+	DemoStorage_Device_Tinit(p);
 	p->StoragesData = ( DataUnit * ) malloc( sizeof(DataUnit) * MAX_HOLD_DATA);
 	
 	for( int i=0;i<MAX_HOLD_DATA;i++)
 		for( int j=0;j<MAX_NUM_DATA;j++)
-			p->StoragesData[i].data[j] = -9999; 
+		{
+				p->StoragesData[i].data[j] = -9999; 
+		}
 	p->cur_pos = 0;
 
 	return p;
@@ -73,9 +77,10 @@ int DemoStorage_Device_Execute(DemoStorageDevice *this)
 	for( int i=0; i<this->cur_pos; i++)
 	{
 		DataUnit temp = this->StoragesData[i];
-		printf("%d%d%d %d%d%d\t",temp.data_tm.tm_year,temp.data_tm.tm_mon,temp.data_tm.tm_mday,temp.data_tm.tm_hour,temp.data_tm.tm_min,temp.data_tm.tm_sec);
+		printf("%2d%2d%2d %2d%2d%2d\t",temp.data_tm.tm_year,temp.data_tm.tm_mon,temp.data_tm.tm_mday,temp.data_tm.tm_hour,temp.data_tm.tm_min,temp.data_tm.tm_sec);
 		for( int j = 0; j < MAX_NUM_DATA; ++j )
-		printf("%3.3f ",temp.data[j]);
+			printf("%3.3f ",temp.data[j]);
+		printf("\n");
 	}
 	this->cur_pos = 0;
 	return 0;
@@ -86,9 +91,11 @@ int DemoStorage_Device_Configure(DemoStorageDevice *this)
 	return 0;
 }
 
-DataUnit * get_CurDataUnit(DemoStorageDevice *this)
+DataUnit * DemoStorageget_CurDataUnit(DemoStorageDevice *this)
 {
+	printf("Executre get store Device\n");
 	int t = this->cur_pos;
 	this->cur_pos = this->cur_pos+1;
-	return &(this->StoragesData[t]);
+	DataUnit * data_t = this -> StoragesData;
+	return (data_t + t);
 }

@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+extern long TimeStamp ;
+
 LoadData_Device_Abstract_FctnTable LoadDataDevice_abstract_vmt = {
 	LoadData_Device_VTinit,
 	LoadData_Device_init,
@@ -50,6 +52,7 @@ LoadDataDevice* New_LoadData_Device( int infonum, DemoStorageDevice * ptr )
 	p->info = infonum;
 	p->store_device = ptr;
 	LoadData_Device_VTinit(p);
+	LoadData_Device_Tinit(p);
 	return p;
 }
 
@@ -63,8 +66,18 @@ void LoadData_Device_Tinit(LoadDataDevice *this)
 
 int LoadData_Device_Execute(LoadDataDevice *this)
 {
-	printf("Executre LoadData Device\n");
-	cur_data = this->store_device->get_CurDataUnit(this->store_device);
+	if( this -> store_device == NULL)
+		printf("NULL store device\n");
+	cur_data = this->store_device->vmt->get_CurDataUnit(this->store_device);
+	/*TODO : could init -999 here */
+	
+	
+	if( cur_data != NULL)
+	{
+		updateTime((uint32_t)TimeStamp,cur_data->data_tm);
+		calcDate( &(cur_data->data_tm));
+		TimeStamp = 0;
+	}
 	return 0;
 }
 

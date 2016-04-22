@@ -15,7 +15,8 @@
 #include "utilities/inc/common.h"
 #include "utilities/inc/llist.h"
 #include "wrapper/base-class/inc/Base_Sensor.h"
-	
+#include "wrapper/other-device/inc/DemoStorage_Device.h"
+#include "wrapper/other-device/inc/LoadData_Device.h"
 
 /*************************************************************************//**
   @brief A container struct to hold device/sensor pointer and corresponding timeout info. 
@@ -29,6 +30,8 @@ struct event
 	int repeat_interval;
     int borrow_timeout;
 	BaseSensor * sp;
+	LoadDataDevice *load_p;
+	DemoStorageDevice *store_p;
 	int info;
     enum DeviceState cur_state;
     int (* run)(struct event *);

@@ -9,6 +9,9 @@
 #ifndef _BASE_SENSOR_H_
 #define _BASE_SENSOR_H_
 #include "wrapper/base-class/inc/Base_Device.h"
+#include "utilities/inc/data_unit.h"
+
+extern DataUnit * cur_data;
 
 struct _Base_Sensor;
 typedef struct _Base_Sensor BaseSensor;

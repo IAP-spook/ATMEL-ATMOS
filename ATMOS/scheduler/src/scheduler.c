@@ -57,7 +57,7 @@ int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otheri
 /*************************************************************************//**
   @brief Load a brand new device activity into the scheduler's timeoutQ
 *****************************************************************************/
-int load_new_device( int timeout, int repeat, BaseSensor *device_ptr, int otherinfo )
+int load_new_device( int timeout, int repeat, BaseDevice *device_ptr, int otherinfo )
 {
 
     /* assume we have available event in freelist */
@@ -68,7 +68,8 @@ int load_new_device( int timeout, int repeat, BaseSensor *device_ptr, int otheri
     ep->timeout = timeout;
     ep->repeat_interval = repeat;
 	ep->borrow_timeout = 0;
-    ep->sp = device_ptr;
+    ep->load_p = device_ptr;
+	ep->store_p = device_ptr;
     ep->info = otherinfo;
     ep->cur_state = Ready;
     ep->run = device_handler;
@@ -120,10 +121,13 @@ int handle_timeoutq_event( )
 	/* assume we get a valid one */
 	struct event * ev = (struct event * )LL_TOP( timeoutq );
 	if( EV_NULL == ev )
+	{
+		printf("err\n");
         return -1;
+	}
     
     /* sanity check */
-    if( ev->sp == NULL )
+    if( ev->sp == NULL && ev->load_p == NULL && ev->store_p == NULL)
         return -1;
 
 	/* retNum may need to be designed in other ways */
