@@ -24,8 +24,11 @@
 #include "wrapper/sensor/inc/BMP280_Sensor.h"
 #include "avr/io.h"
 #include "avr/interrupt.h"
+#include "utilities/inc/data_unit.h"
 
 int SensorDataCount;
+DataUnit *cur_data;
+
 /* TODO : clean up these messy init */
 static void APP_Init(void){
 	PWR_Init();
@@ -72,5 +75,6 @@ int main(void)
  * 2. Derive a DemoFlashDevice.h/.c for demonstration usage , it should hold some DataUnit queue DONE!!!
  * 3. Add two members one called Start_data, the other End_data in BaseSensor.h/.c DONE!!!
  * 4. Add getStartNum() and getEndNum() in BaseSensor.h/.c correspondingly	DONE!!!
- * 5. Add a null_start_device to get a valid empty DataUnit, and it should init all data to -9999 as default
+ * 5. Add LoadData_Device to get a valid empty DataUnit, and it should init all data to -9999 as default DONE !!!
+ * 6. Add Handler of Devices 
  */ 

@@ -40,7 +40,7 @@ struct _DemoStorage_Device
 	int info;
 	int cur_pos;
 	DataUnit * StoragesData;
-	DataUnit (*get_CurDataUnit)(DemoStorageDevice *);
+	DataUnit * (*get_CurDataUnit)(DemoStorageDevice *);
 };
 
 

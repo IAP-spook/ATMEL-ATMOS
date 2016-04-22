@@ -69,7 +69,7 @@ void DemoStorage_Device_Tinit(DemoStorageDevice *this)
 
 int DemoStorage_Device_Execute(DemoStorageDevice *this)
 {
-	printf("Storage Execution\n");
+	printf("Executre Storage Device\n");
 	for( int i=0; i<this->cur_pos; i++)
 	{
 		DataUnit temp = this->StoragesData[i];
@@ -86,9 +86,9 @@ int DemoStorage_Device_Configure(DemoStorageDevice *this)
 	return 0;
 }
 
-DataUnit get_CurDataUnit(DemoStorageDevice *this)
+DataUnit * get_CurDataUnit(DemoStorageDevice *this)
 {
 	int t = this->cur_pos;
 	this->cur_pos = this->cur_pos+1;
-	return this->StoragesData[t];
+	return &(this->StoragesData[t]);
 }

@@ -8,7 +8,6 @@
  */ 
 #pragma once
 
-
 #include <stdint.h>
 #include "avr/io.h"
 #include <util/delay.h>
@@ -22,6 +21,7 @@
 #define MAX_NUM_DATA 4
 
 extern int SensorDataCount;
+
 
 enum DeviceState { New, Ready, Running, Terminated, Oops };
 

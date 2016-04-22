@@ -108,9 +108,11 @@ C_SRCS +=  \
 ../wrapper/base-class/src/Base_Device.c \
 ../wrapper/base-class/src/Base_Sensor.c \
 ../wrapper/other-device/src/DemoStorage_Device.c \
+../wrapper/other-device/src/LoadData_Device.c \
 ../wrapper/other-device/src/My_Device.c \
 ../wrapper/sensor/src/BMP280_Sensor.c \
-../wrapper/sensor/src/My_Sensor.c
+../wrapper/sensor/src/My_Sensor.c \
+../wrapper/sensor/src/Si7020_Sensor.c
 
 
 PREPROCESSING_SRCS += 
@@ -154,9 +156,11 @@ utilities/src/time.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/other-device/src/DemoStorage_Device.o \
+wrapper/other-device/src/LoadData_Device.o \
 wrapper/other-device/src/My_Device.o \
 wrapper/sensor/src/BMP280_Sensor.o \
-wrapper/sensor/src/My_Sensor.o
+wrapper/sensor/src/My_Sensor.o \
+wrapper/sensor/src/Si7020_Sensor.o
 
 OBJS_AS_ARGS +=  \
 ATMOS.o \
@@ -193,9 +197,11 @@ utilities/src/time.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
 wrapper/other-device/src/DemoStorage_Device.o \
+wrapper/other-device/src/LoadData_Device.o \
 wrapper/other-device/src/My_Device.o \
 wrapper/sensor/src/BMP280_Sensor.o \
-wrapper/sensor/src/My_Sensor.o
+wrapper/sensor/src/My_Sensor.o \
+wrapper/sensor/src/Si7020_Sensor.o
 
 C_DEPS +=  \
 ATMOS.d \
@@ -232,9 +238,11 @@ utilities/src/time.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/other-device/src/DemoStorage_Device.d \
+wrapper/other-device/src/LoadData_Device.d \
 wrapper/other-device/src/My_Device.d \
 wrapper/sensor/src/BMP280_Sensor.d \
-wrapper/sensor/src/My_Sensor.d
+wrapper/sensor/src/My_Sensor.d \
+wrapper/sensor/src/Si7020_Sensor.d
 
 C_DEPS_AS_ARGS +=  \
 ATMOS.d \
@@ -271,9 +279,11 @@ utilities/src/time.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
 wrapper/other-device/src/DemoStorage_Device.d \
+wrapper/other-device/src/LoadData_Device.d \
 wrapper/other-device/src/My_Device.d \
 wrapper/sensor/src/BMP280_Sensor.d \
-wrapper/sensor/src/My_Sensor.d
+wrapper/sensor/src/My_Sensor.d \
+wrapper/sensor/src/Si7020_Sensor.d
 
 OUTPUT_FILE_PATH +=ATMOS.elf
 
@@ -289,6 +299,10 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 

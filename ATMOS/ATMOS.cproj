@@ -441,10 +441,16 @@
     <Compile Include="wrapper\other-device\inc\DemoStorage_Device.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="wrapper\other-device\inc\LoadData_Device.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="wrapper\other-device\inc\My_Device.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="wrapper\other-device\src\DemoStorage_Device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\other-device\src\LoadData_Device.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="wrapper\other-device\src\My_Device.c">
@@ -456,10 +462,16 @@
     <Compile Include="wrapper\sensor\inc\My_Sensor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="wrapper\sensor\inc\Si7020_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="wrapper\sensor\src\BMP280_Sensor.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="wrapper\sensor\src\My_Sensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\sensor\src\Si7020_Sensor.c">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
