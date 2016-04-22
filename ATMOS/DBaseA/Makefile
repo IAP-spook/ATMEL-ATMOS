@@ -105,9 +105,9 @@ C_SRCS +=  \
 ../utilities/src/common.c \
 ../utilities/src/llist.c \
 ../utilities/src/time.c \
-../wrapper/base-class/src/My_Device.c \
 ../wrapper/base-class/src/Base_Device.c \
 ../wrapper/base-class/src/Base_Sensor.c \
+../wrapper/other-device/src/My_Device.c \
 ../wrapper/sensor/src/BMP280_Sensor.c \
 ../wrapper/sensor/src/My_Sensor.c
 
@@ -150,9 +150,9 @@ sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
 utilities/src/time.o \
-wrapper/base-class/src/My_Device.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
+wrapper/other-device/src/My_Device.o \
 wrapper/sensor/src/BMP280_Sensor.o \
 wrapper/sensor/src/My_Sensor.o
 
@@ -188,9 +188,9 @@ sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
 utilities/src/time.o \
-wrapper/base-class/src/My_Device.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
+wrapper/other-device/src/My_Device.o \
 wrapper/sensor/src/BMP280_Sensor.o \
 wrapper/sensor/src/My_Sensor.o
 
@@ -226,9 +226,9 @@ sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
 utilities/src/time.d \
-wrapper/base-class/src/My_Device.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
+wrapper/other-device/src/My_Device.d \
 wrapper/sensor/src/BMP280_Sensor.d \
 wrapper/sensor/src/My_Sensor.d
 
@@ -264,9 +264,9 @@ sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
 utilities/src/time.d \
-wrapper/base-class/src/My_Device.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
+wrapper/other-device/src/My_Device.d \
 wrapper/sensor/src/BMP280_Sensor.d \
 wrapper/sensor/src/My_Sensor.d
 
@@ -421,6 +421,13 @@ utilities/src/%.o: ../utilities/src/%.c
 	
 
 wrapper/base-class/src/%.o: ../wrapper/base-class/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.8.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+wrapper/other-device/src/%.o: ../wrapper/other-device/src/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -5,7 +5,7 @@
  *  Author: Anxin Bai
  */ 
 
-#include "wrapper/base-class/inc/My_Device.h"
+#include "wrapper/other-device/inc/My_Device.h"
 #include <stdlib.h>
 #include <stdio.h>
 

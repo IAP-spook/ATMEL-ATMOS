@@ -64,11 +64,11 @@ utilities\src\llist.c
 
 utilities\src\time.c
 
-wrapper\base-class\src\My_Device.c
-
 wrapper\base-class\src\Base_Device.c
 
 wrapper\base-class\src\Base_Sensor.c
+
+wrapper\other-device\src\My_Device.c
 
 wrapper\sensor\src\BMP280_Sensor.c
 
