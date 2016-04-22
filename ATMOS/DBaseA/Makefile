@@ -107,6 +107,7 @@ C_SRCS +=  \
 ../utilities/src/time.c \
 ../wrapper/base-class/src/Base_Device.c \
 ../wrapper/base-class/src/Base_Sensor.c \
+../wrapper/other-device/src/DemoStorage_Device.c \
 ../wrapper/other-device/src/My_Device.c \
 ../wrapper/sensor/src/BMP280_Sensor.c \
 ../wrapper/sensor/src/My_Sensor.c
@@ -152,6 +153,7 @@ utilities/src/llist.o \
 utilities/src/time.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
+wrapper/other-device/src/DemoStorage_Device.o \
 wrapper/other-device/src/My_Device.o \
 wrapper/sensor/src/BMP280_Sensor.o \
 wrapper/sensor/src/My_Sensor.o
@@ -190,6 +192,7 @@ utilities/src/llist.o \
 utilities/src/time.o \
 wrapper/base-class/src/Base_Device.o \
 wrapper/base-class/src/Base_Sensor.o \
+wrapper/other-device/src/DemoStorage_Device.o \
 wrapper/other-device/src/My_Device.o \
 wrapper/sensor/src/BMP280_Sensor.o \
 wrapper/sensor/src/My_Sensor.o
@@ -228,6 +231,7 @@ utilities/src/llist.d \
 utilities/src/time.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
+wrapper/other-device/src/DemoStorage_Device.d \
 wrapper/other-device/src/My_Device.d \
 wrapper/sensor/src/BMP280_Sensor.d \
 wrapper/sensor/src/My_Sensor.d
@@ -266,6 +270,7 @@ utilities/src/llist.d \
 utilities/src/time.d \
 wrapper/base-class/src/Base_Device.d \
 wrapper/base-class/src/Base_Sensor.d \
+wrapper/other-device/src/DemoStorage_Device.d \
 wrapper/other-device/src/My_Device.d \
 wrapper/sensor/src/BMP280_Sensor.d \
 wrapper/sensor/src/My_Sensor.d
@@ -284,6 +289,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

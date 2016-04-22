@@ -66,8 +66,8 @@ int main(void)
 }
 
 /* TODO list at high priority 
- * 1. Add a My_Device.h/.c at wrapper/other-device which features a Exec() and a Configure() function
- * 2. Derive a DemoFlashDevice.h/.c for demonstration usage , it should hold some DataUnit queue
+ * 1. Add a My_Device.h/.c at wrapper/other-device which features a Exec() and a Configure() function DONE!!!
+ * 2. Derive a DemoFlashDevice.h/.c for demonstration usage , it should hold some DataUnit queue DONE!!!
  * 3. Add two members one called Start_data, the other End_data in BaseSensor.h/.c
  * 4. Add getStartNum() and getEndNum() in BaseSensor.h/.c correspondingly
  * 5. Add a null_start_device to get a valid empty DataUnit, and it should init all data to -9999 as default

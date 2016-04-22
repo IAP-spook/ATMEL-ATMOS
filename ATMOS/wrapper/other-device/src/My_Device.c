@@ -16,6 +16,12 @@ My_Device_Abstract_FctnTable MyDevice_abstract_vmt = {
 	My_Device_getType
 };
 
+My_Device_FctnTable MyDevice_vmt = {
+	My_Device_Tinit,
+	My_Device_Execute,
+	My_Device_Configure
+};
+
 
 void My_Device_VTinit( MyDevice *this )
 {
@@ -43,16 +49,23 @@ MyDevice* New_My_Device( int infonum )
 	MyDevice *p = malloc(sizeof(MyDevice));
 	p->info = infonum;
 	My_Device_VTinit(p);
-	return p;	
+	return p;
 }
 
-int Execute( MyDevice *this )
+
+
+
+void My_Device_Tinit(MyDevice *this)
 {
-	printf("MyDevice_Execute\n");
+	this->vmt = &MyDevice_vmt;
+}
+
+int My_Device_Execute(MyDevice *this)
+{
 	return 0;
 }
 
-int Configure( MyDevice *this )
+int My_Device_Configure(MyDevice *this)
 {
 	return 0;
 }

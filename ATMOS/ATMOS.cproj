@@ -435,7 +435,13 @@
     <Compile Include="wrapper\base-class\src\Base_Sensor.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="wrapper\other-device\inc\DemoStorage_Device.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="wrapper\other-device\inc\My_Device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="wrapper\other-device\src\DemoStorage_Device.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="wrapper\other-device\src\My_Device.c">

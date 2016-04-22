@@ -518,6 +518,43 @@ Discarded input sections
  .debug_str     0x00000000      0x345 wrapper/base-class/src/Base_Sensor.o
  .comment       0x00000000       0x31 wrapper/base-class/src/Base_Sensor.o
  .debug_frame   0x00000000       0xc0 wrapper/base-class/src/Base_Sensor.o
+ .text          0x00000000        0x0 wrapper/other-device/src/DemoStorage_Device.o
+ .data          0x00000000        0x0 wrapper/other-device/src/DemoStorage_Device.o
+ .bss           0x00000000        0x0 wrapper/other-device/src/DemoStorage_Device.o
+ .text.DemoStorage_Device_VTinit
+                0x00000000        0xc wrapper/other-device/src/DemoStorage_Device.o
+ .text.DemoStorage_Device_init
+                0x00000000        0x6 wrapper/other-device/src/DemoStorage_Device.o
+ .text.DemoStorage_Device_reset
+                0x00000000        0x6 wrapper/other-device/src/DemoStorage_Device.o
+ .text.DemoStorage_Device_getType
+                0x00000000        0x6 wrapper/other-device/src/DemoStorage_Device.o
+ .text.DemoStorage_Device_Tinit
+                0x00000000        0xc wrapper/other-device/src/DemoStorage_Device.o
+ .text.DemoStorage_Device_Configure
+                0x00000000        0x6 wrapper/other-device/src/DemoStorage_Device.o
+ .rodata.str1.1
+                0x00000000       0x28 wrapper/other-device/src/DemoStorage_Device.o
+ .text.DemoStorage_Device_Execute
+                0x00000000      0x162 wrapper/other-device/src/DemoStorage_Device.o
+ .text.New_DemoStorage_Device
+                0x00000000       0x86 wrapper/other-device/src/DemoStorage_Device.o
+ .text.get_CurDataUnit
+                0x00000000       0x3a wrapper/other-device/src/DemoStorage_Device.o
+ .data.DemoStorageDevice_vmt
+                0x00000000        0x6 wrapper/other-device/src/DemoStorage_Device.o
+ .data.DemoStorageDevice_abstract_vmt
+                0x00000000        0x8 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_info    0x00000000      0x695 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_abbrev  0x00000000      0x24b wrapper/other-device/src/DemoStorage_Device.o
+ .debug_loc     0x00000000      0x419 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_aranges
+                0x00000000       0x60 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_ranges  0x00000000       0x68 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_line    0x00000000      0x2ae wrapper/other-device/src/DemoStorage_Device.o
+ .debug_str     0x00000000      0x481 wrapper/other-device/src/DemoStorage_Device.o
+ .comment       0x00000000       0x31 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_frame   0x00000000      0x120 wrapper/other-device/src/DemoStorage_Device.o
  .text          0x00000000        0x0 wrapper/other-device/src/My_Device.o
  .data          0x00000000        0x0 wrapper/other-device/src/My_Device.o
  .bss           0x00000000        0x0 wrapper/other-device/src/My_Device.o
@@ -529,25 +566,28 @@ Discarded input sections
                 0x00000000        0x6 wrapper/other-device/src/My_Device.o
  .text.My_Device_getType
                 0x00000000        0x6 wrapper/other-device/src/My_Device.o
+ .text.My_Device_Tinit
+                0x00000000        0xc wrapper/other-device/src/My_Device.o
+ .text.My_Device_Execute
+                0x00000000        0x6 wrapper/other-device/src/My_Device.o
+ .text.My_Device_Configure
+                0x00000000        0x6 wrapper/other-device/src/My_Device.o
  .text.New_My_Device
                 0x00000000       0x22 wrapper/other-device/src/My_Device.o
- .rodata.str1.1
-                0x00000000       0x11 wrapper/other-device/src/My_Device.o
- .text.Execute  0x00000000        0xe wrapper/other-device/src/My_Device.o
- .text.Configure
+ .data.MyDevice_vmt
                 0x00000000        0x6 wrapper/other-device/src/My_Device.o
  .data.MyDevice_abstract_vmt
                 0x00000000        0x8 wrapper/other-device/src/My_Device.o
- .debug_info    0x00000000      0x3ed wrapper/other-device/src/My_Device.o
- .debug_abbrev  0x00000000      0x180 wrapper/other-device/src/My_Device.o
+ .debug_info    0x00000000      0x423 wrapper/other-device/src/My_Device.o
+ .debug_abbrev  0x00000000      0x197 wrapper/other-device/src/My_Device.o
  .debug_loc     0x00000000      0x121 wrapper/other-device/src/My_Device.o
  .debug_aranges
-                0x00000000       0x50 wrapper/other-device/src/My_Device.o
- .debug_ranges  0x00000000       0x40 wrapper/other-device/src/My_Device.o
- .debug_line    0x00000000      0x211 wrapper/other-device/src/My_Device.o
- .debug_str     0x00000000      0x2c2 wrapper/other-device/src/My_Device.o
+                0x00000000       0x58 wrapper/other-device/src/My_Device.o
+ .debug_ranges  0x00000000       0x48 wrapper/other-device/src/My_Device.o
+ .debug_line    0x00000000      0x213 wrapper/other-device/src/My_Device.o
+ .debug_str     0x00000000      0x321 wrapper/other-device/src/My_Device.o
  .comment       0x00000000       0x31 wrapper/other-device/src/My_Device.o
- .debug_frame   0x00000000       0x90 wrapper/other-device/src/My_Device.o
+ .debug_frame   0x00000000       0xa0 wrapper/other-device/src/My_Device.o
  .text          0x00000000        0x0 wrapper/sensor/src/BMP280_Sensor.o
  .data          0x00000000        0x0 wrapper/sensor/src/BMP280_Sensor.o
  .bss           0x00000000        0x0 wrapper/sensor/src/BMP280_Sensor.o
@@ -949,6 +989,7 @@ LOAD utilities/src/llist.o
 LOAD utilities/src/time.o
 LOAD wrapper/base-class/src/Base_Device.o
 LOAD wrapper/base-class/src/Base_Sensor.o
+LOAD wrapper/other-device/src/DemoStorage_Device.o
 LOAD wrapper/other-device/src/My_Device.o
 LOAD wrapper/sensor/src/BMP280_Sensor.o
 LOAD wrapper/sensor/src/My_Sensor.o

@@ -6,13 +6,21 @@
  */ 
 
 
-#ifndef BASEGENERALDEVICE_H_
-#define BASEGENERALDEVICE_H_
+#ifndef My_DEVICE_H
+#define My_DEVICE_H
 
 #include "wrapper/base-class/inc/Base_Device.h"
 
 struct _My_Device;
 typedef struct _My_Device MyDevice;
+
+
+typedef struct _My_Device_vmt
+{
+	void (*Device_Tinit)(MyDevice*);
+	int (*Execute)(MyDevice*);
+	int (*Configure)(MyDevice*);
+} My_Device_FctnTable;
 
 typedef struct _My_Device_Abstract_vmt
 {
@@ -25,9 +33,8 @@ typedef struct _My_Device_Abstract_vmt
 struct _My_Device
 {
 	BaseDevice abstract;
+	My_Device_FctnTable *vmt;
 	int info;
-	int (*Execute)(MyDevice*);
-	int (*Configure)(MyDevice*);
 };
 
 
@@ -38,5 +45,7 @@ int My_Device_getType( MyDevice* );
 
 MyDevice* New_My_Device( int num );
 
-
+void My_Device_Tinit(MyDevice *this);
+int My_Device_Execute(MyDevice *this);
+int My_Device_Configure(MyDevice *this);
 #endif
