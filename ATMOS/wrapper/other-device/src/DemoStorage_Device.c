@@ -57,6 +57,8 @@ DemoStorageDevice* New_DemoStorage_Device( int infonum )
 		for( int j=0;j<MAX_NUM_DATA;j++)
 		{
 				p->StoragesData[i].data[j] = -9999; 
+				p->StoragesData[i].data_tm.unix_msec = 0;
+				p->StoragesData[i].data_tm.unix_time = 0;
 		}
 	p->cur_pos = 0;
 
@@ -93,8 +95,8 @@ int DemoStorage_Device_Configure(DemoStorageDevice *this)
 
 DataUnit * DemoStorageget_CurDataUnit(DemoStorageDevice *this)
 {
-	printf("Executre get store Device\n");
 	int t = this->cur_pos;
+	printf("Executre get store Device : %d\n",t);
 	this->cur_pos = this->cur_pos+1;
 	DataUnit * data_t = this -> StoragesData;
 	return (data_t + t);
