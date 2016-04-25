@@ -32,11 +32,13 @@ struct _tm
 	long tm_yday;
 } typedef tm;
 
-void updateTime(long increment_msec, tm tm_eg);
+void updateTime(long increment_msec, tm * tm_eg);
 
 void synchTime(long calibrate_sec, tm *tm_ptr);
 
 void calcDate(tm *tm_ptr);
+
+void init_timestamp(tm *tm_ptr);
 
 
 

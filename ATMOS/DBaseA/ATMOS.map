@@ -106,6 +106,7 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 Allocating common symbols
 Common symbol       size              file
 
+cur_time            0x28              ATMOS.o
 nwkIb               0x28              nwk/src/nwk.o
 queue               0x150             ATMOS.o
 __brkval            0x2               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
@@ -1022,7 +1023,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x3ad0
+.text           0x00000000     0x3b02
  *(.vectors)
  .vectors       0x00000000      0x134 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.98/gcc/dev/atmega644rfr2/avr5/crtatmega644rfr2.o
                 0x00000000                __vector_default
@@ -1158,452 +1159,455 @@ END GROUP
                 0x00000270                __vector_65
                 0x00000274                . = ALIGN (0x2)
  *(.text.*)
- .text.main     0x00000274       0xf4 ATMOS.o
+ .text.main     0x00000274       0xfc ATMOS.o
                 0x00000274                main
  .text.BMP280_ReadBytes
-                0x00000368       0x54 devices/src/BMP280.o
+                0x00000370       0x54 devices/src/BMP280.o
  .text.BMP280_ReadInt
-                0x000003bc       0x4a devices/src/BMP280.o
+                0x000003c4       0x4a devices/src/BMP280.o
  .text.BMP280_Init
-                0x00000406      0x1c0 devices/src/BMP280.o
-                0x00000406                BMP280_Init
+                0x0000040e      0x1c0 devices/src/BMP280.o
+                0x0000040e                BMP280_Init
  .text.BMP280_SetOversampling
-                0x000005c6        0xc devices/src/BMP280.o
-                0x000005c6                BMP280_SetOversampling
+                0x000005ce        0xc devices/src/BMP280.o
+                0x000005ce                BMP280_SetOversampling
  .text.BMP280_StartMeasurment
-                0x000005d2       0xd4 devices/src/BMP280.o
-                0x000005d2                BMP280_StartMeasurment
+                0x000005da       0xd4 devices/src/BMP280.o
+                0x000005da                BMP280_StartMeasurment
  .text.BMP280_GetUnPT
-                0x000006a6      0x14c devices/src/BMP280.o
-                0x000006a6                BMP280_GetUnPT
+                0x000006ae      0x14c devices/src/BMP280.o
+                0x000006ae                BMP280_GetUnPT
  .text.BMP280_CalcTemperature
-                0x000007f2      0x186 devices/src/BMP280.o
-                0x000007f2                BMP280_CalcTemperature
+                0x000007fa      0x186 devices/src/BMP280.o
+                0x000007fa                BMP280_CalcTemperature
  .text.BMP280_CalcPressure
-                0x00000978      0x2ec devices/src/BMP280.o
-                0x00000978                BMP280_CalcPressure
+                0x00000980      0x2ec devices/src/BMP280.o
+                0x00000980                BMP280_CalcPressure
  .text.BMP280_GetTemperatureAndPressure
-                0x00000c64       0x8c devices/src/BMP280.o
-                0x00000c64                BMP280_GetTemperatureAndPressure
+                0x00000c6c       0x8c devices/src/BMP280.o
+                0x00000c6c                BMP280_GetTemperatureAndPressure
  .text.Si7020_readHumidity
-                0x00000cf0       0x64 devices/src/Si7020.o
-                0x00000cf0                Si7020_readHumidity
+                0x00000cf8       0x64 devices/src/Si7020.o
+                0x00000cf8                Si7020_readHumidity
  .text.Si7020_calHumidity
-                0x00000d54       0x3c devices/src/Si7020.o
-                0x00000d54                Si7020_calHumidity
+                0x00000d5c       0x3c devices/src/Si7020.o
+                0x00000d5c                Si7020_calHumidity
  .text.Si7020_readTemperature
-                0x00000d90       0x64 devices/src/Si7020.o
-                0x00000d90                Si7020_readTemperature
+                0x00000d98       0x64 devices/src/Si7020.o
+                0x00000d98                Si7020_readTemperature
  .text.Si7020_calTemperature
-                0x00000df4       0x3c devices/src/Si7020.o
-                0x00000df4                Si7020_calTemperature
+                0x00000dfc       0x3c devices/src/Si7020.o
+                0x00000dfc                Si7020_calTemperature
  .text.ADC_Init
-                0x00000e30       0x18 drivers/src/ADC.o
-                0x00000e30                ADC_Init
+                0x00000e38       0x18 drivers/src/ADC.o
+                0x00000e38                ADC_Init
  .text.__vector_15
-                0x00000e48       0x8a drivers/src/int_timer.o
-                0x00000e48                __vector_15
+                0x00000e50       0x8a drivers/src/int_timer.o
+                0x00000e50                __vector_15
  .text.init_Event_Timer
-                0x00000ed2       0x2e drivers/src/int_timer.o
-                0x00000ed2                init_Event_Timer
+                0x00000eda       0x2e drivers/src/int_timer.o
+                0x00000eda                init_Event_Timer
  .text.general_set_timer
-                0x00000f00      0x1c6 drivers/src/int_timer.o
-                0x00000f00                general_set_timer
+                0x00000f08      0x1c6 drivers/src/int_timer.o
+                0x00000f08                general_set_timer
  .text.init_set_timer
-                0x000010c6       0x10 drivers/src/int_timer.o
-                0x000010c6                init_set_timer
+                0x000010ce       0x10 drivers/src/int_timer.o
+                0x000010ce                init_set_timer
  .text.set_timer
-                0x000010d6       0x42 drivers/src/int_timer.o
-                0x000010d6                set_timer
+                0x000010de       0x42 drivers/src/int_timer.o
+                0x000010de                set_timer
  .text.PWR_Init
-                0x00001118        0x8 drivers/src/PWR.o
-                0x00001118                PWR_Init
+                0x00001120        0x8 drivers/src/PWR.o
+                0x00001120                PWR_Init
  .text.PWR_TurnOn5V
-                0x00001120        0x4 drivers/src/PWR.o
-                0x00001120                PWR_TurnOn5V
+                0x00001128        0x4 drivers/src/PWR.o
+                0x00001128                PWR_TurnOn5V
  .text.SPI_SlaveInit
-                0x00001124        0x8 drivers/src/SPI.o
-                0x00001124                SPI_SlaveInit
+                0x0000112c        0x8 drivers/src/SPI.o
+                0x0000112c                SPI_SlaveInit
  .text.TWI_Init
-                0x0000112c       0x3c drivers/src/TWI.o
-                0x0000112c                TWI_Init
+                0x00001134       0x3c drivers/src/TWI.o
+                0x00001134                TWI_Init
  .text.TWI_WriteByte
-                0x00001168       0x1c drivers/src/TWI.o
-                0x00001168                TWI_WriteByte
+                0x00001170       0x1c drivers/src/TWI.o
+                0x00001170                TWI_WriteByte
  .text.TWI_BeginWrite
-                0x00001184       0x3a drivers/src/TWI.o
-                0x00001184                TWI_BeginWrite
+                0x0000118c       0x3a drivers/src/TWI.o
+                0x0000118c                TWI_BeginWrite
  .text.TWI_BeginRead
-                0x000011be       0x30 drivers/src/TWI.o
-                0x000011be                TWI_BeginRead
+                0x000011c6       0x30 drivers/src/TWI.o
+                0x000011c6                TWI_BeginRead
  .text.TWI_ReadAck
-                0x000011ee       0x20 drivers/src/TWI.o
-                0x000011ee                TWI_ReadAck
+                0x000011f6       0x20 drivers/src/TWI.o
+                0x000011f6                TWI_ReadAck
  .text.TWI_ReadNack
-                0x0000120e       0x20 drivers/src/TWI.o
-                0x0000120e                TWI_ReadNack
+                0x00001216       0x20 drivers/src/TWI.o
+                0x00001216                TWI_ReadNack
  .text.TWI_Stop
-                0x0000122e        0xa drivers/src/TWI.o
-                0x0000122e                TWI_Stop
+                0x00001236        0xa drivers/src/TWI.o
+                0x00001236                TWI_Stop
  .text.TWI_Read
-                0x00001238       0x78 drivers/src/TWI.o
-                0x00001238                TWI_Read
+                0x00001240       0x78 drivers/src/TWI.o
+                0x00001240                TWI_Read
  .text.TWI_Write
-                0x000012b0       0x34 drivers/src/TWI.o
-                0x000012b0                TWI_Write
+                0x000012b8       0x34 drivers/src/TWI.o
+                0x000012b8                TWI_Write
  .text.USART0_Init
-                0x000012e4       0x5a drivers/src/usart0.o
-                0x000012e4                USART0_Init
+                0x000012ec       0x5a drivers/src/usart0.o
+                0x000012ec                USART0_Init
  .text.USART0_Transmit
-                0x0000133e       0x10 drivers/src/usart0.o
-                0x0000133e                USART0_Transmit
+                0x00001346       0x10 drivers/src/usart0.o
+                0x00001346                USART0_Transmit
  .text.USART0_putchar_printf
-                0x0000134e       0x1c drivers/src/usart0.o
-                0x0000134e                USART0_putchar_printf
+                0x00001356       0x1c drivers/src/usart0.o
+                0x00001356                USART0_putchar_printf
  .text.HAL_Init
-                0x0000136a       0x2a hal/atmega256rfr2/src/hal.o
-                0x0000136a                HAL_Init
+                0x00001372       0x2a hal/atmega256rfr2/src/hal.o
+                0x00001372                HAL_Init
  .text.HAL_TimerInit
-                0x00001394       0x2a hal/atmega256rfr2/src/halTimer.o
-                0x00001394                HAL_TimerInit
+                0x0000139c       0x2a hal/atmega256rfr2/src/halTimer.o
+                0x0000139c                HAL_TimerInit
  .text.__vector_42
-                0x000013be       0x22 hal/atmega256rfr2/src/halTimer.o
-                0x000013be                __vector_42
+                0x000013c6       0x22 hal/atmega256rfr2/src/halTimer.o
+                0x000013c6                __vector_42
  .text.NWK_Init
-                0x000013e0       0x34 nwk/src/nwk.o
-                0x000013e0                NWK_Init
+                0x000013e8       0x34 nwk/src/nwk.o
+                0x000013e8                NWK_Init
  .text.NWK_OpenEndpoint
-                0x00001414       0x12 nwk/src/nwk.o
-                0x00001414                NWK_OpenEndpoint
+                0x0000141c       0x12 nwk/src/nwk.o
+                0x0000141c                NWK_OpenEndpoint
  .text.nwkDataReqInit
-                0x00001426        0xa nwk/src/nwkDataReq.o
-                0x00001426                nwkDataReqInit
+                0x0000142e        0xa nwk/src/nwkDataReq.o
+                0x0000142e                nwkDataReqInit
  .text.nwkFrameInit
-                0x00001430       0x16 nwk/src/nwkFrame.o
-                0x00001430                nwkFrameInit
+                0x00001438       0x16 nwk/src/nwkFrame.o
+                0x00001438                nwkFrameInit
  .text.nwkFrameNext
-                0x00001446       0x44 nwk/src/nwkFrame.o
-                0x00001446                nwkFrameNext
+                0x0000144e       0x44 nwk/src/nwkFrame.o
+                0x0000144e                nwkFrameNext
  .text.nwkRxServiceDataInd
-                0x0000148a       0x28 nwk/src/nwkRx.o
+                0x00001492       0x28 nwk/src/nwkRx.o
  .text.nwkRxDuplicateRejectionTimerHandler
-                0x000014b2       0x2e nwk/src/nwkRx.o
+                0x000014ba       0x2e nwk/src/nwkRx.o
  .text.nwkRxInit
-                0x000014e0       0x3c nwk/src/nwkRx.o
-                0x000014e0                nwkRxInit
+                0x000014e8       0x3c nwk/src/nwkRx.o
+                0x000014e8                nwkRxInit
  .text.nwkTxDelayTimerHandler
-                0x0000151c       0x5c nwk/src/nwkTx.o
+                0x00001524       0x5c nwk/src/nwkTx.o
  .text.nwkTxAckWaitTimerHandler
-                0x00001578       0x68 nwk/src/nwkTx.o
+                0x00001580       0x68 nwk/src/nwkTx.o
  .text.nwkTxInit
-                0x000015e0       0x46 nwk/src/nwkTx.o
-                0x000015e0                nwkTxInit
+                0x000015e8       0x46 nwk/src/nwkTx.o
+                0x000015e8                nwkTxInit
  .text.nwkTxAckReceived
-                0x00001626       0x4a nwk/src/nwkTx.o
-                0x00001626                nwkTxAckReceived
+                0x0000162e       0x4a nwk/src/nwkTx.o
+                0x0000162e                nwkTxAckReceived
  .text.phyTrxSetState
-                0x00001670       0x24 phy/atmegarfr2/src/phy.o
+                0x00001678       0x24 phy/atmegarfr2/src/phy.o
  .text.PHY_Init
-                0x00001694       0x30 phy/atmegarfr2/src/phy.o
-                0x00001694                PHY_Init
+                0x0000169c       0x30 phy/atmegarfr2/src/phy.o
+                0x0000169c                PHY_Init
  .text.sensor_handler
-                0x000016c4      0x102 scheduler/src/handler.o
-                0x000016c4                sensor_handler
+                0x000016cc      0x102 scheduler/src/handler.o
+                0x000016cc                sensor_handler
  .text.device_handler
-                0x000017c6       0x98 scheduler/src/handler.o
-                0x000017c6                device_handler
+                0x000017ce       0x98 scheduler/src/handler.o
+                0x000017ce                device_handler
  .text.init_timeoutq
-                0x0000185e       0x58 scheduler/src/scheduler.o
-                0x0000185e                init_timeoutq
+                0x00001866       0x58 scheduler/src/scheduler.o
+                0x00001866                init_timeoutq
  .text.get_next_interval
-                0x000018b6       0x44 scheduler/src/scheduler.o
-                0x000018b6                get_next_interval
+                0x000018be       0x44 scheduler/src/scheduler.o
+                0x000018be                get_next_interval
  .text.insert_timeoutq_event
-                0x000018fa       0x72 scheduler/src/scheduler.o
-                0x000018fa                insert_timeoutq_event
+                0x00001902       0x72 scheduler/src/scheduler.o
+                0x00001902                insert_timeoutq_event
  .text.load_new_sensor
-                0x0000196c       0x6c scheduler/src/scheduler.o
-                0x0000196c                load_new_sensor
+                0x00001974       0x6c scheduler/src/scheduler.o
+                0x00001974                load_new_sensor
  .text.load_new_device
-                0x000019d8       0x70 scheduler/src/scheduler.o
-                0x000019d8                load_new_device
+                0x000019e0       0x70 scheduler/src/scheduler.o
+                0x000019e0                load_new_device
  .text.handle_timeoutq_event
-                0x00001a48       0xd6 scheduler/src/scheduler.o
-                0x00001a48                handle_timeoutq_event
+                0x00001a50       0xd6 scheduler/src/scheduler.o
+                0x00001a50                handle_timeoutq_event
  .text.SYS_Init
-                0x00001b1e       0x12 sys/src/sys.o
-                0x00001b1e                SYS_Init
+                0x00001b26       0x12 sys/src/sys.o
+                0x00001b26                SYS_Init
  .text.placeTimer
-                0x00001b30       0xc8 sys/src/sysTimer.o
+                0x00001b38       0xc8 sys/src/sysTimer.o
  .text.SYS_TimerInit
-                0x00001bf8        0xa sys/src/sysTimer.o
-                0x00001bf8                SYS_TimerInit
+                0x00001c00        0xa sys/src/sysTimer.o
+                0x00001c00                SYS_TimerInit
  .text.SYS_TimerStarted
-                0x00001c02       0x34 sys/src/sysTimer.o
-                0x00001c02                SYS_TimerStarted
+                0x00001c0a       0x34 sys/src/sysTimer.o
+                0x00001c0a                SYS_TimerStarted
  .text.SYS_TimerStart
-                0x00001c36       0x1a sys/src/sysTimer.o
-                0x00001c36                SYS_TimerStart
+                0x00001c3e       0x1a sys/src/sysTimer.o
+                0x00001c3e                SYS_TimerStart
  .text.check_crc
-                0x00001c50       0x38 utilities/src/common.o
-                0x00001c50                check_crc
+                0x00001c58       0x38 utilities/src/common.o
+                0x00001c58                check_crc
  .text.ll_first
-                0x00001c88       0x12 utilities/src/llist.o
-                0x00001c88                ll_first
+                0x00001c90       0x12 utilities/src/llist.o
+                0x00001c90                ll_first
  .text.ll_r_insert
-                0x00001c9a       0x26 utilities/src/llist.o
-                0x00001c9a                ll_r_insert
+                0x00001ca2       0x26 utilities/src/llist.o
+                0x00001ca2                ll_r_insert
  .text.ll_detach
-                0x00001cc0       0x46 utilities/src/llist.o
-                0x00001cc0                ll_detach
- .text.ll_pop   0x00001d06       0x18 utilities/src/llist.o
-                0x00001d06                ll_pop
+                0x00001cc8       0x46 utilities/src/llist.o
+                0x00001cc8                ll_detach
+ .text.ll_pop   0x00001d0e       0x18 utilities/src/llist.o
+                0x00001d0e                ll_pop
  .text.updateTime
-                0x00001d1e       0xa8 utilities/src/time.o
-                0x00001d1e                updateTime
+                0x00001d26       0xa4 utilities/src/time.o
+                0x00001d26                updateTime
  .text.calcDate
-                0x00001dc6      0x33e utilities/src/time.o
-                0x00001dc6                calcDate
+                0x00001dca      0x33e utilities/src/time.o
+                0x00001dca                calcDate
+ .text.init_timestamp
+                0x00002108       0x14 utilities/src/time.o
+                0x00002108                init_timestamp
  .text.DemoStorage_Device_VTinit
-                0x00002104        0xc wrapper/other-device/src/DemoStorage_Device.o
-                0x00002104                DemoStorage_Device_VTinit
+                0x0000211c        0xc wrapper/other-device/src/DemoStorage_Device.o
+                0x0000211c                DemoStorage_Device_VTinit
  .text.DemoStorage_Device_init
-                0x00002110        0x6 wrapper/other-device/src/DemoStorage_Device.o
-                0x00002110                DemoStorage_Device_init
+                0x00002128        0x6 wrapper/other-device/src/DemoStorage_Device.o
+                0x00002128                DemoStorage_Device_init
  .text.DemoStorage_Device_reset
-                0x00002116        0x6 wrapper/other-device/src/DemoStorage_Device.o
-                0x00002116                DemoStorage_Device_reset
- .text.DemoStorage_Device_getType
-                0x0000211c        0x6 wrapper/other-device/src/DemoStorage_Device.o
-                0x0000211c                DemoStorage_Device_getType
- .text.DemoStorage_Device_Tinit
-                0x00002122        0xc wrapper/other-device/src/DemoStorage_Device.o
-                0x00002122                DemoStorage_Device_Tinit
- .text.DemoStorage_Device_Configure
                 0x0000212e        0x6 wrapper/other-device/src/DemoStorage_Device.o
-                0x0000212e                DemoStorage_Device_Configure
+                0x0000212e                DemoStorage_Device_reset
+ .text.DemoStorage_Device_getType
+                0x00002134        0x6 wrapper/other-device/src/DemoStorage_Device.o
+                0x00002134                DemoStorage_Device_getType
+ .text.DemoStorage_Device_Tinit
+                0x0000213a        0xc wrapper/other-device/src/DemoStorage_Device.o
+                0x0000213a                DemoStorage_Device_Tinit
+ .text.DemoStorage_Device_Configure
+                0x00002146        0x6 wrapper/other-device/src/DemoStorage_Device.o
+                0x00002146                DemoStorage_Device_Configure
  .text.DemoStorageget_CurDataUnit
-                0x00002134       0x4e wrapper/other-device/src/DemoStorage_Device.o
-                0x00002134                DemoStorageget_CurDataUnit
+                0x0000214c       0x4e wrapper/other-device/src/DemoStorage_Device.o
+                0x0000214c                DemoStorageget_CurDataUnit
  .text.DemoStorage_Device_Execute
-                0x00002182      0x19a wrapper/other-device/src/DemoStorage_Device.o
-                0x00002182                DemoStorage_Device_Execute
+                0x0000219a      0x19a wrapper/other-device/src/DemoStorage_Device.o
+                0x0000219a                DemoStorage_Device_Execute
  .text.New_DemoStorage_Device
-                0x0000231c       0xc2 wrapper/other-device/src/DemoStorage_Device.o
-                0x0000231c                New_DemoStorage_Device
+                0x00002334       0xc2 wrapper/other-device/src/DemoStorage_Device.o
+                0x00002334                New_DemoStorage_Device
  .text.LoadData_Device_VTinit
-                0x000023de        0xc wrapper/other-device/src/LoadData_Device.o
-                0x000023de                LoadData_Device_VTinit
+                0x000023f6        0xc wrapper/other-device/src/LoadData_Device.o
+                0x000023f6                LoadData_Device_VTinit
  .text.LoadData_Device_init
-                0x000023ea        0x6 wrapper/other-device/src/LoadData_Device.o
-                0x000023ea                LoadData_Device_init
+                0x00002402        0x6 wrapper/other-device/src/LoadData_Device.o
+                0x00002402                LoadData_Device_init
  .text.LoadData_Device_reset
-                0x000023f0        0x6 wrapper/other-device/src/LoadData_Device.o
-                0x000023f0                LoadData_Device_reset
- .text.LoadData_Device_getType
-                0x000023f6        0x6 wrapper/other-device/src/LoadData_Device.o
-                0x000023f6                LoadData_Device_getType
- .text.LoadData_Device_Tinit
-                0x000023fc        0xc wrapper/other-device/src/LoadData_Device.o
-                0x000023fc                LoadData_Device_Tinit
- .text.LoadData_Device_Configure
                 0x00002408        0x6 wrapper/other-device/src/LoadData_Device.o
-                0x00002408                LoadData_Device_Configure
+                0x00002408                LoadData_Device_reset
+ .text.LoadData_Device_getType
+                0x0000240e        0x6 wrapper/other-device/src/LoadData_Device.o
+                0x0000240e                LoadData_Device_getType
+ .text.LoadData_Device_Tinit
+                0x00002414        0xc wrapper/other-device/src/LoadData_Device.o
+                0x00002414                LoadData_Device_Tinit
+ .text.LoadData_Device_Configure
+                0x00002420        0x6 wrapper/other-device/src/LoadData_Device.o
+                0x00002420                LoadData_Device_Configure
  .text.LoadData_Device_Execute
-                0x0000240e       0xb2 wrapper/other-device/src/LoadData_Device.o
-                0x0000240e                LoadData_Device_Execute
+                0x00002426       0xcc wrapper/other-device/src/LoadData_Device.o
+                0x00002426                LoadData_Device_Execute
  .text.New_LoadData_Device
-                0x000024c0       0x3a wrapper/other-device/src/LoadData_Device.o
-                0x000024c0                New_LoadData_Device
+                0x000024f2       0x3a wrapper/other-device/src/LoadData_Device.o
+                0x000024f2                New_LoadData_Device
  .text.BMP280_FctnInit
-                0x000024fa        0xc wrapper/sensor/src/BMP280_Sensor.o
-                0x000024fa                BMP280_FctnInit
+                0x0000252c        0xc wrapper/sensor/src/BMP280_Sensor.o
+                0x0000252c                BMP280_FctnInit
  .text.BMP280_Configure
-                0x00002506        0x6 wrapper/sensor/src/BMP280_Sensor.o
-                0x00002506                BMP280_Configure
+                0x00002538        0x6 wrapper/sensor/src/BMP280_Sensor.o
+                0x00002538                BMP280_Configure
  .text.BMP280_VTinit
-                0x0000250c        0xc wrapper/sensor/src/BMP280_Sensor.o
-                0x0000250c                BMP280_VTinit
+                0x0000253e        0xc wrapper/sensor/src/BMP280_Sensor.o
+                0x0000253e                BMP280_VTinit
  .text.BMP280_reset
-                0x00002518        0x6 wrapper/sensor/src/BMP280_Sensor.o
-                0x00002518                BMP280_reset
+                0x0000254a        0x6 wrapper/sensor/src/BMP280_Sensor.o
+                0x0000254a                BMP280_reset
  .text.BMP280_getType
-                0x0000251e        0x6 wrapper/sensor/src/BMP280_Sensor.o
-                0x0000251e                BMP280_getType
+                0x00002550        0x6 wrapper/sensor/src/BMP280_Sensor.o
+                0x00002550                BMP280_getType
  .text.BMP280_Error
-                0x00002524        0xe wrapper/sensor/src/BMP280_Sensor.o
-                0x00002524                BMP280_Error
+                0x00002556        0xe wrapper/sensor/src/BMP280_Sensor.o
+                0x00002556                BMP280_Error
  .text.BMP280_init
-                0x00002532        0xe wrapper/sensor/src/BMP280_Sensor.o
-                0x00002532                BMP280_init
+                0x00002564        0xe wrapper/sensor/src/BMP280_Sensor.o
+                0x00002564                BMP280_init
  .text.BMP280_Request
-                0x00002540       0x40 wrapper/sensor/src/BMP280_Sensor.o
-                0x00002540                BMP280_Request
+                0x00002572       0x40 wrapper/sensor/src/BMP280_Sensor.o
+                0x00002572                BMP280_Request
  .text.BMP280_Collect
-                0x00002580       0xa6 wrapper/sensor/src/BMP280_Sensor.o
-                0x00002580                BMP280_Collect
+                0x000025b2       0xa6 wrapper/sensor/src/BMP280_Sensor.o
+                0x000025b2                BMP280_Collect
  .text.New_BMP280_Sensor
-                0x00002626       0x74 wrapper/sensor/src/BMP280_Sensor.o
-                0x00002626                New_BMP280_Sensor
+                0x00002658       0x74 wrapper/sensor/src/BMP280_Sensor.o
+                0x00002658                New_BMP280_Sensor
  .text.Si7020_FctnInit
-                0x0000269a        0xc wrapper/sensor/src/Si7020_Sensor.o
-                0x0000269a                Si7020_FctnInit
+                0x000026cc        0xc wrapper/sensor/src/Si7020_Sensor.o
+                0x000026cc                Si7020_FctnInit
  .text.Si7020_Configure
-                0x000026a6        0x6 wrapper/sensor/src/Si7020_Sensor.o
-                0x000026a6                Si7020_Configure
+                0x000026d8        0x6 wrapper/sensor/src/Si7020_Sensor.o
+                0x000026d8                Si7020_Configure
  .text.Si7020_Error
-                0x000026ac        0x6 wrapper/sensor/src/Si7020_Sensor.o
-                0x000026ac                Si7020_Error
+                0x000026de        0x6 wrapper/sensor/src/Si7020_Sensor.o
+                0x000026de                Si7020_Error
  .text.Si7020_VTinit
-                0x000026b2        0xc wrapper/sensor/src/Si7020_Sensor.o
-                0x000026b2                Si7020_VTinit
+                0x000026e4        0xc wrapper/sensor/src/Si7020_Sensor.o
+                0x000026e4                Si7020_VTinit
  .text.Si7020_reset
-                0x000026be        0x6 wrapper/sensor/src/Si7020_Sensor.o
-                0x000026be                Si7020_reset
+                0x000026f0        0x6 wrapper/sensor/src/Si7020_Sensor.o
+                0x000026f0                Si7020_reset
  .text.Si7020_getType
-                0x000026c4        0x6 wrapper/sensor/src/Si7020_Sensor.o
-                0x000026c4                Si7020_getType
+                0x000026f6        0x6 wrapper/sensor/src/Si7020_Sensor.o
+                0x000026f6                Si7020_getType
  .text.Si7020_Init
-                0x000026ca        0xe wrapper/sensor/src/Si7020_Sensor.o
-                0x000026ca                Si7020_Init
+                0x000026fc        0xe wrapper/sensor/src/Si7020_Sensor.o
+                0x000026fc                Si7020_Init
  .text.Si7020_Request
-                0x000026d8       0x2c wrapper/sensor/src/Si7020_Sensor.o
-                0x000026d8                Si7020_Request
+                0x0000270a       0x2c wrapper/sensor/src/Si7020_Sensor.o
+                0x0000270a                Si7020_Request
  .text.Si7020_Collect
-                0x00002704       0xa4 wrapper/sensor/src/Si7020_Sensor.o
-                0x00002704                Si7020_Collect
+                0x00002736       0xa4 wrapper/sensor/src/Si7020_Sensor.o
+                0x00002736                Si7020_Collect
  .text.New_Si7020_Sensor
-                0x000027a8       0x80 wrapper/sensor/src/Si7020_Sensor.o
-                0x000027a8                New_Si7020_Sensor
+                0x000027da       0x80 wrapper/sensor/src/Si7020_Sensor.o
+                0x000027da                New_Si7020_Sensor
  .text.avr-libc.fplib
-                0x00002828        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
-                0x00002828                __subsf3
-                0x0000282a                __addsf3
+                0x0000285a        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                0x0000285a                __subsf3
+                0x0000285c                __addsf3
  .text.avr-libc.fplib
-                0x00002836       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
-                0x00002858                __addsf3x
+                0x00002868       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                0x0000288a                __addsf3x
  .text.avr-libc.fplib
-                0x00002902        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
-                0x00002902                __nesf2
-                0x00002902                __eqsf2
-                0x00002902                __cmpsf2
-                0x00002902                __ltsf2
-                0x00002902                __lesf2
+                0x00002934        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+                0x00002934                __nesf2
+                0x00002934                __eqsf2
+                0x00002934                __cmpsf2
+                0x00002934                __ltsf2
+                0x00002934                __lesf2
  .text.avr-libc.fplib
-                0x0000290c        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3.o)
-                0x0000290c                __divsf3
+                0x0000293e        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                0x0000293e                __divsf3
  .text.avr-libc.fplib
-                0x00002914       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
-                0x00002934                __divsf3x
-                0x0000293a                __divsf3_pse
+                0x00002946       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                0x00002966                __divsf3x
+                0x0000296c                __divsf3_pse
  .text.avr-libc.fplib
-                0x000029f0        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
-                0x000029f0                __fixsfsi
+                0x00002a22        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                0x00002a22                __fixsfsi
  .text.avr-libc.fplib
-                0x000029fe       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
-                0x000029fe                __fixunssfsi
+                0x00002a30       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                0x00002a30                __fixunssfsi
  .text.avr-libc.fplib
-                0x00002a5c       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
-                0x00002a5c                __floatunsisf
-                0x00002a60                __floatsisf
+                0x00002a8e       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                0x00002a8e                __floatunsisf
+                0x00002a92                __floatsisf
  .text.avr-libc.fplib
-                0x00002ad6       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
-                0x00002ad6                __fp_cmp
+                0x00002b08       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+                0x00002b08                __fp_cmp
  .text.avr-libc.fplib
-                0x00002b1e        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
-                0x00002b1e                __fp_inf
+                0x00002b50        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                0x00002b50                __fp_inf
  .text.avr-libc.fplib
-                0x00002b2a        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
-                0x00002b2a                __fp_nan
+                0x00002b5c        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                0x00002b5c                __fp_nan
  .text.avr-libc.fplib
-                0x00002b30        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
-                0x00002b30                __fp_pscA
+                0x00002b62        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                0x00002b62                __fp_pscA
  .text.avr-libc.fplib
-                0x00002b3e        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
-                0x00002b3e                __fp_pscB
+                0x00002b70        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                0x00002b70                __fp_pscB
  .text.avr-libc.fplib
-                0x00002b4c       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
-                0x00002b4c                __fp_round
+                0x00002b7e       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                0x00002b7e                __fp_round
  .text.avr-libc.fplib
-                0x00002b6e       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
-                0x00002b6e                __fp_split3
-                0x00002b7e                __fp_splitA
+                0x00002ba0       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                0x00002ba0                __fp_split3
+                0x00002bb0                __fp_splitA
  .text.avr-libc.fplib
-                0x00002bb2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
-                0x00002bb2                __fp_zero
-                0x00002bb4                __fp_szero
+                0x00002be4        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                0x00002be4                __fp_zero
+                0x00002be6                __fp_szero
  .text.avr-libc.fplib
-                0x00002bc0        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(gesf2.o)
-                0x00002bc0                __gesf2
-                0x00002bc0                __gtsf2
+                0x00002bf2        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(gesf2.o)
+                0x00002bf2                __gesf2
+                0x00002bf2                __gtsf2
  .text.avr-libc.fplib
-                0x00002bca        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
-                0x00002bca                __mulsf3
+                0x00002bfc        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                0x00002bfc                __mulsf3
  .text.avr-libc.fplib
-                0x00002bd2       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
-                0x00002bf0                __mulsf3x
-                0x00002bf6                __mulsf3_pse
+                0x00002c04       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                0x00002c22                __mulsf3x
+                0x00002c28                __mulsf3_pse
  .text.avr-libc
-                0x00002ca4      0x6f8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
-                0x00002ca4                vfprintf
+                0x00002cd6      0x6f8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
+                0x00002cd6                vfprintf
  .text.libgcc.div
-                0x0000339c       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
-                0x0000339c                __udivmodsi4
+                0x000033ce       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
+                0x000033ce                __udivmodsi4
  .text.libgcc.div
-                0x000033e0       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodsi4.o)
-                0x000033e0                __divmodsi4
+                0x00003412       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodsi4.o)
+                0x00003412                __divmodsi4
  .text.libgcc.div
-                0x0000340e       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_negsi2.o)
-                0x0000340e                __negsi2
+                0x00003440       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_negsi2.o)
+                0x00003440                __negsi2
  .text.libgcc.mul
-                0x0000341e       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulshisi3.o)
-                0x0000341e                __mulshisi3
-                0x00003424                __mulohisi3
+                0x00003450       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulshisi3.o)
+                0x00003450                __mulshisi3
+                0x00003456                __mulohisi3
  .text.libgcc.prologue
-                0x0000342e       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_prologue.o)
-                0x0000342e                __prologue_saves__
+                0x00003460       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_prologue.o)
+                0x00003460                __prologue_saves__
  .text.libgcc.prologue
-                0x00003466       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_epilogue.o)
-                0x00003466                __epilogue_restores__
+                0x00003498       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_epilogue.o)
+                0x00003498                __epilogue_restores__
  .text.libgcc.mul
-                0x0000349c       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_muluhisi3.o)
-                0x0000349c                __muluhisi3
+                0x000034ce       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_muluhisi3.o)
+                0x000034ce                __muluhisi3
  .text.libgcc.mul
-                0x000034b2       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_umulhisi3.o)
-                0x000034b2                __umulhisi3
+                0x000034e4       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_umulhisi3.o)
+                0x000034e4                __umulhisi3
  .text.avr-libc
-                0x000034d0      0x25a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x000034d0                malloc
-                0x000035fa                free
+                0x00003502      0x25a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00003502                malloc
+                0x0000362c                free
  .text.avr-libc
-                0x0000372a      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
-                0x0000372a                __ftoa_engine
+                0x0000375c      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
+                0x0000375c                __ftoa_engine
  .text.avr-libc
-                0x000038da       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x000038da                strnlen_P
+                0x0000390c       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x0000390c                strnlen_P
  .text.avr-libc
-                0x000038f0       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x000038f0                strnlen
+                0x00003922       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x00003922                strnlen
  .text.avr-libc
-                0x00003906       0x70 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x00003906                fputc
+                0x00003938       0x70 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x00003938                fputc
  .text.avr-libc
-                0x00003976       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
-                0x00003976                printf
+                0x000039a8       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
+                0x000039a8                printf
  .text.avr-libc
-                0x000039a2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(putchar.o)
-                0x000039a2                putchar
+                0x000039d4        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(putchar.o)
+                0x000039d4                putchar
  .text.avr-libc
-                0x000039b0       0x60 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(puts.o)
-                0x000039b0                puts
+                0x000039e2       0x60 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(puts.o)
+                0x000039e2                puts
  .text.avr-libc
-                0x00003a10       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x00003a10                __ultoa_invert
-                0x00003acc                . = ALIGN (0x2)
+                0x00003a42       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x00003a42                __ultoa_invert
+                0x00003afe                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00003acc        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
-                0x00003acc                _exit
-                0x00003acc                exit
+ .fini9         0x00003afe        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+                0x00003afe                _exit
+                0x00003afe                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1622,11 +1626,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00003acc        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x00003afe        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00003ad0                _etext = .
+                0x00003b02                _etext = .
 
-.data           0x00800200      0x3a2 load address 0x00003ad0
+.data           0x00800200      0x3b2 load address 0x00003b02
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800200        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
@@ -1674,99 +1678,99 @@ END GROUP
                 0x00800335      0x10a scheduler/src/scheduler.o
  .rodata.str1.1
                 0x0080043f       0x10 utilities/src/time.o
- .rodata.daysInMonth.1667
+ .rodata.daysInMonth.1669
                 0x0080044f        0xc utilities/src/time.o
  .rodata.str1.1
                 0x0080045b       0x54 wrapper/other-device/src/DemoStorage_Device.o
  .rodata.str1.1
-                0x008004af       0x12 wrapper/other-device/src/LoadData_Device.o
+                0x008004af       0x23 wrapper/other-device/src/LoadData_Device.o
  .rodata.str1.1
-                0x008004c1       0x89 wrapper/sensor/src/BMP280_Sensor.o
+                0x008004d2       0x89 wrapper/sensor/src/BMP280_Sensor.o
  .rodata.str1.1
-                0x0080054a       0x57 wrapper/sensor/src/Si7020_Sensor.o
+                0x0080055b       0x57 wrapper/sensor/src/Si7020_Sensor.o
                                  0x6b (size before relaxing)
  *(.gnu.linkonce.d*)
-                0x008005a2                . = ALIGN (0x2)
- *fill*         0x008005a1        0x1 
-                0x008005a2                _edata = .
-                0x008005a2                PROVIDE (__data_end, .)
+                0x008005b2                . = ALIGN (0x2)
+                0x008005b2                _edata = .
+                0x008005b2                PROVIDE (__data_end, .)
 
-.bss            0x008005a2      0x4ca
-                0x008005a2                PROVIDE (__bss_start, .)
+.bss            0x008005b2      0x4f2
+                0x008005b2                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.cur_data  0x008005a2        0x2 ATMOS.o
-                0x008005a2                cur_data
- .bss.status    0x008005a4        0x1 devices/src/BMP280.o
- .bss.error     0x008005a5        0x1 devices/src/BMP280.o
- .bss.t_fine    0x008005a6        0x4 devices/src/BMP280.o
+ .bss.cur_data  0x008005b2        0x2 ATMOS.o
+                0x008005b2                cur_data
+ .bss.status    0x008005b4        0x1 devices/src/BMP280.o
+ .bss.error     0x008005b5        0x1 devices/src/BMP280.o
+ .bss.t_fine    0x008005b6        0x4 devices/src/BMP280.o
  .bss.oversampling_t
-                0x008005aa        0x2 devices/src/BMP280.o
+                0x008005ba        0x2 devices/src/BMP280.o
  .bss.oversampling
-                0x008005ac        0x2 devices/src/BMP280.o
- .bss.dig_T1    0x008005ae        0x2 devices/src/BMP280.o
- .bss.dig_P1    0x008005b0        0x2 devices/src/BMP280.o
- .bss.dig_P9    0x008005b2        0x2 devices/src/BMP280.o
- .bss.dig_P8    0x008005b4        0x2 devices/src/BMP280.o
- .bss.dig_P7    0x008005b6        0x2 devices/src/BMP280.o
- .bss.dig_P6    0x008005b8        0x2 devices/src/BMP280.o
- .bss.dig_P5    0x008005ba        0x2 devices/src/BMP280.o
- .bss.dig_P4    0x008005bc        0x2 devices/src/BMP280.o
- .bss.dig_P3    0x008005be        0x2 devices/src/BMP280.o
- .bss.dig_P2    0x008005c0        0x2 devices/src/BMP280.o
- .bss.dig_T3    0x008005c2        0x2 devices/src/BMP280.o
- .bss.dig_T2    0x008005c4        0x2 devices/src/BMP280.o
+                0x008005bc        0x2 devices/src/BMP280.o
+ .bss.dig_T1    0x008005be        0x2 devices/src/BMP280.o
+ .bss.dig_P1    0x008005c0        0x2 devices/src/BMP280.o
+ .bss.dig_P9    0x008005c2        0x2 devices/src/BMP280.o
+ .bss.dig_P8    0x008005c4        0x2 devices/src/BMP280.o
+ .bss.dig_P7    0x008005c6        0x2 devices/src/BMP280.o
+ .bss.dig_P6    0x008005c8        0x2 devices/src/BMP280.o
+ .bss.dig_P5    0x008005ca        0x2 devices/src/BMP280.o
+ .bss.dig_P4    0x008005cc        0x2 devices/src/BMP280.o
+ .bss.dig_P3    0x008005ce        0x2 devices/src/BMP280.o
+ .bss.dig_P2    0x008005d0        0x2 devices/src/BMP280.o
+ .bss.dig_T3    0x008005d2        0x2 devices/src/BMP280.o
+ .bss.dig_T2    0x008005d4        0x2 devices/src/BMP280.o
  .bss.TimeStamp
-                0x008005c6        0x4 drivers/src/int_timer.o
-                0x008005c6                TimeStamp
+                0x008005d6        0x4 drivers/src/int_timer.o
+                0x008005d6                TimeStamp
  .bss.timer_usage
-                0x008005ca        0x2 drivers/src/int_timer.o
+                0x008005da        0x2 drivers/src/int_timer.o
  .bss.nwkDataReqQueue
-                0x008005cc        0x2 nwk/src/nwkDataReq.o
+                0x008005dc        0x2 nwk/src/nwkDataReq.o
  .bss.nwkFrameFrames
-                0x008005ce      0x2ad nwk/src/nwkFrame.o
+                0x008005de      0x2ad nwk/src/nwkFrame.o
  .bss.nwkRxDuplicateRejectionTimer
-                0x0080087b        0xd nwk/src/nwkRx.o
+                0x0080088b        0xd nwk/src/nwkRx.o
  .bss.nwkRxDuplicateRejectionTable
-                0x00800888       0x32 nwk/src/nwkRx.o
+                0x00800898       0x32 nwk/src/nwkRx.o
  .bss.nwkTxDelayTimer
-                0x008008ba        0xd nwk/src/nwkTx.o
+                0x008008ca        0xd nwk/src/nwkTx.o
  .bss.nwkTxAckWaitTimer
-                0x008008c7        0xd nwk/src/nwkTx.o
+                0x008008d7        0xd nwk/src/nwkTx.o
  .bss.nwkTxPhyActiveFrame
-                0x008008d4        0x2 nwk/src/nwkTx.o
- .bss.phyBand   0x008008d6        0x1 phy/atmegarfr2/src/phy.o
+                0x008008e4        0x2 nwk/src/nwkTx.o
+ .bss.phyBand   0x008008e6        0x1 phy/atmegarfr2/src/phy.o
  .bss.phyRxState
-                0x008008d7        0x1 phy/atmegarfr2/src/phy.o
- .bss.phyState  0x008008d8        0x1 phy/atmegarfr2/src/phy.o
- .bss.timers    0x008008d9        0x2 sys/src/sysTimer.o
+                0x008008e7        0x1 phy/atmegarfr2/src/phy.o
+ .bss.phyState  0x008008e8        0x1 phy/atmegarfr2/src/phy.o
+ .bss.timers    0x008008e9        0x2 sys/src/sysTimer.o
  *(COMMON)
- COMMON         0x008008db      0x15e ATMOS.o
-                0x008008db                queue
-                0x00800a2b                TQ
-                0x00800a2f                timeoutq
-                0x00800a31                SensorDataCount
-                0x00800a33                FL
-                0x00800a37                freelist
- COMMON         0x00800a39        0x1 hal/atmega256rfr2/src/halTimer.o
-                0x00800a39                halTimerIrqCount
- COMMON         0x00800a3a       0x28 nwk/src/nwk.o
-                0x00800a3a                nwkIb
- COMMON         0x00800a62        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x00800a62                __brkval
-                0x00800a64                __flp
- COMMON         0x00800a66        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
-                0x00800a66                __iob
-                0x00800a6c                PROVIDE (__bss_end, .)
-                0x00003ad0                __data_load_start = LOADADDR (.data)
-                0x00003e72                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008008eb      0x186 ATMOS.o
+                0x008008eb                cur_time
+                0x00800913                queue
+                0x00800a63                TQ
+                0x00800a67                timeoutq
+                0x00800a69                SensorDataCount
+                0x00800a6b                FL
+                0x00800a6f                freelist
+ COMMON         0x00800a71        0x1 hal/atmega256rfr2/src/halTimer.o
+                0x00800a71                halTimerIrqCount
+ COMMON         0x00800a72       0x28 nwk/src/nwk.o
+                0x00800a72                nwkIb
+ COMMON         0x00800a9a        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00800a9a                __brkval
+                0x00800a9c                __flp
+ COMMON         0x00800a9e        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
+                0x00800a9e                __iob
+                0x00800aa4                PROVIDE (__bss_end, .)
+                0x00003b02                __data_load_start = LOADADDR (.data)
+                0x00003eb4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800a6c        0x0
-                0x00800a6c                PROVIDE (__noinit_start, .)
+.noinit         0x00800aa4        0x0
+                0x00800aa4                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800a6c                PROVIDE (__noinit_end, .)
-                0x00800a6c                _end = .
-                0x00800a6c                PROVIDE (__heap_start, .)
+                0x00800aa4                PROVIDE (__noinit_end, .)
+                0x00800aa4                _end = .
+                0x00800aa4                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -1865,7 +1869,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x7f8
+.debug_aranges  0x00000000      0x800
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 ATMOS.o
@@ -1914,51 +1918,51 @@ END GROUP
  .debug_aranges
                 0x000005f0       0x50 utilities/src/llist.o
  .debug_aranges
-                0x00000640       0x30 utilities/src/time.o
+                0x00000640       0x38 utilities/src/time.o
  .debug_aranges
-                0x00000670       0x60 wrapper/other-device/src/DemoStorage_Device.o
+                0x00000678       0x60 wrapper/other-device/src/DemoStorage_Device.o
  .debug_aranges
-                0x000006d0       0x58 wrapper/other-device/src/LoadData_Device.o
+                0x000006d8       0x58 wrapper/other-device/src/LoadData_Device.o
  .debug_aranges
-                0x00000728       0x68 wrapper/sensor/src/BMP280_Sensor.o
+                0x00000730       0x68 wrapper/sensor/src/BMP280_Sensor.o
  .debug_aranges
-                0x00000790       0x68 wrapper/sensor/src/Si7020_Sensor.o
+                0x00000798       0x68 wrapper/sensor/src/Si7020_Sensor.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x9eb6
+.debug_info     0x00000000     0x9f5b
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0xca0 ATMOS.o
- .debug_info    0x00000ca0      0xaeb devices/src/BMP280.o
- .debug_info    0x0000178b      0x448 devices/src/Si7020.o
- .debug_info    0x00001bd3      0x121 drivers/src/ADC.o
- .debug_info    0x00001cf4      0x82e drivers/src/int_timer.o
- .debug_info    0x00002522       0xdb drivers/src/PWR.o
- .debug_info    0x000025fd      0x102 drivers/src/SPI.o
- .debug_info    0x000026ff      0x45e drivers/src/TWI.o
- .debug_info    0x00002b5d      0x299 drivers/src/usart0.o
- .debug_info    0x00002df6      0x128 hal/atmega256rfr2/src/hal.o
- .debug_info    0x00002f1e       0xe4 hal/atmega256rfr2/src/halTimer.o
- .debug_info    0x00003002      0x4a6 nwk/src/nwk.o
- .debug_info    0x000034a8      0x79d nwk/src/nwkDataReq.o
- .debug_info    0x00003c45      0x56a nwk/src/nwkFrame.o
- .debug_info    0x000041af      0xc23 nwk/src/nwkRx.o
- .debug_info    0x00004dd2      0xa08 nwk/src/nwkTx.o
- .debug_info    0x000057da      0x7c0 phy/atmegarfr2/src/phy.o
- .debug_info    0x00005f9a      0x935 scheduler/src/handler.o
- .debug_info    0x000068cf      0xac1 scheduler/src/scheduler.o
- .debug_info    0x00007390      0x12b sys/src/sys.o
- .debug_info    0x000074bb      0x341 sys/src/sysTimer.o
- .debug_info    0x000077fc       0xe6 utilities/src/common.o
- .debug_info    0x000078e2      0x34c utilities/src/llist.o
- .debug_info    0x00007c2e      0x2f5 utilities/src/time.o
- .debug_info    0x00007f23      0x737 wrapper/other-device/src/DemoStorage_Device.o
- .debug_info    0x0000865a      0x72c wrapper/other-device/src/LoadData_Device.o
- .debug_info    0x00008d86      0x84a wrapper/sensor/src/BMP280_Sensor.o
- .debug_info    0x000095d0      0x8e6 wrapper/sensor/src/Si7020_Sensor.o
+ .debug_info    0x00000000      0xce8 ATMOS.o
+ .debug_info    0x00000ce8      0xaeb devices/src/BMP280.o
+ .debug_info    0x000017d3      0x448 devices/src/Si7020.o
+ .debug_info    0x00001c1b      0x121 drivers/src/ADC.o
+ .debug_info    0x00001d3c      0x82e drivers/src/int_timer.o
+ .debug_info    0x0000256a       0xdb drivers/src/PWR.o
+ .debug_info    0x00002645      0x102 drivers/src/SPI.o
+ .debug_info    0x00002747      0x45e drivers/src/TWI.o
+ .debug_info    0x00002ba5      0x299 drivers/src/usart0.o
+ .debug_info    0x00002e3e      0x128 hal/atmega256rfr2/src/hal.o
+ .debug_info    0x00002f66       0xe4 hal/atmega256rfr2/src/halTimer.o
+ .debug_info    0x0000304a      0x4a6 nwk/src/nwk.o
+ .debug_info    0x000034f0      0x79d nwk/src/nwkDataReq.o
+ .debug_info    0x00003c8d      0x56a nwk/src/nwkFrame.o
+ .debug_info    0x000041f7      0xc23 nwk/src/nwkRx.o
+ .debug_info    0x00004e1a      0xa08 nwk/src/nwkTx.o
+ .debug_info    0x00005822      0x7c0 phy/atmegarfr2/src/phy.o
+ .debug_info    0x00005fe2      0x935 scheduler/src/handler.o
+ .debug_info    0x00006917      0xac1 scheduler/src/scheduler.o
+ .debug_info    0x000073d8      0x12b sys/src/sys.o
+ .debug_info    0x00007503      0x341 sys/src/sysTimer.o
+ .debug_info    0x00007844       0xe6 utilities/src/common.o
+ .debug_info    0x0000792a      0x34c utilities/src/llist.o
+ .debug_info    0x00007c76      0x322 utilities/src/time.o
+ .debug_info    0x00007f98      0x737 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_info    0x000086cf      0x75c wrapper/other-device/src/LoadData_Device.o
+ .debug_info    0x00008e2b      0x84a wrapper/sensor/src/BMP280_Sensor.o
+ .debug_info    0x00009675      0x8e6 wrapper/sensor/src/Si7020_Sensor.o
 
-.debug_abbrev   0x00000000     0x3272
+.debug_abbrev   0x00000000     0x328c
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x281 ATMOS.o
  .debug_abbrev  0x00000281      0x335 devices/src/BMP280.o
@@ -1985,42 +1989,42 @@ END GROUP
  .debug_abbrev  0x0000265b      0x195 utilities/src/llist.o
  .debug_abbrev  0x000027f0      0x14b utilities/src/time.o
  .debug_abbrev  0x0000293b      0x238 wrapper/other-device/src/DemoStorage_Device.o
- .debug_abbrev  0x00002b73      0x241 wrapper/other-device/src/LoadData_Device.o
- .debug_abbrev  0x00002db4      0x272 wrapper/sensor/src/BMP280_Sensor.o
- .debug_abbrev  0x00003026      0x24c wrapper/sensor/src/Si7020_Sensor.o
+ .debug_abbrev  0x00002b73      0x25b wrapper/other-device/src/LoadData_Device.o
+ .debug_abbrev  0x00002dce      0x272 wrapper/sensor/src/BMP280_Sensor.o
+ .debug_abbrev  0x00003040      0x24c wrapper/sensor/src/Si7020_Sensor.o
 
-.debug_line     0x00000000     0x303a
+.debug_line     0x00000000     0x305c
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x27d ATMOS.o
- .debug_line    0x0000027d      0x271 devices/src/BMP280.o
- .debug_line    0x000004ee       0xc9 devices/src/Si7020.o
- .debug_line    0x000005b7       0xee drivers/src/ADC.o
- .debug_line    0x000006a5      0x238 drivers/src/int_timer.o
- .debug_line    0x000008dd       0xe4 drivers/src/PWR.o
- .debug_line    0x000009c1       0xd2 drivers/src/SPI.o
- .debug_line    0x00000a93      0x238 drivers/src/TWI.o
- .debug_line    0x00000ccb      0x143 drivers/src/usart0.o
- .debug_line    0x00000e0e      0x158 hal/atmega256rfr2/src/hal.o
- .debug_line    0x00000f66       0xe3 hal/atmega256rfr2/src/halTimer.o
- .debug_line    0x00001049      0x1d7 nwk/src/nwk.o
- .debug_line    0x00001220      0x162 nwk/src/nwkDataReq.o
- .debug_line    0x00001382      0x132 nwk/src/nwkFrame.o
- .debug_line    0x000014b4      0x247 nwk/src/nwkRx.o
- .debug_line    0x000016fb      0x265 nwk/src/nwkTx.o
- .debug_line    0x00001960      0x21d phy/atmegarfr2/src/phy.o
- .debug_line    0x00001b7d      0x20e scheduler/src/handler.o
- .debug_line    0x00001d8b      0x2be scheduler/src/scheduler.o
- .debug_line    0x00002049       0xc2 sys/src/sys.o
- .debug_line    0x0000210b      0x194 sys/src/sysTimer.o
- .debug_line    0x0000229f       0xba utilities/src/common.o
- .debug_line    0x00002359      0x112 utilities/src/llist.o
- .debug_line    0x0000246b      0x158 utilities/src/time.o
- .debug_line    0x000025c3      0x2bb wrapper/other-device/src/DemoStorage_Device.o
- .debug_line    0x0000287e      0x26a wrapper/other-device/src/LoadData_Device.o
- .debug_line    0x00002ae8      0x2a9 wrapper/sensor/src/BMP280_Sensor.o
- .debug_line    0x00002d91      0x2a9 wrapper/sensor/src/Si7020_Sensor.o
+ .debug_line    0x00000000      0x27e ATMOS.o
+ .debug_line    0x0000027e      0x271 devices/src/BMP280.o
+ .debug_line    0x000004ef       0xc9 devices/src/Si7020.o
+ .debug_line    0x000005b8       0xee drivers/src/ADC.o
+ .debug_line    0x000006a6      0x238 drivers/src/int_timer.o
+ .debug_line    0x000008de       0xe4 drivers/src/PWR.o
+ .debug_line    0x000009c2       0xd2 drivers/src/SPI.o
+ .debug_line    0x00000a94      0x238 drivers/src/TWI.o
+ .debug_line    0x00000ccc      0x143 drivers/src/usart0.o
+ .debug_line    0x00000e0f      0x158 hal/atmega256rfr2/src/hal.o
+ .debug_line    0x00000f67       0xe3 hal/atmega256rfr2/src/halTimer.o
+ .debug_line    0x0000104a      0x1d7 nwk/src/nwk.o
+ .debug_line    0x00001221      0x162 nwk/src/nwkDataReq.o
+ .debug_line    0x00001383      0x132 nwk/src/nwkFrame.o
+ .debug_line    0x000014b5      0x247 nwk/src/nwkRx.o
+ .debug_line    0x000016fc      0x265 nwk/src/nwkTx.o
+ .debug_line    0x00001961      0x21d phy/atmegarfr2/src/phy.o
+ .debug_line    0x00001b7e      0x20e scheduler/src/handler.o
+ .debug_line    0x00001d8c      0x2be scheduler/src/scheduler.o
+ .debug_line    0x0000204a       0xc2 sys/src/sys.o
+ .debug_line    0x0000210c      0x194 sys/src/sysTimer.o
+ .debug_line    0x000022a0       0xba utilities/src/common.o
+ .debug_line    0x0000235a      0x112 utilities/src/llist.o
+ .debug_line    0x0000246c      0x16c utilities/src/time.o
+ .debug_line    0x000025d8      0x2bb wrapper/other-device/src/DemoStorage_Device.o
+ .debug_line    0x00002893      0x277 wrapper/other-device/src/LoadData_Device.o
+ .debug_line    0x00002b0a      0x2a9 wrapper/sensor/src/BMP280_Sensor.o
+ .debug_line    0x00002db3      0x2a9 wrapper/sensor/src/Si7020_Sensor.o
 
-.debug_frame    0x00000000     0x1470
+.debug_frame    0x00000000     0x148c
  *(.debug_frame)
  .debug_frame   0x00000000       0x34 ATMOS.o
  .debug_frame   0x00000034      0x248 devices/src/BMP280.o
@@ -2045,72 +2049,72 @@ END GROUP
  .debug_frame   0x00000da0       0xc0 sys/src/sysTimer.o
  .debug_frame   0x00000e60       0x24 utilities/src/common.o
  .debug_frame   0x00000e84       0xac utilities/src/llist.o
- .debug_frame   0x00000f30       0xf8 utilities/src/time.o
- .debug_frame   0x00001028      0x144 wrapper/other-device/src/DemoStorage_Device.o
- .debug_frame   0x0000116c       0xb8 wrapper/other-device/src/LoadData_Device.o
- .debug_frame   0x00001224      0x110 wrapper/sensor/src/BMP280_Sensor.o
- .debug_frame   0x00001334      0x13c wrapper/sensor/src/Si7020_Sensor.o
+ .debug_frame   0x00000f30      0x104 utilities/src/time.o
+ .debug_frame   0x00001034      0x144 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_frame   0x00001178       0xc8 wrapper/other-device/src/LoadData_Device.o
+ .debug_frame   0x00001240      0x110 wrapper/sensor/src/BMP280_Sensor.o
+ .debug_frame   0x00001350      0x13c wrapper/sensor/src/Si7020_Sensor.o
 
-.debug_str      0x00000000     0x232e
+.debug_str      0x00000000     0x2346
  *(.debug_str)
- .debug_str     0x00000000      0x55f ATMOS.o
-                                0x682 (size before relaxing)
- .debug_str     0x0000055f      0x228 devices/src/BMP280.o
+ .debug_str     0x00000000      0x577 ATMOS.o
+                                0x69a (size before relaxing)
+ .debug_str     0x00000577      0x228 devices/src/BMP280.o
                                 0x3e7 (size before relaxing)
- .debug_str     0x00000787       0xcd devices/src/Si7020.o
+ .debug_str     0x0000079f       0xcd devices/src/Si7020.o
                                 0x26f (size before relaxing)
- .debug_str     0x00000854       0x4c drivers/src/ADC.o
+ .debug_str     0x0000086c       0x4c drivers/src/ADC.o
                                 0x1ab (size before relaxing)
- .debug_str     0x000008a0       0x78 drivers/src/int_timer.o
+ .debug_str     0x000008b8       0x78 drivers/src/int_timer.o
                                 0x522 (size before relaxing)
- .debug_str     0x00000918       0x40 drivers/src/PWR.o
+ .debug_str     0x00000930       0x40 drivers/src/PWR.o
                                 0x19f (size before relaxing)
- .debug_str     0x00000958       0x45 drivers/src/SPI.o
+ .debug_str     0x00000970       0x45 drivers/src/SPI.o
                                 0x1aa (size before relaxing)
- .debug_str     0x0000099d       0x83 drivers/src/TWI.o
+ .debug_str     0x000009b5       0x83 drivers/src/TWI.o
                                 0x26e (size before relaxing)
- .debug_str     0x00000a20       0x8e drivers/src/usart0.o
+ .debug_str     0x00000a38       0x8e drivers/src/usart0.o
                                 0x21f (size before relaxing)
- .debug_str     0x00000aae       0x64 hal/atmega256rfr2/src/hal.o
+ .debug_str     0x00000ac6       0x64 hal/atmega256rfr2/src/hal.o
                                 0x1b6 (size before relaxing)
- .debug_str     0x00000b12       0x41 hal/atmega256rfr2/src/halTimer.o
+ .debug_str     0x00000b2a       0x41 hal/atmega256rfr2/src/halTimer.o
                                 0x1b0 (size before relaxing)
- .debug_str     0x00000b53      0x1b1 nwk/src/nwk.o
+ .debug_str     0x00000b6b      0x1b1 nwk/src/nwk.o
                                 0x330 (size before relaxing)
- .debug_str     0x00000d04      0x338 nwk/src/nwkDataReq.o
+ .debug_str     0x00000d1c      0x338 nwk/src/nwkDataReq.o
                                 0x56c (size before relaxing)
- .debug_str     0x0000103c       0x5b nwk/src/nwkFrame.o
+ .debug_str     0x00001054       0x5b nwk/src/nwkFrame.o
                                 0x40b (size before relaxing)
- .debug_str     0x00001097      0x37d nwk/src/nwkRx.o
+ .debug_str     0x000010af      0x37d nwk/src/nwkRx.o
                                 0x705 (size before relaxing)
- .debug_str     0x00001414      0x1c1 nwk/src/nwkTx.o
+ .debug_str     0x0000142c      0x1c1 nwk/src/nwkTx.o
                                 0x6ba (size before relaxing)
- .debug_str     0x000015d5      0x525 phy/atmegarfr2/src/phy.o
+ .debug_str     0x000015ed      0x525 phy/atmegarfr2/src/phy.o
                                 0x77a (size before relaxing)
- .debug_str     0x00001afa       0xd7 scheduler/src/handler.o
+ .debug_str     0x00001b12       0xd7 scheduler/src/handler.o
                                 0x549 (size before relaxing)
- .debug_str     0x00001bd1       0x70 scheduler/src/scheduler.o
+ .debug_str     0x00001be9       0x70 scheduler/src/scheduler.o
                                 0x570 (size before relaxing)
- .debug_str     0x00001c41       0x44 sys/src/sys.o
+ .debug_str     0x00001c59       0x44 sys/src/sys.o
                                 0x1d8 (size before relaxing)
- .debug_str     0x00001c85       0x58 sys/src/sysTimer.o
+ .debug_str     0x00001c9d       0x58 sys/src/sysTimer.o
                                 0x26d (size before relaxing)
- .debug_str     0x00001cdd       0x57 utilities/src/common.o
+ .debug_str     0x00001cf5       0x57 utilities/src/common.o
                                 0x1b3 (size before relaxing)
- .debug_str     0x00001d34       0x44 utilities/src/llist.o
+ .debug_str     0x00001d4c       0x44 utilities/src/llist.o
                                 0x15e (size before relaxing)
- .debug_str     0x00001d78       0xab utilities/src/time.o
-                                0x26e (size before relaxing)
- .debug_str     0x00001e23      0x1b3 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_str     0x00001d90       0xab utilities/src/time.o
+                                0x27d (size before relaxing)
+ .debug_str     0x00001e3b      0x1b3 wrapper/other-device/src/DemoStorage_Device.o
                                 0x523 (size before relaxing)
- .debug_str     0x00001fd6      0x140 wrapper/other-device/src/LoadData_Device.o
-                                0x537 (size before relaxing)
- .debug_str     0x00002116      0x110 wrapper/sensor/src/BMP280_Sensor.o
+ .debug_str     0x00001fee      0x140 wrapper/other-device/src/LoadData_Device.o
+                                0x547 (size before relaxing)
+ .debug_str     0x0000212e      0x110 wrapper/sensor/src/BMP280_Sensor.o
                                 0x4f1 (size before relaxing)
- .debug_str     0x00002226      0x108 wrapper/sensor/src/Si7020_Sensor.o
+ .debug_str     0x0000223e      0x108 wrapper/sensor/src/Si7020_Sensor.o
                                 0x52c (size before relaxing)
 
-.debug_loc      0x00000000     0x559a
+.debug_loc      0x00000000     0x54d9
  *(.debug_loc)
  .debug_loc     0x00000000       0x7e ATMOS.o
  .debug_loc     0x0000007e      0xb24 devices/src/BMP280.o
@@ -2133,11 +2137,11 @@ END GROUP
  .debug_loc     0x00003699      0x42e sys/src/sysTimer.o
  .debug_loc     0x00003ac7       0xd6 utilities/src/common.o
  .debug_loc     0x00003b9d      0x37f utilities/src/llist.o
- .debug_loc     0x00003f1c      0x768 utilities/src/time.o
- .debug_loc     0x00004684      0x4a6 wrapper/other-device/src/DemoStorage_Device.o
- .debug_loc     0x00004b2a      0x218 wrapper/other-device/src/LoadData_Device.o
- .debug_loc     0x00004d42      0x349 wrapper/sensor/src/BMP280_Sensor.o
- .debug_loc     0x0000508b      0x50f wrapper/sensor/src/Si7020_Sensor.o
+ .debug_loc     0x00003f1c      0x666 utilities/src/time.o
+ .debug_loc     0x00004582      0x4a6 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_loc     0x00004a28      0x259 wrapper/other-device/src/LoadData_Device.o
+ .debug_loc     0x00004c81      0x349 wrapper/sensor/src/BMP280_Sensor.o
+ .debug_loc     0x00004fca      0x50f wrapper/sensor/src/Si7020_Sensor.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -2157,7 +2161,7 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x7b0
+.debug_ranges   0x00000000      0x7b8
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 ATMOS.o
  .debug_ranges  0x00000010       0xa0 devices/src/BMP280.o
@@ -2182,11 +2186,11 @@ END GROUP
  .debug_ranges  0x00000520       0x70 sys/src/sysTimer.o
  .debug_ranges  0x00000590       0x10 utilities/src/common.o
  .debug_ranges  0x000005a0       0x40 utilities/src/llist.o
- .debug_ranges  0x000005e0       0x70 utilities/src/time.o
- .debug_ranges  0x00000650       0x68 wrapper/other-device/src/DemoStorage_Device.o
- .debug_ranges  0x000006b8       0x48 wrapper/other-device/src/LoadData_Device.o
- .debug_ranges  0x00000700       0x58 wrapper/sensor/src/BMP280_Sensor.o
- .debug_ranges  0x00000758       0x58 wrapper/sensor/src/Si7020_Sensor.o
+ .debug_ranges  0x000005e0       0x78 utilities/src/time.o
+ .debug_ranges  0x00000658       0x68 wrapper/other-device/src/DemoStorage_Device.o
+ .debug_ranges  0x000006c0       0x48 wrapper/other-device/src/LoadData_Device.o
+ .debug_ranges  0x00000708       0x58 wrapper/sensor/src/BMP280_Sensor.o
+ .debug_ranges  0x00000760       0x58 wrapper/sensor/src/Si7020_Sensor.o
 
 .debug_macro
  *(.debug_macro)

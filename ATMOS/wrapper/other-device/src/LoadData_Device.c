@@ -74,8 +74,10 @@ int LoadData_Device_Execute(LoadDataDevice *this)
 	
 	if( cur_data != NULL)
 	{
-		updateTime((uint32_t)TimeStamp,cur_data->data_tm);
+		updateTime((uint32_t)TimeStamp,&cur_time);
+		cur_data->data_tm.unix_time = cur_time.unix_time;
 		calcDate( &(cur_data->data_tm));
+		printf("time debug3 %ld\n",cur_data->data_tm.unix_time);
 		TimeStamp = 0;
 	}
 	return 0;
