@@ -118,8 +118,8 @@ int device_handler( struct event *p )
 {
 	int retNum;
 	BaseDevice * bdp = (BaseDevice *) ( p->sp );
-	LoadDataDevice *ldp = (LoadDataDevice*) ( p->sp );
-	DemoStorageDevice *ddp = (DemoStorageDevice*) ( p->sp );
+	LoadDataDevice *ldp = (LoadDataDevice*) ( p->load_p );
+	DemoStorageDevice *ddp = (DemoStorageDevice*) ( p->store_p );
 
 	/* sanity check */
 	if( p == EV_NULL )

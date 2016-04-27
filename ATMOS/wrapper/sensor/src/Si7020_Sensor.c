@@ -54,7 +54,7 @@ int Si7020_Collect(Si7020Sensor *this )
 	printf("Si7020_Collect\n");
 	float T = Si7020_calTemperature(this->temperature_data);
 	float H = Si7020_calHumidity(this->humility_data);
-	printf("Temperature = %.3f\nHumility = %.3f\n",T,H);
+	printf("\tTemperature = %.3f\n\tHumility = %.3f\n",T,H);
 	return 0;
 }
 

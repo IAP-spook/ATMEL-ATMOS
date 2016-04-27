@@ -50,7 +50,7 @@ struct event queue[ MAX_EVENTS ]; /**<@brief Declaration of event resources, and
  */
 ///@{
 int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otherinfo );
-int load_new_device( int timeout, int repeat, BaseSensor *device_ptr, int otherinfo );
+int load_new_device( int timeout, int repeat, BaseDevice *device_ptr, int otherinfo );
 void init_timeoutq();
 int get_next_interval();
 void insert_timeoutq_event( struct event * event_pointer);
