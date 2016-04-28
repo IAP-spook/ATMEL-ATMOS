@@ -14,7 +14,7 @@
 #include "utilities/inc/data_unit.h"
 
 extern DataUnit * cur_data;
-extern tm cur_time;
+
 
 struct _LoadData_Device;
 typedef struct _LoadData_Device LoadDataDevice;

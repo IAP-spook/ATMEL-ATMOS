@@ -7,7 +7,6 @@
 
 #include "utilities/inc/config.h"
 #include "utilities/inc/common.h"
-#include "utilities/inc/time.h"
 #include "hal.h"
 #include "phy.h"
 #include "sys.h"
@@ -31,7 +30,6 @@
 
 int SensorDataCount;
 DataUnit *cur_data = NULL;
-tm cur_time;
 
 /* TODO : clean up these messy init */
 static void APP_Init(void){
@@ -57,7 +55,6 @@ int main(void)
 	
 	// could have sealed following in a function //
 	init_timeoutq();
-	init_timestamp(&cur_time);
 	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0,2 );
 	Si7020Sensor *Si_ptr = New_Si7020_Sensor(0,2);
 	
