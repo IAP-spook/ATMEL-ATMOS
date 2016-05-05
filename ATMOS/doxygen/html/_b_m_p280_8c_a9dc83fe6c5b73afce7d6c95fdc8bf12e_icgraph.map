@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_b_m_p280_8c.html#a2d512d05a3f329da6e0bfb081a1f6685" title="Initializes the BMP280 and reads the calibration data from the device." alt="" coords="176,5,272,32"/>
-<area shape="rect" id="node5" href="$_a_t_m_o_s_8c.html#adc8ec6db76d813f9160b2d2933219b29" title="APP_Init" alt="" coords="321,5,394,32"/>
-<area shape="rect" id="node7" href="$_a_t_m_o_s_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="443,5,493,32"/>
-</map>

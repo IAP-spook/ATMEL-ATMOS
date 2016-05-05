@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$nwk_route_8c.html" title="Routing implementation." alt="" coords="5,109,219,165"/>
-<area shape="rect" id="node5" href="$nwk_route_discovery_8c.html" title="Route discovery implementation." alt="" coords="243,109,456,165"/>
-<area shape="rect" id="node7" href="$nwk_rx_8c.html" title="Receive routines implementation." alt="" coords="480,109,693,165"/>
-<area shape="rect" id="node9" href="$nwk_tx_8c.html" title="Transmit routines implementation." alt="" coords="717,109,931,165"/>
-</map>

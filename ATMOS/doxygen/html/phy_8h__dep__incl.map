@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$nwk_8c.html" title="Network layer management functions implementation." alt="" coords="5,109,219,165"/>
-<area shape="rect" id="node5" href="$nwk_rx_8c.html" title="Receive routines implementation." alt="" coords="243,109,456,165"/>
-<area shape="rect" id="node7" href="$nwk_tx_8c.html" title="Transmit routines implementation." alt="" coords="480,109,693,165"/>
-<area shape="rect" id="node9" href="$sys_8h.html" title="C:/Users/AB/Documents\l/GitHub/ATMEL&#45;ATMOS/ATMOS\l/sys/inc/sys.h" alt="" coords="768,109,981,165"/>
-<area shape="rect" id="node11" href="$sys_8c.html" title="Main system routines interface." alt="" coords="636,213,849,269"/>
-<area shape="rect" id="node13" href="$_a_t_m_o_s_8c.html" title="The entry function." alt="" coords="899,213,1112,269"/>
-<area shape="rect" id="node16" href="$sys_encrypt_8c.html" title="System encryption routines implementation." alt="" coords="1056,109,1269,165"/>
-</map>

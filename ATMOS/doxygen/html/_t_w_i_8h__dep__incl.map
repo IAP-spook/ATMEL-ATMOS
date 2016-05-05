@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_b_m_p280_8c.html" title="BMP280 Pressure Sensor Library implementation." alt="" coords="5,109,219,165"/>
-<area shape="rect" id="node5" href="$_k30_8c.html" title="C:/Users/AB/Documents\l/GitHub/ATMEL&#45;ATMOS/ATMOS\l/devices/src/K30.c" alt="" coords="243,109,456,165"/>
-<area shape="rect" id="node7" href="$_si7020_8c.html" title="C:/Users/AB/Documents\l/GitHub/ATMEL&#45;ATMOS/ATMOS\l/devices/src/Si7020.c" alt="" coords="480,109,693,165"/>
-<area shape="rect" id="node9" href="$_t_w_i_8c.html" title="TWI hardware interface library implementation in master mode." alt="" coords="717,109,931,165"/>
-<area shape="rect" id="node11" href="$_a_t_m_o_s_8c.html" title="The entry function." alt="" coords="955,109,1168,165"/>
-</map>

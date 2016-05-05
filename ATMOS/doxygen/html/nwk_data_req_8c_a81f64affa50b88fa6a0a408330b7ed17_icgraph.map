@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$nwk_data_req_8c.html#a63e5112ed190ccd0df7f611e1158aa5c" title="Data Request module task handler." alt="" coords="193,5,359,32"/>
-<area shape="rect" id="node5" href="$nwk_8c.html#a7a95bb657e0031994b25ca0f67cd958f" title="Network layer task handler." alt="" coords="409,5,541,32"/>
-<area shape="rect" id="node7" href="$sys_8c.html#a572702f4112412ec253f4181bb48fe8d" title="SYS_TaskHandler" alt="" coords="589,5,717,32"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$nwk_frame_8h.html#ab249cdccb7480445764d633214ea35f1" title="Frees a frame and returns it to the buffer pool." alt="" coords="189,5,297,32"/>
-<area shape="rect" id="node5" href="$nwk_frame_8h.html#ada81d011312b3cee09e753101767d60c" title="Cycles through the allocated frames starting from the specified frame." alt="" coords="188,56,297,83"/>
-<area shape="rect" id="node7" href="$phy_8h.html#acd90121624ff42a358505ec644d65fc8" title="PHY_DataReq" alt="" coords="189,107,296,133"/>
-<area shape="rect" id="node9" href="$sys_timer_8h.html#aa27b59d34fb6e862cdd3c07973f5d6fe" title="SYS_TimerStart" alt="" coords="185,157,301,184"/>
-<area shape="rect" id="node11" href="$sys_timer_8h.html#a966f968c4826a8ccd9b09a0488e4593b" title="SYS_TimerStarted" alt="" coords="349,132,480,159"/>
-<area shape="rect" id="node13" href="$sys_timer_8c.html#a7cda4c212bb8e8086f2c8404a5221e35" title="placeTimer" alt="" coords="372,183,457,209"/>
-</map>

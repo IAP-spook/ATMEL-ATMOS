@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$scheduler_8h.html#a14fc4d6f2c57dd6c53413dcda79d71aa" title="Return the the time ( ms ) of the next event." alt="" coords="223,5,342,32"/>
-<area shape="rect" id="node6" href="$scheduler_8h.html#a0cd2b196b5888a7df16b4d2413dd0f7c" title="Insert a new event into the scheduler according to timeout order." alt="" coords="209,56,357,83"/>
-<area shape="rect" id="node8" href="$int__timer_8h.html#a07c20565b7b2a31bb00ae736a02317f9" title="set_timer" alt="" coords="245,107,321,133"/>
-</map>

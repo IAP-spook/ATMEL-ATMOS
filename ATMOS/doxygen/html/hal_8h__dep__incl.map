@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$hal_8c.html" title="ATmega256rfr2 HAL implementation." alt="" coords="5,109,219,165"/>
-<area shape="rect" id="node5" href="$hal_timer_8c.html" title="ATmega256rfr2 timer implementation." alt="" coords="243,109,457,165"/>
-<area shape="rect" id="node7" href="$sys_8h.html" title="C:/Users/AB/Documents\l/GitHub/ATMEL&#45;ATMOS/ATMOS\l/sys/inc/sys.h" alt="" coords="533,109,747,165"/>
-<area shape="rect" id="node9" href="$sys_8c.html" title="Main system routines interface." alt="" coords="401,213,615,269"/>
-<area shape="rect" id="node11" href="$_a_t_m_o_s_8c.html" title="The entry function." alt="" coords="664,213,877,269"/>
-<area shape="rect" id="node14" href="$sys_timer_8c.html" title="System timer implementation." alt="" coords="821,109,1035,165"/>
-</map>

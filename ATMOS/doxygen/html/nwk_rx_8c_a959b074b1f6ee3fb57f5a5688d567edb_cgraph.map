@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$nwk_rx_8c.html#aad1e03f3ed07f3b0c8f61076afad1417" title="nwkRxRejectDuplicate" alt="" coords="247,31,399,57"/>
-<area shape="rect" id="node11" href="$nwk_tx_8h.html#a333f833fff5602060928a304cc0c42df" title="nwkTxBroadcastFrame" alt="" coords="245,81,400,108"/>
-<area shape="rect" id="node5" href="$sys_timer_8h.html#aa27b59d34fb6e862cdd3c07973f5d6fe" title="SYS_TimerStart" alt="" coords="449,31,565,57"/>
-<area shape="rect" id="node7" href="$sys_timer_8h.html#a966f968c4826a8ccd9b09a0488e4593b" title="SYS_TimerStarted" alt="" coords="613,5,744,32"/>
-<area shape="rect" id="node9" href="$sys_timer_8c.html#a7cda4c212bb8e8086f2c8404a5221e35" title="placeTimer" alt="" coords="636,56,721,83"/>
-<area shape="rect" id="node13" href="$nwk_frame_8h.html#a7c0159f718fc4195ff825984156c0f12" title="Allocates an empty frame from the buffer pool." alt="" coords="451,81,562,108"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$scheduler_8c.html#a4fb33031c030b4646e4bb73c5227c075" title="Handle the next event in timeoutQ: execute the event&#39;s handler function according to the device type..." alt="" coords="203,29,357,56"/>
-<area shape="rect" id="node6" href="$scheduler_8c.html#a7f089fd35d3f012126b8d75b4be3274e" title="Load a brand new device activity into the scheduler&#39;s timeoutQ." alt="" coords="405,105,528,132"/>
-<area shape="rect" id="node10" href="$handler_8c.html#a4b5cf710f16ac4264ba17dc60e87d422" title="sensor_handler function to decide the execution logic of a sensor according to its state..." alt="" coords="225,131,335,157"/>
-<area shape="rect" id="node8" href="$_a_t_m_o_s_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="576,105,627,132"/>
-</map>

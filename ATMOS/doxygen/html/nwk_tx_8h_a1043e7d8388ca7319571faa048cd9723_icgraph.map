@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$nwk_tx_8c.html#abeacf9335927e1aa844c02dd2f86165b" title="nwkTxAckWaitTimerHandler" alt="" coords="158,5,343,32"/>
-<area shape="rect" id="node5" href="$nwk_tx_8c.html#aa79067bb402f2d14b2dce1daf6bdc3e4" title="Initializes the Tx module." alt="" coords="393,5,469,32"/>
-<area shape="rect" id="node7" href="$nwk_8c.html#a77c5c81f6584bb39aa76d3fa0a73292b" title="Initializes all network layer modules." alt="" coords="517,5,595,32"/>
-<area shape="rect" id="node9" href="$sys_8c.html#ae7266b09907efcfb4bc5df00c544715c" title="SYS_Init" alt="" coords="643,5,717,32"/>
-<area shape="rect" id="node11" href="$_a_t_m_o_s_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="765,5,816,32"/>
-</map>

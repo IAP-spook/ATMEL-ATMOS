@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$handler_8h.html" title="Declaration of various handlers." alt="" coords="315,109,528,165"/>
-<area shape="rect" id="node6" href="$scheduler_8h.html" title="The resources that hold all events and manage useful events in&#45;order within a linked list..." alt="" coords="171,213,384,269"/>
-<area shape="rect" id="node19" href="$handler_8c.html" title="Implementation of various handlers." alt="" coords="459,213,672,269"/>
-<area shape="rect" id="node8" href="$int__timer_8h.html" title="Example for Timers on AVR Devices." alt="" coords="315,317,528,373"/>
-<area shape="rect" id="node14" href="$_a_t_m_o_s_8c.html" title="The entry function." alt="" coords="5,421,219,477"/>
-<area shape="rect" id="node16" href="$scheduler_8c.html" title="Implementation of the resources that hold all events and manage useful events in&#45;order within a linke..." alt="" coords="77,317,291,373"/>
-<area shape="rect" id="node10" href="$int__timer_8c.html" title="Declaration of an asynchronous interrupt timer." alt="" coords="315,421,528,477"/>
-</map>
