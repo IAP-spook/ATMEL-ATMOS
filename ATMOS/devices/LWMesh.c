@@ -5,23 +5,7 @@
  *  Author: Carol
  */ 
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include "config.h"
-#include "hal.h"
-#include "phy.h"
-#include "sys.h"
-#include "nwk.h"
-#include "nwkRoute.h"
-#include "nwkSecurity.h"
-#include "sysTimer.h"
-#include "common.h"
-#include "commands.h"
-#include "halBoard.h"
-#include "halUart.h"
-#include "halSleep.h"
-#include "include/devices/LWMesh.h"
+#include "devices/LWMesh.h"
 
 
 /*- Implementations -------------------------------------------------------------*/
@@ -81,7 +65,7 @@ static void appInit(void) {
 	
 	#endif
 	//APP_CommandsInit(); // TODO
-	//appState = APP_STATE_SEND; // TODO
+	appState = APP_STATE_SEND; // TODO
 	
 	printf("State: appInit end.\n");
 }
@@ -95,6 +79,7 @@ static bool appDataInd(NWK_DataInd_t *ind)
 	if (!appReadyToReceive)
 	return false;
 	*/
+	printf("appDataInd is called.\n");
 	AppMessage_t *msg = (AppMessage_t *)ind->data;
 	
 	msg->lqi	= ind->lqi;
@@ -150,6 +135,7 @@ static void appDataSendingTimerHandler(SYS_Timer_t *timer)
 		printf("State: APP_STATE_SEND\n");
 	} else {
 		SYS_TimerStart(&appDataSendingTimer);
+		printf("Restart system sending timer.\n");
 	}
 	
 	(void)timer;
@@ -187,12 +173,12 @@ static void appSendData(void) {
 		appUartSendMessage((uint8_t *)&appMsg, sizeof(appMsg)); // TODO
 		SYS_TimerStart(&appDataSendingTimer);
 		appState = APP_STATE_WAIT_SEND_TIMER;
-		printf("State: APP_STATE_WAIT_SEND_TIMER\n");
+		printf("APP_COORDINATOR State: APP_STATE_WAIT_SEND_TIMER\n");
 	#else
 		//TODO: replace with real settings: ENDPOINT, ADDR, etc.
 		appNwkDataReq.dstAddr = 0; // Send to coordinator
-		appNwkDataReq.dstEndpoint = APP_ENDPOINT;
-		appNwkDataReq.srcEndpoint = APP_ENDPOINT; //??
+		appNwkDataReq.dstEndpoint = APP_DST_ENDPOINT;
+		appNwkDataReq.srcEndpoint = APP_SRC_ENDPOINT; //??
 		appNwkDataReq.options = (NWK_OPT_ACK_REQUEST | NWK_OPT_ENABLE_SECURITY);
 		appNwkDataReq.data  = (uint8_t*)&appMsg;
 		appNwkDataReq.size = sizeof(appMsg);
@@ -200,11 +186,12 @@ static void appSendData(void) {
 		
 		NWK_DataReq(&appNwkDataReq);
 		
-		printf("Sending: temperature %ld (0x%x)\n", appMsg.sensors.temperature, (unsigned int)appMsg.sensors.temperature);
-		printf("Sending: battery %ld (0x%x)\n", appMsg.sensors.battery, (unsigned int)appMsg.sensors.battery);
-		printf("State: APP_STATE_WAIT_CONF\n");
+		printf("End device Sending: temperature %ld (0x%x)\n", appMsg.sensors.temperature, (unsigned int)appMsg.sensors.temperature);
+		printf("End device Sending: battery %ld (0x%x)\n", appMsg.sensors.battery, (unsigned int)appMsg.sensors.battery);
+
 		
 		appState = APP_STATE_WAIT_CONF;
+		printf("State: APP_STATE_WAIT_CONF\n");
 	#endif
 }
 
@@ -304,8 +291,8 @@ static void APP_TaskHandler(void) {
 **********************************************************************************/
 int LWMesh(void) {
 	printf("Light weight mesh started.\n");
-	SYS_Init();
-	HAL_UartInit(38400);
+	//SYS_Init();
+	HAL_UartInit(76800);
 	
 	while (1)
 	{

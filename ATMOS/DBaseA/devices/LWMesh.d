@@ -1,4 +1,5 @@
 devices/LWMesh.d devices/LWMesh.o: ../devices/LWMesh.c \
+ ../include/devices/LWMesh.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
@@ -32,7 +33,9 @@ devices/LWMesh.d devices/LWMesh.o: ../devices/LWMesh.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../commands.h ../hal/atmega256rfr2/inc/halBoard.h \
  ../hal/atmega256rfr2/inc/halGpio.h ../hal/atmega256rfr2/inc/halUart.h \
- ../hal/atmega256rfr2/inc/halSleep.h ../include/devices/LWMesh.h
+ ../hal/atmega256rfr2/inc/halSleep.h
+
+../include/devices/LWMesh.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
@@ -127,5 +130,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../hal/atmega256rfr2/inc/halUart.h:
 
 ../hal/atmega256rfr2/inc/halSleep.h:
-
-../include/devices/LWMesh.h:

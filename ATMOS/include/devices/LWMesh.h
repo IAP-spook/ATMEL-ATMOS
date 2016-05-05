@@ -9,6 +9,23 @@
 #ifndef LWMESH_H_
 #define LWMESH_H_
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "config.h"
+#include "hal.h"
+#include "phy.h"
+#include "sys.h"
+#include "nwk.h"
+#include "nwkRoute.h"
+#include "nwkSecurity.h"
+#include "sysTimer.h"
+#include "common.h"
+#include "commands.h"
+#include "halBoard.h"
+#include "halUart.h"
+#include "halSleep.h"
+
 /*- Definitions ------------------------- */
 #if defined(APP_COORDINATOR)
 #define APP_NODE_TYPE 0

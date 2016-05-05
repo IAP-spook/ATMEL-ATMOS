@@ -28,11 +28,18 @@ ATMOS.d ATMOS.o: .././ATMOS.c .././config.h \
  ../include/drivers/TWI.h ../include/drivers/PWR.h \
  ../include/drivers/ADC.h ../include/drivers/SPI.h \
  ../include/devices/TGS2600.h ../include/devices/K30.h \
+ ../include/devices/LWMesh.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
+ ../nwk/inc/nwkRoute.h ../nwk/inc/nwkSecurity.h ../sys/inc/sysTimer.h \
  ../include/common.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
+ ../commands.h ../hal/atmega256rfr2/inc/halBoard.h \
+ ../hal/atmega256rfr2/inc/halGpio.h ../hal/atmega256rfr2/inc/halUart.h \
+ ../hal/atmega256rfr2/inc/halSleep.h
 
 .././config.h:
 
@@ -118,6 +125,18 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 ../include/devices/K30.h:
 
+../include/devices/LWMesh.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h:
+
+../nwk/inc/nwkRoute.h:
+
+../nwk/inc/nwkSecurity.h:
+
+../sys/inc/sysTimer.h:
+
 ../include/common.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\delay.h:
@@ -127,3 +146,13 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+../commands.h:
+
+../hal/atmega256rfr2/inc/halBoard.h:
+
+../hal/atmega256rfr2/inc/halGpio.h:
+
+../hal/atmega256rfr2/inc/halUart.h:
+
+../hal/atmega256rfr2/inc/halSleep.h:

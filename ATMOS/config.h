@@ -17,7 +17,9 @@
 #define APP_MODULATION 0x35
 #define APP_POWER 0x00
 #define APP_SECURITY_KEY "SENSESecurityKey0"
-#define APP_ENDPOINT 1
+#define APP_ENDPOINT 1 // 1: id for coordinator
+#define APP_SRC_ENDPOINT 1
+#define APP_DST_ENDPOINT 2
 
 #if APP_ADDR == 0
 	#define APP_CAPTION		"Coordinator"

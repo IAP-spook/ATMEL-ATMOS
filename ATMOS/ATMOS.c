@@ -13,6 +13,7 @@
 #include "drivers/SPI.h"
 #include "devices/TGS2600.h"
 #include "devices/K30.h"
+#include "devices/LWMesh.h"
 #include "common.h"
 
 unsigned char data[3];
@@ -60,6 +61,7 @@ static void APP_Init(void){
 	SPI_SlaveInit();
 }
 
+/*
 static void APP_TaskHandler(void)
 {
 
@@ -177,9 +179,10 @@ static void APP_TaskHandler(void)
   co2=K30_readCO2();
   //printf("Co2: %i\n",co2);
   printf(" : Hum %.3F : Temp2 %.3F : Temp3 %.3F : Res %.3F : C02 %i\n",humidity,temp2,temp3,resistance,co2);
-  */
-}
 
+}
+*/
+	
 int main(void)
 {
   /*SYS_Init(); //Commented out until wireless hardware is tuned
@@ -191,6 +194,8 @@ int main(void)
     APP_TaskHandler();
   }
   */
-  printf("\n======================\n");
+  SYS_Init(); //Commented out until wireless hardware is tuned
+  APP_Init();
+  printf("\n==========***==========\n");
   LWMesh();
 }
