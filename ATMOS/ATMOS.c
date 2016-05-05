@@ -1,201 +1,216 @@
+/**
+ * \file Peer2Peer.c
+ *
+ * \brief Peer2Peer application implementation
+ *
+ * Copyright (C) 2012-2014, Atmel Corporation. All rights reserved.
+ *
+ * \asf_license_start
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. The name of Atmel may not be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * 4. This software may only be redistributed and used in connection with an
+ *    Atmel microcontroller product.
+ *
+ * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+ * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * \asf_license_stop
+ *
+ * Modification and other use of this code is subject to Atmel's Limited
+ * License Agreement (license.txt).
+ *
+ * $Id: Peer2Peer.c 9267 2014-03-18 21:46:19Z ataradov $
+ *
+ */
 
+/*- Includes ---------------------------------------------------------------*/
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "config.h"
 #include "hal.h"
 #include "phy.h"
 #include "sys.h"
 #include "nwk.h"
-#include "devices/Si7020.h"
-#include "devices/BMP280.h"
-#include "drivers/usart0.h"
-#include "drivers/TWI.h"
-#include "drivers/PWR.h"
-#include "drivers/ADC.h"
-#include "drivers/SPI.h"
-#include "devices/TGS2600.h"
-#include "devices/K30.h"
-#include "devices/LWMesh.h"
-#include "common.h"
+#include "sysTimer.h"
+#include "halBoard.h"
+#include "halUart.h"
 
-unsigned char data[3];
-char dummy;
-float humidity, temp2;
-float temp3, resistance;
-int co2;
-double T,P;
-char buff[3] = {0,0,0};
+/*- Definitions ------------------------------------------------------------*/
+#ifdef NWK_ENABLE_SECURITY
+  #define APP_BUFFER_SIZE     (NWK_MAX_PAYLOAD_SIZE - NWK_SECURITY_MIC_SIZE)
+#else
+  #define APP_BUFFER_SIZE     NWK_MAX_PAYLOAD_SIZE
+#endif
 
-char ref1[5]={'T','P','H','C',0};
-char refT[4]={'1','2','3',0};
-char refP[2]={'1',0};
-char refH[2]={'1',0};
-char refC[3]={'2','4',0};
-	
-char sendbuff[100];
+/*- Types ------------------------------------------------------------------*/
+typedef enum AppState_t
+{
+  APP_STATE_INITIAL,
+  APP_STATE_IDLE,
+} AppState_t;
 
-void my_delay_ms(int n) {
-	while(n--) {
-		_delay_ms(1);
-	}
+/*- Prototypes -------------------------------------------------------------*/
+static void appSendData(void);
+
+/*- Variables --------------------------------------------------------------*/
+static AppState_t appState = APP_STATE_INITIAL;
+static SYS_Timer_t appTimer;
+static NWK_DataReq_t appDataReq;
+static bool appDataReqBusy = false;
+static uint8_t appDataReqBuffer[3];
+static uint8_t appUartBuffer[3];
+static uint8_t appUartBufferPtr = 0;
+
+/*- Implementations --------------------------------------------------------*/
+
+/*************************************************************************//**
+*****************************************************************************/
+static void appDataConf(NWK_DataReq_t *req)
+{
+  appDataReqBusy = false;
+  (void)req;
 }
 
-char checkChar(char *ref, char test){
-	int j=0;
-	while((ref[j]!=test) && (ref[j]!=0)) j++;
-	if(ref[j]==0) return 100;
-	return j;
+/*************************************************************************//**
+*****************************************************************************/
+static void appSendData(void)
+{
+	printf("begin send\n");
+  if (appDataReqBusy || 0 == appUartBufferPtr)
+    return;
+
+  memcpy(appDataReqBuffer, appUartBuffer, appUartBufferPtr);
+	appDataReqBuffer[0] = 12;
+	appDataReqBuffer[1] = 13;	
+	appDataReqBuffer[2] = 14;	
+	//TODO
+  appDataReq.dstAddr = 1-APP_ADDR;
+  appDataReq.dstEndpoint = APP_ENDPOINT;
+  appDataReq.srcEndpoint = APP_ENDPOINT;
+  appDataReq.options = NWK_OPT_ENABLE_SECURITY;
+  appDataReq.data = appDataReqBuffer;
+  appDataReq.size = 3;
+  appDataReq.confirm = appDataConf;
+  NWK_DataReq(&appDataReq);
+
+  appUartBufferPtr = 0;
+  appDataReqBusy = true;
+  printf("end send\n");
 }
 
-static void APP_Init(void){
-	PWR_Init();
-	PWR_TurnOn5V();
-	USART0_Init(76800);
-	DDRB |= 0b00010000;
-	DDRE |= 0b00001000;
-	PORTE|= 0b00001000;
-	TWI_Init(10000);
-	ADC_Init();
-	TGS2600_Init();
-	Si7020_init();
-	printf("BMP280 Status %i\n", BMP280_Init());
-	BMP280_SetOversampling(4);
-	SPI_SlaveInit();
+/*************************************************************************//**
+*****************************************************************************/
+void HAL_UartBytesReceived(uint16_t bytes)
+{
+for (uint16_t i = 0; i < bytes; i++)
+{
+uint8_t byte = HAL_UartReadByte();
+
+if (appUartBufferPtr == sizeof(appUartBuffer))
+appSendData();
+
+if (appUartBufferPtr < sizeof(appUartBuffer))
+appUartBuffer[appUartBufferPtr++] = byte;
 }
 
-/*
+SYS_TimerStop(&appTimer);
+SYS_TimerStart(&appTimer);
+}
+
+/*************************************************************************//**
+*****************************************************************************/
+static void appTimerHandler(SYS_Timer_t *timer)
+{
+  appSendData();
+  (void)timer;
+}
+
+/*************************************************************************//**
+*****************************************************************************/
+static bool appDataInd(NWK_DataInd_t *ind)
+{
+	printf("begin recv\n");
+	for (uint8_t i = 0; i < ind->size; i++)
+		printf("\t data %d = %d",i,ind->data[i]);
+	printf("begin recv\n");
+  return true;
+}
+
+/*************************************************************************//**
+*****************************************************************************/
+static void appInit(void)
+{
+  NWK_SetAddr(APP_ADDR);
+  NWK_SetPanId(APP_PANID);
+  PHY_SetChannel(APP_CHANNEL);
+#ifdef PHY_AT86RF212
+  PHY_SetBand(APP_BAND);
+  PHY_SetModulation(APP_MODULATION);
+#endif
+  PHY_SetRxState(true);
+
+  NWK_OpenEndpoint(APP_ENDPOINT, appDataInd);
+
+  HAL_BoardInit();
+
+  appTimer.interval = 3000;
+  appTimer.mode = SYS_TIMER_PERIODIC_MODE;
+  appTimer.handler = appTimerHandler;
+}
+
+/*************************************************************************//**
+*****************************************************************************/
 static void APP_TaskHandler(void)
 {
+  switch (appState)
+  {
+    case APP_STATE_INITIAL:
+    {
+      appInit();
+      appState = APP_STATE_IDLE;
+    } break;
 
-	printf("Top of loop\n");
-	//SPI Test
-	int i;
-	for(i=0;i<=1;i++){
-		if((i==1) && (checkChar(&ref1[0],buff[0])==100))i=0; 
-		buff[i]=SPI_SlaveReceive();
-	}
-	PORTB |= 0b00010000; //LED on
-	printf("Received %s\n",buff);
-	char result;
-	switch(buff[0]){
-		case 'T':
-			//switch(checkChar(&refT[0], buff[1])){
-			switch(buff[1]){
-				case '1':
-					result = BMP280_StartMeasurment();
-					if(result!=0){
-						my_delay_ms(result);
-						result = BMP280_GetTemperatureAndPressure(&T,&P);
-					}
-					sprintf(&sendbuff[0],"%.3F\r",T);
-					break;
-				case '2':
-					dummy = Si7020_readTemperature(&data[0],3);
-					sprintf(&sendbuff[0],"%.3F\r",Si7020_calTemperature(&data[0]));
-					break;
-				case '3':
-					sprintf(&sendbuff[0],"%.3F\r",ADC_DieTemp());
-					break;
-				default:
-					sendbuff[0]='\r';
-					break;
-			}
-			break;
-		case 'P':
-			//switch(checkChar(&refP[0],buff[1])){
-			switch(buff[1]){
-				case '1':
-					result = BMP280_StartMeasurment();
-					if(result!=0){
-						my_delay_ms(result);
-						result = BMP280_GetTemperatureAndPressure(&T,&P);
-					}
-					sprintf(&sendbuff[0],"%.3F\r",P);
-					break;
-				default:
-					sendbuff[0]='\r';
-					break;
-			}
-			break;
-		case 'H':
-			//switch(checkChar(&refH[0],buff[1])){
-			switch(buff[1]){
-				case '1':
-					dummy = Si7020_readHumidity(&data[0],3);
-					sprintf(&sendbuff[0],"%.3F\r",Si7020_calHumidity(&data[0]));
-					break;
-				default:
-					sendbuff[0]='\r';
-					break;
-			}
-			break;
-		case 'C':
-			//switch(checkChar(&refC[0],buff[1])){
-			switch(buff[1]){
-				case '2':
-					sprintf(&sendbuff[0],"%i\r",K30_readCO2());
-					break;
-				case '4':
-					sprintf(&sendbuff[0],"%.3F\r",TGS2600_GetResistance());		
-					break;			
-				default:
-					sendbuff[0]='\r';
-					break;
-			}
-			break;
-		default:
-			break;
-	}
-	printf("Sending SPI: \n%s\n",sendbuff);
-	i=0;
-	PORTE&=0b11110111;
-	while(sendbuff[i]!='\r'){
-		SPI_SlaveTransmit(sendbuff[i]);
-		i++;
-	}
-	SPI_SlaveTransmit('\r');
-	PORTE|=0b00001000;
-	PORTB &= 0b11101111; //LED off
-	
-	/* Busy loop all-sensor test //
-	PORTB |= 0b00010000; //LED on
-	_delay_ms(1000);
-	PORTB &= 0b11101111; //LED off
-  _delay_ms(1000);
-  
-  char result = BMP280_StartMeasurment();
-  //printf("Measure result: %i",result);
-  if(result!=0){
-	  my_delay_ms(result);
-	  result = BMP280_GetTemperatureAndPressure(&T,&P);
-	  if(result!=0){ 
-		  printf("Pres:%.3F : Temp1:%.3F",P,T);
-	  }
+    case APP_STATE_IDLE:
+      break;
+
+    default:
+      break;
   }
-  dummy = Si7020_readHumidity(&data[0],3);
-  humidity = Si7020_calHumidity(&data[0]);
-  dummy = Si7020_readTemperature(&data[0],3);
-  temp2 = Si7020_calTemperature(&data[0]);
-  temp3 = ADC_DieTemp();
-  resistance=TGS2600_GetResistance();
-  co2=K30_readCO2();
-  //printf("Co2: %i\n",co2);
-  printf(" : Hum %.3F : Temp2 %.3F : Temp3 %.3F : Res %.3F : C02 %i\n",humidity,temp2,temp3,resistance,co2);
-
 }
-*/
-	
+
+/*************************************************************************//**
+*****************************************************************************/
 int main(void)
 {
-  /*SYS_Init(); //Commented out until wireless hardware is tuned
-  APP_Init();
-  printf("\n======================\n");
+  SYS_Init();
+  HAL_UartInit(76800);
+
   while (1)
   {
-    //SYS_TaskHandler(); //Commented out until wireless hardware is tuned
+    SYS_TaskHandler();
+    HAL_UartTaskHandler();
     APP_TaskHandler();
   }
-  */
-  SYS_Init(); //Commented out until wireless hardware is tuned
-  APP_Init();
-  printf("\n==========***==========\n");
-  LWMesh();
 }
