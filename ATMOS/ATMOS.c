@@ -205,8 +205,7 @@ static void APP_TaskHandler(void)
 int main(void)
 {
   SYS_Init();
-  HAL_UartInit(76800);
-
+  USART0_Init(76800);
   while (1)
   {
     SYS_TaskHandler();
