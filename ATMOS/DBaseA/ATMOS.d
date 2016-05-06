@@ -26,7 +26,7 @@ ATMOS.d ATMOS.o: .././ATMOS.c \
  ../nwk/inc/nwkRx.h ../nwk/inc/nwkFrame.h ../nwk/inc/nwkGroup.h \
  ../nwk/inc/nwkSecurity.h ../nwk/inc/nwkDataReq.h ../sys/inc/sysTimer.h \
  ../hal/atmega256rfr2/inc/halBoard.h ../hal/atmega256rfr2/inc/halGpio.h \
- ../hal/atmega256rfr2/inc/halUart.h ../include/drivers/usart0.h
+ ../hal/atmega256rfr2/inc/halUart.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
@@ -105,5 +105,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 ../hal/atmega256rfr2/inc/halGpio.h:
 
 ../hal/atmega256rfr2/inc/halUart.h:
-
-../include/drivers/usart0.h:

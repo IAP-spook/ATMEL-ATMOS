@@ -56,7 +56,6 @@
 #include "sysTimer.h"
 #include "halBoard.h"
 #include "halUart.h"
-#include "drivers/usart0.h"
 
 /*- Definitions ------------------------------------------------------------*/
 #ifdef NWK_ENABLE_SECURITY
@@ -183,9 +182,8 @@ static void appInit(void)
 
 /*************************************************************************//**
 *****************************************************************************/
-static void APP_TaskHandler1(void)
+static void APP_TaskHandler(void)
 {
-	printf("APP handler\n\n");
   switch (appState)
   {
     case APP_STATE_INITIAL:
@@ -207,12 +205,12 @@ static void APP_TaskHandler1(void)
 int main(void)
 {
   SYS_Init();
-  USART0_Init(9600);
-  printf("init done\n");
+  HAL_UartInit(76800);
+
   while (1)
   {
     SYS_TaskHandler();
-    // HAL_UartTaskHandler();
-    APP_TaskHandler1();
+    HAL_UartTaskHandler();
+    APP_TaskHandler();
   }
 }
