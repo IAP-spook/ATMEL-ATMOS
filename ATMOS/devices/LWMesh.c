@@ -98,7 +98,6 @@ static bool appDataInd(NWK_DataInd_t *ind)
 
 /*************************************************************************//**
 *****************************************************************************/
-#if defined(APP_ROUTER) || defined(APP_ENDDEVICE)
 static void appDataConf(NWK_DataReq_t *req)
 {
 	if (NWK_SUCCESS_STATUS == req->status) {
@@ -120,11 +119,10 @@ static void appDataConf(NWK_DataReq_t *req)
 		appState = APP_STATE_WAIT_COMMAND_TIMER;
 		printf("State: APP_STATE_WAIT_COMMAND_TIMER\n");
 	} else {
-		appState = APP_STATE_SENDING_DONE;
-		printf("State: APP_STATE_SENDING_DONE\n");
+		appState = APP_STATE_SEND;
+		printf("State: APP_STATE_SENDING_DONE and try resend\n");
 	}
 }
-#endif
 
 /******************************************************************************//**
 **********************************************************************************/
@@ -160,39 +158,35 @@ static void appCommandWaitTimerHandler(SYS_Timer_t *timer)
 /******************************************************************************//**
 **********************************************************************************/
 static void appSendData(void) {
+	
+	/*
 	#ifdef NWK_ENABLE_ROUTING
 		appMsg.parentShortAddr = NWK_RouteNextHop(0, 0);
 	#else
 		appMsg.parentShortAddr = 0;
 	#endif
+	*/
 		
 	appMsg.sensors.temperature = 111; // Dummy data
 	appMsg.sensors.battery = 50; // Dummy data
 	
-	#if defined(APP_COORDINATOR)
-		appUartSendMessage((uint8_t *)&appMsg, sizeof(appMsg)); // TODO
-		SYS_TimerStart(&appDataSendingTimer);
-		appState = APP_STATE_WAIT_SEND_TIMER;
-		printf("APP_COORDINATOR State: APP_STATE_WAIT_SEND_TIMER\n");
-	#else
-		//TODO: replace with real settings: ENDPOINT, ADDR, etc.
-		appNwkDataReq.dstAddr = 0; // Send to coordinator
-		appNwkDataReq.dstEndpoint = APP_DST_ENDPOINT;
-		appNwkDataReq.srcEndpoint = APP_SRC_ENDPOINT; //??
-		appNwkDataReq.options = (NWK_OPT_ACK_REQUEST | NWK_OPT_ENABLE_SECURITY);
-		appNwkDataReq.data  = (uint8_t*)&appMsg;
-		appNwkDataReq.size = sizeof(appMsg);
-		appNwkDataReq.confirm = appDataConf;
-		
-		NWK_DataReq(&appNwkDataReq);
-		
-		printf("End device Sending: temperature %ld (0x%x)\n", appMsg.sensors.temperature, (unsigned int)appMsg.sensors.temperature);
-		printf("End device Sending: battery %ld (0x%x)\n", appMsg.sensors.battery, (unsigned int)appMsg.sensors.battery);
 
+
+	//TODO: replace with real settings: ENDPOINT, ADDR, etc.
+	appNwkDataReq.dstAddr = 0; // Send to coordinator
+	appNwkDataReq.dstEndpoint = APP_ENDPOINT;
+	appNwkDataReq.srcEndpoint = APP_ENDPOINT; //??
+	appNwkDataReq.options = (NWK_OPT_ACK_REQUEST  /*| NWK_OPT_ENABLE_SECURITY */);
+	appNwkDataReq.data  = (uint8_t*)&appMsg;
+	appNwkDataReq.size = sizeof(appMsg);
+	appNwkDataReq.confirm = appDataConf;
 		
-		appState = APP_STATE_WAIT_CONF;
-		printf("State: APP_STATE_WAIT_CONF\n");
-	#endif
+	NWK_DataReq(&appNwkDataReq);
+		
+	printf("End device Sending: temperature %ld (0x%x)\n", appMsg.sensors.temperature, (unsigned int)appMsg.sensors.temperature);
+	printf("End device Sending: battery %ld (0x%x)\n", appMsg.sensors.battery, (unsigned int)appMsg.sensors.battery);
+
+
 }
 
 /*************************************************************************//**
@@ -224,65 +218,23 @@ static void appUartSendMessage(uint8_t *data, uint8_t size) {
 
 /******************************************************************************//**
 **********************************************************************************/
-static void APP_TaskHandler(void) {
-	//TODO: Put your application code here
-	switch(appState) {
+static void APP_TaskHandler(void)
+{
+	switch (appState)
+	{
 		case APP_STATE_INITIAL:
-		{
-			appInit();
-			break;
-		}		
+		appInit();
+		appState = APP_STATE_SEND;
+		break;
+
 		case APP_STATE_SEND:
-		{
-			appSendData();
-			break;
-		}
-		/*
-		case APP_STATE_WAIT_CONF:
-			break;
-		*/
-		case APP_STATE_SENDING_DONE:
-		{
-			#if defined(APP_ENDDEVICE)
-				appState = APP_STATE_PREPARE_TO_SLEEP;
-			#else
-				SYS_TimerStart(&appDataSendingTimer);
-				appState = APP_STATE_WAIT_SEND_TIMER;
-			#endif
-			break;
-		}
-		/*
-		case APP_STATE_WAIT_SEND_TIMER:
-			break;
-		case APP_STATE_WAIT_COMMAND_TIMER:
-			break;
-		*/
-		case APP_STATE_PREPARE_TO_SLEEP:
-		{
-			if (!NWK_Busy()) {
-				NWK_SleepReq();
-				appState = APP_STATE_SLEEP;
-			}
-			break;
-		}
-		case APP_STATE_SLEEP:
-		{
-			//HAL_LedClose();
-			HAL_Sleep(APP_SENDING_INTERVAL);
-			appState = APP_STATE_WAKEUP;
-			break;
-		}
-		case APP_STATE_WAKEUP:
-		{
-			NWK_WakeupReq();
-			//HAL_LedInit();
-			//HAL_LedOn(APP_LED_NETWORK);
-				
-			appState = APP_STATE_SEND;
-			break;
-		}
-		default: 
-			break;
+		appSendData();
+		_delay_ms(3000);
+		appState = APP_STATE_SEND;
+		break;
+
+		default:
+		break;
 	}
 }
 

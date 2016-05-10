@@ -35,12 +35,12 @@
 #define APP_NODE_TYPE 2
 #endif
 
-#if defined(APP_ROUTER) || defined(APP_ENDDEVICE)
+//#if defined(APP_ROUTER) || defined(APP_ENDDEVICE)
 static NWK_DataReq_t appNwkDataReq;
 static SYS_Timer_t appNetworkStatusTimer;
 static SYS_Timer_t appCommandWaitTimer;
 static bool appNetworkStatus;
-#endif
+//#endif
 
 #define APP_CAPTION_SIZE (sizeof(APP_CAPTION) - 1)
 #define APP_COMMAND_PENDING 0x01
@@ -93,13 +93,6 @@ typedef enum AppState_t
 static AppState_t appState = APP_STATE_INITIAL;
 static AppMessage_t appMsg;
 static SYS_Timer_t appDataSendingTimer;
-
-#if defined(APP_ROUTER) || defined(APP_ENDDEVICE)
-static NWK_DataReq_t appNwkDataReq;
-static SYS_Timer_t appNetworkStatusTimer;
-static SYS_Timer_t appCommandWaitTimer;
-static bool appNetworkStatus;
-#endif
 
 
 /*- Functions -------------------------------- */
