@@ -33,8 +33,6 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
-../devices/inc \
-../devices/src \
 ../drivers/inc \
 ../drivers/src \
 ../hal/ \
@@ -43,13 +41,12 @@ SUBDIRS :=  \
 ../hal/atmega256rfr2/src/ \
 ../drivers \
 ../inc \
-../devices \
 ../scheduler \
 ../scheduler/inc \
 ../scheduler/src \
 ../utilities/inc \
 ../utilities/src \
-../wrapper \
+../devices \
 ../utilities \
 ../nwk/ \
 ../nwk/inc/ \
@@ -61,24 +58,21 @@ SUBDIRS :=  \
 ../sys/ \
 ../sys/inc/ \
 ../sys/src/ \
-../wrapper/base-class \
-../wrapper/base-class/inc \
-../wrapper/base-class/src \
-../wrapper/other-device \
-../wrapper/other-device/inc/ \
-../wrapper/other-device/src/ \
-../wrapper/sensor \
-../wrapper/sensor/inc/ \
-../wrapper/sensor/src/
+../devices/base-class \
+../devices/base-class/inc \
+../devices/base-class/src \
+../devices/old-sensor \
+../devices/other-device \
+../devices/other-device/inc \
+../devices/other-device/src \
+../devices/sensor \
+../devices/sensor/inc \
+../devices/sensor/src
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../ATMOS.c \
-../devices/src/BMP280.c \
-../devices/src/K30.c \
-../devices/src/Si7020.c \
-../devices/src/TGS2600.c \
 ../drivers/src/ADC.c \
 ../drivers/src/int_timer.c \
 ../drivers/src/PWR.c \
@@ -105,14 +99,18 @@ C_SRCS +=  \
 ../utilities/src/common.c \
 ../utilities/src/llist.c \
 ../utilities/src/time.c \
-../wrapper/base-class/src/Base_Device.c \
-../wrapper/base-class/src/Base_Sensor.c \
-../wrapper/other-device/src/DemoStorage_Device.c \
-../wrapper/other-device/src/LoadData_Device.c \
-../wrapper/other-device/src/My_Device.c \
-../wrapper/sensor/src/BMP280_Sensor.c \
-../wrapper/sensor/src/My_Sensor.c \
-../wrapper/sensor/src/Si7020_Sensor.c
+../devices/base-class/src/Base_Device.c \
+../devices/base-class/src/Base_Sensor.c \
+../devices/old-sensor/BMP280.c \
+../devices/old-sensor/K30.c \
+../devices/old-sensor/Si7020.c \
+../devices/old-sensor/TGS2600.c \
+../devices/other-device/src/DemoStorage_Device.c \
+../devices/other-device/src/LoadData_Device.c \
+../devices/other-device/src/My_Device.c \
+../devices/sensor/src/BMP280_Sensor.c \
+../devices/sensor/src/My_Sensor.c \
+../devices/sensor/src/Si7020_Sensor.c
 
 
 PREPROCESSING_SRCS += 
@@ -123,10 +121,6 @@ ASM_SRCS +=
 
 OBJS +=  \
 ATMOS.o \
-devices/src/BMP280.o \
-devices/src/K30.o \
-devices/src/Si7020.o \
-devices/src/TGS2600.o \
 drivers/src/ADC.o \
 drivers/src/int_timer.o \
 drivers/src/PWR.o \
@@ -153,21 +147,21 @@ sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
 utilities/src/time.o \
-wrapper/base-class/src/Base_Device.o \
-wrapper/base-class/src/Base_Sensor.o \
-wrapper/other-device/src/DemoStorage_Device.o \
-wrapper/other-device/src/LoadData_Device.o \
-wrapper/other-device/src/My_Device.o \
-wrapper/sensor/src/BMP280_Sensor.o \
-wrapper/sensor/src/My_Sensor.o \
-wrapper/sensor/src/Si7020_Sensor.o
+devices/base-class/src/Base_Device.o \
+devices/base-class/src/Base_Sensor.o \
+devices/old-sensor/BMP280.o \
+devices/old-sensor/K30.o \
+devices/old-sensor/Si7020.o \
+devices/old-sensor/TGS2600.o \
+devices/other-device/src/DemoStorage_Device.o \
+devices/other-device/src/LoadData_Device.o \
+devices/other-device/src/My_Device.o \
+devices/sensor/src/BMP280_Sensor.o \
+devices/sensor/src/My_Sensor.o \
+devices/sensor/src/Si7020_Sensor.o
 
 OBJS_AS_ARGS +=  \
 ATMOS.o \
-devices/src/BMP280.o \
-devices/src/K30.o \
-devices/src/Si7020.o \
-devices/src/TGS2600.o \
 drivers/src/ADC.o \
 drivers/src/int_timer.o \
 drivers/src/PWR.o \
@@ -194,21 +188,21 @@ sys/src/sysTimer.o \
 utilities/src/common.o \
 utilities/src/llist.o \
 utilities/src/time.o \
-wrapper/base-class/src/Base_Device.o \
-wrapper/base-class/src/Base_Sensor.o \
-wrapper/other-device/src/DemoStorage_Device.o \
-wrapper/other-device/src/LoadData_Device.o \
-wrapper/other-device/src/My_Device.o \
-wrapper/sensor/src/BMP280_Sensor.o \
-wrapper/sensor/src/My_Sensor.o \
-wrapper/sensor/src/Si7020_Sensor.o
+devices/base-class/src/Base_Device.o \
+devices/base-class/src/Base_Sensor.o \
+devices/old-sensor/BMP280.o \
+devices/old-sensor/K30.o \
+devices/old-sensor/Si7020.o \
+devices/old-sensor/TGS2600.o \
+devices/other-device/src/DemoStorage_Device.o \
+devices/other-device/src/LoadData_Device.o \
+devices/other-device/src/My_Device.o \
+devices/sensor/src/BMP280_Sensor.o \
+devices/sensor/src/My_Sensor.o \
+devices/sensor/src/Si7020_Sensor.o
 
 C_DEPS +=  \
 ATMOS.d \
-devices/src/BMP280.d \
-devices/src/K30.d \
-devices/src/Si7020.d \
-devices/src/TGS2600.d \
 drivers/src/ADC.d \
 drivers/src/int_timer.d \
 drivers/src/PWR.d \
@@ -235,21 +229,21 @@ sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
 utilities/src/time.d \
-wrapper/base-class/src/Base_Device.d \
-wrapper/base-class/src/Base_Sensor.d \
-wrapper/other-device/src/DemoStorage_Device.d \
-wrapper/other-device/src/LoadData_Device.d \
-wrapper/other-device/src/My_Device.d \
-wrapper/sensor/src/BMP280_Sensor.d \
-wrapper/sensor/src/My_Sensor.d \
-wrapper/sensor/src/Si7020_Sensor.d
+devices/base-class/src/Base_Device.d \
+devices/base-class/src/Base_Sensor.d \
+devices/old-sensor/BMP280.d \
+devices/old-sensor/K30.d \
+devices/old-sensor/Si7020.d \
+devices/old-sensor/TGS2600.d \
+devices/other-device/src/DemoStorage_Device.d \
+devices/other-device/src/LoadData_Device.d \
+devices/other-device/src/My_Device.d \
+devices/sensor/src/BMP280_Sensor.d \
+devices/sensor/src/My_Sensor.d \
+devices/sensor/src/Si7020_Sensor.d
 
 C_DEPS_AS_ARGS +=  \
 ATMOS.d \
-devices/src/BMP280.d \
-devices/src/K30.d \
-devices/src/Si7020.d \
-devices/src/TGS2600.d \
 drivers/src/ADC.d \
 drivers/src/int_timer.d \
 drivers/src/PWR.d \
@@ -276,14 +270,18 @@ sys/src/sysTimer.d \
 utilities/src/common.d \
 utilities/src/llist.d \
 utilities/src/time.d \
-wrapper/base-class/src/Base_Device.d \
-wrapper/base-class/src/Base_Sensor.d \
-wrapper/other-device/src/DemoStorage_Device.d \
-wrapper/other-device/src/LoadData_Device.d \
-wrapper/other-device/src/My_Device.d \
-wrapper/sensor/src/BMP280_Sensor.d \
-wrapper/sensor/src/My_Sensor.d \
-wrapper/sensor/src/Si7020_Sensor.d
+devices/base-class/src/Base_Device.d \
+devices/base-class/src/Base_Sensor.d \
+devices/old-sensor/BMP280.d \
+devices/old-sensor/K30.d \
+devices/old-sensor/Si7020.d \
+devices/old-sensor/TGS2600.d \
+devices/other-device/src/DemoStorage_Device.d \
+devices/other-device/src/LoadData_Device.d \
+devices/other-device/src/My_Device.d \
+devices/sensor/src/BMP280_Sensor.d \
+devices/sensor/src/My_Sensor.d \
+devices/sensor/src/Si7020_Sensor.d
 
 OUTPUT_FILE_PATH +=ATMOS.elf
 
@@ -385,13 +383,6 @@ LINKER_SCRIPT_DEP+=
 	@echo Finished building: $<
 	
 
-devices/src/%.o: ../devices/src/%.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\gcc\dev\atmega644rfr2" -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
 drivers/src/%.o: ../drivers/src/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
@@ -441,21 +432,28 @@ utilities/src/%.o: ../utilities/src/%.c
 	@echo Finished building: $<
 	
 
-wrapper/base-class/src/%.o: ../wrapper/base-class/src/%.c
+devices/base-class/src/%.o: ../devices/base-class/src/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\gcc\dev\atmega644rfr2" -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-wrapper/other-device/src/%.o: ../wrapper/other-device/src/%.c
+devices/old-sensor/%.o: ../devices/old-sensor/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\gcc\dev\atmega644rfr2" -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-wrapper/sensor/src/%.o: ../wrapper/sensor/src/%.c
+devices/other-device/src/%.o: ../devices/other-device/src/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\gcc\dev\atmega644rfr2" -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+devices/sensor/src/%.o: ../devices/sensor/src/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644rfr2 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\gcc\dev\atmega644rfr2" -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

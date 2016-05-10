@@ -9,8 +9,8 @@
 
 #include "scheduler/inc/handler.h"
 #include "utilities/inc/data_unit.h"
-#include "wrapper/other-device/inc/DemoStorage_Device.h"
-#include "wrapper/other-device/inc/LoadData_Device.h"
+#include "devices/other-device/inc/DemoStorage_Device.h"
+#include "devices/other-device/inc/LoadData_Device.h"
 
 /*************************************************************************//**
   @brief sensor_handler function to decide the execution logic of a sensor according to its state, return 1 if it has some borrow time 

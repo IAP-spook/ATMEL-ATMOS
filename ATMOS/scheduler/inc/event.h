@@ -14,9 +14,9 @@
 #include <stdio.h>
 #include "utilities/inc/common.h"
 #include "utilities/inc/llist.h"
-#include "wrapper/base-class/inc/Base_Sensor.h"
-#include "wrapper/other-device/inc/DemoStorage_Device.h"
-#include "wrapper/other-device/inc/LoadData_Device.h"
+#include "devices/base-class/inc/Base_Sensor.h"
+#include "devices/other-device/inc/DemoStorage_Device.h"
+#include "devices/other-device/inc/LoadData_Device.h"
 
 /*************************************************************************//**
   @brief A container struct to hold device/sensor pointer and corresponding timeout info. 

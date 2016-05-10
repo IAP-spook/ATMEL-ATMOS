@@ -21,12 +21,12 @@
 #include "drivers/inc/SPI.h"
 #include "drivers/inc/int_timer.h"
 #include "scheduler/inc/scheduler.h"
-#include "wrapper/sensor/inc/My_Sensor.h"
-#include "wrapper/sensor/inc/Si7020_Sensor.h"
-#include "wrapper/sensor/inc/Temperature_ADC_Sensor.h"
-#include "wrapper/sensor/inc/BMP280_Sensor.h"
-#include "wrapper/other-device/inc/DemoStorage_Device.h"
-#include "wrapper/other-device/inc/LoadData_Device.h"
+#include "devices/sensor/inc/My_Sensor.h"
+#include "devices/sensor/inc/Si7020_Sensor.h"
+#include "devices/sensor/inc/Temperature_ADC_Sensor.h"
+#include "devices/sensor/inc/BMP280_Sensor.h"
+#include "devices/other-device/inc/DemoStorage_Device.h"
+#include "devices/other-device/inc/LoadData_Device.h"
 #include "avr/io.h"
 #include "avr/interrupt.h"
 #include "utilities/inc/data_unit.h"
@@ -86,7 +86,7 @@ int main(void)
 }
 
 /* TODO list at high priority 
- * 1. Add a My_Device.h/.c at wrapper/other-device which features a Exec() and a Configure() function DONE!!!
+ * 1. Add a My_Device.h/.c at wrappe/other-device which features a Exec() and a Configure() function DONE!!!
  * 2. Derive a DemoFlashDevice.h/.c for demonstration usage , it should hold some DataUnit queue DONE!!!
  * 3. Add two members one called Start_data, the other End_data in BaseSensor.h/.c DONE!!!
  * 4. Add getStartNum() and getEndNum() in BaseSensor.h/.c correspondingly	DONE!!!

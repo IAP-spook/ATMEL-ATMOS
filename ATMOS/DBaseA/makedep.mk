@@ -4,14 +4,6 @@
 
 ATMOS.c
 
-devices\src\BMP280.c
-
-devices\src\K30.c
-
-devices\src\Si7020.c
-
-devices\src\TGS2600.c
-
 drivers\src\ADC.c
 
 drivers\src\int_timer.c
@@ -64,19 +56,27 @@ utilities\src\llist.c
 
 utilities\src\time.c
 
-wrapper\base-class\src\Base_Device.c
+devices\base-class\src\Base_Device.c
 
-wrapper\base-class\src\Base_Sensor.c
+devices\base-class\src\Base_Sensor.c
 
-wrapper\other-device\src\DemoStorage_Device.c
+devices\old-sensor\BMP280.c
 
-wrapper\other-device\src\LoadData_Device.c
+devices\old-sensor\K30.c
 
-wrapper\other-device\src\My_Device.c
+devices\old-sensor\Si7020.c
 
-wrapper\sensor\src\BMP280_Sensor.c
+devices\old-sensor\TGS2600.c
 
-wrapper\sensor\src\My_Sensor.c
+devices\other-device\src\DemoStorage_Device.c
 
-wrapper\sensor\src\Si7020_Sensor.c
+devices\other-device\src\LoadData_Device.c
+
+devices\other-device\src\My_Device.c
+
+devices\sensor\src\BMP280_Sensor.c
+
+devices\sensor\src\My_Sensor.c
+
+devices\sensor\src\Si7020_Sensor.c
 
