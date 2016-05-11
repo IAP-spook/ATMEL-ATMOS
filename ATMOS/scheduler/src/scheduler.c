@@ -6,7 +6,7 @@
  * Created: 2016/4/14 23:05:53
  *  Author: Anxin Bai
  */ 
-#include "scheduler//inc/scheduler.h"
+#include "scheduler/inc/scheduler.h"
 
 
 
@@ -77,6 +77,16 @@ int load_new_device( int timeout, int repeat, BaseDevice *device_ptr, int otheri
     return 0;
 }
 
+/*************************************************************************//**
+  @brief Update next event's timeout value when we set timer for it.
+*****************************************************************************/
+void next_event_time_collapse(int sleep_time)
+{
+	struct event * ev = ( struct event * ) LL_TOP( timeoutq );
+	if( EV_NULL == ev )
+		return;
+	ev->timeout -= sleep_time;
+}
 
 /*************************************************************************//**
   @brief Return the the time ( ms ) of the next event
@@ -104,20 +114,16 @@ int get_next_interval()
 	{
 		wait_time = ev->timeout;
 	}
-	/* if the next event time is longer, we need to wait it time by time, since currently, the longest waiting time support is 8s */
-	else
-	{
-		ev->timeout = ev->timeout - wait_time;
-	}
+	/* if the next event time is longer, we need to wait it time by time in handle_timeoutq_event() function, since currently, the longest waiting time support is 8s */
 	return wait_time;
 }
-
 
 /*************************************************************************//**
   @brief Handle the next event in timeoutQ: execute the event's handler function according to the device type, re-insert it according to the period, and set a timer of next event.
 *****************************************************************************/
 int handle_timeoutq_event( )
 {
+	int retNum, sleep_time;
 	/* assume we get a valid one */
 	struct event * ev = (struct event * )LL_TOP( timeoutq );
 	if( EV_NULL == ev )
@@ -130,8 +136,17 @@ int handle_timeoutq_event( )
     if( ev->sp == NULL && ev->load_p == NULL && ev->store_p == NULL)
         return -1;
 
+	/* if it is not the right time, re-set the timer */
+	if( ev->timeout != 0 )
+	{
+		sleep_time = get_next_interval();
+		next_event_time_collapse(sleep_time);
+		set_timer(sleep_time);
+		return 0;
+	}
+	
 	/* retNum may need to be designed in other ways */
-    int retNum = ev->run( ev );
+    retNum = ev->run( ev );
 	
 	/* 
 	 * return 1 if it has to with some borrow time( have a request-time!=0 case ) 
@@ -140,11 +155,15 @@ int handle_timeoutq_event( )
 	 */
 	if( retNum == 1 )
 	{
+		sleep_time = get_next_interval();
 		/* judge if the next top in queue has a timeout <= 0, which we may want to handle it right now */
-		if( get_next_interval() == 0 )
+		if( sleep_time == 0 )
+		{
 			handle_timeoutq_event();
-			
-		set_timer(get_next_interval());
+			return 0;
+		}
+		next_event_time_collapse(sleep_time);	
+		set_timer(sleep_time);
 		return 0;
 	}
 	
@@ -169,12 +188,15 @@ int handle_timeoutq_event( )
         LL_PUSH( freelist, ev );
     }
 
-	
+	sleep_time = get_next_interval();
 	/* judge if the next top in queue has a timeout <= 0, which we may want to handle it right now */
-	if( get_next_interval() == 0 )
+	if( sleep_time == 0 )
+	{
 		handle_timeoutq_event();
-		
-	set_timer(get_next_interval());
+		return 0;
+	}
+	next_event_time_collapse(sleep_time);	
+	set_timer(sleep_time);
     return 0;
 }
 
