@@ -93,8 +93,10 @@ Si7020Sensor* New_Si7020_Sensor( int num, int NumData)
 	Si7020Sensor *p = malloc(sizeof(Si7020Sensor));
 	Si7020_VTinit( p );
 	Si7020_FctnInit( p );
-	p->inherited.test_num = num;
+	p->inherited.getStartNum = fctn_getStartNum;
+	p->inherited.getEndNum = fctn_getEndNum;
 	
+	p->inherited.test_num = num;
 	p->inherited.NumOfData = NumData;
 	p->inherited.StartNum = SensorDataCount;
 	SensorDataCount += NumData;

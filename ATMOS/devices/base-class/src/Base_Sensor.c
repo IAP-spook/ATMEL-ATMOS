@@ -55,12 +55,12 @@ int Base_Error(BaseSensor *this )
 	return 0;
 }
 
-int getStartNum( BaseSensor *this)
+int fctn_getStartNum( BaseSensor *this)
 {
 	return this->StartNum;
 }
 
-int getEndNum( BaseSensor *this)
+int fctn_getEndNum( BaseSensor *this)
 {
 	return ( this->StartNum + this->NumOfData );
 }
@@ -68,15 +68,19 @@ int getEndNum( BaseSensor *this)
 BaseSensor* New_Base_Sensor( int num, int NumData)
 {
 	BaseSensor *p = malloc(sizeof(BaseSensor));
-	p->test_num = num;
+	p->getStartNum = fctn_getStartNum;
+	p->getEndNum = fctn_getEndNum;
+	Base_FctnInit(p);
+	Base_VTinit(p);	
 	
+	p->test_num = num;
 	p->NumOfData = NumData;
 	p->StartNum = SensorDataCount;
+	
 	SensorDataCount += NumData;
 	printf("SensorDataCount %d\n",SensorDataCount);
 	
-	Base_FctnInit(p);
-	Base_VTinit(p);
+
 	return p;
 }
 

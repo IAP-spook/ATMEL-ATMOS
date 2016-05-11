@@ -7,15 +7,15 @@
  *  Author: Anxin Bai
  */ 
 #include "utilities/inc/time.h"
+#include <stdio.h>
 
 
 void updateTime(long increment_msec, tm * tm_eg)
 {
-	printf("time debug %ld\n",tm_eg->unix_time);
 	tm_eg->unix_msec += increment_msec;
-	tm_eg->unix_time += tm_eg->unix_msec / 1000;
+	tm_eg->unix_time += ( tm_eg->unix_msec / 1000 );
 	tm_eg->unix_msec = tm_eg->unix_msec % 1000;
-	printf("time debug %ld\n",tm_eg->unix_time);
+	calcDate(tm_eg);
 }
 
 void synchTime(long calibrate_sec, tm *tm_ptr)
@@ -85,7 +85,7 @@ void calcDate(tm *tm_ptr)
 	tm_ptr->tm_min  = minutes;
 	tm_ptr->tm_hour = hours;
 	tm_ptr->tm_mday = days + 1;
-	tm_ptr->tm_mon  = month;
+	tm_ptr->tm_mon  = month + 1;
 	tm_ptr->tm_year = year;
 	tm_ptr->tm_wday = dayOfWeek;
 }

@@ -56,6 +56,9 @@ int Base_init( BaseSensor* );
 int Base_reset( BaseSensor* );
 int Base_getType( BaseSensor* );
 
+int fctn_getStartNum( BaseSensor* );
+int fctn_getEndNum( BaseSensor* );
+
 BaseSensor* New_Base_Sensor( int num, int NumData  );
 
 

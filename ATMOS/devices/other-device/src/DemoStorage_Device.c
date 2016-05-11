@@ -79,7 +79,7 @@ int DemoStorage_Device_Execute(DemoStorageDevice *this)
 	for( int i=0; i<this->cur_pos; i++)
 	{
 		DataUnit temp = this->StoragesData[i];
-		printf("%2d%2d%2d %2d%2d%2d\t",temp.data_tm.tm_year,temp.data_tm.tm_mon,temp.data_tm.tm_mday,temp.data_tm.tm_hour,temp.data_tm.tm_min,temp.data_tm.tm_sec);
+		printf("%04ld %02ld %02ld %02ld %02ld %02ld\t",temp.data_tm.tm_year,temp.data_tm.tm_mon,temp.data_tm.tm_mday,temp.data_tm.tm_hour,temp.data_tm.tm_min,temp.data_tm.tm_sec);
 		for( int j = 0; j < MAX_NUM_DATA; ++j )
 			printf("%3.3f ",temp.data[j]);
 		printf("\n");
