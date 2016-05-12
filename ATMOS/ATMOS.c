@@ -30,10 +30,12 @@
 #include "avr/io.h"
 #include "avr/interrupt.h"
 #include "utilities/inc/data_unit.h"
+#include "parameters.h"
 
 int SensorDataCount;
 DataUnit *cur_data = NULL;
 tm cur_time;
+GlobalParameter GP;
 
 /* TODO : clean up these messy init */
 static void APP_Init(void){
@@ -51,15 +53,13 @@ static void APP_Init(void){
 	SensorDataCount = 0;
 }
 
-
-int main(void)
-{
-	SYS_Init();
-	APP_Init();
+static void DEVICE_Init(void){
 	
-	// could have sealed following in a function //
+	init_parameter(&GP);
+	
 	init_timeoutq();
 	init_timestamp(&cur_time);
+	
 	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0,2 );
 	Si7020Sensor *Si_ptr = New_Si7020_Sensor(0,2);
 	
@@ -69,13 +69,24 @@ int main(void)
 	init_Event_Timer();
 	printf("init done!\n");
 	
+	/* load all sensors */
+	load_new_sensor( GP.SensorList[BMP280].StartTime, GP.SensorList[BMP280].ExecutePeriod, (BaseSensor *)BMP280_ptr, 0 );
+	load_new_sensor( GP.SensorList[Si7020].StartTime, GP.SensorList[Si7020].ExecutePeriod, (BaseSensor *)Si_ptr, 0 );
 	
-	// could have sealed following in a function //
-	load_new_sensor( 1000, 12000, (BaseSensor *)BMP280_ptr, 0 );
-	load_new_sensor( 3000, 12000, (BaseSensor *)Si_ptr, 0 );
-	load_new_device( 3300, 12000, (BaseDevice *)Strg_ptr, 0 );
-	load_new_device( 100, 12000, (BaseDevice *)Load_ptr, 0 );
-	// load_new_sensor( 4, 4, (BaseSensor *)Si7020_ptr, 0 );
+	
+	printf("%d\t%d\n",GP.DeviceList[DemoStorage].StartTime,GP.DeviceList[DemoStorage].ExecutePeriod);
+	/* load all ( non-sensor ) devices */
+	load_new_device( GP.DeviceList[DemoLoadData].StartTime, GP.DeviceList[DemoLoadData].ExecutePeriod, (BaseDevice *)Load_ptr, 0 );
+	load_new_device( GP.DeviceList[DemoStorage].StartTime, GP.DeviceList[DemoStorage].ExecutePeriod, (BaseDevice *)Strg_ptr, 0 );
+	// load_new_sensor( 4, 4, (BaseSensor *)Si7020_ptr, 0 );	
+}
+
+int main(void)
+{
+	SYS_Init();
+	APP_Init();
+	DEVICE_Init();
+
 	init_set_timer( get_next_interval() );
 	
 	// Enable global interrupt //
@@ -85,7 +96,7 @@ int main(void)
 	return 0;
 }
 
-/* TODO list at high priority 
+/* TODO list 
  * 1. Add a My_Device.h/.c at wrappe/other-device which features a Exec() and a Configure() function DONE!!!
  * 2. Derive a DemoFlashDevice.h/.c for demonstration usage , it should hold some DataUnit queue DONE!!!
  * 3. Add two members one called Start_data, the other End_data in BaseSensor.h/.c DONE!!!
@@ -93,4 +104,11 @@ int main(void)
  * 5. Add LoadData_Device to get a valid empty DataUnit DONE !!!
  * 6. Add Handler of Devices 
  * 7. LoadData_Device should init all data to -9999 as default
+ * 8. configurable parameter Done!!!
+ * 9. configurable parameter handler Interface Done!!!
+ * 10. Readable parameter Done!!!
+ * 11. Data unit's timestamp issue 
+ * 12. Integragte common.h's type def. with devicelist.h's.
+ * 13. Let Sensor's data collect() procedure be more automatical ( no assigning number )
+ * 14. Adjust all int to long, since int is a uint16_t, the timer may overflow!!!
  */ 

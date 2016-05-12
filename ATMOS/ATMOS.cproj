@@ -355,6 +355,9 @@
     <Compile Include="nwk\src\nwkTx.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="parameters.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="phy\atmegarfr2\inc\atmegarfr2.h">
       <SubType>compile</SubType>
     </Compile>
@@ -377,6 +380,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="scheduler\src\scheduler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="devicelist.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="sys\inc\sys.h">
@@ -413,9 +419,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="utilities\inc\llist.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="utilities\inc\SensorDataCount.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="utilities\inc\time.h">
