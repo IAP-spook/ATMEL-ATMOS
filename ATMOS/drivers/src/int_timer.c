@@ -51,7 +51,7 @@ void init_Event_Timer(void)
 }
 
 
-void general_set_timer( int period_number )
+void general_set_timer( int32_t period_number )
 {
 	// printf("debug %d\n",period_number);
 	/* Wait till registers are ready
@@ -84,7 +84,7 @@ void general_set_timer( int period_number )
 	// 0.25s/256
 	if( period_number <= 250 )
 	{
-		temp = 256 - (int) ( 256.0/250.0 * period_number);
+		temp = 256 - (int32_t) ( 256.0/250.0 * period_number);
 		temp = temp > 255 ? 255 : temp ;
 		TCNT2 = temp;
 		TCCR2B = (1<<CS21)|(1<<CS20);
@@ -93,7 +93,7 @@ void general_set_timer( int period_number )
 	// 0.5s/256
 	else if ( period_number <= 500 )
 	{
-		temp = 256 - (int) ( 256.0/500.0 * period_number);
+		temp = 256 - (int32_t) ( 256.0/500.0 * period_number);
 		temp = temp > 255 ? 255 : temp ;
 		TCNT2 = temp;
 		TCCR2B = (1<<CS22);
@@ -102,7 +102,7 @@ void general_set_timer( int period_number )
 	// 1s/256
 	else if ( period_number <= 1000 )
 	{
-		temp = 256 - (int) ( 256.0/1000.0 * period_number);
+		temp = 256 - (int32_t) ( 256.0/1000.0 * period_number);
 		temp = temp > 255 ? 255 : temp ;
 		TCNT2 = temp;
 		TCCR2B = (1<<CS22)|(1<<CS20);	
@@ -111,7 +111,7 @@ void general_set_timer( int period_number )
 	// 2s/256
 	else if ( period_number <= 2000 )
 	{
-		temp = 256 - (int) ( 256.0/2000.0 * period_number);
+		temp = 256 - (int32_t) ( 256.0/2000.0 * period_number);
 		temp = temp > 255 ? 255 : temp ;
 		TCNT2 = temp;
 		TCCR2B = (1<<CS22)|(1<<CS21);	
@@ -120,10 +120,9 @@ void general_set_timer( int period_number )
 	// 8s/256
 	else if ( period_number <= 8000 )
 	{
-		t = (int) ( 256.0/8000.0 * period_number);
+		t = (int32_t) ( 256.0/8000.0 * period_number);
 		temp = 256 - t;
 		temp = temp > 255 ? 255 : temp ;
-
 		TCNT2 = temp;
 		TCCR2B = (1<<CS22)|(1<<CS21)|(1<<CS20);
 	}
@@ -137,7 +136,7 @@ void general_set_timer( int period_number )
 	TimeStamp += period_number;
 }
 
-void init_set_timer( int period_number )
+void init_set_timer( int32_t period_number )
 {
     general_set_timer( period_number );
 	/* Clear pending interrupts */
@@ -147,9 +146,9 @@ void init_set_timer( int period_number )
 
 }
 
-void set_timer( int period_number )
+void set_timer( int32_t period_number )
 {
-	printf("set timer gap = %d\n\n", period_number);
+	printf("set timer gap = %ld\n\n", period_number);
 	if( period_number == 0)
 	{
 		/* we won't every set a zero timeout, will we ? */

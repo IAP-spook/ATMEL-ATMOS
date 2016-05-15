@@ -34,7 +34,7 @@ void init_timeoutq()
 /*************************************************************************//**
   @brief Load a brand new sensor activity into the scheduler's timeoutQ
 *****************************************************************************/
-int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otherinfo )
+int load_new_sensor( int32_t timeout, int32_t repeat, BaseSensor *device_ptr, int otherinfo )
 {
 
     /* assume we have available event in freelist */
@@ -57,7 +57,7 @@ int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otheri
 /*************************************************************************//**
   @brief Load a brand new device activity into the scheduler's timeoutQ
 *****************************************************************************/
-int load_new_device( int timeout, int repeat, BaseDevice *device_ptr, int otherinfo )
+int load_new_device( int32_t timeout, int32_t repeat, BaseDevice *device_ptr, int otherinfo )
 {
 
     /* assume we have available event in freelist */
@@ -80,7 +80,7 @@ int load_new_device( int timeout, int repeat, BaseDevice *device_ptr, int otheri
 /*************************************************************************//**
   @brief Update next event's timeout value when we set timer for it.
 *****************************************************************************/
-void next_event_time_collapse(int sleep_time)
+void next_event_time_collapse(int32_t sleep_time)
 {
 	struct event * ev = ( struct event * ) LL_TOP( timeoutq );
 	if( EV_NULL == ev )
@@ -91,10 +91,10 @@ void next_event_time_collapse(int sleep_time)
 /*************************************************************************//**
   @brief Return the the time ( ms ) of the next event
 *****************************************************************************/
-int get_next_interval()
+int32_t get_next_interval()
 {
 
-	int wait_time = MAX_SLEEP_INTERVAL;
+	int32_t wait_time = MAX_SLEEP_INTERVAL;
 	struct event * ev = ( struct event * ) LL_TOP( timeoutq );
 
 	/* sanity check */

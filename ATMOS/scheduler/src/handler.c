@@ -18,7 +18,6 @@
 int sensor_handler( struct event *p )
 {
 	int retNum;
-	int data = 0;
 	BaseSensor *sp;
 	/* sanity check */
 	if( p == EV_NULL )
@@ -59,7 +58,7 @@ int sensor_handler( struct event *p )
 		else if( retNum == 0 )
 		{
 			p->cur_state = Ready;
-			data = sp->vmt->Collect(p->sp);
+			sp->vmt->Collect(p->sp);
 			// #ifdef DEBUG
 			// printf("data : %d\n", data);
 			// #endif
@@ -67,8 +66,8 @@ int sensor_handler( struct event *p )
 		else
 		{
 			p->cur_state = Running;
-			p->timeout = retNum;
-			p->borrow_timeout = retNum;
+			p->timeout = (int16_t) retNum;
+			p->borrow_timeout = (int16_t)  retNum;
 			LL_POP( timeoutq );
 			insert_timeoutq_event( p );
 			return 1;
@@ -115,7 +114,7 @@ int sensor_handler( struct event *p )
 *****************************************************************************/
 int device_handler( struct event *p )
 {
-	int retNum;
+	int retNum = 0;
 	BaseDevice * bdp = (BaseDevice *) ( p->load_p );
 	LoadDataDevice *ldp = (LoadDataDevice*) ( p->load_p );
 	DemoStorageDevice *ddp = (DemoStorageDevice*) ( p->store_p );
@@ -152,7 +151,7 @@ int device_handler( struct event *p )
 		default :
 			break;
 	}
-	return 0;
+	return retNum;
 }
 
 /*
@@ -164,7 +163,7 @@ int device_handler( struct event *p )
 *****************************************************************************/
 int storeData_handler( struct event *p )
 {
-	int retNum;
+	int retNum = 0;
 	DataUnit data_instance;
 	// TODO : Macro of GetCurDataUnit
 	// data_instance = GetCurDataUnit();
@@ -180,6 +179,6 @@ int storeData_handler( struct event *p )
 	 */
 
 	
-	return 0;
+	return retNum;
 }
 

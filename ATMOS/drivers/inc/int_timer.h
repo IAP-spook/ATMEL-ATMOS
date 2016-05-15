@@ -19,11 +19,11 @@
 #define APERIOD 8
 
 void init_Event_Timer(void);
-void general_set_timer( int period_number );
+void general_set_timer( int32_t period_number );
 
-void init_set_timer( int period_number );
+void init_set_timer( int32_t period_number );
 
-void set_timer( int period_number );
+void set_timer( int32_t period_number );
 
 ISR(TIMER2_OVF_vect);
 

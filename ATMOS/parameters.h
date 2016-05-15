@@ -14,10 +14,10 @@
 
 typedef struct  
 {
-	int StartTime;		/* in ms */
-	int ExecutePeriod;
-	int NumOfData;
-	int CheckCode;
+	int32_t StartTime;		/* in ms */
+	int32_t ExecutePeriod;
+	int32_t NumOfData;
+	int32_t CheckCode;
 } EndDeviceParameter;
 
 typedef struct
@@ -28,17 +28,17 @@ typedef struct
 
 typedef struct 
 {
-	int SensorNum;
-	int CheckCode;
-	int StartTime;
-	int ExecutePeriod;
+	int32_t SensorNum;
+	int32_t CheckCode;
+	int32_t StartTime;
+	int32_t ExecutePeriod;
 } UniUpdatePacket;
 
 typedef struct  
 {	
-	int NumDevicePacket;
+	int32_t NumDevicePacket;
 	UniUpdatePacket * DeviceUpdateList;
-	int NumSensorPacket;
+	int32_t NumSensorPacket;
 	UniUpdatePacket * SensorUpdateList;
 } UpdateParameterPacket;
 

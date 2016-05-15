@@ -110,5 +110,5 @@ int main(void)
  * 11. Data unit's timestamp issue 
  * 12. Integragte common.h's type def. with devicelist.h's.
  * 13. Let Sensor's data collect() procedure be more automatical ( no assigning number )
- * 14. Adjust all int to long, since int is a uint16_t, the timer may overflow!!!
+ * 14. Adjust all int to long, since int is a uint16_t, the timer may overflow. Need test
  */ 

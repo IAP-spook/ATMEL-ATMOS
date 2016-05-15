@@ -35,20 +35,20 @@ enum SensorList
 /* unit in ms */
 #define SENSOR_INIT_PERIOD  12000
 
-int SensorInitStartTimeList[] =
+int32_t SensorInitStartTimeList[] =
 {
 	//0,
 	1000,
 	3000
 };
 
-int SensorCheckCodeList[] =
+int32_t SensorCheckCodeList[] =
 {
 	1425,
 	1023
 };
 
-int SensorNumDataList[] =
+int32_t SensorNumDataList[] =
 {
 	2,	/* BMP280 has 2 data output */
 	2	/* Si7020 has 2 data output */
@@ -66,20 +66,20 @@ enum DeviceList
 };
 
 /* unit in ms */
-int DeviceInitPeriodList[] =
+int32_t DeviceInitPeriodList[] =
 {
 	SENSOR_INIT_PERIOD,
 	3 * SENSOR_INIT_PERIOD
 };
 
-int DeviceInitStartTimeList[] =
+int32_t DeviceInitStartTimeList[] =
 {
 	//0,
 	100,
 	3300
 };
 
-int DeviceCheckCodeList[] =
+int32_t DeviceCheckCodeList[] =
 {
 	1425,
 	1023

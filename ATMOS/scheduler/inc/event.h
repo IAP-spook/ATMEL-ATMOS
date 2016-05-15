@@ -25,10 +25,10 @@ struct event
 {
 	LL_PTRS;
 	//! next timeout value in ms.
-	int timeout;
+	int32_t timeout;
 	//! the repeat period of the event in ms. 0 means no repeatence.
-	int repeat_interval;
-    int borrow_timeout;
+	int32_t repeat_interval;
+    int32_t borrow_timeout;
 	BaseSensor * sp;
 	LoadDataDevice *load_p;
 	DemoStorageDevice *store_p;
