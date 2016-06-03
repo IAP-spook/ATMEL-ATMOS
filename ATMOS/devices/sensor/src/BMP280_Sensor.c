@@ -32,6 +32,8 @@ BMP280_Abstract_FctnTable BMP280_abstract_vmt = {
 void BMP280_FctnInit(BMP280Sensor *this)
 {
 	this->inherited.vmt = &BMP280_vmt;
+	printf("init success");
+	//delay_us(100);  //the delay is used to replace printf, exact timing needs to be calculated.
 }
 
 
@@ -39,6 +41,8 @@ int BMP280_Configure(BMP280Sensor *this )
 {
 	// virtual function
 	return 0;
+	printf("config success");
+	//delay_us(100);
 }
 
 int BMP280_Request(BMP280Sensor *this )
@@ -67,6 +71,8 @@ int BMP280_Collect(BMP280Sensor *this )
 	cur_data->data[0] = T;
 	cur_data->data[1] = P; 
 	return 0;
+	//printf("collect success");
+	delay_us(100);
 }
 
 int BMP280_Error(BMP280Sensor *this )

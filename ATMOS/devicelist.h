@@ -15,6 +15,7 @@
 #include "devices/sensor/inc/BMP280_Sensor.h"
 #include "devices/other-device/inc/DemoStorage_Device.h"
 #include "devices/other-device/inc/LoadData_Device.h"
+#include "devices/sensor/inc/K30_Sensor.h"
 
 enum 
 {
@@ -29,6 +30,7 @@ enum SensorList
 	//SensorListBegin,
 	BMP280,
 	Si7020,
+	K30,
 	SensorListEnd	
 };
 
@@ -39,19 +41,22 @@ int32_t SensorInitStartTimeList[] =
 {
 	//0,
 	1000,
-	3000
+	3000,
+	4000
 };
 
 int32_t SensorCheckCodeList[] =
 {
 	1425,
-	1023
+	1023,
+	1111
 };
 
 int32_t SensorNumDataList[] =
 {
 	2,	/* BMP280 has 2 data output */
-	2	/* Si7020 has 2 data output */
+	2,	/* Si7020 has 2 data output */
+	1	/* K30 has 1 data output */
 };
 
 

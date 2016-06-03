@@ -25,6 +25,7 @@
 #include "devices/sensor/inc/Si7020_Sensor.h"
 #include "devices/sensor/inc/Temperature_ADC_Sensor.h"
 #include "devices/sensor/inc/BMP280_Sensor.h"
+#include "devices/sensor/inc/K30_Sensor.h"
 #include "devices/other-device/inc/DemoStorage_Device.h"
 #include "devices/other-device/inc/LoadData_Device.h"
 #include "avr/io.h"
@@ -61,7 +62,10 @@ static void DEVICE_Init(void){
 	init_timestamp(&cur_time);
 	
 	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0,2 );
-	Si7020Sensor *Si_ptr = New_Si7020_Sensor(0,2);
+	printf("init success");
+	//delay_us(100);
+	/*Si7020Sensor *Si_ptr = New_Si7020_Sensor(0,2); */
+	K30Sensor *K30_ptr = New_K30_Sensor(0,1);
 	
 	DemoStorageDevice *Strg_ptr = New_DemoStorage_Device(0);
 	LoadDataDevice *Load_ptr = New_LoadData_Device(0,Strg_ptr);
@@ -71,7 +75,8 @@ static void DEVICE_Init(void){
 	
 	/* load all sensors */
 	load_new_sensor( GP.SensorList[BMP280].StartTime, GP.SensorList[BMP280].ExecutePeriod, (BaseSensor *)BMP280_ptr, 0 );
-	load_new_sensor( GP.SensorList[Si7020].StartTime, GP.SensorList[Si7020].ExecutePeriod, (BaseSensor *)Si_ptr, 0 );
+	/* load_new_sensor( GP.SensorList[Si7020].StartTime, GP.SensorList[Si7020].ExecutePeriod, (BaseSensor *)Si_ptr, 0 ); */
+	load_new_sensor( GP.SensorList[K30].StartTime, GP.SensorList[K30].ExecutePeriod, (BaseSensor *)K30_ptr, 0 );
 	
 	
 	printf("%d\t%d\n",GP.DeviceList[DemoStorage].StartTime,GP.DeviceList[DemoStorage].ExecutePeriod);

@@ -4,6 +4,8 @@
 
 ATMOS.c
 
+devices\sensor\src\K30_Sensor.c
+
 drivers\src\ADC.c
 
 drivers\src\int_timer.c
@@ -61,8 +63,6 @@ devices\base-class\src\Base_Device.c
 devices\base-class\src\Base_Sensor.c
 
 devices\old-sensor\BMP280.c
-
-devices\old-sensor\K30.c
 
 devices\old-sensor\Si7020.c
 

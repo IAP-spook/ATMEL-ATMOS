@@ -14,6 +14,8 @@
 #include "drivers/inc/TWI.h"
 #include "drivers/inc/usart0.h"
 #include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 static int dig_T2 , dig_T3 , dig_P2 , dig_P3, dig_P4, dig_P5, dig_P6, dig_P7, dig_P8, dig_P9; //!<Calibration values from the BMP280
 static unsigned int dig_P1,dig_T1 ; //!<Calibration values from the BMP280
@@ -97,6 +99,8 @@ static char BMP280_ReadUInt(char address, unsigned int *val){
 		return(1);
 	}
 	*val = 0;
+	printf("success on RedaUInt");
+	//delay_us(100);   delay in not defined here
 	return(0);
 }
 
@@ -118,6 +122,8 @@ static char BMP280_ReadBytes(unsigned char *values, char length){
 	if (status == TWI_SLAR_ACK){
 		if(((TWI_Read(&values[0],length,false)&TWSR_MASK) == TWI_REC_NACK) && (TWI_Stop() != 0)) return(1); //Receive bytes, send a STOP bit, and check for success
 	}
+	printf("success on RedaBytes");
+	//delay_us(100);
 	return(0);
 }
 
@@ -197,6 +203,7 @@ char BMP280_StartMeasurment(void){
 	return(delay); // return the delay in ms (rounded up) to wait before retrieving data
 	else
 	return(-1); // or return -1 if there was a problem communicating with the BMP
+	printf("failure on writeInt");
 }
 
 /*************************************************************************//**
@@ -219,6 +226,8 @@ char BMP280_GetUnPT(double *uP, double *uT){
 		
 	}
 	return(result);
+	//printf("get values successful");
+	delay_us(100);
 }
 
 /*************************************************************************//**
