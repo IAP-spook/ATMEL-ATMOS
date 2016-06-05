@@ -32,6 +32,7 @@
 #include "avr/interrupt.h"
 #include "utilities/inc/data_unit.h"
 #include "parameters.h"
+#include "inc/util.h"
 
 int SensorDataCount;
 DataUnit *cur_data = NULL;
@@ -57,13 +58,18 @@ static void APP_Init(void){
 static void DEVICE_Init(void){
 	
 	init_parameter(&GP);
-	
+	delay_us(100);
+		
 	init_timeoutq();
-	init_timestamp(&cur_time);
+	delay_us(100);
 	
-	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0,2 );
+	init_timestamp(&cur_time);
+	delay_us(100);
+	
+	BMP280Sensor *BMP280_ptr = New_BMP280_Sensor( 0,2 /* GP.SensorList[i].NumOfData */ );
 	printf("init success");
-	//delay_us(100);
+	delay_us(100);
+	
 	/*Si7020Sensor *Si_ptr = New_Si7020_Sensor(0,2); */
 	K30Sensor *K30_ptr = New_K30_Sensor(0,1);
 	

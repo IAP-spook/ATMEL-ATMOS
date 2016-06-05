@@ -4,6 +4,8 @@
 
 ATMOS.c
 
+devices\old-sensor\K30.c
+
 devices\sensor\src\K30_Sensor.c
 
 drivers\src\ADC.c

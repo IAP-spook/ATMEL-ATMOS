@@ -32,8 +32,6 @@ BMP280_Abstract_FctnTable BMP280_abstract_vmt = {
 void BMP280_FctnInit(BMP280Sensor *this)
 {
 	this->inherited.vmt = &BMP280_vmt;
-	printf("init success");
-	//delay_us(100);  //the delay is used to replace printf, exact timing needs to be calculated.
 }
 
 
@@ -41,8 +39,6 @@ int BMP280_Configure(BMP280Sensor *this )
 {
 	// virtual function
 	return 0;
-	printf("config success");
-	//delay_us(100);
 }
 
 int BMP280_Request(BMP280Sensor *this )
@@ -59,20 +55,22 @@ int BMP280_Request(BMP280Sensor *this )
 int BMP280_Collect(BMP280Sensor *this )
 {
 	printf("BMP280 Collect\n");
+	// double BMP280Data[3] = {-999,-999,-999};
 	double T, P;
-	BMP280_GetTemperatureAndPressure(&T,&P);
+	BMP280_GetTPH(&T,&P);
+	// BMP280_GetTPH(BMP280Data,BMP280Data+1,BMP280Data+2);
 	printf("\tTemperature = %.3f\n\tPressure = %.3f\n",T,P);
 	printf("\tgetStart = %d\n\tgetEnd = %d\n",this->inherited.getStartNum( &this->inherited ),this->inherited.getEndNum( &this->inherited ));
 	/*
-	for( int i = 0 ; i = this->inherited.getStartNum(); i < this->inherited.getEndNum() )
+	int j = 0;
+	for( int i = this->inherited.getStartNum(); i < this->inherited.getEndNum(); ++i )
 	{
+		cur_data->data[i] = BMP280Data[j++];
 	}
 	*/
 	cur_data->data[0] = T;
 	cur_data->data[1] = P; 
 	return 0;
-	//printf("collect success");
-	delay_us(100);
 }
 
 int BMP280_Error(BMP280Sensor *this )

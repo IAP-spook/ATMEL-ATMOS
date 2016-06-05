@@ -7,6 +7,7 @@
  */ 
 
 #include "devices/sensor/inc/K30_Sensor.h"
+// #include "devices/old-sensor/K30.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include "drivers/inc/TWI.h"
@@ -45,6 +46,8 @@ int K30_Configure(K30Sensor *this )
 
 int K30_Request(K30Sensor *this )
 {
+	return K30_delaytime();
+	/*
 	int val=0;
 	int sum=0;
 	
@@ -58,10 +61,15 @@ int K30_Request(K30Sensor *this )
 	TWI_Stop();
 	_delay_ms(10);
 	return 0;
+	*/
 }
 
 int K30_Collect(K30Sensor *this )
 {
+	double K30Data;
+	K30Data = K30_readCO2();
+	printf("\tK30 data is %lf\n",K30Data);
+/*
 	int val=0;
 	int sum=0;
 	
@@ -80,7 +88,9 @@ int K30_Collect(K30Sensor *this )
 	val |= buffer[2] & 0xFF;
 	sum = buffer[0] + buffer[1] + buffer[2];
 	if(sum==buffer[3]){return val;}
+		printf_P()
 	else{return 0;}
+*/
 }
 
 int K30_Error(K30Sensor *this )
@@ -95,7 +105,7 @@ void K30_VTinit( K30Sensor* this)
 
 int K30_init( K30Sensor* this)
 {
-	TWI_Init(200000);
+	// TWI_Init(200000);
 	printf("K30 Sensor Init\n");
 	return 0;
 }

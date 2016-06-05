@@ -73,6 +73,7 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../ATMOS.c \
+../devices/old-sensor/K30.c \
 ../devices/sensor/src/K30_Sensor.c \
 ../drivers/src/ADC.c \
 ../drivers/src/int_timer.c \
@@ -121,6 +122,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 ATMOS.o \
+devices/old-sensor/K30.o \
 devices/sensor/src/K30_Sensor.o \
 drivers/src/ADC.o \
 drivers/src/int_timer.o \
@@ -162,6 +164,7 @@ devices/sensor/src/Si7020_Sensor.o
 
 OBJS_AS_ARGS +=  \
 ATMOS.o \
+devices/old-sensor/K30.o \
 devices/sensor/src/K30_Sensor.o \
 drivers/src/ADC.o \
 drivers/src/int_timer.o \
@@ -203,6 +206,7 @@ devices/sensor/src/Si7020_Sensor.o
 
 C_DEPS +=  \
 ATMOS.d \
+devices/old-sensor/K30.d \
 devices/sensor/src/K30_Sensor.d \
 drivers/src/ADC.d \
 drivers/src/int_timer.d \
@@ -244,6 +248,7 @@ devices/sensor/src/Si7020_Sensor.d
 
 C_DEPS_AS_ARGS +=  \
 ATMOS.d \
+devices/old-sensor/K30.d \
 devices/sensor/src/K30_Sensor.d \
 drivers/src/ADC.d \
 drivers/src/int_timer.d \
@@ -376,7 +381,16 @@ LINKER_SCRIPT_DEP+=
 
 
 
+
+
 ./%.o: .././%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2564rfr2 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\gcc\dev\atmega2564rfr2" -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+devices/old-sensor/%.o: ../devices/old-sensor/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2564rfr2 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\gcc\dev\atmega2564rfr2" -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -440,13 +454,6 @@ utilities/src/%.o: ../utilities/src/%.c
 	
 
 devices/base-class/src/%.o: ../devices/base-class/src/%.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2564rfr2 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\gcc\dev\atmega2564rfr2" -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-devices/old-sensor/%.o: ../devices/old-sensor/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DBASE_A -DHAL_ATMEGA256RFR2 -DPHY_ATMEGARFR2 -DF_CPU=16000000  -USATELLITE  -I"../hal/atmega256rfr2/inc" -I"../nwk/inc" -I"../phy/atmegarfr2/inc" -I"../sys/inc" -I".." -I"../include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2564rfr2 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\gcc\dev\atmega2564rfr2" -c -std=gnu99 -Wl,-u,vfprintf -lprintf_flt -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

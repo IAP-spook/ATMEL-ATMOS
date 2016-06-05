@@ -7,6 +7,7 @@
  *
  * Created: 2/10/2015 20:24:55
  *  Author: Camden Miller
+ *  Modified: Zidu Zhang, 2016
  */ 
 
 //Includes//
@@ -17,8 +18,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int dig_T2 , dig_T3 , dig_P2 , dig_P3, dig_P4, dig_P5, dig_P6, dig_P7, dig_P8, dig_P9; //!<Calibration values from the BMP280
-static unsigned int dig_P1,dig_T1 ; //!<Calibration values from the BMP280
+static int dig_T2 , dig_T3 , dig_P2 , dig_P3, dig_P4, dig_P5, dig_P6, dig_P7, dig_P8, dig_P9, dig_H2, dig_H4, dig_H5; //!<Calibration values from the BMP280
+static unsigned int dig_P1, dig_T1; //!<Calibration values from the BMP280
+static unsigned char dig_H1, dig_H2;
+static signed char dig_H6;
 
 static short oversampling, oversampling_t; //!<Oversampling sertings
 static long signed int t_fine; 
@@ -28,6 +31,7 @@ static char error, status; //1<Error and status codes
 static char BMP280_ReadInt(char, int *);
 static char BMP280_ReadUInt(char, unsigned int *);
 static char BMP280_ReadBytes(unsigned char *, char);
+static char BMP280_ReadSBytes(signed char *, char);
 static char BMP280_WriteBytes(unsigned char *, char);
 
 /*************************************************************************//**
@@ -45,19 +49,26 @@ char BMP280_Init(void){
 	// Retrieve calibration data from device:
 	
 	if (    
-		BMP280_ReadUInt(0x88, &dig_T1) &&
-		BMP280_ReadInt(0x8A, &dig_T2)  &&
-		BMP280_ReadInt(0x8C, &dig_T3)  &&
-		BMP280_ReadUInt(0x8E, &dig_P1) &&
-		BMP280_ReadInt(0x90, &dig_P2)  &&
-		BMP280_ReadInt(0x92, &dig_P3)  &&
-		BMP280_ReadInt(0x94, &dig_P4)  &&
-		BMP280_ReadInt(0x96, &dig_P5)  &&
-		BMP280_ReadInt(0x98, &dig_P6)  &&
-		BMP280_ReadInt(0x9A, &dig_P7)  &&
-		BMP280_ReadInt(0x9C, &dig_P8)  &&
-		BMP280_ReadInt(0x9E, &dig_P9)){
-			printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%1 ,%i \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9);
+		BMP280_ReadUInt(0x88, &dig_T1)   &&
+		BMP280_ReadInt(0x8A, &dig_T2)    &&
+		BMP280_ReadInt(0x8C, &dig_T3)    &&
+		BMP280_ReadUInt(0x8E, &dig_P1)   &&
+		BMP280_ReadInt(0x90, &dig_P2)    &&
+		BMP280_ReadInt(0x92, &dig_P3)    &&
+		BMP280_ReadInt(0x94, &dig_P4)    &&
+		BMP280_ReadInt(0x96, &dig_P5)    &&
+		BMP280_ReadInt(0x98, &dig_P6)    &&
+		BMP280_ReadInt(0x9A, &dig_P7)    &&
+		BMP280_ReadInt(0x9C, &dig_P8)    &&
+		BMP280_ReadInt(0x9E, &dig_P9)    &&
+		BMP280_ReadBytes(0xA1, &dig_H1)  &&
+		BMP280_ReadInt(0xE1, &dig_H2)    &&
+		BMP280_ReadBytes(0xE3, &dig_H3)  &&
+		BMP280_ReadInt(0xE4, &dig_H4)    &&
+		BMP280_ReadInt(0xE5, &dig_H5)	 &&
+		BMP280_ReadSBytes(0xE7, &dig_H6) &&	)
+	{
+		printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%1 ,%i \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9);
 		return (1);
 	}
 	else 
@@ -99,8 +110,6 @@ static char BMP280_ReadUInt(char address, unsigned int *val){
 		return(1);
 	}
 	*val = 0;
-	printf("success on RedaUInt");
-	//delay_us(100);   delay in not defined here
 	return(0);
 }
 
@@ -122,7 +131,7 @@ static char BMP280_ReadBytes(unsigned char *values, char length){
 	if (status == TWI_SLAR_ACK){
 		if(((TWI_Read(&values[0],length,false)&TWSR_MASK) == TWI_REC_NACK) && (TWI_Stop() != 0)) return(1); //Receive bytes, send a STOP bit, and check for success
 	}
-	printf("success on RedaBytes");
+	//printf("success on RedaBytes");
 	//delay_us(100);
 	return(0);
 }
@@ -203,31 +212,30 @@ char BMP280_StartMeasurment(void){
 	return(delay); // return the delay in ms (rounded up) to wait before retrieving data
 	else
 	return(-1); // or return -1 if there was a problem communicating with the BMP
-	printf("failure on writeInt");
+	//printf("failure on writeInt");
 }
 
 /*************************************************************************//**
-  @brief Gets the uncalibrated temperature and pressure data
+  @brief Gets the uncalibrated temperature and pressure and humidity data
   @param[out] pointer to a place to store the pressure data
   @param[out] pointer to a place to store the temperature data
   @return status
 *****************************************************************************/
-char BMP280_GetUnPT(double *uP, double *uT){
-	unsigned char data[6];
+char BMP280_GetUnPTH(double *uP, double *uT, double *uH){
+	unsigned char data[9];
 	char result;
 	
 	data[0] = BMP280_REG_RESULT_PRESSURE; //0xF7
 
-	result = BMP280_ReadBytes(&data[0], 6); // 0xF7; xF8, 0xF9, 0xFA, 0xFB, 0xFC
+	result = BMP280_ReadBytes(&data[0], 9); // 0xF7; xF8, 0xF9, 0xFA, 0xFB, 0xFC, 0xFD, 0xFE, 0XFF
 	if (result){ // good read
 		double factor = pow(2, 4);
-		*uP = (( (data[0] *256.0) + data[1] + (data[2]/256.0))) * factor ;	//20bit UP
-		*uT = (( (data[3] *256.0) + data[4] + (data[5]/256.0))) * factor ;	//20bit UT
+		*uP = ( (data[0] *256.0) + data[1] + (data[2]/256.0) ) * factor ;	//20bit UP
+		*uT = ( (data[3] *256.0) + data[4] + (data[5]/256.0) ) * factor ;	//20bit UT
+		*uH = ( (data[6] *256.0) + data[7] + (data[8]/256.0) ) * factor ;	//20bit UH
 		
 	}
 	return(result);
-	//printf("get values successful");
-	delay_us(100);
 }
 
 /*************************************************************************//**
@@ -236,26 +244,31 @@ char BMP280_GetUnPT(double *uP, double *uT){
   @param[out] pointer to a place to store the temperature data
   @return status
 *****************************************************************************/
-char BMP280_GetTemperatureAndPressure(double *T,double *P){
-	double uP,uT ;
-	char result = BMP280_GetUnPT(&uP,&uT);
+char BMP280_GetTPH(double *T, double *P, double *H){
+	double uP,uT,uH ;
+	char result = BMP280_GetUnPTH(&uP, &uT, &uH);
 	if(result!=0){
 		// calculate the temperature
 		result = BMP280_CalcTemperature(T,&uT);
 		if(result){
 			// calculate the pressure
 			result = BMP280_CalcPressure(P,&uP);
-			if(result)return (1);
-			else error = 3 ;	// pressure error ;
-			return (0);
+			if(result){
+				result = BMP280_CalcHumidity(H,&uH); 	
+				if(result)return (1);
+				else error = 4 ;	// humidity error ;
+				return (0);
+			}else
+			error = 3;	// pressure error ;
 		}else
-		error = 2;	// temperature error ;
+		error = 2; // temperature error
 	}
 	else
 	error = 1;
 	
 	return (0);
 }
+
 
 /*************************************************************************//**
   @brief Calculates temperature
@@ -333,6 +346,22 @@ char BMP280_CalcPressure(double *P,double *uP){
 	if((*P>1200.0) || (*P < 800.0))return (0);
 	return (1);
 }
+
+/*************************************************************************//**
+  @brief Calculates Humidity
+  @param[out] pointer to a place to store the humidity
+  @param[in] pointer to the uncalibrated humidity data
+  @return status
+*****************************************************************************/
+char BMP280_CalcHumidity(double *P,double *uP)
+{
+	
+	
+}
+
+
+
+
 
 /*************************************************************************//**
   @brief Calculates pressure at sea level given an altitude

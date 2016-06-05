@@ -25,6 +25,17 @@ unsigned char readcmd[4]={0x22,0x00,0x08,0x2A};
 }
 */
 
+int K30_delaytime()
+{
+	char status;
+	status=TWI_BeginWrite(0x68);
+	if(status!=TWI_SLAW_ACK) return -1;
+	status=TWI_Write(&readcmd[0],4);
+	if(status!=TWI_SENT_ACK) return -1;
+	TWI_Stop();	
+	return 10;
+}
+
 int K30_readCO2(){
 	int val=0;
 	int sum=0;
@@ -32,12 +43,6 @@ int K30_readCO2(){
 	char status;
 	//printf("K30_readCO2");
 	unsigned char buffer[4]={0,0,0,0};
-	status=TWI_BeginWrite(0x68);
-	if(status!=TWI_SLAW_ACK) return 0;
-	status=TWI_Write(&readcmd[0],4);
-	if(status!=TWI_SENT_ACK) return 0;
-	TWI_Stop();
-	_delay_ms(10);
 	status=TWI_BeginRead(0x68);
 	if(status!=TWI_SLAR_ACK) return 0;
 	status=TWI_Read(&buffer[0],4,true);

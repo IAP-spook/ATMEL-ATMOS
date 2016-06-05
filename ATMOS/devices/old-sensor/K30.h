@@ -26,3 +26,4 @@
 //char K30_init();
 //static char K30_readCO2(unsigned char *, char);
 int K30_readCO2();
+int K30_delaytime();
