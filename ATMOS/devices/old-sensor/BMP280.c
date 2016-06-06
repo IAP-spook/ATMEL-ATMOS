@@ -7,7 +7,7 @@
  *
  * Created: 2/10/2015 20:24:55
  *  Author: Camden Miller
- *  Modified: Zidu Zhang, 2016
+ *  Modified: Zidu Zhang, 04/06/2016
  */ 
 
 //Includes//
@@ -20,7 +20,7 @@
 
 static int dig_T2 , dig_T3 , dig_P2 , dig_P3, dig_P4, dig_P5, dig_P6, dig_P7, dig_P8, dig_P9, dig_H2, dig_H4, dig_H5; //!<Calibration values from the BMP280
 static unsigned int dig_P1, dig_T1; //!<Calibration values from the BMP280
-static unsigned char dig_H1, dig_H2;
+static unsigned char dig_H1, dig_H3;
 static signed char dig_H6;
 
 static short oversampling, oversampling_t; //!<Oversampling sertings
@@ -30,8 +30,9 @@ static char error, status; //1<Error and status codes
 //static function prototypes//
 static char BMP280_ReadInt(char, int *);
 static char BMP280_ReadUInt(char, unsigned int *);
+static char BMP280_ReadChar(char, int *);
+static char BMP280_ReadUChar(char, unsigned int *);
 static char BMP280_ReadBytes(unsigned char *, char);
-static char BMP280_ReadSBytes(signed char *, char);
 static char BMP280_WriteBytes(unsigned char *, char);
 
 /*************************************************************************//**
@@ -61,12 +62,12 @@ char BMP280_Init(void){
 		BMP280_ReadInt(0x9A, &dig_P7)    &&
 		BMP280_ReadInt(0x9C, &dig_P8)    &&
 		BMP280_ReadInt(0x9E, &dig_P9)    &&
-		BMP280_ReadBytes(0xA1, &dig_H1)  &&
+		BMP280_ReadUChar(0xA1, &dig_H1)  &&
 		BMP280_ReadInt(0xE1, &dig_H2)    &&
-		BMP280_ReadBytes(0xE3, &dig_H3)  &&
+		BMP280_ReadUChar(0xE3, &dig_H3)  &&
 		BMP280_ReadInt(0xE4, &dig_H4)    &&
 		BMP280_ReadInt(0xE5, &dig_H5)	 &&
-		BMP280_ReadSBytes(0xE7, &dig_H6) &&	)
+		BMP280_ReadChar(0xE7, &dig_H6)    )
 	{
 		printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%1 ,%i \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9);
 		return (1);
@@ -84,8 +85,8 @@ char BMP280_Init(void){
 static char BMP280_ReadInt(char address, int *val){
 	//printf("\nBMP280_ReadInt");
 	unsigned char data[2];	//char is 4 bits, 1 byte
-
 	data[0] = address;
+	
 	if (BMP280_ReadBytes(&data[0],2)){
 		*val = (((int)data[1]<<8)|(int)data[0]);
 		return(1);
@@ -103,10 +104,48 @@ static char BMP280_ReadInt(char address, int *val){
 static char BMP280_ReadUInt(char address, unsigned int *val){
 	//printf("\nBMP280_ReadUInt");
 	unsigned char data[2];	//4 bits
-	
 	data[0] = address;
+	
 	if (BMP280_ReadBytes(&data[0],2)){
 		*val = (((unsigned int)data[1]<<8)|(unsigned int)data[0]);
+		return(1);
+	}
+	*val = 0;
+	return(0);
+}
+
+/*************************************************************************//**
+Has no buffer overrun protection
+ @brief Read signed bytes from BMP280
+ @param[in] *values pointer to an array to store the bytes, put the starting register in values[0]
+ @param[in] length how many bytes to read
+ @return status (zero on failure, non zero otherwise)
+*****************************************************************************/
+static char BMP280_ReadChar(char address, int *val){
+	unsigned char data[1];
+	data[0] = address;
+	
+	if (BMP280_ReadBytes(&data[0],1)){
+		*val = (int)data[0];
+		return(1);
+	}
+	*val = 0;
+	return(0);
+}
+
+/*************************************************************************//**
+Has no buffer overrun protection
+ @brief Read unsigned bytes from BMP280
+ @param[in] *values pointer to an array to store the bytes, put the starting register in values[0]
+ @param[in] length how many bytes to read
+ @return status (zero on failure, non zero otherwise)
+*****************************************************************************/
+static char BMP280_ReadUChar(char address, unsigned int *val){
+	unsigned char data[1];
+	data[0] = address;
+	
+	if (BMP280_ReadBytes(&data[0],1)){
+		*val = (unsigned int)data[0];
 		return(1);
 	}
 	*val = 0;
@@ -131,8 +170,6 @@ static char BMP280_ReadBytes(unsigned char *values, char length){
 	if (status == TWI_SLAR_ACK){
 		if(((TWI_Read(&values[0],length,false)&TWSR_MASK) == TWI_REC_NACK) && (TWI_Stop() != 0)) return(1); //Receive bytes, send a STOP bit, and check for success
 	}
-	//printf("success on RedaBytes");
-	//delay_us(100);
 	return(0);
 }
 

@@ -56,10 +56,10 @@ int BMP280_Collect(BMP280Sensor *this )
 {
 	printf("BMP280 Collect\n");
 	// double BMP280Data[3] = {-999,-999,-999};
-	double T, P;
-	BMP280_GetTPH(&T,&P);
+	double T, P, H;
+	BMP280_GetTPH(&T,&P,&H);
 	// BMP280_GetTPH(BMP280Data,BMP280Data+1,BMP280Data+2);
-	printf("\tTemperature = %.3f\n\tPressure = %.3f\n",T,P);
+	printf("\tTemperature = %.3f\n\tPressure = %.3f\n\tHumidity = %.3f\n",T,P,H);
 	printf("\tgetStart = %d\n\tgetEnd = %d\n",this->inherited.getStartNum( &this->inherited ),this->inherited.getEndNum( &this->inherited ));
 	/*
 	int j = 0;
