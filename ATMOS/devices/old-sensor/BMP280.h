@@ -48,10 +48,10 @@ char BMP280_GetUnPT(double *, double *);
 char BMP280_GetTPH(double *,double *,double *);
 char BMP280_CalcTemperature(double *, double *);
 char BMP280_CalcPressure(double *,double *);
+char BMP280_CalcHumidity(double *,double *);
 double BMP280_Sealevel(double , double);
 double BMP280_Altitude(double , double);
 char BMP280_GetError(void);
-
 //static functions are prototyped in BMP280.c as they're only intended for use there
 
 #endif /* BMP280_H_ */

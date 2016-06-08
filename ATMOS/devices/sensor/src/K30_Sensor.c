@@ -15,7 +15,6 @@
 #include "drivers/inc/usart0.h"
 #include <math.h>
 
-unsigned char readcmd[4]={0x22,0x00,0x08,0x2A};
 
 K30_FctnTable K30_vmt = {
 	K30_FctnInit,

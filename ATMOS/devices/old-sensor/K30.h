@@ -7,6 +7,9 @@
  *  Author: Hui Shi
  */ 
  
+#ifndef K30_H_
+#define K30_H_
+
 //#include <stdbool.h>
 #include <stdint.h>
 
@@ -27,3 +30,5 @@
 //static char K30_readCO2(unsigned char *, char);
 int K30_readCO2();
 int K30_delaytime();
+
+#endif /* K30_H_ */
