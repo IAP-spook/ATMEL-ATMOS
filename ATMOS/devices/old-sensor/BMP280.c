@@ -19,7 +19,7 @@
 #include <stdlib.h>
 
 static int dig_T2 , dig_T3 , dig_P2 , dig_P3, dig_P4, dig_P5, dig_P6, dig_P7, dig_P8, dig_P9, dig_H2, dig_H4, dig_H5; //!<Calibration values from the BMP280
-static unsigned int dig_P1, dig_T1; //!<Calibration values from the BMP280
+static unsigned int dig_T1, dig_P1; //!<Calibration values from the BMP280
 static unsigned char dig_H1, dig_H3;
 static signed char dig_H6;
 
@@ -65,11 +65,13 @@ char BMP280_Init(void){
 		BMP280_ReadUChar(0xA1, &dig_H1)  &&
 		BMP280_ReadInt(0xE1, &dig_H2)    &&
 		BMP280_ReadUChar(0xE3, &dig_H3)  &&
-		BMP280_ReadInt(0xE4, &dig_H4)    &&
-		BMP280_ReadInt(0xE5, &dig_H5)	 &&
+		BMP280_ReadInt4(0xE4, &dig_H4)   &&
+		BMP280_ReadInt5(0xE5, &dig_H5)	 &&
 		BMP280_ReadChar(0xE7, &dig_H6)    )
 	{
-		printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%1 ,%i \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9);
+		dig_H4 = 
+		
+		printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%1 ,%i \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9,dig_H1,dig_H2,dig_H3,dig_H4,dig_H5,dig_H6);
 		return (1);
 	}
 	else 
@@ -94,6 +96,34 @@ static char BMP280_ReadInt(char address, int *val){
 	*val = 0;
 	return(0);
 }
+
+static char BMP280_ReadInt4(char address, int *val){
+	//printf("\nBMP280_ReadInt");
+	signed char data[2];	//char is 4 bits, 1 byte
+	data[0] = address;
+	
+	if (BMP280_ReadBytes(&data[0],2)){
+		*val = ( ((int)data[0]<<4)|((int)data[1]&(0x0F)) );
+		return(1);
+	}
+	*val = 0;
+	return(0);
+}
+
+
+static char BMP280_ReadInt5(char address, int *val){
+	//printf("\nBMP280_ReadInt");
+	signed char data[2];	//char is 4 bits, 1 byte
+	data[0] = address;
+	
+	if (BMP280_ReadBytes(&data[0],2)){
+		*val = (((int)data[1]<<4)|((int)data[0]>>4));
+		return(1);
+	}
+	*val = 0;
+	return(0);
+}
+
 
 /*************************************************************************//**
   @brief Reads an unsigned int from the BMP280
@@ -407,7 +437,7 @@ char BMP280_CalcHumidity(double *H,double *uH)
 	*H = var1;
 	
 	if (var1 > 100) {var1 = 100; *H = var1;}
-	else if (var1 < 0) var1 = 0; *H = var1;
+	else if (var1 < 0) {var1 = 0; *H = var1;}
 	return (1);
 	
 }

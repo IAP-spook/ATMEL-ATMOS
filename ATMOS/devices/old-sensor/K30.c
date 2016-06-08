@@ -44,9 +44,9 @@ int K30_readCO2(){
 	//printf("K30_readCO2");
 	unsigned char buffer[4]={0,0,0,0};
 	status=TWI_BeginRead(0x68);
-	if(status!=TWI_SLAR_ACK) return 0;
+	if(status!=TWI_SLAR_ACK) return -9998;
 	status=TWI_Read(&buffer[0],4,true);
-	if(status!=TWI_REC_ACK) return 0;
+	if(status!=TWI_REC_ACK) return -9997;
 	TWI_Stop();
 	
 	val = 0;
@@ -54,8 +54,9 @@ int K30_readCO2(){
 	val = val << 8;
 	val |= buffer[2] & 0xFF;
 	sum = buffer[0] + buffer[1] + buffer[2];
+	printf("K30-DEBUG : %u,%u,%u,%u\n",buffer[0],buffer[1],buffer[2],buffer[3]);
 	if(sum==buffer[3]){return val;}
-	else{return 0;}
+	else{return -9999;}
 	
 }
 
