@@ -29,6 +29,8 @@ static char error, status; //1<Error and status codes
 
 //static function prototypes//
 static char BMP280_ReadInt(char, int *);
+static char BMP280_ReadInt4(char, int *);
+static char BMP280_ReadInt5(char, int *);
 static char BMP280_ReadUInt(char, unsigned int *);
 static char BMP280_ReadChar(char, int *);
 static char BMP280_ReadUChar(char, unsigned int *);
