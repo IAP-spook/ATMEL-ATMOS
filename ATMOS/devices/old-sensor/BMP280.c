@@ -264,12 +264,12 @@ char BMP280_GetUnPTH(double *uP, double *uT, double *uH){
 	
 	data[0] = BMP280_REG_RESULT_PRESSURE; //0xF7
 
-	result = BMP280_ReadBytes(&data[0], 9); // 0xF7; xF8, 0xF9, 0xFA, 0xFB, 0xFC, 0xFD, 0xFE, 0XFF
+	result = BMP280_ReadBytes(&data[0], 8); // 0xF7; xF8, 0xF9, 0xFA, 0xFB, 0xFC, 0xFD, 0xFE
 	if (result){ // good read
 		double factor = pow(2, 4);
 		*uP = ( (data[0] *256.0) + data[1] + (data[2]/256.0) ) * factor ;	//20bit UP
 		*uT = ( (data[3] *256.0) + data[4] + (data[5]/256.0) ) * factor ;	//20bit UT
-		*uH = ( (data[6] *256.0) + data[7] + (data[8]/256.0) ) * factor ;	//20bit UH
+		*uH = ( (data[6] *256.0) + data[7] ) * factor ;	//16bit UH
 		
 	}
 	return(result);
@@ -302,7 +302,6 @@ char BMP280_GetTPH(double *T, double *P, double *H){
 	}
 	else
 	error = 1;
-	
 	return (0);
 }
 
@@ -390,9 +389,26 @@ char BMP280_CalcPressure(double *P,double *uP){
   @param[in] pointer to the uncalibrated humidity data
   @return status
 *****************************************************************************/
-char BMP280_CalcHumidity(double *P,double *uP)
+char BMP280_CalcHumidity(double *H,double *uH)
 {
+	double adc_H = *uH;
+	double var1;
 	
+	var1 = t_fine - 76800;
+	
+	if (var1 != 0)
+	{
+		var1 = (((((adc_H * 16384) - ((double)dig_H4 * 1048576) - ((double)dig_H5 * var1)) + 16384 ) / 32768 ) * (((((((var1 * dig_H6) / 1024) * (((var1 * dig_H3) / 2048) + 32768)) / 1024) + 2097152) * (dig_H2 + 8192)/14)));	
+		*H = var1;
+	}
+	else return (0);
+	
+	var1 = (var1 - (((((var1 / 32768) * (var1 / 32768)) / 128) * dig_H1) / 16));
+	*H = var1;
+	
+	if (var1 > 100) {var1 = 100; *H = var1;}
+	else if (var1 < 0) var1 = 0; *H = var1;
+	return (1);
 	
 }
 
