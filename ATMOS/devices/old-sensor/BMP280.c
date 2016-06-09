@@ -131,7 +131,8 @@ static char BMP280_ReadInt4(char address, int *val){
 	
 	if ( (BMP280_ReadUChar(&data[0], *val1)) && (BMP280_ReadUChar(&data[1], *val2)) )
 	{
-		*val = (*val1<<4)|(*val2 & 0x0F);
+		printf("READINT4 DEBUG - %d %d\n",*val1,*val2);
+		*val = ((*val1)<<4)|((*val2) & 0x0F);
 		return(1);
 	}
 	/*
@@ -211,6 +212,7 @@ static char BMP280_ReadUChar(char address, unsigned int *val){
 	data[0] = address;
 	
 	if (BMP280_ReadBytes(&data[0],1)){
+		printf("READUCHAR DEBUG - %d\n",data[0]);
 		*val = (unsigned int)data[0];
 		return(1);
 	}
