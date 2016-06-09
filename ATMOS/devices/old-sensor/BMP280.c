@@ -77,6 +77,25 @@ char BMP280_Init(void){
 	// Retrieve calibration data from device:
 	BME280_ClearCalibration();
 	
+	printf("INIT DEBUG - %d\n",BMP280_ReadUInt(0x88, &dig_T1));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x8A, &dig_T2));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x8C, &dig_T3));
+	printf("INIT DEBUG - %d\n",BMP280_ReadUInt(0x8E, &dig_P1));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x90, &dig_P2)); 
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x92, &dig_P3));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x94, &dig_P4));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x96, &dig_P5)); 
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x98, &dig_P6));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x9A, &dig_P7));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x9C, &dig_P8));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x9E, &dig_P9));
+	printf("INIT DEBUG - %d\n",BMP280_ReadUChar(0xA1, &dig_H1));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0xE1, &dig_H2));
+	printf("INIT DEBUG - %d\n",BMP280_ReadUChar(0xE3, &dig_H3));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt4(0xE4, &dig_H4));
+	printf("INIT DEBUG - %d\n",BMP280_ReadInt5(0xE5, &dig_H5));
+	printf("INIT DEBUG - %d\n",BMP280_ReadChar(0xE7, &dig_H6));
+	
 	if (    
 		BMP280_ReadUInt(0x88, &dig_T1)   &&
 		BMP280_ReadInt(0x8A, &dig_T2)    &&
