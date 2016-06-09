@@ -97,7 +97,7 @@ char BMP280_Init(void){
 		BMP280_ReadInt5(0xE5, &dig_H5)	 &&
 		BMP280_ReadChar(0xE7, &dig_H6)    )
 	{
-		printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%1 ,%i \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9,dig_H1,dig_H2,dig_H3,dig_H4,dig_H5,dig_H6);
+		printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%i ,%i \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9,dig_H1,dig_H2,dig_H3,dig_H4,dig_H5,dig_H6); //%i = 16 bit
 		return (1);
 	}
 	else 
@@ -126,7 +126,7 @@ static char BMP280_ReadInt(char address, int *val){
 static char BMP280_ReadInt4(char address, int *val){
 	//printf("\nBMP280_ReadInt");
 	int *val1, *val2;
-	signed char data[2];	//char is 4 bits, 1 byte
+	unsigned char data[2];	//char is 4 bits, 1 byte
 	data[0] = address;
 	
 	if ( (BMP280_ReadUChar(&data[0], *val1)) && (BMP280_ReadUChar(&data[1], *val2)) )
@@ -148,7 +148,7 @@ static char BMP280_ReadInt4(char address, int *val){
 static char BMP280_ReadInt5(char address, int *val){
 	//printf("\nBMP280_ReadInt");
 	int *val1, *val2;
-	signed char data[2];	//char is 4 bits, 1 byte
+	unsigned char data[2];	//char is 4 bits, 1 byte
 	data[0] = address;
 	
 	if ( (BMP280_ReadUChar(&data[0], *val1)) && (BMP280_ReadUChar(&data[1], *val2)) )
@@ -188,7 +188,7 @@ Has no buffer overrun protection
  @return status (zero on failure, non zero otherwise)
 *****************************************************************************/
 static char BMP280_ReadChar(char address, int *val){
-	signed char data[1];
+	unsigned char data[1];
 	data[0] = address;
 	
 	if (BMP280_ReadBytes(&data[0],1)){
@@ -336,7 +336,7 @@ char BMP280_GetUnPTH(double *uP, double *uT, double *uH){
 		*uP = ( (data[0] *256.0) + data[1] + (data[2]/256.0) ) * factor ;	//20bit UP
 		*uT = ( (data[3] *256.0) + data[4] + (data[5]/256.0) ) * factor ;	//20bit UT
 		*uH = ( (data[6] *256.0) + data[7] ) * factor ;	//16bit UH
-		printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%1 ,%i H: %i ,i% ,i% ,i% ,i% ,i% \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9,dig_H1,dig_H2,dig_H3,dig_H4,dig_H5,dig_H6);
+		printf("\nH: %i ,%i ,%i ,%i ,%i ,%i \n",dig_H1,dig_H2,dig_H3,dig_H4,dig_H5,dig_H6);
 	}
 	return(result);
 }
