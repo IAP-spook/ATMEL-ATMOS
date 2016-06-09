@@ -90,11 +90,17 @@ char BMP280_Init(void){
 	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x9C, &dig_P8));
 	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0x9E, &dig_P9));
 	printf("INIT DEBUG - %d\n",BMP280_ReadUChar(0xA1, &dig_H1));
+	printf("H1 debug - %d\n",dig_H1);
 	printf("INIT DEBUG - %d\n",BMP280_ReadInt(0xE1, &dig_H2));
+	printf("H2 debug - %d\n",dig_H2);
 	printf("INIT DEBUG - %d\n",BMP280_ReadUChar(0xE3, &dig_H3));
+	printf("H3 debug - %d\n",dig_H3);
 	printf("INIT DEBUG - %d\n",BMP280_ReadInt4(0xE4, &dig_H4));
+	printf("H4 debug - %d\n",dig_H4);
 	printf("INIT DEBUG - %d\n",BMP280_ReadInt5(0xE5, &dig_H5));
+	printf("H5 debug - %d\n",dig_H5);
 	printf("INIT DEBUG - %d\n",BMP280_ReadChar(0xE7, &dig_H6));
+	printf("H6 debug - %d\n",dig_H6);
 	
 	if (    
 		BMP280_ReadUInt(0x88, &dig_T1)   &&
