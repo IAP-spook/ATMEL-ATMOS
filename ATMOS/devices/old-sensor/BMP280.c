@@ -23,6 +23,31 @@ static unsigned int dig_T1, dig_P1; //!<Calibration values from the BMP280
 static unsigned char dig_H1, dig_H3;
 static signed char dig_H6;
 
+/*initialization*/
+void BME280_ClearCalibration(void)
+{
+	dig_T1 = 0;
+	dig_T2 = 0;
+	dig_T3 = 0;
+	dig_P1 = 0;
+	dig_P2 = 0;
+	dig_P3 = 0;
+	dig_P4 = 0;
+	dig_P5 = 0;
+	dig_P6 = 0;
+	dig_P7 = 0;
+	dig_P8 = 0;
+	dig_P9 = 0;
+	dig_H1 = 0;
+	dig_H2 = 0;
+	dig_H3 = 0;
+	dig_H4 = 0;
+	dig_H5 = 0;
+	dig_H6 = 0;
+}
+/****************/
+
+
 static short oversampling, oversampling_t; //!<Oversampling sertings
 static long signed int t_fine; 
 static char error, status; //1<Error and status codes
@@ -50,6 +75,7 @@ char BMP280_Init(void){
 	// used in the calculations when taking measurements.
 
 	// Retrieve calibration data from device:
+	BME280_ClearCalibration();
 	
 	if (    
 		BMP280_ReadUInt(0x88, &dig_T1)   &&
@@ -71,8 +97,6 @@ char BMP280_Init(void){
 		BMP280_ReadInt5(0xE5, &dig_H5)	 &&
 		BMP280_ReadChar(0xE7, &dig_H6)    )
 	{
-		dig_H4 = 
-		
 		printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%1 ,%i \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9,dig_H1,dig_H2,dig_H3,dig_H4,dig_H5,dig_H6);
 		return (1);
 	}
@@ -101,13 +125,21 @@ static char BMP280_ReadInt(char address, int *val){
 
 static char BMP280_ReadInt4(char address, int *val){
 	//printf("\nBMP280_ReadInt");
+	int *val1, *val2;
 	signed char data[2];	//char is 4 bits, 1 byte
 	data[0] = address;
 	
+	if ( (BMP280_ReadUChar(&data[0], *val1)) && (BMP280_ReadUChar(&data[1], *val2)) )
+	{
+		*val = (*val1<<4)|(*val2 & 0x0F);
+		return(1);
+	}
+	/*
 	if (BMP280_ReadBytes(&data[0],2)){
 		*val = ( ((int)data[0]<<4)|((int)data[1]&(0x0F)) );
 		return(1);
 	}
+	*val = 0;*/
 	*val = 0;
 	return(0);
 }
@@ -115,11 +147,13 @@ static char BMP280_ReadInt4(char address, int *val){
 
 static char BMP280_ReadInt5(char address, int *val){
 	//printf("\nBMP280_ReadInt");
+	int *val1, *val2;
 	signed char data[2];	//char is 4 bits, 1 byte
 	data[0] = address;
 	
-	if (BMP280_ReadBytes(&data[0],2)){
-		*val = (((int)data[1]<<4)|((int)data[0]>>4));
+	if ( (BMP280_ReadUChar(&data[0], *val1)) && (BMP280_ReadUChar(&data[1], *val2)) )
+	{
+		*val = (*val2<<4)|(*val1>>4);
 		return(1);
 	}
 	*val = 0;
@@ -154,7 +188,7 @@ Has no buffer overrun protection
  @return status (zero on failure, non zero otherwise)
 *****************************************************************************/
 static char BMP280_ReadChar(char address, int *val){
-	unsigned char data[1];
+	signed char data[1];
 	data[0] = address;
 	
 	if (BMP280_ReadBytes(&data[0],1)){
@@ -302,7 +336,7 @@ char BMP280_GetUnPTH(double *uP, double *uT, double *uH){
 		*uP = ( (data[0] *256.0) + data[1] + (data[2]/256.0) ) * factor ;	//20bit UP
 		*uT = ( (data[3] *256.0) + data[4] + (data[5]/256.0) ) * factor ;	//20bit UT
 		*uH = ( (data[6] *256.0) + data[7] ) * factor ;	//16bit UH
-		
+		printf("\nT: %i ,%i ,%i P: %i ,%i ,%i ,%i ,%i ,%i ,%i ,%1 ,%i H: %i ,i% ,i% ,i% ,i% ,i% \n",dig_T1,dig_T2,dig_T3,dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,dig_P6,dig_P7,dig_P8,dig_P9,dig_H1,dig_H2,dig_H3,dig_H4,dig_H5,dig_H6);
 	}
 	return(result);
 }
@@ -426,26 +460,23 @@ char BMP280_CalcHumidity(double *H,double *uH)
 	double adc_H = *uH;
 	double var1;
 	
-	var1 = t_fine - 76800;
+	var1 = (double)t_fine - 76800.0;
 	
 	if (var1 != 0)
 	{
-		var1 = (((((adc_H * 16384) - ((double)dig_H4 * 1048576) - ((double)dig_H5 * var1)) + 16384 ) / 32768 ) * (((((((var1 * dig_H6) / 1024) * (((var1 * dig_H3) / 2048) + 32768)) / 1024) + 2097152) * (dig_H2 + 8192)/14)));	
+		var1 = (((((adc_H * 16384) - ((double)dig_H4 * 1048576) - ((double)dig_H5 * var1)) + 16384 ) / 32768 ) * (((((((var1 * (double)dig_H6) / 1024) * (((var1 * (double)dig_H3) / 2048) + 32768)) / 1024) + 2097152) * ((double)dig_H2 + 8192) / 16384)));
+		/*var1 = (adc_H - (((double)dig_H4) * 64.0 + ((double)dig_H5) / 16384.0 * var1)) *
+				(((double)dig_H2) / 65536.0 * (1.0 + ((double)dig_H6) / 67108864.0 * 
+				var1 * (1.0 + ((double)dig_H3) / 67108864.0 * var1))); */
 		*H = var1;
 	}
 	else return (0);
-	
-	var1 = (var1 - (((((var1 / 32768) * (var1 / 32768)) / 128) * dig_H1) / 16));
-	*H = var1;
-	
-	if (var1 > 100) {var1 = 100; *H = var1;}
-	else if (var1 < 0) {var1 = 0; *H = var1;}
+	var1 = (var1 - (((((var1 / 32768) * (var1 / 32768)) / 128) * (double)dig_H1) / 16));
+	//var1 = var1 * (1.0 - ((double)dig_H1) * var1 / 524288.0);
+	if (var1 > 100.0) {var1 = 100.0; *H = var1;}
+	else if (var1 < 0.0) {var1 = 0.0; *H = var1;}
 	return (1);
-	
 }
-
-
-
 
 
 /*************************************************************************//**
