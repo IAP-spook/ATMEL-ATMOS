@@ -9,7 +9,7 @@
  * It is responsible to access some limited memory ( currently 07/07/2016 managed by DemoStorage_Device.h/.c and defined in /utilities/inc/data_unit.h ) and mark the memory slot that should be used for current period.
  * At the beginning of each collecting period the execute function, it accesses the limited memory and move to the next available slot and let cur_data pointer points to it.
  * So during collecting, all sensors use cur_data pointer to load new data but don't need to worry about where in memory to save it and how to manage the memory.
- * NOTE at 07/07/2016 : You definitely still need this virtual device in the future. But DemoStorageDevice should be modified to act as MemoryDevice ( a virtual device to help manage memory ).
+ * NOTE at 07/07/2016 : You definitely still need this virtual device in the future. But DemoStorageDevice should be modified to act as Memory_Device ( a virtual device to help manage memory ).
  */ 
 
 
@@ -71,7 +71,7 @@ struct _LoadData_Device
 	BaseDevice abstract;
 	LoadData_Device_FctnTable *vmt;
 	int info;
-	DemoStorageDevice *store_device;/**<@brief This DemoStorageDevice ( or called MemoryDevice later is needed since this class is only responsible for accessing certain memory and get a proper one to load data but not for managing the memory.)  */
+	DemoStorageDevice *store_device;/**<@brief This DemoStorageDevice ( or called Memory_Device later is needed since this class is only responsible for accessing certain memory and get a proper one to load data but not for managing the memory.)  */
 };
 ///@}
 
@@ -88,7 +88,7 @@ int LoadData_Device_getType( LoadDataDevice* );
 
 /** @name Declaration of the new API for this struct
  *  It is used for instantiate the device in the system. You can adjust the input parameter as long as you use it the same way as you define it.
- *  Note you need to pass in a pointer of DemoStorageDevice ( or MemoryDevice in the future ) since this class is only responsible for accessing certain memory and get a proper one to load data but not for managing the memory.
+ *  Note you need to pass in a pointer of DemoStorageDevice ( or Memory_Device in the future ) since this class is only responsible for accessing certain memory and get a proper one to load data but not for managing the memory.
  */
 ///@{
 LoadDataDevice* New_LoadData_Device( int num, DemoStorageDevice * ptr );
