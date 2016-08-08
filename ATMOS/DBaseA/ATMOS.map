@@ -230,7 +230,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 nwk/src/nwkGroup.o
  .debug_line    0x00000000       0x1a nwk/src/nwkGroup.o
- .debug_str     0x00000000      0x151 nwk/src/nwkGroup.o
+ .debug_str     0x00000000      0x166 nwk/src/nwkGroup.o
  .comment       0x00000000       0x31 nwk/src/nwkGroup.o
  .text          0x00000000        0x0 nwk/src/nwkRoute.o
  .data          0x00000000        0x0 nwk/src/nwkRoute.o
@@ -240,7 +240,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 nwk/src/nwkRoute.o
  .debug_line    0x00000000       0x1a nwk/src/nwkRoute.o
- .debug_str     0x00000000      0x160 nwk/src/nwkRoute.o
+ .debug_str     0x00000000      0x175 nwk/src/nwkRoute.o
  .comment       0x00000000       0x31 nwk/src/nwkRoute.o
  .text          0x00000000        0x0 nwk/src/nwkRouteDiscovery.o
  .data          0x00000000        0x0 nwk/src/nwkRouteDiscovery.o
@@ -250,7 +250,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 nwk/src/nwkRouteDiscovery.o
  .debug_line    0x00000000       0x1a nwk/src/nwkRouteDiscovery.o
- .debug_str     0x00000000      0x169 nwk/src/nwkRouteDiscovery.o
+ .debug_str     0x00000000      0x17e nwk/src/nwkRouteDiscovery.o
  .comment       0x00000000       0x31 nwk/src/nwkRouteDiscovery.o
  .text          0x00000000        0x0 nwk/src/nwkRx.o
  .data          0x00000000        0x0 nwk/src/nwkRx.o
@@ -271,7 +271,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 nwk/src/nwkSecurity.o
  .debug_line    0x00000000       0x1a nwk/src/nwkSecurity.o
- .debug_str     0x00000000      0x163 nwk/src/nwkSecurity.o
+ .debug_str     0x00000000      0x178 nwk/src/nwkSecurity.o
  .comment       0x00000000       0x31 nwk/src/nwkSecurity.o
  .text          0x00000000        0x0 nwk/src/nwkTx.o
  .data          0x00000000        0x0 nwk/src/nwkTx.o
@@ -340,7 +340,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 sys/src/sysEncrypt.o
  .debug_line    0x00000000       0x1a sys/src/sysEncrypt.o
- .debug_str     0x00000000      0x153 sys/src/sysEncrypt.o
+ .debug_str     0x00000000      0x168 sys/src/sysEncrypt.o
  .comment       0x00000000       0x31 sys/src/sysEncrypt.o
  .text          0x00000000        0x0 sys/src/sysTimer.o
  .data          0x00000000        0x0 sys/src/sysTimer.o
@@ -361,7 +361,7 @@ Discarded input sections
                 0x00000000       0x20 utilities/src/common.o
  .debug_ranges  0x00000000       0x10 utilities/src/common.o
  .debug_line    0x00000000       0xe1 utilities/src/common.o
- .debug_str     0x00000000      0x1ad utilities/src/common.o
+ .debug_str     0x00000000      0x1c2 utilities/src/common.o
  .comment       0x00000000       0x31 utilities/src/common.o
  .debug_frame   0x00000000       0x24 utilities/src/common.o
  .text          0x00000000        0x0 utilities/src/llist.o
@@ -398,7 +398,7 @@ Discarded input sections
                 0x00000000       0x40 devices/base-class/src/Base_Device.o
  .debug_ranges  0x00000000       0x30 devices/base-class/src/Base_Device.o
  .debug_line    0x00000000      0x1d9 devices/base-class/src/Base_Device.o
- .debug_str     0x00000000      0x28d devices/base-class/src/Base_Device.o
+ .debug_str     0x00000000      0x2a2 devices/base-class/src/Base_Device.o
  .comment       0x00000000       0x31 devices/base-class/src/Base_Device.o
  .debug_frame   0x00000000       0x64 devices/base-class/src/Base_Device.o
  .text          0x00000000        0x0 devices/base-class/src/Base_Sensor.o
@@ -461,7 +461,7 @@ Discarded input sections
                 0x00000000       0x40 devices/old-sensor/Si7020.o
  .debug_ranges  0x00000000       0x70 devices/old-sensor/Si7020.o
  .debug_line    0x00000000      0x1a8 devices/old-sensor/Si7020.o
- .debug_str     0x00000000      0x270 devices/old-sensor/Si7020.o
+ .debug_str     0x00000000      0x285 devices/old-sensor/Si7020.o
  .comment       0x00000000       0x31 devices/old-sensor/Si7020.o
  .debug_frame   0x00000000       0x7c devices/old-sensor/Si7020.o
  .text          0x00000000        0x0 devices/old-sensor/TGS2600.o
@@ -482,7 +482,7 @@ Discarded input sections
                 0x00000000       0x38 devices/old-sensor/TGS2600.o
  .debug_ranges  0x00000000       0x28 devices/old-sensor/TGS2600.o
  .debug_line    0x00000000      0x12d devices/old-sensor/TGS2600.o
- .debug_str     0x00000000      0x1c5 devices/old-sensor/TGS2600.o
+ .debug_str     0x00000000      0x1da devices/old-sensor/TGS2600.o
  .comment       0x00000000       0x31 devices/old-sensor/TGS2600.o
  .debug_frame   0x00000000       0x68 devices/old-sensor/TGS2600.o
  .text          0x00000000        0x0 devices/other-device/src/DemoStorage_Device.o
@@ -520,8 +520,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x58 devices/other-device/src/My_Device.o
  .debug_ranges  0x00000000       0x48 devices/other-device/src/My_Device.o
- .debug_line    0x00000000      0x24d devices/other-device/src/My_Device.o
- .debug_str     0x00000000      0x381 devices/other-device/src/My_Device.o
+ .debug_line    0x00000000      0x250 devices/other-device/src/My_Device.o
+ .debug_str     0x00000000      0x396 devices/other-device/src/My_Device.o
  .comment       0x00000000       0x31 devices/other-device/src/My_Device.o
  .debug_frame   0x00000000       0xa0 devices/other-device/src/My_Device.o
  .text          0x00000000        0x0 devices/sensor/src/BMP280_Sensor.o
@@ -561,7 +561,7 @@ Discarded input sections
                 0x00000000       0x68 devices/sensor/src/My_Sensor.o
  .debug_ranges  0x00000000       0x58 devices/sensor/src/My_Sensor.o
  .debug_line    0x00000000      0x2d0 devices/sensor/src/My_Sensor.o
- .debug_str     0x00000000      0x3e6 devices/sensor/src/My_Sensor.o
+ .debug_str     0x00000000      0x3fb devices/sensor/src/My_Sensor.o
  .comment       0x00000000       0x31 devices/sensor/src/My_Sensor.o
  .debug_frame   0x00000000       0xe4 devices/sensor/src/My_Sensor.o
  .text          0x00000000        0x0 devices/sensor/src/Si7020_Sensor.o
@@ -600,7 +600,7 @@ Discarded input sections
                 0x00000000       0x68 devices/sensor/src/Si7020_Sensor.o
  .debug_ranges  0x00000000       0x58 devices/sensor/src/Si7020_Sensor.o
  .debug_line    0x00000000      0x374 devices/sensor/src/Si7020_Sensor.o
- .debug_str     0x00000000      0x526 devices/sensor/src/Si7020_Sensor.o
+ .debug_str     0x00000000      0x53b devices/sensor/src/Si7020_Sensor.o
  .comment       0x00000000       0x31 devices/sensor/src/Si7020_Sensor.o
  .debug_frame   0x00000000      0x13c devices/sensor/src/Si7020_Sensor.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
@@ -2045,7 +2045,7 @@ END GROUP
  .debug_abbrev  0x00003081      0x25b devices/other-device/src/LoadData_Device.o
  .debug_abbrev  0x000032dc      0x27d devices/sensor/src/BMP280_Sensor.o
 
-.debug_line     0x00000000     0x4ed4
+.debug_line     0x00000000     0x4ed5
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x492 ATMOS.o
  .debug_line    0x00000492      0x18c devices/old-sensor/K30.o
@@ -2073,8 +2073,8 @@ END GROUP
  .debug_line    0x00003a41      0x2d0 devices/base-class/src/Base_Sensor.o
  .debug_line    0x00003d11      0x7fd devices/old-sensor/BMP280.o
  .debug_line    0x0000450e      0x376 devices/other-device/src/DemoStorage_Device.o
- .debug_line    0x00004884      0x2e6 devices/other-device/src/LoadData_Device.o
- .debug_line    0x00004b6a      0x36a devices/sensor/src/BMP280_Sensor.o
+ .debug_line    0x00004884      0x2e7 devices/other-device/src/LoadData_Device.o
+ .debug_line    0x00004b6b      0x36a devices/sensor/src/BMP280_Sensor.o
 
 .debug_frame    0x00000000     0x179c
  *(.debug_frame)
@@ -2107,64 +2107,64 @@ END GROUP
  .debug_frame   0x000015b0       0xc8 devices/other-device/src/LoadData_Device.o
  .debug_frame   0x00001678      0x124 devices/sensor/src/BMP280_Sensor.o
 
-.debug_str      0x00000000     0x254d
+.debug_str      0x00000000     0x2562
  *(.debug_str)
- .debug_str     0x00000000      0x736 ATMOS.o
-                                0x888 (size before relaxing)
- .debug_str     0x00000736       0x85 devices/old-sensor/K30.o
-                                0x20f (size before relaxing)
- .debug_str     0x000007bb      0x15e devices/sensor/src/K30_Sensor.o
-                                0x455 (size before relaxing)
- .debug_str     0x00000919       0x53 drivers/src/ADC.o
-                                0x1a5 (size before relaxing)
- .debug_str     0x0000096c       0x78 drivers/src/int_timer.o
-                                0x524 (size before relaxing)
- .debug_str     0x000009e4       0x40 drivers/src/PWR.o
-                                0x199 (size before relaxing)
- .debug_str     0x00000a24       0x3e drivers/src/SPI.o
-                                0x1a4 (size before relaxing)
- .debug_str     0x00000a62       0x64 drivers/src/TWI.o
-                                0x268 (size before relaxing)
- .debug_str     0x00000ac6       0x8e drivers/src/usart0.o
-                                0x219 (size before relaxing)
- .debug_str     0x00000b54       0x64 hal/atmega256rfr2/src/hal.o
-                                0x1b0 (size before relaxing)
- .debug_str     0x00000bb8       0x41 hal/atmega256rfr2/src/halTimer.o
-                                0x1aa (size before relaxing)
- .debug_str     0x00000bf9      0x1b1 nwk/src/nwk.o
-                                0x32a (size before relaxing)
- .debug_str     0x00000daa      0x338 nwk/src/nwkDataReq.o
-                                0x566 (size before relaxing)
- .debug_str     0x000010e2       0x5b nwk/src/nwkFrame.o
-                                0x405 (size before relaxing)
- .debug_str     0x0000113d      0x37d nwk/src/nwkRx.o
-                                0x6ff (size before relaxing)
- .debug_str     0x000014ba      0x1c1 nwk/src/nwkTx.o
-                                0x6b4 (size before relaxing)
- .debug_str     0x0000167b      0x525 phy/atmegarfr2/src/phy.o
-                                0x774 (size before relaxing)
- .debug_str     0x00001ba0       0x7d scheduler/src/handler.o
-                                0x553 (size before relaxing)
- .debug_str     0x00001c1d       0x9e scheduler/src/scheduler.o
-                                0x596 (size before relaxing)
- .debug_str     0x00001cbb       0x44 sys/src/sys.o
-                                0x1d2 (size before relaxing)
- .debug_str     0x00001cff       0x58 sys/src/sysTimer.o
-                                0x267 (size before relaxing)
- .debug_str     0x00001d57       0x44 utilities/src/llist.o
-                                0x158 (size before relaxing)
- .debug_str     0x00001d9b       0xab utilities/src/time.o
-                                0x270 (size before relaxing)
- .debug_str     0x00001e46       0xc8 devices/base-class/src/Base_Sensor.o
-                                0x3d2 (size before relaxing)
- .debug_str     0x00001f0e      0x257 devices/old-sensor/BMP280.o
-                                0x47d (size before relaxing)
- .debug_str     0x00002165      0x1a0 devices/other-device/src/DemoStorage_Device.o
-                                0x51d (size before relaxing)
- .debug_str     0x00002305      0x140 devices/other-device/src/LoadData_Device.o
-                                0x541 (size before relaxing)
- .debug_str     0x00002445      0x108 devices/sensor/src/BMP280_Sensor.o
-                                0x4d8 (size before relaxing)
+ .debug_str     0x00000000      0x74b ATMOS.o
+                                0x89d (size before relaxing)
+ .debug_str     0x0000074b       0x85 devices/old-sensor/K30.o
+                                0x224 (size before relaxing)
+ .debug_str     0x000007d0      0x15e devices/sensor/src/K30_Sensor.o
+                                0x46a (size before relaxing)
+ .debug_str     0x0000092e       0x53 drivers/src/ADC.o
+                                0x1ba (size before relaxing)
+ .debug_str     0x00000981       0x78 drivers/src/int_timer.o
+                                0x539 (size before relaxing)
+ .debug_str     0x000009f9       0x40 drivers/src/PWR.o
+                                0x1ae (size before relaxing)
+ .debug_str     0x00000a39       0x3e drivers/src/SPI.o
+                                0x1b9 (size before relaxing)
+ .debug_str     0x00000a77       0x64 drivers/src/TWI.o
+                                0x27d (size before relaxing)
+ .debug_str     0x00000adb       0x8e drivers/src/usart0.o
+                                0x22e (size before relaxing)
+ .debug_str     0x00000b69       0x64 hal/atmega256rfr2/src/hal.o
+                                0x1c5 (size before relaxing)
+ .debug_str     0x00000bcd       0x41 hal/atmega256rfr2/src/halTimer.o
+                                0x1bf (size before relaxing)
+ .debug_str     0x00000c0e      0x1b1 nwk/src/nwk.o
+                                0x33f (size before relaxing)
+ .debug_str     0x00000dbf      0x338 nwk/src/nwkDataReq.o
+                                0x57b (size before relaxing)
+ .debug_str     0x000010f7       0x5b nwk/src/nwkFrame.o
+                                0x41a (size before relaxing)
+ .debug_str     0x00001152      0x37d nwk/src/nwkRx.o
+                                0x714 (size before relaxing)
+ .debug_str     0x000014cf      0x1c1 nwk/src/nwkTx.o
+                                0x6c9 (size before relaxing)
+ .debug_str     0x00001690      0x525 phy/atmegarfr2/src/phy.o
+                                0x789 (size before relaxing)
+ .debug_str     0x00001bb5       0x7d scheduler/src/handler.o
+                                0x568 (size before relaxing)
+ .debug_str     0x00001c32       0x9e scheduler/src/scheduler.o
+                                0x5ab (size before relaxing)
+ .debug_str     0x00001cd0       0x44 sys/src/sys.o
+                                0x1e7 (size before relaxing)
+ .debug_str     0x00001d14       0x58 sys/src/sysTimer.o
+                                0x27c (size before relaxing)
+ .debug_str     0x00001d6c       0x44 utilities/src/llist.o
+                                0x16d (size before relaxing)
+ .debug_str     0x00001db0       0xab utilities/src/time.o
+                                0x285 (size before relaxing)
+ .debug_str     0x00001e5b       0xc8 devices/base-class/src/Base_Sensor.o
+                                0x3e7 (size before relaxing)
+ .debug_str     0x00001f23      0x257 devices/old-sensor/BMP280.o
+                                0x492 (size before relaxing)
+ .debug_str     0x0000217a      0x1a0 devices/other-device/src/DemoStorage_Device.o
+                                0x532 (size before relaxing)
+ .debug_str     0x0000231a      0x140 devices/other-device/src/LoadData_Device.o
+                                0x556 (size before relaxing)
+ .debug_str     0x0000245a      0x108 devices/sensor/src/BMP280_Sensor.o
+                                0x4ed (size before relaxing)
 
 .debug_loc      0x00000000     0x5acf
  *(.debug_loc)
