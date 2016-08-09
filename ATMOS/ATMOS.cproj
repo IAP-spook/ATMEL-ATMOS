@@ -270,6 +270,12 @@
     <Compile Include="devices\old-sensor\K30.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="devices\other-device\inc\N25Q.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="devices\other-device\src\N25Q.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="devices\sensor\inc\K30_Sensor.h">
       <SubType>compile</SubType>
     </Compile>
@@ -285,7 +291,7 @@
     <Compile Include="drivers\inc\PWR.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="drivers\inc\SPI.h">
+    <Compile Include="drivers\inc\spi.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="drivers\inc\TWI.h">
