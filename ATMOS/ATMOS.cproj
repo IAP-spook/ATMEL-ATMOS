@@ -270,7 +270,13 @@
     <Compile Include="devices\old-sensor\K30.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="devices\other-device\inc\FlashStorage_Device.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="devices\other-device\inc\N25Q.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="devices\other-device\src\FlashStorage_Device.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="devices\other-device\src\N25Q.c">

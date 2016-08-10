@@ -43,8 +43,10 @@ ATMOS.d ATMOS.o: .././ATMOS.c .././utilities/inc/config.h \
  .././devices/sensor/inc/K30_Sensor.h \
  .././devices/other-device/inc/DemoStorage_Device.h \
  .././devices/other-device/inc/LoadData_Device.h \
- .././devices/other-device/inc/N25Q.h .././utilities/inc/data_unit.h \
- .././parameters.h .././devicelist.h .././inc/util.h
+ .././devices/other-device/inc/FlashStorage_Device.h \
+ ../devices/other-device/inc/N25Q.h .././devices/other-device/inc/N25Q.h \
+ .././utilities/inc/data_unit.h .././parameters.h .././devicelist.h \
+ .././inc/util.h
 
 .././utilities/inc/config.h:
 
@@ -171,6 +173,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 .././devices/other-device/inc/DemoStorage_Device.h:
 
 .././devices/other-device/inc/LoadData_Device.h:
+
+.././devices/other-device/inc/FlashStorage_Device.h:
+
+../devices/other-device/inc/N25Q.h:
 
 .././devices/other-device/inc/N25Q.h:
 

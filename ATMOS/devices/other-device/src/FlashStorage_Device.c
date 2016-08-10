@@ -52,7 +52,7 @@ FlashStorage_Abstract_FctnTable FlashStorageDevice_abstract_vmt = {
  	FlashStorage_VTinit(p);
   FlashStorage_Tinit(p);
   N25Qret = N25Q_Init(&N25Qfdo);
-  if (Flash_WrongType == ret)
+  if (Flash_WrongType == N25Qret)
 	{
 		printf("Sorry, no device detected.\n");
 		return -1;

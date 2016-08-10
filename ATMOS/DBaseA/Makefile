@@ -74,6 +74,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../ATMOS.c \
 ../devices/old-sensor/K30.c \
+../devices/other-device/src/FlashStorage_Device.c \
 ../devices/other-device/src/N25Q.c \
 ../devices/sensor/src/K30_Sensor.c \
 ../drivers/src/ADC.c \
@@ -124,6 +125,7 @@ ASM_SRCS +=
 OBJS +=  \
 ATMOS.o \
 devices/old-sensor/K30.o \
+devices/other-device/src/FlashStorage_Device.o \
 devices/other-device/src/N25Q.o \
 devices/sensor/src/K30_Sensor.o \
 drivers/src/ADC.o \
@@ -167,6 +169,7 @@ devices/sensor/src/Si7020_Sensor.o
 OBJS_AS_ARGS +=  \
 ATMOS.o \
 devices/old-sensor/K30.o \
+devices/other-device/src/FlashStorage_Device.o \
 devices/other-device/src/N25Q.o \
 devices/sensor/src/K30_Sensor.o \
 drivers/src/ADC.o \
@@ -210,6 +213,7 @@ devices/sensor/src/Si7020_Sensor.o
 C_DEPS +=  \
 ATMOS.d \
 devices/old-sensor/K30.d \
+devices/other-device/src/FlashStorage_Device.d \
 devices/other-device/src/N25Q.d \
 devices/sensor/src/K30_Sensor.d \
 drivers/src/ADC.d \
@@ -253,6 +257,7 @@ devices/sensor/src/Si7020_Sensor.d
 C_DEPS_AS_ARGS +=  \
 ATMOS.d \
 devices/old-sensor/K30.d \
+devices/other-device/src/FlashStorage_Device.d \
 devices/other-device/src/N25Q.d \
 devices/sensor/src/K30_Sensor.d \
 drivers/src/ADC.d \
@@ -307,6 +312,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
