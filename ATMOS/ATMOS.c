@@ -30,7 +30,6 @@
 #include "devices/other-device/inc/LoadData_Device.h"
 #include "devices/other-device/inc/FlashStorage_Device.h"
 #include "devices/other-device/inc/N25Q.h"
-#include "devices/other-device/inc/N25Q.h"
 #include "avr/io.h"
 #include "avr/interrupt.h"
 #include "utilities/inc/data_unit.h"
@@ -102,6 +101,7 @@ int main(void)
 {
 	SYS_Init();
 	APP_Init();
+	DEVICE_Init();
 	init_set_timer( get_next_interval() );
 
 	// Enable global interrupt //

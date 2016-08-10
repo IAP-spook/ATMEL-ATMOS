@@ -4,7 +4,7 @@
  * \brief Device and Sensor List
  * Created: 2016/5/12 0:40:41
  *  Author: AB
- */ 
+ */
 
 
 #ifndef DEVICELIST_H_
@@ -17,7 +17,7 @@
 #include "devices/other-device/inc/LoadData_Device.h"
 #include "devices/sensor/inc/K30_Sensor.h"
 
-enum 
+enum
 {
 	SensorType,
 	DeviceType
@@ -31,7 +31,7 @@ enum SensorList
 	BMP280,
 	Si7020,
 	K30,
-	SensorListEnd	
+	SensorListEnd
 };
 
 /* unit in ms */
@@ -65,8 +65,8 @@ int32_t SensorNumDataList[] =
 enum DeviceList
 {
 	//DeviceListBegin,
-	DemoLoadData,
 	DemoStorage,
+	FlashStorage,
 	DeviceListEnd
 };
 
