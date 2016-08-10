@@ -1,27 +1,9 @@
 /*
  * \file FlashStorage_Device.h
  * \brief Declaration of FlashStorageDevice struct.
- * Created: 2016/4/21 23:55:29
- *  Author: Anxin Bai
+ * Created: 8/10/2016
+ *  Author: C. Martin
  *
- *
- *	This file along with FlashStorage_Device.c offer a sample implementation of adding a general device in software's view. 
- *	So if you want to add any new device into the system, follow the steps listed below :
- *  1. CREATE *NEW DEVICE NAME*_Device.h in the same folder of FlashStorage_Device.h and COPY all codes ( maybe except the top comments ) from FlashStorage_Device.h to the new one.
- *  2. Within *NEW DEVICE NAME*_Device.h, REPLACE all "FlashStorage_Device" by "*NEW DEVICE NAME*" ( like "FlashStorage" for e.g. ). 
- *	   You can use Ctrl+Shift+F shortcut and click "Replace in Files" to do this work,
- *     but NOTE that below "LOOK IN" column, choose 'current project'( the newly created .h ) since you don't want to ruin FlashStorage_Device.h/.c, do you?
- *  3. CREATE *NEW DEVICE NAME*_Device.c in the same folder of FlashStorage_Device.c and COPY all codes ( maybe except the top comments ) from FlashStorage_Device.h to the new one.
- *  4. Within *NEW DEVICE NAME*_Device.c, REPLACE all "FlashStorage_Device" by "*NEW DEVICE NAME*" ( like "FlashStorage" for e.g. ). 
- *	   You can use Ctrl+Shift+F shortcut and click "Replace in Files" to do this work,
- *     but NOTE that below "LOOK IN" column, choose 'current project'( the newly created .c ) since you don't want to ruin FlashStorage_Device.h/.c, do you?
- *  5. Within *NEW DEVICE NAME*_Device.c, only add contents within these functions ( the add-in contents should be decided by you since this is only a rough guide about a general device )
- *			New_*NEW DEVICE NAME*(),
- *			*NEW DEVICE NAME*_init(),
- *			*NEW DEVICE NAME*_reset(),
- *			*NEW DEVICE NAME*_Execute(),
- *			*NEW DEVICE NAME*_Configure()
- *  6. If you want to create some private function to help execute some logics, feel free to add.
  */
 
 
@@ -29,6 +11,9 @@
 #define FlashStorage_DEVICE_H
 
 #include "devices/base-class/inc/Base_Device.h"
+#include "devices/other-device/inc/N25Q.h"
+
+#include "devices/other-device/inc/N25Q.h"
 
 /** @name Declaration and Typedef of the derived struct
  *

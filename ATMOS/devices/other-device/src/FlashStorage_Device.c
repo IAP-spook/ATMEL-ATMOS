@@ -6,67 +6,75 @@
  *
  */
  #include "devices/other-device/inc/FlashStorage_Device.h"
- #include "devices/other-devices/inc/N25Q.h"
+ #include "devices/other-device/inc/N25Q.h"
  #include <stdlib.h>
  #include <stdio.h>
 
-FlashStorage_Abstract_FctnTable MyDevice_abstract_vmt = {
+FlashStorage_Abstract_FctnTable FlashStorageDevice_abstract_vmt = {
  	FlashStorage_VTinit,
  	FlashStorage_init,
  	FlashStorage_reset,
  	FlashStorage_getType
  };
 
- FlashStorage_FctnTable MyDevice_vmt = {
+ FlashStorage_FctnTable FlashStorageDevice_vmt = {
  	FlashStorage_Tinit,
  	FlashStorage_Execute,
  	FlashStorage_Configure
  };
 
 
- void FlashStorage_VTinit( MyDevice *this )
+ void FlashStorage_VTinit( FlashStorageDevice *this )
  {
- 	this->abstract.device_vt = &MyDevice_abstract_vmt;
+ 	this->abstract.device_vt = &FlashStorageDevice_abstract_vmt;
  	return;
  }
 
- int FlashStorage_init( MyDevice *this )
+ int FlashStorage_init( FlashStorageDevice *this )
  {
  	return 0;
  }
 
- int FlashStorage_reset( MyDevice *this )
+ int FlashStorage_reset( FlashStorageDevice *this )
  {
  	return 0;
  }
 
- int FlashStorage_getType( MyDevice *this )
+ int FlashStorage_getType( FlashStorageDevice *this )
  {
- 	return TYPE_DEVICE;
+ 	return TYPE_STORAGE_DEVICE;
  }
 
- MyDevice* New_FlashStorage( int infonum )
+ FlashStorageDevice* New_FlashStorage_Device( int infonum )
  {
- 	MyDevice *p = malloc(sizeof(MyDevice));
+ 	FlashStorageDevice *p = malloc(sizeof(FlashStorageDevice));
  	p->info = infonum;
  	FlashStorage_VTinit(p);
+  FlashStorage_Tinit(p);
+  N25Qret = N25Q_Init(&N25Qfdo);
+  if (Flash_WrongType == ret)
+	{
+		printf("Sorry, no device detected.\n");
+		return -1;
+	}
+  printf("Flash Storage Initialized!\n");
  	return p;
  }
 
 
 
 
- void FlashStorage_Tinit(MyDevice *this)
+ void FlashStorage_Tinit(FlashStorageDevice *this)
  {
- 	this->vmt = &MyDevice_vmt;
+ 	this->vmt = &FlashStorageDevice_vmt;
  }
 
- int FlashStorage_Execute(MyDevice *this)
+ int FlashStorage_Execute(FlashStorageDevice *this)
  {
  	return 0;
  }
 
- int FlashStorage_Configure(MyDevice *this)
+ int FlashStorage_Configure(FlashStorageDevice *this)
  {
  	return 0;
  }

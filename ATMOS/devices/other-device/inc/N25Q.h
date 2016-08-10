@@ -509,7 +509,7 @@ typedef struct
 *******************************************************************************/
 uAddrType BlockOffset(uSectorType uscSectorNr);
 ReturnType FlashReadDeviceIdentification(NMX_uint32 *uwpDeviceIdentification);
-ReturnType Driver_Init(FLASH_DEVICE_OBJECT *flash_device_object);
+ReturnType N25Q_Init(FLASH_DEVICE_OBJECT *flash_device_object);
 ReturnType FlashWriteEnable(void);
 ReturnType FlashWriteDisable(void);
 ReturnType FlashReadStatusRegister(NMX_uint8 *ucpStatusRegister);

@@ -118,7 +118,7 @@ Pseudo Code:
    Step 3: If N25Q256 device or higher, call FlashEnter4ByteAddressMode and verify that
 		   device accept 4-byte address mode.
 *******************************************************************************/
-ReturnType Driver_Init(FLASH_DEVICE_OBJECT *flash_device_object)
+ReturnType N25Q_Init(FLASH_DEVICE_OBJECT *flash_device_object)
 {
 	NMX_uint8 flag = 0;
 	NMX_uint32 Device = 0;
@@ -2386,7 +2386,7 @@ Note:
 Pseudo Code:
 
 *******************************************************************************/
-ReturnType FlashReadLockRegister(uAddrType address,  NMX_uint8 * val) 
+ReturnType FlashReadLockRegister(uAddrType address,  NMX_uint8 * val)
 {
 
 	CharStream char_stream_send;
@@ -2426,7 +2426,7 @@ Note:
 Pseudo Code:
 
 *******************************************************************************/
-ReturnType FlashWriteLockRegister(uAddrType address,  NMX_uint8 * val) 
+ReturnType FlashWriteLockRegister(uAddrType address,  NMX_uint8 * val)
 {
 
 	CharStream char_stream_send;
@@ -2442,7 +2442,7 @@ ReturnType FlashWriteLockRegister(uAddrType address,  NMX_uint8 * val)
 	fill_addr_vect(address, pIns_Addr, fdo->Desc.NumAddrByte);
 	pIns_Addr[fdo->Desc.NumAddrByte + 1] = *val;
 
-	
+
     // Step 2: Send the packet serially, and fill the buffer with the data being returned
     Serialize_SPI(&char_stream_send,
 					NULL_PTR,
@@ -2467,7 +2467,7 @@ Note:
 Pseudo Code:
 
 *******************************************************************************/
-ReturnType FlashLockOneSector(uAddrType address) 
+ReturnType FlashLockOneSector(uAddrType address)
 {
 
 	NMX_uint8 LR;
@@ -2485,7 +2485,7 @@ ReturnType FlashLockOneSector(uAddrType address)
 	//Check write lock down bit
 	if(LR & 0x02)
 		return Flash_SectorLockDownFailed;
-	
+
 	LR = 0x01;
 	FlashWriteLockRegister((address & (~(sector_size-1))),&LR);
 
@@ -2524,7 +2524,7 @@ ReturnType FlashUnlockOneSector(uAddrType address)
 	//Check write down lock bit
 	if(LR & 0x02)
 		return Flash_SectorLockDownFailed;
-	
+
 	LR = 0x00;
 	FlashWriteLockRegister((address & (~(sector_size-1))),&LR);
 

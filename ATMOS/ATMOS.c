@@ -28,6 +28,7 @@
 #include "devices/sensor/inc/K30_Sensor.h"
 #include "devices/other-device/inc/DemoStorage_Device.h"
 #include "devices/other-device/inc/LoadData_Device.h"
+#include "devices/other-device/inc/FlashStorage_Device.h"
 #include "devices/other-device/inc/N25Q.h"
 #include "devices/other-device/inc/N25Q.h"
 #include "avr/io.h"
@@ -53,6 +54,7 @@ static void APP_Init(void){
 	ADC_Init();
 	printf("BMP280 Status %i\n", BMP280_Init());
 	BMP280_SetOversampling(4);
+	spi_init_master(); // initialize SPI interface
 	//SPI_SlaveInit();
 	SensorDataCount = 0;
 }
@@ -100,35 +102,6 @@ int main(void)
 {
 	SYS_Init();
 	APP_Init();
-	/*
-	DEVICE_Init();
-	FLASH_DEVICE_OBJECT fdo;
-	ParameterType para;
-	ReturnType ret;
-	NMX_uint8 rbuffer[16];
-	NMX_uint8 wbuffer[16] =
-	{
-		0xBE, 0xEF, 0xFE, 0xED, 0xBE, 0xEF, 0xFE, 0xED,
-		0xBE, 0xEF, 0xFE, 0xED, 0xBE, 0xEF, 0xFE, 0xED
-	};
-	spi_init_master();                    // initialize your SPI interface
-	ret = Driver_Init(&fdo);            // initialize the flash driver
-	if (Flash_WrongType == ret)
-	{
-		printf("Sorry, no device detected.\n");
-		return -1;
-	}
-	printf("it detected the flash memory!");
-	fdo.GenOp.SectorErase(0);           // erase first sector 
-	para.PageProgram.udAddr = 0;        // program 16 byte at address 0
-	para.PageProgram.pArray = wbuffer;
-	para.PageProgram.udNrOfElementsInArray = 16;
-	fdo.GenOp.DataProgram(PageProgram, &para);
-	para.Read.udAddr = 0;               // read 16 byte at address 0
-	para.Read.pArray = rbuffer;
-	para.Read.udNrOfElementsToRead = 16;
-	fdo.GenOp.DataRead(Read, &para);
-	printf("The first device byte is: 0x%x\n", rbuffer[0]);*/
 	init_set_timer( get_next_interval() );
 
 	// Enable global interrupt //
