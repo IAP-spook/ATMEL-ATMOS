@@ -71,10 +71,39 @@ FlashStorage_Abstract_FctnTable FlashStorageDevice_abstract_vmt = {
 
  int FlashStorage_Execute(FlashStorageDevice *this)
  {
+   /* This is where data will be read from memory and stored in the Flash */
+   // Call write API
+   printf("writing\n");
+   N25Q_Write();
+   printf("reading\n");
+   N25Q_Read();
+
  	return 0;
  }
 
  int FlashStorage_Configure(FlashStorageDevice *this)
  {
  	return 0;
+ }
+
+ int N25Q_Write()
+ {
+   // for now generic
+   NMX_uint8 wbuffer[4] = {0x01,0x33,0xA1,0x2A};
+   N25Qfdo.GenOp.SectorErase(0);           //erase first sector
+   N25Qpara.PageProgram.udAddr = 0;       //program 4 byte at address 0
+   N25Qpara.PageProgram.udNrOfElementsInArray = 4;
+   N25Qfdo.GenOp.DataProgram(PageProgram, &N25Qpara);
+
+ }
+
+ int N25Q_Read()
+ {
+   // for now generic
+   NMX_uint8 rbuffer[4];
+   N25Qpara.Read.udAddr = 0;       //program 4 byte at address 0
+   N25Qpara.Read.udNrOfElementsInArray = 4;
+   N25Qfdo.GenOp.DataRead(Read, &N25Qpara);
+   printf("%d",rbuffer);
+
  }

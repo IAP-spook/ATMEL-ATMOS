@@ -89,4 +89,7 @@ int FlashStorage_Execute(FlashStorageDevice *this);/**<@brief The main logic fun
 int FlashStorage_Configure(FlashStorageDevice *this);/**<@brief The configuration function of the FlashStorage_Device, it should be automatically executed as long as you configure it well in ATMOS.c, devicelist.h and parameter.h  */
 ///@}
 
+int N25Q_Write();
+int N25Q_Read();
+
 #endif
