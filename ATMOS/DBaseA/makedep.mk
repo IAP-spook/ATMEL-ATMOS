@@ -6,6 +6,10 @@ ATMOS.c
 
 devices\old-sensor\K30.c
 
+devices\other-device\src\FlashStorage_Device.c
+
+devices\other-device\src\N25Q.c
+
 devices\sensor\src\K30_Sensor.c
 
 drivers\src\ADC.c

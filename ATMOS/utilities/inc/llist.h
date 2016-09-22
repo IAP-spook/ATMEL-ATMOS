@@ -1,7 +1,7 @@
 /**
  * \file llist.h
  *
- * \brief Declaration of routines for a doubly linked list package
+ * \brief Declaration of routines for a doubly linked list package and YOU SHOULD NOT WANT TO MODIFY THIS
  * 
  *  Author: Resources from web
  */ 

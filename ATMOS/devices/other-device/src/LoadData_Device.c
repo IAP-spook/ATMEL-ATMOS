@@ -3,7 +3,13 @@
  * \brief Implementation of LoadDataDevice struct.
  * Created: 2016/4/21 23:55:49
  *  Author: Anxin Bai
- */ 
+ *
+ *
+ * The LoadData_Device.h along with LoadData_Device.c serve as virtual device that simulated by the mcu( or cpu ).
+ * It is responsible to access some limited memory ( currently 07/07/2016 managed by DemoStorage_Device.h/.c and defined in /utilities/inc/data_unit.h ) and mark the memory slot that should be used for current period.
+ * At the beginning of each collecting period the execute function, it accesses the limited memory and move to the next available slot and let cur_data pointer points to it.
+ * So during collecting, all sensors use cur_data pointer to load new data but don't need to worry about where in memory to save it and how to manage the memory.
+ */
 
 #include "devices/other-device/inc/LoadData_Device.h"
 #include <stdlib.h>
