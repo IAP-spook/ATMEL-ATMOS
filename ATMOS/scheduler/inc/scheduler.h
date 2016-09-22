@@ -49,8 +49,13 @@ struct event queue[ MAX_EVENTS ]; /**<@brief Declaration of event resources, and
  *  API of the Round-Robin Scheduler
  */
 ///@{
+<<<<<<< HEAD
 int load_new_sensor( int32_t timeout, int32_t repeat, BaseSensor *device_ptr, int otherinfo );
 int load_new_device( int32_t timeout, int32_t repeat, BaseDevice *device_ptr, int otherinfo );
+=======
+int load_new_sensor( int timeout, int repeat, BaseSensor *device_ptr, int otherinfo );
+int load_new_device( int timeout, int repeat, BaseDevice *device_ptr, int otherinfo );
+>>>>>>> refs/remotes/origin/master
 void init_timeoutq();
 void next_event_time_collapse(int32_t sleep_time);
 int32_t get_next_interval();

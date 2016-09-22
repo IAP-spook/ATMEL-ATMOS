@@ -79,6 +79,7 @@ static void DEVICE_Init(void){
 	init_Event_Timer();
 	printf("init done!\n");
 	
+<<<<<<< HEAD
 	/* load all sensors */
 	load_new_sensor( GP.SensorList[BMP280].StartTime, GP.SensorList[BMP280].ExecutePeriod, (BaseSensor *)BMP280_ptr, 0 );
 	/* load_new_sensor( GP.SensorList[Si7020].StartTime, GP.SensorList[Si7020].ExecutePeriod, (BaseSensor *)Si_ptr, 0 ); */
@@ -98,6 +99,14 @@ int main(void)
 	APP_Init();
 	DEVICE_Init();
 
+=======
+	// could have sealed following in a function //
+	load_new_sensor( 1000, 4000, (BaseSensor *)BMP280_ptr, 0 );
+	load_new_sensor( 3000, 4000, (BaseSensor *)Si_ptr, 0 );
+	load_new_device( 1000, 12000, (BaseSensor *)Strg_ptr, 0 );
+	load_new_device( 100, 4000, (BaseSensor *)Load_ptr, 0 );
+	// load_new_sensor( 4, 4, (BaseSensor *)Si7020_ptr, 0 );
+>>>>>>> refs/remotes/origin/master
 	init_set_timer( get_next_interval() );
 	
 	// Enable global interrupt //
