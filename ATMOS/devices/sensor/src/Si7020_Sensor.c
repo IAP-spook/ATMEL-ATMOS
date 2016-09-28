@@ -55,11 +55,8 @@ int Si7020_Collect(Si7020Sensor *this )
 	float T = Si7020_calTemperature(this->temperature_data);
 	float H = Si7020_calHumidity(this->humility_data);
 	printf("\tTemperature = %.3f\n\tHumility = %.3f\n",T,H);
-<<<<<<< HEAD:ATMOS/devices/sensor/src/Si7020_Sensor.c
 	cur_data->data[2] = T;
 	cur_data->data[3] = H;
-=======
->>>>>>> refs/remotes/origin/master:ATMOS/wrapper/sensor/src/Si7020_Sensor.c
 	return 0;
 }
 

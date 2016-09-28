@@ -85,9 +85,12 @@ static void DEVICE_Init(void){
 <<<<<<< HEAD
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> origin/css-laptop-version
+=======
+>>>>>>> parent of 6b3315b... Merge remote-tracking branch 'refs/remotes/origin/master' into css-laptop-version
 	/* load all sensors */
 	load_new_sensor( GP.SensorList[BMP280].StartTime, GP.SensorList[BMP280].ExecutePeriod, (BaseSensor *)BMP280_ptr, 0 );
 	/* load_new_sensor( GP.SensorList[Si7020].StartTime, GP.SensorList[Si7020].ExecutePeriod, (BaseSensor *)Si_ptr, 0 ); */
@@ -109,6 +112,7 @@ int main(void)
 	DEVICE_Init();
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 =======
 	// could have sealed following in a function //
 	load_new_sensor( 1000, 4000, (BaseSensor *)BMP280_ptr, 0 );
@@ -119,6 +123,8 @@ int main(void)
 >>>>>>> refs/remotes/origin/master
 =======
 >>>>>>> origin/css-laptop-version
+=======
+>>>>>>> parent of 6b3315b... Merge remote-tracking branch 'refs/remotes/origin/master' into css-laptop-version
 	init_set_timer( get_next_interval() );
 
 	// Enable global interrupt //

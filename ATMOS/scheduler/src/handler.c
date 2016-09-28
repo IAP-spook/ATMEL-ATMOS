@@ -114,13 +114,8 @@ int sensor_handler( struct event *p )
 *****************************************************************************/
 int device_handler( struct event *p )
 {
-<<<<<<< HEAD
 	int retNum = 0;
 	BaseDevice * bdp = (BaseDevice *) ( p->load_p );
-=======
-	int retNum;
-	BaseDevice * bdp = (BaseDevice *) ( p->sp );
->>>>>>> refs/remotes/origin/master
 	LoadDataDevice *ldp = (LoadDataDevice*) ( p->load_p );
 	DemoStorageDevice *ddp = (DemoStorageDevice*) ( p->store_p );
 

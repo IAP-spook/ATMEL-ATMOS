@@ -57,11 +57,7 @@ int load_new_sensor( int32_t timeout, int32_t repeat, BaseSensor *device_ptr, in
 /*************************************************************************//**
   @brief Load a brand new device activity into the scheduler's timeoutQ
 *****************************************************************************/
-<<<<<<< HEAD
 int load_new_device( int32_t timeout, int32_t repeat, BaseDevice *device_ptr, int otherinfo )
-=======
-int load_new_device( int timeout, int repeat, BaseDevice *device_ptr, int otherinfo )
->>>>>>> refs/remotes/origin/master
 {
 
     /* assume we have available event in freelist */
@@ -72,12 +68,7 @@ int load_new_device( int timeout, int repeat, BaseDevice *device_ptr, int otheri
     ep->timeout = timeout;
     ep->repeat_interval = repeat;
 	ep->borrow_timeout = 0;
-<<<<<<< HEAD
     ep->load_p = device_ptr;
-=======
-    ep->sp = device_ptr;
-	ep->load_p = device_ptr;
->>>>>>> refs/remotes/origin/master
 	ep->store_p = device_ptr;
     ep->info = otherinfo;
     ep->cur_state = Ready;
